@@ -1,0 +1,44 @@
+---
+description: MemoApp backend FastAPI project structure and conventions.
+alwaysApply: true
+---
+
+# MemoApp Backend Structure
+
+Use these conventions when working in `memoappbackend` (`C:\Users\Mithun\Documents\GitHub\memoappbackend`).
+
+## Framework / Runtime
+
+- Backend is FastAPI with async SQLAlchemy, Alembic, Pydantic v2, Supabase auth, and pytest.
+- Keep the app entry point in `app/main.py`; mount versioned routes through `app.api.v1.api_router` under `/api/v1`.
+- Keep environment/config access centralized in `app/core/config.py`; do not add direct `os.getenv` calls in feature code.
+
+## Folder Responsibilities
+
+- `app/api/v1/`: FastAPI routers only. Parse request data, declare dependencies, call services when business logic is non-trivial, and return schemas.
+- `app/services/`: business logic, orchestration, transactions, idempotency, side effects, and domain calculations.
+- `app/models/`: SQLAlchemy ORM models and table/index/constraint definitions. Reuse shared mixins from `app/models/base.py`.
+- `app/schemas/`: Pydantic request/response models. Keep create/update/output schemas explicit instead of reusing one model for every direction.
+- `app/core/`: cross-cutting infrastructure such as config, database sessions, auth/security, dependencies, exception handlers, caching, and Supabase integration.
+- `app/utils/`: pure reusable helpers only; avoid database access and HTTP concerns here.
+- `alembic/versions/`: one migration per schema change; do not modify migrations that may already be shared/applied.
+- `tests/`: pytest coverage for API contracts, services, schemas, and regression cases.
+
+## API / Router Pattern
+
+- Add new resource routers as `app/api/v1/<resources>.py`, then register them in `app/api/v1/__init__.py` with a clear prefix and tag.
+- Keep routers thin. If an endpoint mutates multiple tables, computes totals, allocates IDs, sends email, or handles sync/offline behavior, move that logic into `app/services/`.
+- Use `Depends(get_db)` for `AsyncSession`, `Depends(get_current_user)` for authenticated users, `Depends(get_current_shop)` for tenant scope, and `require_role(...)` for role gates.
+
+## Data / Security Rules
+
+- Always scope tenant data by `shop_id` before reading or mutating rows.
+- Prefer soft-delete/version/client UUID patterns where existing models use them, especially for syncable/offline entities.
+- Use async SQLAlchemy APIs consistently: `await db.execute(...)`, `await db.commit()`, `await db.refresh(...)`.
+- Keep Supabase JWT verification and current-user loading in `app/core/security.py` / `app/core/supabase.py`; do not duplicate token parsing in routers.
+
+## Naming
+
+- Routers are usually plural resources: `products.py`, `customers.py`, `memos.py`.
+- Models and schemas are usually singular domain names: `product.py`, `customer.py`, `memo.py`.
+- Services use `<domain>_service.py` for shared business logic and can use feature subfolders for larger domains, as in `app/services/assistant/`.

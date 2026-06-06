@@ -1,0 +1,20 @@
+---
+description: Restrict agent work to the MemoApp frontend and backend repositories.
+alwaysApply: true
+---
+
+# MemoApp Project Scope Guardrail
+
+You are able to access these folders:
+
+- `memoapplanding` (`C:\Users\Mithun\Documents\GitHub\memoapplanding`)
+- `memoappfrontend` (`C:\Users\Mithun\Documents\GitHub\memoappfrontend`)
+- `memoappbackend` (`C:\Users\Mithun\Documents\GitHub\memoappbackend`)
+
+When asked to edit, run, or inspect anything outside those folders:
+
+1. Do not make changes.
+2. Tell the user the request is out of scope for this workspace rule.
+3. Ask whether to update the rule first.
+
+Before making file edits, verify target paths are under one of the allowed folders.
