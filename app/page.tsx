@@ -23,6 +23,10 @@ const softwareSchema = {
     "Retail reports",
     "Offline-first sync",
     "AI shop assistant",
+    "Bangla language support",
+    "Google Drive auto backup",
+    "Business notes",
+    "Employee management",
   ],
 };
 

@@ -25,6 +25,10 @@ html {
   scroll-behavior: smooth;
 }
 
+html[lang="bn"] {
+  font-size: 15px;
+}
+
 body {
   margin: 0;
   background:
@@ -71,6 +75,16 @@ select {
   text-wrap: balance;
 }
 
+.primary-button {
+  background: var(--color-secondary);
+  color: #ffffff;
+}
+
+.primary-button:hover {
+  background: var(--color-primary-dark);
+  color: #ffffff;
+}
+
 .feature-card {
   animation: feature-card-enter 620ms ease both;
   transform-origin: center bottom;
@@ -78,6 +92,55 @@ select {
 
 .feature-card:hover {
   border-color: rgba(2, 115, 74, 0.22);
+}
+
+.feature-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg,
+      transparent,
+      #000 8%,
+      #000 92%,
+      transparent);
+}
+
+.feature-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 1.25rem;
+  animation: feature-marquee-left 42s linear infinite;
+  will-change: transform;
+}
+
+.feature-marquee-track-reverse {
+  animation-name: feature-marquee-right;
+}
+
+.feature-marquee:hover .feature-marquee-track {
+  animation-play-state: paused;
+}
+
+.feature-marquee-card {
+  flex: 0 0 min(82vw, 25rem);
+}
+
+@keyframes feature-marquee-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes feature-marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 .feature-card:nth-child(1) {
@@ -123,5 +186,25 @@ select {
 
   .feature-card {
     animation: none;
+  }
+
+  .feature-marquee {
+    overflow: visible;
+    mask-image: none;
+  }
+
+  .feature-marquee-track {
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: none;
+  }
+
+  .feature-marquee-card {
+    flex: 1 1 18rem;
+  }
+
+  .feature-marquee-card[aria-hidden="true"] {
+    display: none;
   }
 }
