@@ -86,12 +86,14 @@ function HeroSection() {
       <div className="absolute left-1/2 top-12 -z-10 h-80 w-80 -translate-x-1/2 rounded-full bg-(--color-secondary-light)/20 blur-3xl" />
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-24 lg:grid-cols-[0.95fr_1.05fr] lg:px-8 lg:pb-28">
         <div>
-          <div className="inline-flex flex-wrap items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white/80">
-            <span className="size-2 rounded-full bg-(--color-info)" />
-            {content.hero.eyebrow}
+          <div className="inline-flex max-w-76 flex-col gap-2 rounded-3xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-medium text-white/80 sm:max-w-none sm:flex-row sm:items-center sm:gap-3 sm:rounded-full sm:py-2">
+            <span className="flex items-center gap-2">
+              <span className="size-2 shrink-0 rounded-full bg-(--color-info)" />
+              <span>{content.hero.eyebrow}</span>
+            </span>
             <span className="hidden h-4 w-px bg-white/20 sm:block" />
             <a
-              className="font-semibold text-(--color-info) transition hover:text-(--color-info-light)"
+              className="pl-4 text-sm font-semibold text-(--color-info) transition hover:text-(--color-info-light) sm:pl-0"
               href={ororaSoftAboutUrl}
               rel="noreferrer"
               target="_blank"
