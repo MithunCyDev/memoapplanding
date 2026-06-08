@@ -528,19 +528,17 @@ export function FinalCtaSection() {
 
 export function Footer() {
   return (
-    <footer className="border-t border-(--color-border) bg-white px-5 py-10 lg:px-8">
+    <footer className="border-t border-(--color-border) bg-white px-5 py-6 lg:px-8">
       <div className="mx-auto flex max-w-7xl flex-col gap-5 text-sm text-(--color-muted) md:flex-row md:items-center md:justify-between">
-        <p>
-          © {new Date().getFullYear()} MemoApp. All rights reserved.{" "}
-          <a
-            className="font-semibold text-(--color-primary) hover:text-(--color-primary-dark)"
-            href={ororaSoftUrl}
-            rel="noreferrer"
-            target="_blank"
-          >
-            Developed and maintained by OroraSoft.
-          </a>
-        </p>
+        <p>© {new Date().getFullYear()} MemoApp. All rights reserved.</p>
+        <a
+          className="font-semibold text-(--color-primary) hover:text-(--color-primary-dark) md:text-right"
+          href={ororaSoftUrl}
+          rel="noreferrer"
+          target="_blank"
+        >
+          Developed and maintained by OroraSoft.
+        </a>
       </div>
     </footer>
   );
