@@ -1,23 +1,55 @@
 "use client";
 
+import { useState } from "react";
 import { useLanguage } from "@/components/landing/language-provider";
+import { WhatsAppChatButton } from "@/components/landing/whatsapp-chat-button";
 import { appLoginUrl } from "@/lib/landing-content";
+
+type BillingCycle = "monthly" | "yearly";
 
 export function PricingRouteContent() {
   const { content } = useLanguage();
+  const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
 
   return (
     <>
       <section className="px-5 py-10 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-3 rounded-4xl border border-(--color-border) bg-white p-4 shadow-sm">
-          {content.pricingBenefits.map((benefit) => (
-            <span
-              className="rounded-full bg-(--color-primary-light) px-4 py-2 text-sm font-semibold text-(--color-primary-dark)"
-              key={benefit}
-            >
-              {benefit}
-            </span>
-          ))}
+        <div className="mx-auto grid max-w-7xl gap-5 rounded-4xl border border-(--color-border) bg-white p-4 shadow-sm lg:grid-cols-[1fr_auto] lg:items-center">
+          <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
+            {content.pricingBenefits.map((benefit) => (
+              <span
+                className="rounded-full bg-(--color-primary-light) px-4 py-2 text-sm font-semibold text-(--color-primary-dark)"
+                key={benefit}
+              >
+                {benefit}
+              </span>
+            ))}
+          </div>
+          <div className="flex justify-center">
+            <div className="rounded-full bg-(--color-background) p-1">
+              {(["monthly", "yearly"] as const).map((cycle) => (
+                <button
+                  className={`rounded-full px-5 py-2 text-sm font-bold transition ${
+                    billingCycle === cycle
+                      ? "bg-(--color-secondary) text-white shadow-sm"
+                      : "text-(--color-muted) hover:text-(--color-primary)"
+                  }`}
+                  key={cycle}
+                  onClick={() => setBillingCycle(cycle)}
+                  type="button"
+                >
+                  {cycle === "monthly"
+                    ? content.billing.monthly
+                    : `${content.billing.yearly} · ${content.billing.saveLabel}`}
+                </button>
+              ))}
+            </div>
+          </div>
+          {billingCycle === "yearly" ? (
+            <p className="rounded-3xl bg-(--color-primary-light) px-4 py-3 text-center text-sm font-semibold text-(--color-primary-dark) lg:col-span-2">
+              {content.billing.yearlyBenefit}
+            </p>
+          ) : null}
         </div>
       </section>
 
@@ -53,10 +85,22 @@ export function PricingRouteContent() {
                 </span>
               </div>
 
+              <p
+                className={`text-sm font-semibold ${
+                  plan.highlighted ? "text-white/70" : "text-(--color-muted)"
+                }`}
+              >
+                {plan.target}
+              </p>
+
               <h2 className="text-4xl font-semibold">
-                {plan.price}
+                {billingCycle === "monthly"
+                  ? plan.monthlyPrice
+                  : plan.yearlyPrice}
                 <span className="text-base font-medium opacity-70">
-                  {plan.term}
+                  {billingCycle === "monthly"
+                    ? plan.monthlyTerm
+                    : plan.yearlyTerm}
                 </span>
               </h2>
               <p
@@ -64,14 +108,16 @@ export function PricingRouteContent() {
                   plan.highlighted ? "text-white/65" : "text-(--color-muted)"
                 }`}
               >
-                {plan.yearly}
+                {billingCycle === "yearly" && plan.yearlyWasPrice
+                  ? `${content.billing.wasLabel} ${plan.yearlyWasPrice} · ${plan.yearlyNote}`
+                  : plan.yearly}
               </p>
               <p
                 className={`mt-5 min-h-24 leading-7 ${
                   plan.highlighted ? "text-white/70" : "text-(--color-muted)"
                 }`}
               >
-                {plan.description}
+                {plan.blurb}
               </p>
 
               <ul className="mt-7 space-y-3">
@@ -97,7 +143,7 @@ export function PricingRouteContent() {
                 }`}
                 href={appLoginUrl}
               >
-                {content.common.startWithMemoApp}
+                {plan.cta}
               </a>
             </article>
           ))}
@@ -119,6 +165,12 @@ export function PricingRouteContent() {
           ))}
         </div>
       </section>
+
+      <WhatsAppChatButton
+        className="fixed bottom-6 right-6 z-50"
+        label={content.faqPage.chatWithUs}
+        message={content.faqPage.whatsappMessage}
+      />
     </>
   );
 }

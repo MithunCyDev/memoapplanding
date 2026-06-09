@@ -390,7 +390,7 @@ export function PricingSection() {
                 }`}
                 href={appLoginUrl}
               >
-                {content.common.tryForFree}
+                {plan.cta}
               </a>
             </article>
           ))}

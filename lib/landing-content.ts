@@ -186,6 +186,14 @@ export const landingContent = {
       "Insights",
       "AI",
     ],
+    billing: {
+      monthly: "Monthly",
+      yearly: "Yearly",
+      saveLabel: "Save 10%",
+      yearlyBenefit:
+        "Yearly billing charges for 10 months while you use 12 months - two bonus months baked in.",
+      wasLabel: "Was",
+    },
     pricingPlans: [
       {
         name: "Trial",
@@ -194,10 +202,22 @@ export const landingContent = {
         yearly: "Explore before choosing a paid plan",
         description:
           "Try MemoApp with guided access to core shop workflows before your team commits.",
+        monthlyPrice: "Free",
+        yearlyPrice: "Free",
+        yearlyWasPrice: "",
+        monthlyTerm: "14 days",
+        yearlyTerm: "14 days",
+        target: "New shops · first-time setup · early exploration",
+        blurb:
+          "Try onboarding, invoicing, catalog, dues, expense tracking, and baseline reports.",
+        cta: "Start free trial",
+        yearlyNote: "Trial access stays free while you explore MemoApp.",
         features: [
           "POS memo creation",
           "Products and customers",
           "Dues and reports",
+          "Expense tracking",
+          "Baseline reports",
         ],
         highlighted: false,
         badge: "Start",
@@ -209,6 +229,16 @@ export const landingContent = {
         yearly: "৳4,990/year",
         description:
           "For one-owner shops that need clean billing, stock, and dues.",
+        monthlyPrice: "৳499",
+        yearlyPrice: "৳4,990",
+        yearlyWasPrice: "৳5,988",
+        monthlyTerm: "/month",
+        yearlyTerm: "/year",
+        target: "Small shops · grocery · mini mart · pharmacy",
+        blurb:
+          "Run one shop confidently with dashboards, dues, backups, and about 5k invoices monthly.",
+        cta: "Get started",
+        yearlyNote: "2 months free yearly",
         features: ["POS memo creation", "Products and stock", "Customer dues"],
         highlighted: false,
         badge: "Basics",
@@ -220,6 +250,16 @@ export const landingContent = {
         yearly: "৳11,990/year",
         description:
           "For busy counters that need stronger reporting, purchases, collections, and AI.",
+        monthlyPrice: "৳1,199",
+        yearlyPrice: "৳11,990",
+        yearlyWasPrice: "৳14,388",
+        monthlyTerm: "/month",
+        yearlyTerm: "/year",
+        target: "Growing retail · hardware · pharmacy · electronics",
+        blurb:
+          "Adds purchasing and suppliers plus barcode-ready workflows, exporters, richer analytics, and starter AI assistant access.",
+        cta: "Choose growth",
+        yearlyNote: "2 months free yearly",
         features: [
           "Purchases and suppliers",
           "Reports and cashflow",
@@ -236,6 +276,16 @@ export const landingContent = {
         yearly: "৳24,990/year",
         description:
           "For growing teams that need advanced reporting, secure backup, and staff workflows.",
+        monthlyPrice: "৳2,499",
+        yearlyPrice: "৳24,990",
+        yearlyWasPrice: "৳29,988",
+        monthlyTerm: "/month",
+        yearlyTerm: "/year",
+        target: "Medium & multi-branch businesses",
+        blurb:
+          "Multi-branch control, granular roles and audits, transfer pipelines, APIs, analytics depth, insights, and premium storage.",
+        cta: "Upgrade to pro",
+        yearlyNote: "2 months free yearly",
         features: [
           "Unlimited records",
           "Auto Google Drive backup",
@@ -415,7 +465,13 @@ export const landingContent = {
       },
     ],
     faqPage: {
+      title: "Frequently Asked Questions",
       browseTopics: "Browse topics",
+      allGroups: "All groups",
+      searchPlaceholder: "Search questions, topics, or answers...",
+      emptyTitle: "No matching questions found",
+      emptyDescription:
+        "Try a different keyword or choose another help category from the sidebar.",
       popular: "Popular",
       stillNeedHelp: "Still need help?",
       supportTitle: "In-app support is available after login.",
@@ -423,6 +479,8 @@ export const landingContent = {
         "Report a problem or reach us by email or WhatsApp. We respond as soon as we can.",
       openHelpCenter: "Open Help Center",
       emailSupport: "Email support",
+      chatWithUs: "Chat with us",
+      whatsappMessage: "Hello MemoApp team, I need help with MemoApp.",
     },
   },
   bn: {
@@ -590,6 +648,14 @@ export const landingContent = {
         "প্রাইসিং পরে MemoApp মেম্বারশিপ ব্যাকএন্ডের সঙ্গে যুক্ত হতে পারে। এখন পেজটি পরিষ্কার প্ল্যান পজিশনিং ও কনভার্সন পথ দেখায়।",
     },
     pricingBenefits: ["ইনভয়েস", "স্টক", "কালেকশন", "ক্রয়", "ইনসাইট", "AI"],
+    billing: {
+      monthly: "মাসিক",
+      yearly: "বার্ষিক",
+      saveLabel: "১০% সেভ",
+      yearlyBenefit:
+        "বার্ষিক বিলিংয়ে ১০ মাসের চার্জে ১২ মাস ব্যবহার - দুই মাস বোনাস।",
+      wasLabel: "আগে",
+    },
     pricingPlans: [
       {
         name: "ট্রায়াল",
@@ -598,7 +664,23 @@ export const landingContent = {
         yearly: "পেইড প্ল্যান নেওয়ার আগে ঘুরে দেখুন",
         description:
           "টিম কমিট করার আগে কোর দোকান ওয়ার্কফ্লোসহ MemoApp ব্যবহার করে দেখুন।",
-        features: ["POS মেমো তৈরি", "প্রোডাক্ট ও কাস্টমার", "বাকি ও রিপোর্ট"],
+        monthlyPrice: "ফ্রি",
+        yearlyPrice: "ফ্রি",
+        yearlyWasPrice: "",
+        monthlyTerm: "১৪ দিন",
+        yearlyTerm: "১৪ দিন",
+        target: "নতুন দোকান · প্রথম সেটআপ · শুরুতে ঘুরে দেখা",
+        blurb:
+          "অনবোর্ডিং, ইনভয়েসিং, ক্যাটালগ, বাকি, খরচ ট্র্যাকিং ও বেসলাইন রিপোর্ট ব্যবহার করে দেখুন।",
+        cta: "ফ্রি ট্রায়াল শুরু করুন",
+        yearlyNote: "MemoApp ঘুরে দেখার সময় ট্রায়াল অ্যাক্সেস ফ্রি থাকে।",
+        features: [
+          "POS মেমো তৈরি",
+          "প্রোডাক্ট ও কাস্টমার",
+          "বাকি ও রিপোর্ট",
+          "খরচ ট্র্যাকিং",
+          "বেসলাইন রিপোর্ট",
+        ],
         highlighted: false,
         badge: "Start",
       },
@@ -609,6 +691,16 @@ export const landingContent = {
         yearly: "৳৪,৯৯০/বছর",
         description:
           "এক মালিকের দোকানের জন্য পরিষ্কার বিলিং, স্টক ও বাকি হিসাব।",
+        monthlyPrice: "৳৪৯৯",
+        yearlyPrice: "৳৪,৯৯০",
+        yearlyWasPrice: "৳৫,৯৮৮",
+        monthlyTerm: "/মাস",
+        yearlyTerm: "/বছর",
+        target: "ছোট দোকান · গ্রোসারি · মিনি মার্ট · ফার্মেসি",
+        blurb:
+          "ড্যাশবোর্ড, বাকি, ব্যাকআপ এবং মাসে প্রায় ৫ হাজার ইনভয়েসসহ এক দোকান আত্মবিশ্বাসের সঙ্গে চালান।",
+        cta: "শুরু করুন",
+        yearlyNote: "ইয়ারলি প্ল্যানে ২ মাস ফ্রি",
         features: ["POS মেমো তৈরি", "প্রোডাক্ট ও স্টক", "কাস্টমার বাকি"],
         highlighted: false,
         badge: "Basics",
@@ -620,6 +712,16 @@ export const landingContent = {
         yearly: "৳১১,৯৯০/বছর",
         description:
           "ব্যস্ত কাউন্টারের জন্য শক্তিশালী রিপোর্ট, ক্রয়, কালেকশন ও AI।",
+        monthlyPrice: "৳১,১৯৯",
+        yearlyPrice: "৳১১,৯৯০",
+        yearlyWasPrice: "৳১৪,৩৮৮",
+        monthlyTerm: "/মাস",
+        yearlyTerm: "/বছর",
+        target: "গ্রোয়িং রিটেইল · হার্ডওয়্যার · ফার্মেসি · ইলেকট্রনিক্স",
+        blurb:
+          "ক্রয় ও সাপ্লায়ার, বারকোড-রেডি ওয়ার্কফ্লো, এক্সপোর্টার, উন্নত অ্যানালিটিক্স এবং স্টার্টার AI অ্যাসিস্ট্যান্ট যোগ করে।",
+        cta: "Growth বেছে নিন",
+        yearlyNote: "ইয়ারলি প্ল্যানে ২ মাস ফ্রি",
         features: [
           "ক্রয় ও সাপ্লায়ার",
           "রিপোর্ট ও ক্যাশফ্লো",
@@ -636,6 +738,16 @@ export const landingContent = {
         yearly: "৳২৪,৯৯০/বছর",
         description:
           "বড় টিমের জন্য অ্যাডভান্সড রিপোর্ট, সিকিউর ব্যাকআপ ও স্টাফ ওয়ার্কফ্লো।",
+        monthlyPrice: "৳২,৪৯৯",
+        yearlyPrice: "৳২৪,৯৯০",
+        yearlyWasPrice: "৳২৯,৯৮৮",
+        monthlyTerm: "/মাস",
+        yearlyTerm: "/বছর",
+        target: "মিডিয়াম ও মাল্টি-ব্রাঞ্চ ব্যবসা",
+        blurb:
+          "মাল্টি-ব্রাঞ্চ কন্ট্রোল, গ্র্যানুলার রোল ও অডিট, ট্রান্সফার পাইপলাইন, API, গভীর অ্যানালিটিক্স, ইনসাইট ও প্রিমিয়াম স্টোরেজ।",
+        cta: "Pro-তে আপগ্রেড করুন",
+        yearlyNote: "ইয়ারলি প্ল্যানে ২ মাস ফ্রি",
         features: [
           "আনলিমিটেড রেকর্ড",
           "Google Drive অটো ব্যাকআপ",
@@ -813,7 +925,13 @@ export const landingContent = {
       },
     ],
     faqPage: {
+      title: "সাধারণ জিজ্ঞাসা",
       browseTopics: "টপিক দেখুন",
+      allGroups: "সব গ্রুপ",
+      searchPlaceholder: "প্রশ্ন, টপিক বা উত্তর খুঁজুন...",
+      emptyTitle: "মিল পাওয়া যায়নি",
+      emptyDescription:
+        "অন্য কীওয়ার্ড ব্যবহার করুন অথবা সাইডবার থেকে অন্য ক্যাটাগরি বেছে নিন।",
       popular: "জনপ্রিয়",
       stillNeedHelp: "আরও সাহায্য দরকার?",
       supportTitle: "লগইনের পর ইন-অ্যাপ সাপোর্ট পাওয়া যাবে।",
@@ -821,6 +939,8 @@ export const landingContent = {
         "সমস্যা রিপোর্ট করুন অথবা ইমেইল/WhatsApp-এ যোগাযোগ করুন। আমরা যত দ্রুত সম্ভব উত্তর দিই।",
       openHelpCenter: "Help Center খুলুন",
       emailSupport: "ইমেইল সাপোর্ট",
+      chatWithUs: "চ্যাট করুন",
+      whatsappMessage: "হ্যালো MemoApp টিম, MemoApp নিয়ে আমার সাহায্য দরকার।",
     },
   },
 } as const;
