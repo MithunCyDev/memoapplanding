@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { useLanguage } from "@/components/landing/language-provider";
+import { SectionHeading } from "@/components/landing/section-heading";
 import { WhatsAppChatButton } from "@/components/landing/whatsapp-chat-button";
 import { appLoginUrl } from "@/lib/landing-content";
 
@@ -147,6 +149,117 @@ export function PricingRouteContent() {
               </a>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-white px-5 py-24 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading
+            eyebrow={content.pricingRoute.comparisonEyebrow}
+            title={content.pricingRoute.comparisonTitle}
+            description={content.pricingRoute.comparisonDescription}
+          />
+
+          <div className="mt-12 overflow-x-auto rounded-4xl border border-(--color-border) bg-white shadow-sm">
+            <table className="w-full min-w-[60rem] border-collapse text-left">
+              <caption className="sr-only">
+                {content.pricingRoute.comparisonTitle}
+              </caption>
+              <thead>
+                <tr className="bg-(--color-primary-light)">
+                  {content.pricingRoute.comparisonColumns.map((column) => (
+                    <th
+                      className="px-5 py-4 text-sm font-bold text-(--color-primary-dark)"
+                      key={column}
+                      scope="col"
+                    >
+                      {column}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {content.pricingRoute.comparisonRows.map((row) => (
+                  <tr
+                    className="border-t border-(--color-border)"
+                    key={row.feature}
+                  >
+                    <th
+                      className="px-5 py-4 font-semibold text-(--color-ink)"
+                      scope="row"
+                    >
+                      {row.feature}
+                    </th>
+                    <td className="px-5 py-4 text-(--color-muted)">
+                      {row.trial}
+                    </td>
+                    <td className="px-5 py-4 text-(--color-muted)">
+                      {row.basic}
+                    </td>
+                    <td className="px-5 py-4 text-(--color-muted)">
+                      {row.growth}
+                    </td>
+                    <td className="px-5 py-4 text-(--color-muted)">
+                      {row.pro}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {content.pricingRoute.assurance.map((item) => (
+              <div
+                className="rounded-3xl bg-(--color-primary-light) p-5 text-sm font-semibold leading-6 text-(--color-primary-dark)"
+                key={item}
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-24 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading
+            eyebrow={content.pricingRoute.faqEyebrow}
+            title={content.pricingRoute.faqTitle}
+            description={content.pricingRoute.faqDescription}
+          />
+          <div className="mt-12 grid gap-4 lg:grid-cols-2">
+            {content.pricingRoute.faqs.map((faq) => (
+              <details
+                className="group rounded-4xl border border-(--color-border) bg-white p-6 shadow-sm"
+                key={faq.question}
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold">
+                  {faq.question}
+                  <span className="text-2xl text-(--color-primary) transition group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-4 leading-7 text-(--color-muted)">
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+          <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+            <Link
+              className="rounded-full bg-(--color-secondary) px-6 py-3 text-center text-sm font-bold text-white"
+              href="/features"
+            >
+              {content.pricingRoute.featuresLink}
+            </Link>
+            <Link
+              className="rounded-full border border-(--color-border) bg-white px-6 py-3 text-center text-sm font-bold text-(--color-secondary)"
+              href="/faq"
+            >
+              {content.pricingRoute.faqLink}
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -2,20 +2,22 @@ import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
 import { LanguageProvider } from "@/components/landing/language-provider";
+import { openGraphImage, pageSeo } from "@/lib/schema";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "MemoApp | SaaS POS for Modern Shops",
+    default: pageSeo.home.title,
     template: "%s | MemoApp",
   },
-  description: siteConfig.description,
+  description: pageSeo.home.description,
   keywords: siteConfig.keywords,
   applicationName: siteConfig.name,
   authors: [{ name: "MemoApp" }],
   creator: "MemoApp",
   publisher: "MemoApp",
+  manifest: "/manifest.webmanifest",
   alternates: {
     canonical: "/",
   },
@@ -29,22 +31,15 @@ export const metadata: Metadata = {
     locale: "en_BD",
     url: "/",
     siteName: siteConfig.name,
-    title: "MemoApp | SaaS POS for Modern Shops",
-    description: siteConfig.description,
-    images: [
-      {
-        url: "/og.svg",
-        width: 1200,
-        height: 630,
-        alt: "MemoApp SaaS POS landing page preview",
-      },
-    ],
+    title: pageSeo.home.title,
+    description: pageSeo.home.description,
+    images: [openGraphImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "MemoApp | SaaS POS for Modern Shops",
-    description: siteConfig.description,
-    images: ["/og.svg"],
+    title: pageSeo.home.title,
+    description: pageSeo.home.description,
+    images: [openGraphImage.url],
   },
   robots: {
     index: true,

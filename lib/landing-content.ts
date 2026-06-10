@@ -390,6 +390,329 @@ export const landingContent = {
           "Use the live app login to start trial access and choose the right plan from your account.",
       },
     ],
+    featuresRoute: {
+      deepDiveEyebrow: "Feature details",
+      deepDiveTitle: "How MemoApp facilities support daily shop work",
+      deepDiveDescription:
+        "Each MemoApp feature is designed to remove a common retail bottleneck: slow billing, unclear stock, scattered baki records, manual reports, and weak backup discipline.",
+      deepDiveGroups: [
+        {
+          title: "Billing & POS",
+          description:
+            "Create fast memos at the counter while keeping every sale ready for printing, PDF sharing, social sharing, and later reporting.",
+          bullets: [
+            "Make sales memos, invoices, quotations, and challans from one billing flow.",
+            "Record paid, partial paid, and due sales without opening separate ledgers.",
+            "Share customer-ready documents through print, PDF, and social channels.",
+          ],
+        },
+        {
+          title: "Inventory & Purchases",
+          description:
+            "Keep product lists, stock movement, purchase records, supplier activity, and low-stock signals connected to the sales counter.",
+          bullets: [
+            "Track products by category, unit, quantity, purchase price, and sale price.",
+            "Connect supplier purchases to stock updates and payable context.",
+            "Spot low-stock risks before important items disappear from the shelf.",
+          ],
+        },
+        {
+          title: "Customers & Dues",
+          description:
+            "MemoApp helps shops manage baki professionally with customer ledgers, payment history, reminders, and clearer collection decisions.",
+          bullets: [
+            "See who owes money, how much they owe, and when the balance changed.",
+            "Collect full or partial payments and keep the ledger updated instantly.",
+            "Use due reminders to reduce forgotten customer payments.",
+          ],
+        },
+        {
+          title: "Reports & AI",
+          description:
+            "Owners can review sales, cash, profit, expenses, dues, and stock signals without waiting for manual spreadsheet work.",
+          bullets: [
+            "Review daily sales, stock value, dues, purchases, and expense context.",
+            "Ask the AI assistant practical questions about stock, cashflow, or sales trends.",
+            "Use reports to decide what to restock, who to follow up with, and where profit is moving.",
+          ],
+        },
+        {
+          title: "Team, Backup & Security",
+          description:
+            "As a shop grows, MemoApp supports employee records, role-aware workflows, Google Drive backup, and offline-friendly sync.",
+          bullets: [
+            "Organize team workflows with employee and salary-related operations.",
+            "Protect business data with scheduled Google Drive backup.",
+            "Keep important counter work moving when internet quality is uneven.",
+          ],
+        },
+      ],
+      audienceEyebrow: "Best-fit shops",
+      audienceTitle: "Who can use MemoApp?",
+      audienceDescription:
+        "MemoApp is flexible enough for many Bangladeshi retail and service businesses that need billing, stock, customers, and reports in one place.",
+      audiences: [
+        {
+          title: "Grocery and daily needs shops",
+          description:
+            "Fast item selection, due sales, and stock visibility for busy everyday counters.",
+        },
+        {
+          title: "Pharmacy and healthcare retailers",
+          description:
+            "Product organization, purchase tracking, and clear sales records for high-SKU shops.",
+        },
+        {
+          title: "Hardware and electronics stores",
+          description:
+            "Supplier purchases, quotation-style selling, and detailed inventory control.",
+        },
+        {
+          title: "Wholesale and distribution counters",
+          description:
+            "Customer ledgers, bulk sales, payable records, and owner-level reporting.",
+        },
+        {
+          title: "Service shops and local businesses",
+          description:
+            "Invoices, customer history, team records, expenses, and business notes.",
+        },
+      ],
+      faqEyebrow: "Feature FAQ",
+      faqTitle: "Common feature questions from shop owners",
+      faqDescription:
+        "Short answers for shop owners comparing MemoApp with notebooks, spreadsheets, and basic billing tools.",
+      faqs: [
+        {
+          question: "Can MemoApp replace my sales notebook and Excel sheet?",
+          answer:
+            "Yes. MemoApp keeps memos, products, customers, dues, purchases, expenses, and reports together so owners do not need to maintain separate notebooks for daily shop data.",
+        },
+        {
+          question: "Does MemoApp help if customers buy on baki?",
+          answer:
+            "Yes. Customer ledgers show due balances and payment history, while reminders help the team follow up with customers more consistently.",
+        },
+        {
+          question: "Can I understand stock without counting everything daily?",
+          answer:
+            "MemoApp connects sales and purchases to inventory, so owners can monitor quantities, low-stock signals, and purchase context without starting from a blank spreadsheet.",
+        },
+        {
+          question: "Which plan should I choose for these features?",
+          answer:
+            "Start with Trial if you are exploring. Basic fits smaller shops, Growth is better for busy counters, and Pro is best for teams that need backup, employees, and priority support.",
+        },
+      ],
+      ctaTitle: "See how these features work during a real shop day",
+      ctaDescription:
+        "Review the workflow page for the daily operating flow, or compare pricing to choose the right plan for your counter.",
+      workflowLink: "See the daily workflow",
+      pricingLink: "Compare pricing plans",
+    },
+    workflowRoute: {
+      timelineEyebrow: "Full-day workflow",
+      timelineTitle: "From opening counter to evening report",
+      timelineDescription:
+        "MemoApp follows the way a shop actually runs, so each action at the counter updates the records owners need later.",
+      timeline: [
+        {
+          step: "01",
+          title: "Open the counter",
+          description:
+            "Start the day with product shortcuts, opening cash context, and ready memo actions for the first customers.",
+          featureLabel: "POS billing and cash visibility",
+          featureHref: "/features#billing-pos",
+        },
+        {
+          step: "02",
+          title: "Sell and print or share memos",
+          description:
+            "Create paid, partial paid, or due sales and send customer-ready memos through print, PDF, or social channels.",
+          featureLabel: "Memos, invoices, and sharing",
+          featureHref: "/features#billing-pos",
+        },
+        {
+          step: "03",
+          title: "Let stock update with the sale",
+          description:
+            "Product quantities stay connected to counter activity, helping owners see low-stock risk earlier.",
+          featureLabel: "Inventory and low-stock alerts",
+          featureHref: "/features#inventory-purchases",
+        },
+        {
+          step: "04",
+          title: "Collect dues and record purchases",
+          description:
+            "Customer baki, supplier purchases, and payable context stay organized beside the daily sales flow.",
+          featureLabel: "Customer and supplier ledgers",
+          featureHref: "/features#customers-dues",
+        },
+        {
+          step: "05",
+          title: "Add expenses and business notes",
+          description:
+            "Record daily costs, team notes, and important shop updates before details are forgotten.",
+          featureLabel: "Expenses and business notes",
+          featureHref: "/features#team-backup-security",
+        },
+        {
+          step: "06",
+          title: "Review reports, sync, and back up",
+          description:
+            "Close the day with sales, profit, dues, stock, AI guidance, sync status, and backup confidence.",
+          featureLabel: "Reports, AI, sync, and backup",
+          featureHref: "/features#reports-ai",
+        },
+      ],
+      rolesEyebrow: "Team clarity",
+      rolesTitle: "Different roles see the work they need",
+      rolesDescription:
+        "MemoApp keeps counter speed simple for staff while giving owners the wider visibility needed to make decisions.",
+      roles: [
+        {
+          title: "Owner",
+          description:
+            "Reviews sales, profit, dues, stock value, expenses, AI suggestions, and backup status from one business view.",
+        },
+        {
+          title: "Cashier",
+          description:
+            "Focuses on fast memo creation, payment collection, due recording, printing, and customer sharing.",
+        },
+        {
+          title: "Manager",
+          description:
+            "Checks purchases, suppliers, low-stock items, team operations, and daily closing context.",
+        },
+      ],
+      ctaTitle: "Choose the plan that matches your shop workflow",
+      ctaDescription:
+        "Small shops can start simple, while busy counters and growing teams can add stronger reports, AI, backup, and staff features.",
+      pricingLink: "Compare MemoApp pricing",
+    },
+    pricingRoute: {
+      comparisonEyebrow: "Plan comparison",
+      comparisonTitle: "Compare what each MemoApp plan includes",
+      comparisonDescription:
+        "Use this table to quickly match your shop size with the billing, inventory, dues, reports, AI, backup, and team features you need.",
+      comparisonColumns: ["Feature", "Trial", "Basic", "Growth", "Pro"],
+      comparisonRows: [
+        {
+          feature: "Best for",
+          trial: "Exploring MemoApp",
+          basic: "Small one-shop counters",
+          growth: "Busy growing retailers",
+          pro: "Teams and larger operations",
+        },
+        {
+          feature: "POS memos and invoices",
+          trial: "Core access",
+          basic: "Included",
+          growth: "Included",
+          pro: "Included",
+        },
+        {
+          feature: "Inventory and low-stock tracking",
+          trial: "Baseline",
+          basic: "Included",
+          growth: "Advanced",
+          pro: "Advanced",
+        },
+        {
+          feature: "Customer dues and collection",
+          trial: "Baseline",
+          basic: "Included",
+          growth: "Included with reports",
+          pro: "Included with team visibility",
+        },
+        {
+          feature: "Purchases and suppliers",
+          trial: "Preview",
+          basic: "Basic records",
+          growth: "Included",
+          pro: "Advanced",
+        },
+        {
+          feature: "Reports and analytics",
+          trial: "Baseline",
+          basic: "Basic reports",
+          growth: "Richer reports",
+          pro: "Advanced reporting",
+        },
+        {
+          feature: "AI assistant",
+          trial: "Preview",
+          basic: "Not included",
+          growth: "Starter access",
+          pro: "Expanded access",
+        },
+        {
+          feature: "Backup and sync",
+          trial: "Manual check",
+          basic: "Standard backup",
+          growth: "Improved backup",
+          pro: "Google Drive auto backup",
+        },
+        {
+          feature: "Employees and roles",
+          trial: "Preview",
+          basic: "Owner-focused",
+          growth: "Manager workflows",
+          pro: "Employee workflows",
+        },
+        {
+          feature: "Support",
+          trial: "Guided start",
+          basic: "Standard",
+          growth: "Priority queue",
+          pro: "Priority support",
+        },
+      ],
+      assurance: [
+        "Start with the free trial before choosing a paid plan.",
+        "Yearly billing gives two bonus months compared with monthly billing.",
+        "Upgrade when your shop needs richer reports, AI, backup, or employee workflows.",
+      ],
+      faqEyebrow: "Pricing FAQ",
+      faqTitle: "Questions before choosing a plan",
+      faqDescription:
+        "These answers help shop owners understand trial access, yearly savings, upgrades, and what to verify before payment.",
+      featuresLink: "Review MemoApp features",
+      faqLink: "Read public FAQ",
+      faqs: [
+        {
+          question: "What happens after the 14-day trial?",
+          answer:
+            "After the trial, choose the plan that matches your shop size. Basic covers smaller counters, Growth fits busy retailers, and Pro supports larger teams.",
+        },
+        {
+          question: "Can I change plans later?",
+          answer:
+            "Yes. Start with a smaller plan and upgrade when you need richer reports, AI, backup, employees, or priority support.",
+        },
+        {
+          question: "Why is yearly billing cheaper?",
+          answer:
+            "Yearly billing is positioned as two bonus months compared with paying monthly for 12 months.",
+        },
+        {
+          question: "Which plan is best for a small grocery shop?",
+          answer:
+            "Basic is usually the simplest starting point for one-shop counters that need POS billing, products, stock, and customer dues.",
+        },
+        {
+          question: "Which plan includes AI and stronger reports?",
+          answer:
+            "Growth adds starter AI assistant access and richer analytics. Pro is designed for teams that also need backup, employee workflows, and priority support.",
+        },
+        {
+          question: "How should I confirm payment and activation details?",
+          answer:
+            "Use the live app or contact MemoApp support before payment so your shop can confirm current payment methods, activation timing, and any policy updates.",
+        },
+      ],
+    },
     faqTopics: [
       {
         title: "General",
@@ -850,6 +1173,330 @@ export const landingContent = {
           "লাইভ অ্যাপ লগইন দিয়ে ট্রায়াল শুরু করুন এবং আপনার অ্যাকাউন্ট থেকে সঠিক প্ল্যান বেছে নিন।",
       },
     ],
+    featuresRoute: {
+      deepDiveEyebrow: "ফিচার বিস্তারিত",
+      deepDiveTitle:
+        "MemoApp সুবিধাগুলো কীভাবে দৈনন্দিন দোকান চালাতে সাহায্য করে",
+      deepDiveDescription:
+        "প্রতিটি MemoApp ফিচার দোকানের সাধারণ বাধা কমানোর জন্য তৈরি: ধীর বিলিং, অস্পষ্ট স্টক, ছড়ানো বাকি হিসাব, ম্যানুয়াল রিপোর্ট ও দুর্বল ব্যাকআপ অভ্যাস।",
+      deepDiveGroups: [
+        {
+          title: "বিলিং ও POS",
+          description:
+            "কাউন্টারে দ্রুত মেমো তৈরি করুন, আবার প্রতিটি সেল প্রিন্ট, PDF শেয়ার, সোশ্যাল শেয়ার ও পরের রিপোর্টের জন্য প্রস্তুত রাখুন।",
+          bullets: [
+            "এক বিলিং ফ্লো থেকে সেলস মেমো, ইনভয়েস, কোটেশন ও চালান তৈরি করুন।",
+            "পেইড, পারশিয়াল পেইড ও বাকি সেল আলাদা লেজার না খুলেই রেকর্ড করুন।",
+            "প্রিন্ট, PDF ও সোশ্যাল চ্যানেলে কাস্টমার-রেডি ডকুমেন্ট শেয়ার করুন।",
+          ],
+        },
+        {
+          title: "ইনভেন্টরি ও ক্রয়",
+          description:
+            "প্রোডাক্ট লিস্ট, স্টক মুভমেন্ট, ক্রয় রেকর্ড, সাপ্লায়ার অ্যাক্টিভিটি ও লো-স্টক সিগন্যাল সেলস কাউন্টারের সঙ্গে যুক্ত রাখুন।",
+          bullets: [
+            "ক্যাটাগরি, ইউনিট, পরিমাণ, ক্রয় মূল্য ও বিক্রয় মূল্য দিয়ে প্রোডাক্ট ট্র্যাক করুন।",
+            "সাপ্লায়ার ক্রয়কে স্টক আপডেট ও পেমেন্ট কনটেক্সটের সঙ্গে যুক্ত করুন।",
+            "গুরুত্বপূর্ণ আইটেম শেষ হওয়ার আগে লো-স্টক ঝুঁকি ধরুন।",
+          ],
+        },
+        {
+          title: "কাস্টমার ও বাকি",
+          description:
+            "কাস্টমার লেজার, পেমেন্ট হিস্ট্রি, রিমাইন্ডার ও পরিষ্কার কালেকশন সিদ্ধান্ত দিয়ে দোকানের বাকি হিসাব পেশাদারভাবে গুছিয়ে রাখে MemoApp।",
+          bullets: [
+            "কার কত বাকি, কখন ব্যালেন্স বদলেছে ও কাকে ফলোআপ দরকার তা দেখুন।",
+            "পূর্ণ বা আংশিক পেমেন্ট কালেক্ট করে সঙ্গে সঙ্গে লেজার আপডেট করুন।",
+            "বাকি রিমাইন্ডার দিয়ে ভুলে যাওয়া পেমেন্ট কমাতে সাহায্য করুন।",
+          ],
+        },
+        {
+          title: "রিপোর্ট ও AI",
+          description:
+            "ম্যানুয়াল স্প্রেডশিট ছাড়াই মালিক সেলস, ক্যাশ, লাভ, খরচ, বাকি ও স্টক সিগন্যাল রিভিউ করতে পারেন।",
+          bullets: [
+            "দৈনিক সেলস, স্টক ভ্যালু, বাকি, ক্রয় ও খরচের কনটেক্সট দেখুন।",
+            "স্টক, ক্যাশফ্লো বা সেলস ট্রেন্ড নিয়ে AI সহকারীকে প্র্যাকটিক্যাল প্রশ্ন করুন।",
+            "কী রিস্টক করবেন, কাকে ফলোআপ করবেন ও লাভ কোথায় যাচ্ছে তা সিদ্ধান্ত নিন।",
+          ],
+        },
+        {
+          title: "টিম, ব্যাকআপ ও সিকিউরিটি",
+          description:
+            "দোকান বড় হলে MemoApp এমপ্লয়ি রেকর্ড, রোল-ভিত্তিক ওয়ার্কফ্লো, Google Drive ব্যাকআপ ও অফলাইন-ফ্রেন্ডলি সিঙ্ক সাপোর্ট করে।",
+          bullets: [
+            "এমপ্লয়ি ও স্যালারি-সম্পর্কিত অপারেশন দিয়ে টিম ওয়ার্কফ্লো গুছিয়ে নিন।",
+            "শিডিউলড Google Drive ব্যাকআপ দিয়ে বিজনেস ডাটা সুরক্ষিত রাখুন।",
+            "ইন্টারনেট দুর্বল হলেও জরুরি কাউন্টার কাজ চালু রাখুন।",
+          ],
+        },
+      ],
+      audienceEyebrow: "যে দোকানের জন্য মানানসই",
+      audienceTitle: "কারা MemoApp ব্যবহার করতে পারে?",
+      audienceDescription:
+        "বাংলাদেশের যেসব রিটেইল ও সার্ভিস ব্যবসায় বিলিং, স্টক, কাস্টমার ও রিপোর্ট এক জায়গায় দরকার, তাদের জন্য MemoApp নমনীয়।",
+      audiences: [
+        {
+          title: "গ্রোসারি ও দৈনন্দিন পণ্যের দোকান",
+          description:
+            "ব্যস্ত কাউন্টারের জন্য দ্রুত আইটেম সিলেকশন, বাকি সেল ও স্টক ভিজিবিলিটি।",
+        },
+        {
+          title: "ফার্মেসি ও হেলথকেয়ার রিটেইলার",
+          description:
+            "অনেক SKU থাকা দোকানের জন্য প্রোডাক্ট অর্গানাইজেশন, ক্রয় ট্র্যাকিং ও পরিষ্কার সেলস রেকর্ড।",
+        },
+        {
+          title: "হার্ডওয়্যার ও ইলেকট্রনিক্স স্টোর",
+          description:
+            "সাপ্লায়ার ক্রয়, কোটেশন-স্টাইল সেলিং ও বিস্তারিত ইনভেন্টরি কন্ট্রোল।",
+        },
+        {
+          title: "হোলসেল ও ডিস্ট্রিবিউশন কাউন্টার",
+          description:
+            "কাস্টমার লেজার, বাল্ক সেল, পেমেন্ট রেকর্ড ও মালিক-লেভেল রিপোর্টিং।",
+        },
+        {
+          title: "সার্ভিস শপ ও লোকাল বিজনেস",
+          description:
+            "ইনভয়েস, কাস্টমার হিস্ট্রি, টিম রেকর্ড, খরচ ও বিজনেস নোট।",
+        },
+      ],
+      faqEyebrow: "ফিচার FAQ",
+      faqTitle: "দোকান মালিকদের সাধারণ ফিচার প্রশ্ন",
+      faqDescription:
+        "নোটবুক, স্প্রেডশিট ও সাধারণ বিলিং টুলের সঙ্গে MemoApp তুলনা করার সময় দোকান মালিকদের জন্য ছোট উত্তর।",
+      faqs: [
+        {
+          question: "MemoApp কি আমার সেলস খাতা ও Excel শিটের বদলে কাজ করবে?",
+          answer:
+            "হ্যাঁ। MemoApp মেমো, প্রোডাক্ট, কাস্টমার, বাকি, ক্রয়, খরচ ও রিপোর্ট একসঙ্গে রাখে, তাই দৈনন্দিন দোকানের ডাটার জন্য আলাদা খাতা কম লাগে।",
+        },
+        {
+          question: "কাস্টমার বাকি নিলে MemoApp সাহায্য করবে?",
+          answer:
+            "হ্যাঁ। কাস্টমার লেজারে বাকি ব্যালেন্স ও পেমেন্ট হিস্ট্রি দেখা যায়, আর রিমাইন্ডার টিমকে নিয়মিত ফলোআপ করতে সাহায্য করে।",
+        },
+        {
+          question: "প্রতিদিন সব পণ্য না গুনেও স্টক বুঝতে পারব?",
+          answer:
+            "MemoApp সেলস ও ক্রয়কে ইনভেন্টরির সঙ্গে যুক্ত করে, তাই পরিমাণ, লো-স্টক সিগন্যাল ও ক্রয় কনটেক্সট স্প্রেডশিট ছাড়াই দেখা যায়।",
+        },
+        {
+          question: "এই ফিচারগুলোর জন্য কোন প্ল্যান বেছে নেব?",
+          answer:
+            "ঘুরে দেখতে Trial দিয়ে শুরু করুন। ছোট দোকানের জন্য Basic, ব্যস্ত কাউন্টারের জন্য Growth, আর ব্যাকআপ, এমপ্লয়ি ও প্রায়োরিটি সাপোর্ট লাগলে Pro ভালো।",
+        },
+      ],
+      ctaTitle: "বাস্তব দোকানের দিনে এই ফিচারগুলো কীভাবে কাজ করে দেখুন",
+      ctaDescription:
+        "দৈনন্দিন অপারেটিং ফ্লোর জন্য workflow পেজ দেখুন, অথবা আপনার কাউন্টারের জন্য সঠিক প্ল্যান বেছে নিতে pricing তুলনা করুন।",
+      workflowLink: "দৈনন্দিন workflow দেখুন",
+      pricingLink: "প্রাইসিং প্ল্যান তুলনা করুন",
+    },
+    workflowRoute: {
+      timelineEyebrow: "পুরো দিনের workflow",
+      timelineTitle: "কাউন্টার খোলা থেকে সন্ধ্যার রিপোর্ট পর্যন্ত",
+      timelineDescription:
+        "দোকান যেভাবে বাস্তবে চলে MemoApp সেই ফ্লো অনুসরণ করে, তাই কাউন্টারের প্রতিটি কাজ মালিকের দরকারি রেকর্ড আপডেট করে।",
+      timeline: [
+        {
+          step: "০১",
+          title: "কাউন্টার খুলুন",
+          description:
+            "প্রোডাক্ট শর্টকাট, ওপেনিং ক্যাশ কনটেক্সট ও প্রস্তুত মেমো অ্যাকশন দিয়ে প্রথম কাস্টমারের জন্য দিন শুরু করুন।",
+          featureLabel: "POS বিলিং ও ক্যাশ ভিজিবিলিটি",
+          featureHref: "/features#billing-pos",
+        },
+        {
+          step: "০২",
+          title: "মেমো বিক্রি, প্রিন্ট বা শেয়ার করুন",
+          description:
+            "পেইড, পারশিয়াল পেইড বা বাকি সেল তৈরি করুন এবং প্রিন্ট, PDF বা সোশ্যাল চ্যানেলে কাস্টমার-রেডি মেমো পাঠান।",
+          featureLabel: "মেমো, ইনভয়েস ও শেয়ারিং",
+          featureHref: "/features#billing-pos",
+        },
+        {
+          step: "০৩",
+          title: "সেলের সঙ্গে স্টক আপডেট হতে দিন",
+          description:
+            "প্রোডাক্ট পরিমাণ কাউন্টার অ্যাক্টিভিটির সঙ্গে যুক্ত থাকে, তাই মালিক আগে থেকেই লো-স্টক ঝুঁকি দেখতে পারেন।",
+          featureLabel: "ইনভেন্টরি ও লো-স্টক অ্যালার্ট",
+          featureHref: "/features#inventory-purchases",
+        },
+        {
+          step: "০৪",
+          title: "বাকি কালেক্ট করুন ও ক্রয় রেকর্ড করুন",
+          description:
+            "কাস্টমার বাকি, সাপ্লায়ার ক্রয় ও পেমেন্ট কনটেক্সট দৈনিক সেলস ফ্লোর পাশেই গুছানো থাকে।",
+          featureLabel: "কাস্টমার ও সাপ্লায়ার লেজার",
+          featureHref: "/features#customers-dues",
+        },
+        {
+          step: "০৫",
+          title: "খরচ ও বিজনেস নোট যোগ করুন",
+          description:
+            "ডিটেইল ভুলে যাওয়ার আগে দৈনিক খরচ, টিম নোট ও জরুরি দোকান আপডেট রেকর্ড করুন।",
+          featureLabel: "খরচ ও বিজনেস নোট",
+          featureHref: "/features#team-backup-security",
+        },
+        {
+          step: "০৬",
+          title: "রিপোর্ট, সিঙ্ক ও ব্যাকআপ রিভিউ করুন",
+          description:
+            "দিন শেষ করুন সেলস, লাভ, বাকি, স্টক, AI গাইডেন্স, সিঙ্ক স্ট্যাটাস ও ব্যাকআপ কনফিডেন্স দিয়ে।",
+          featureLabel: "রিপোর্ট, AI, সিঙ্ক ও ব্যাকআপ",
+          featureHref: "/features#reports-ai",
+        },
+      ],
+      rolesEyebrow: "টিমের পরিষ্কার ভূমিকা",
+      rolesTitle: "প্রতিটি রোল নিজের দরকারি কাজ দেখে",
+      rolesDescription:
+        "MemoApp স্টাফের জন্য কাউন্টার স্পিড সহজ রাখে, আর মালিককে সিদ্ধান্ত নেওয়ার জন্য বড় ছবিটা দেখায়।",
+      roles: [
+        {
+          title: "মালিক",
+          description:
+            "এক বিজনেস ভিউ থেকে সেলস, লাভ, বাকি, স্টক ভ্যালু, খরচ, AI সাজেশন ও ব্যাকআপ স্ট্যাটাস দেখেন।",
+        },
+        {
+          title: "ক্যাশিয়ার",
+          description:
+            "দ্রুত মেমো তৈরি, পেমেন্ট কালেকশন, বাকি রেকর্ড, প্রিন্টিং ও কাস্টমার শেয়ারিংয়ে ফোকাস করেন।",
+        },
+        {
+          title: "ম্যানেজার",
+          description:
+            "ক্রয়, সাপ্লায়ার, লো-স্টক আইটেম, টিম অপারেশন ও দৈনিক ক্লোজিং কনটেক্সট চেক করেন।",
+        },
+      ],
+      ctaTitle: "আপনার দোকানের workflow অনুযায়ী প্ল্যান বেছে নিন",
+      ctaDescription:
+        "ছোট দোকান সহজভাবে শুরু করতে পারে, আর ব্যস্ত কাউন্টার ও বড় টিম রিপোর্ট, AI, ব্যাকআপ ও স্টাফ ফিচার যোগ করতে পারে।",
+      pricingLink: "MemoApp প্রাইসিং তুলনা করুন",
+    },
+    pricingRoute: {
+      comparisonEyebrow: "প্ল্যান তুলনা",
+      comparisonTitle: "প্রতিটি MemoApp প্ল্যানে কী আছে তুলনা করুন",
+      comparisonDescription:
+        "বিলিং, ইনভেন্টরি, বাকি, রিপোর্ট, AI, ব্যাকআপ ও টিম ফিচারের সঙ্গে আপনার দোকানের আকার মিলিয়ে নিতে এই টেবিলটি ব্যবহার করুন।",
+      comparisonColumns: ["ফিচার", "Trial", "Basic", "Growth", "Pro"],
+      comparisonRows: [
+        {
+          feature: "যাদের জন্য ভালো",
+          trial: "MemoApp ঘুরে দেখা",
+          basic: "ছোট এক দোকানের কাউন্টার",
+          growth: "ব্যস্ত গ্রোয়িং রিটেইলার",
+          pro: "টিম ও বড় অপারেশন",
+        },
+        {
+          feature: "POS মেমো ও ইনভয়েস",
+          trial: "কোর অ্যাক্সেস",
+          basic: "অন্তর্ভুক্ত",
+          growth: "অন্তর্ভুক্ত",
+          pro: "অন্তর্ভুক্ত",
+        },
+        {
+          feature: "ইনভেন্টরি ও লো-স্টক ট্র্যাকিং",
+          trial: "বেসলাইন",
+          basic: "অন্তর্ভুক্ত",
+          growth: "অ্যাডভান্সড",
+          pro: "অ্যাডভান্সড",
+        },
+        {
+          feature: "কাস্টমার বাকি ও কালেকশন",
+          trial: "বেসলাইন",
+          basic: "অন্তর্ভুক্ত",
+          growth: "রিপোর্টসহ অন্তর্ভুক্ত",
+          pro: "টিম ভিজিবিলিটিসহ অন্তর্ভুক্ত",
+        },
+        {
+          feature: "ক্রয় ও সাপ্লায়ার",
+          trial: "প্রিভিউ",
+          basic: "বেসিক রেকর্ড",
+          growth: "অন্তর্ভুক্ত",
+          pro: "অ্যাডভান্সড",
+        },
+        {
+          feature: "রিপোর্ট ও অ্যানালিটিক্স",
+          trial: "বেসলাইন",
+          basic: "বেসিক রিপোর্ট",
+          growth: "রিচার রিপোর্ট",
+          pro: "অ্যাডভান্সড রিপোর্টিং",
+        },
+        {
+          feature: "AI সহকারী",
+          trial: "প্রিভিউ",
+          basic: "অন্তর্ভুক্ত নয়",
+          growth: "স্টার্টার অ্যাক্সেস",
+          pro: "এক্সপ্যান্ডেড অ্যাক্সেস",
+        },
+        {
+          feature: "ব্যাকআপ ও সিঙ্ক",
+          trial: "ম্যানুয়াল চেক",
+          basic: "স্ট্যান্ডার্ড ব্যাকআপ",
+          growth: "ইমপ্রুভড ব্যাকআপ",
+          pro: "Google Drive অটো ব্যাকআপ",
+        },
+        {
+          feature: "এমপ্লয়ি ও রোল",
+          trial: "প্রিভিউ",
+          basic: "মালিক-কেন্দ্রিক",
+          growth: "ম্যানেজার workflow",
+          pro: "এমপ্লয়ি workflow",
+        },
+        {
+          feature: "সাপোর্ট",
+          trial: "গাইডেড শুরু",
+          basic: "স্ট্যান্ডার্ড",
+          growth: "প্রায়োরিটি কিউ",
+          pro: "প্রায়োরিটি সাপোর্ট",
+        },
+      ],
+      assurance: [
+        "পেইড প্ল্যান নেওয়ার আগে ফ্রি ট্রায়াল দিয়ে শুরু করুন।",
+        "মাসিক বিলিংয়ের তুলনায় ইয়ারলি বিলিংয়ে দুই মাস বোনাস পাওয়া যায়।",
+        "রিপোর্ট, AI, ব্যাকআপ বা এমপ্লয়ি workflow দরকার হলে আপগ্রেড করুন।",
+      ],
+      faqEyebrow: "প্রাইসিং FAQ",
+      faqTitle: "প্ল্যান বেছে নেওয়ার আগে সাধারণ প্রশ্ন",
+      faqDescription:
+        "ট্রায়াল অ্যাক্সেস, ইয়ারলি সেভিং, আপগ্রেড ও পেমেন্টের আগে কী যাচাই করবেন তা বুঝতে এই উত্তরগুলো সাহায্য করবে।",
+      featuresLink: "MemoApp ফিচার দেখুন",
+      faqLink: "পাবলিক FAQ পড়ুন",
+      faqs: [
+        {
+          question: "১৪ দিনের ট্রায়ালের পর কী হবে?",
+          answer:
+            "ট্রায়ালের পর দোকানের আকার অনুযায়ী প্ল্যান বেছে নিন। Basic ছোট কাউন্টার, Growth ব্যস্ত রিটেইলার এবং Pro বড় টিমের জন্য।",
+        },
+        {
+          question: "পরে কি প্ল্যান পরিবর্তন করা যাবে?",
+          answer:
+            "হ্যাঁ। ছোট প্ল্যান দিয়ে শুরু করে রিপোর্ট, AI, ব্যাকআপ, এমপ্লয়ি বা প্রায়োরিটি সাপোর্ট দরকার হলে আপগ্রেড করুন।",
+        },
+        {
+          question: "ইয়ারলি বিলিং কেন সাশ্রয়ী?",
+          answer:
+            "ইয়ারলি বিলিং মাসে মাসে ১২ মাস পেমেন্ট করার তুলনায় দুই মাস বোনাস হিসেবে পজিশন করা হয়েছে।",
+        },
+        {
+          question: "ছোট গ্রোসারি দোকানের জন্য কোন প্ল্যান ভালো?",
+          answer:
+            "এক দোকানের POS বিলিং, প্রোডাক্ট, স্টক ও কাস্টমার বাকি দরকার হলে Basic সাধারণত সহজ শুরু।",
+        },
+        {
+          question: "AI ও শক্তিশালী রিপোর্ট কোন প্ল্যানে আছে?",
+          answer:
+            "Growth-এ starter AI assistant ও richer analytics আছে। Pro টিমের জন্য, যেখানে ব্যাকআপ, এমপ্লয়ি workflow ও প্রায়োরিটি সাপোর্টও দরকার।",
+        },
+        {
+          question: "পেমেন্ট ও অ্যাক্টিভেশন বিস্তারিত কীভাবে কনফার্ম করব?",
+          answer:
+            "পেমেন্টের আগে লাইভ অ্যাপ বা MemoApp সাপোর্ট ব্যবহার করে বর্তমান পেমেন্ট মেথড, অ্যাক্টিভেশন সময় ও পলিসি আপডেট কনফার্ম করুন।",
+        },
+      ],
+    },
     faqTopics: [
       {
         title: "General",
