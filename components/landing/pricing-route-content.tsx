@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { useLanguage } from "@/components/landing/language-provider";
 import { SectionHeading } from "@/components/landing/section-heading";
-import { WhatsAppChatButton } from "@/components/landing/whatsapp-chat-button";
 import { appLoginUrl } from "@/lib/landing-content";
 
 type BillingCycle = "monthly" | "yearly";
@@ -161,7 +160,7 @@ export function PricingRouteContent() {
           />
 
           <div className="mt-12 overflow-x-auto rounded-4xl border border-(--color-border) bg-white shadow-sm">
-            <table className="w-full min-w-[60rem] border-collapse text-left">
+            <table className="w-full min-w-240 border-collapse text-left">
               <caption className="sr-only">
                 {content.pricingRoute.comparisonTitle}
               </caption>
@@ -278,12 +277,6 @@ export function PricingRouteContent() {
           ))}
         </div>
       </section>
-
-      <WhatsAppChatButton
-        className="fixed bottom-6 right-6 z-50"
-        label={content.faqPage.chatWithUs}
-        message={content.faqPage.whatsappMessage}
-      />
     </>
   );
 }

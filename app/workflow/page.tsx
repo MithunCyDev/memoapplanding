@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { Footer } from "@/components/landing/footer";
+import { LandingAssistant } from "@/components/landing/landing-assistant";
 import {
   FinalCtaSection,
-  Footer,
   Header,
   WorkflowSection,
 } from "@/components/landing/landing-page";
@@ -57,6 +58,7 @@ export default function WorkflowPage() {
         <FinalCtaSection />
       </main>
       <Footer />
+      <LandingAssistant />
     </div>
   );
 }

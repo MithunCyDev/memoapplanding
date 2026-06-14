@@ -6,7 +6,7 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useState,
+  useSyncExternalStore,
   type ReactNode,
 } from "react";
 import {
@@ -23,31 +23,57 @@ interface LanguageContextValue {
 }
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
+const languageStorageKey = "memoapp-language";
+const languageChangeEvent = "memoapp-language-change";
 
 interface LanguageProviderProps {
   children: ReactNode;
 }
 
+function getStoredLanguage(): Language {
+  if (typeof window === "undefined") {
+    return "en";
+  }
+
+  const savedLanguage = window.localStorage.getItem(languageStorageKey);
+
+  return savedLanguage === "bn" || savedLanguage === "en"
+    ? savedLanguage
+    : "en";
+}
+
+function subscribeToLanguageChange(onStoreChange: () => void) {
+  window.addEventListener("storage", onStoreChange);
+  window.addEventListener(languageChangeEvent, onStoreChange);
+
+  return () => {
+    window.removeEventListener("storage", onStoreChange);
+    window.removeEventListener(languageChangeEvent, onStoreChange);
+  };
+}
+
 export function LanguageProvider({ children }: LanguageProviderProps) {
-  const [language, setLanguageState] = useState<Language>(() => {
-    if (typeof window === "undefined") {
-      return "en";
-    }
+  const language = useSyncExternalStore<Language>(
+    subscribeToLanguageChange,
+    getStoredLanguage,
+    () => "en",
+  );
 
-    const savedLanguage = window.localStorage.getItem("memoapp-language");
+  useEffect(() => {
+    const timeoutId = window.setTimeout(() => {
+      window.dispatchEvent(new Event(languageChangeEvent));
+    }, 0);
 
-    return savedLanguage === "bn" || savedLanguage === "en"
-      ? savedLanguage
-      : "en";
-  });
+    return () => window.clearTimeout(timeoutId);
+  }, []);
 
   useEffect(() => {
     document.documentElement.lang = language === "bn" ? "bn" : "en";
   }, [language]);
 
   const setLanguage = useCallback((nextLanguage: Language) => {
-    setLanguageState(nextLanguage);
-    window.localStorage.setItem("memoapp-language", nextLanguage);
+    window.localStorage.setItem(languageStorageKey, nextLanguage);
+    window.dispatchEvent(new Event(languageChangeEvent));
   }, []);
 
   const value = useMemo<LanguageContextValue>(

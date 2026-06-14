@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { Footer, Header } from "@/components/landing/landing-page";
+import { Footer } from "@/components/landing/footer";
+import { LandingAssistant } from "@/components/landing/landing-assistant";
+import { Header } from "@/components/landing/landing-page";
 import { PricingRouteContent } from "@/components/landing/pricing-route-content";
 import { RouteHero } from "@/components/landing/route-hero";
 import {
@@ -50,6 +52,7 @@ export default function PricingPage() {
         <PricingRouteContent />
       </main>
       <Footer />
+      <LandingAssistant />
     </div>
   );
 }

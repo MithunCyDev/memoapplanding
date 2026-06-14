@@ -24,6 +24,82 @@ export const landingContent = {
       productBy: "A product of",
       copyright: "All rights reserved.",
     },
+    footer: {
+      description:
+        "AI-powered POS, inventory, dues, reports, and backup tools for modern Bangladeshi shops.",
+      productTitle: "Product",
+      companyTitle: "Company & support",
+      legalTitle: "Trust & legal",
+      contactTitle: "Need help choosing a plan?",
+      contactDescription:
+        "Talk with the MemoApp team about setup, pricing, Google backup, or the right workflow for your shop.",
+      emailSupport: "Email support",
+      whatsappSupport: "WhatsApp support",
+      whatsappMessage:
+        "Hello MemoApp team, I need help choosing a MemoApp plan.",
+      tryForFree: "Try MemoApp free",
+      googleDataNote:
+        "Google Contacts and Drive access are used only for customer import and backup features you choose.",
+      developedBy: "Developed and maintained by OroraSoft.",
+      productBy: "A product of OroraSoft",
+      productLinks: [
+        { label: "Home", href: "/", external: false },
+        { label: "Features", href: "/features", external: false },
+        { label: "Workflow", href: "/workflow", external: false },
+        { label: "Pricing", href: "/pricing", external: false },
+        { label: "FAQ", href: "/faq", external: false },
+      ],
+      companyLinks: [
+        { label: "About Us", href: ororaSoftAboutUrl, external: true },
+        { label: "Start free trial", href: appLoginUrl, external: true },
+      ],
+      legalLinks: [
+        { label: "Privacy Policy", href: "/privacy-policy", external: false },
+        {
+          label: "Terms of Service",
+          href: "/terms-of-service",
+          external: false,
+        },
+      ],
+    },
+    assistant: {
+      title: "MemoAI Guide",
+      subtitle:
+        "Ask me about MemoApp, pricing, workflow, features, or support.",
+      launcherLabel: "Ask MemoAI",
+      closeLabel: "Close assistant",
+      placeholder: "Type your question...",
+      sendLabel: "Send",
+      typingLabel: "MemoAI is thinking...",
+      welcomeMessage:
+        "Hi, I am MemoAI Guide. I can help you understand MemoApp features, pricing, workflow, Google backup, OroraSoft, and support options.",
+      fallbackMessage:
+        "I can answer common MemoApp landing-page questions, but I do not want to guess. You can ask about pricing, features, workflow, Google backup, OroraSoft, Bangla support, or contact support.",
+      whatsappSupportLabel: "WhatsApp support",
+      emailSupportLabel: "Email support",
+      quickPrompts: [
+        {
+          label: "Which plan is right for me?",
+          query: "Which MemoApp plan is right for my shop?",
+        },
+        {
+          label: "What features are included?",
+          query: "What features does MemoApp include?",
+        },
+        {
+          label: "How does workflow work?",
+          query: "How does MemoApp workflow work during a shop day?",
+        },
+        {
+          label: "Google backup",
+          query: "How does Google Drive backup work in MemoApp?",
+        },
+        {
+          label: "Who built MemoApp?",
+          query: "Who built MemoApp and what is OroraSoft?",
+        },
+      ],
+    },
     hero: {
       eyebrow: "Built for BD SMEs and modern retail counters",
       title: "Your Business Assistant, Inventory Manager, and POS — All in One",
@@ -815,6 +891,82 @@ export const landingContent = {
       contactMemoApp: "MemoApp-এ যোগাযোগ করুন",
       productBy: "Product by",
       copyright: "সর্বস্বত্ব সংরক্ষিত।",
+    },
+    footer: {
+      description:
+        "বাংলাদেশের আধুনিক দোকানের জন্য AI-পাওয়ারড POS, ইনভেন্টরি, বাকি, রিপোর্ট ও ব্যাকআপ টুল।",
+      productTitle: "প্রোডাক্ট",
+      companyTitle: "কোম্পানি ও সাপোর্ট",
+      legalTitle: "বিশ্বাস ও আইনি তথ্য",
+      contactTitle: "প্ল্যান বেছে নিতে সাহায্য দরকার?",
+      contactDescription:
+        "Setup, pricing, Google backup বা আপনার দোকানের জন্য সঠিক workflow নিয়ে MemoApp টিমের সাথে কথা বলুন।",
+      emailSupport: "Support-এ ইমেইল করুন",
+      whatsappSupport: "WhatsApp support",
+      whatsappMessage:
+        "Hello MemoApp team, I need help choosing a MemoApp plan.",
+      tryForFree: "MemoApp ফ্রি ট্রাই করুন",
+      googleDataNote:
+        "Google Contacts ও Drive access শুধু আপনার বেছে নেওয়া customer import ও backup feature-এর জন্য ব্যবহার হয়।",
+      developedBy: "OroraSoft ডেভেলপ ও মেইনটেইন করে।",
+      productBy: "OroraSoft-এর একটি product",
+      productLinks: [
+        { label: "Home", href: "/", external: false },
+        { label: "Features", href: "/features", external: false },
+        { label: "Workflow", href: "/workflow", external: false },
+        { label: "Pricing", href: "/pricing", external: false },
+        { label: "FAQ", href: "/faq", external: false },
+      ],
+      companyLinks: [
+        { label: "About Us", href: ororaSoftAboutUrl, external: true },
+        { label: "Free trial শুরু করুন", href: appLoginUrl, external: true },
+      ],
+      legalLinks: [
+        { label: "Privacy Policy", href: "/privacy-policy", external: false },
+        {
+          label: "Terms of Service",
+          href: "/terms-of-service",
+          external: false,
+        },
+      ],
+    },
+    assistant: {
+      title: "MemoAI Guide",
+      subtitle:
+        "MemoApp, pricing, workflow, feature বা support নিয়ে প্রশ্ন করুন।",
+      launcherLabel: "MemoAI-কে জিজ্ঞাসা করুন",
+      closeLabel: "Assistant বন্ধ করুন",
+      placeholder: "আপনার প্রশ্ন লিখুন...",
+      sendLabel: "পাঠান",
+      typingLabel: "MemoAI ভাবছে...",
+      welcomeMessage:
+        "হ্যালো, আমি MemoAI Guide। MemoApp feature, pricing, workflow, Google backup, OroraSoft ও support option বুঝতে সাহায্য করতে পারি।",
+      fallbackMessage:
+        "আমি MemoApp landing page-এর সাধারণ প্রশ্নের উত্তর দিতে পারি, কিন্তু অনুমান করতে চাই না। Pricing, feature, workflow, Google backup, OroraSoft, Bangla support বা support contact সম্পর্কে জিজ্ঞাসা করুন।",
+      whatsappSupportLabel: "WhatsApp support",
+      emailSupportLabel: "Support-এ ইমেইল করুন",
+      quickPrompts: [
+        {
+          label: "কোন প্ল্যান ভালো?",
+          query: "আমার দোকানের জন্য কোন MemoApp plan ভালো?",
+        },
+        {
+          label: "কী কী feature আছে?",
+          query: "MemoApp-এ কী কী feature আছে?",
+        },
+        {
+          label: "Workflow কীভাবে চলে?",
+          query: "দোকানের দিনে MemoApp workflow কীভাবে কাজ করে?",
+        },
+        {
+          label: "Google backup",
+          query: "MemoApp-এ Google Drive backup কীভাবে কাজ করে?",
+        },
+        {
+          label: "OroraSoft কে?",
+          query: "MemoApp কে তৈরি করেছে এবং OroraSoft কী?",
+        },
+      ],
     },
     hero: {
       eyebrow: "বাংলাদেশের SME ও আধুনিক দোকানের জন্য তৈরি",

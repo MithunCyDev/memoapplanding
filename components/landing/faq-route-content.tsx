@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from "react";
 import { useLanguage } from "@/components/landing/language-provider";
-import { WhatsAppChatButton } from "@/components/landing/whatsapp-chat-button";
 
 export function FaqRouteContent() {
   const { content } = useLanguage();
@@ -131,12 +130,6 @@ export function FaqRouteContent() {
           </div>
         </div>
       </div>
-
-      <WhatsAppChatButton
-        className="fixed bottom-6 right-6 z-50"
-        label={content.faqPage.chatWithUs}
-        message={content.faqPage.whatsappMessage}
-      />
     </section>
   );
 }

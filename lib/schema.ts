@@ -77,6 +77,34 @@ export const pageSeo = {
     ],
     path: "/faq",
   },
+  privacyPolicy: {
+    title: "Privacy Policy - MemoApp Data & Google API Use",
+    openGraphTitle: "MemoApp Privacy Policy - Data & Google API Use",
+    description:
+      "Read how MemoApp collects, uses, stores, shares, and protects account, shop, customer, Google Contacts, and Google Drive backup data.",
+    keywords: [
+      "MemoApp privacy policy",
+      "MemoApp Google Contacts privacy",
+      "MemoApp Google Drive backup privacy",
+      "POS app privacy policy",
+      "shop management data policy",
+    ],
+    path: "/privacy-policy",
+  },
+  termsOfService: {
+    title: "Terms of Service - MemoApp",
+    openGraphTitle: "MemoApp Terms of Service",
+    description:
+      "Review the terms for using MemoApp, including account responsibilities, lawful shop data use, Google integrations, backups, subscriptions, and acceptable use.",
+    keywords: [
+      "MemoApp terms of service",
+      "MemoApp terms",
+      "POS app terms",
+      "shop management software terms",
+      "Google Drive backup terms",
+    ],
+    path: "/terms-of-service",
+  },
 } as const;
 
 const featureNames = landingContent.en.featureCards.map(
@@ -290,6 +318,54 @@ export function buildFaqPageSchema() {
           text: faq.answer,
         },
       })),
+    },
+  ];
+}
+
+export function buildPrivacyPolicyPageSchema() {
+  return [
+    buildBreadcrumb(pageSeo.privacyPolicy.path, "Privacy Policy"),
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: pageSeo.privacyPolicy.openGraphTitle,
+      url: absoluteUrl(pageSeo.privacyPolicy.path),
+      description: pageSeo.privacyPolicy.description,
+      isPartOf: {
+        "@type": "WebSite",
+        name: siteConfig.name,
+        url: siteConfig.url,
+      },
+      about: [
+        "Privacy policy",
+        "Google Contacts data use",
+        "Google Drive backup data use",
+        "Shop management data protection",
+      ],
+    },
+  ];
+}
+
+export function buildTermsOfServicePageSchema() {
+  return [
+    buildBreadcrumb(pageSeo.termsOfService.path, "Terms of Service"),
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: pageSeo.termsOfService.openGraphTitle,
+      url: absoluteUrl(pageSeo.termsOfService.path),
+      description: pageSeo.termsOfService.description,
+      isPartOf: {
+        "@type": "WebSite",
+        name: siteConfig.name,
+        url: siteConfig.url,
+      },
+      about: [
+        "Terms of service",
+        "Acceptable use",
+        "Google Contacts import",
+        "Google Drive backup",
+      ],
     },
   ];
 }

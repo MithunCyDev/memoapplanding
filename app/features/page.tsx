@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { FeaturesRouteContent } from "@/components/landing/features-route-content";
+import { Footer } from "@/components/landing/footer";
+import { LandingAssistant } from "@/components/landing/landing-assistant";
 import {
   FeatureSection,
   FinalCtaSection,
-  Footer,
   Header,
 } from "@/components/landing/landing-page";
 import { RouteHero } from "@/components/landing/route-hero";
@@ -57,6 +58,7 @@ export default function FeaturesPage() {
         <FinalCtaSection />
       </main>
       <Footer />
+      <LandingAssistant />
     </div>
   );
 }
