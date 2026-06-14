@@ -51,7 +51,7 @@ export function LegalDocumentContent({
         className="px-5 py-16 lg:px-8 lg:py-24"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="rounded-4xl border border-(--color-border) bg-white p-5 shadow-sm sm:p-8">
+          <div className="rounded-2xl border border-(--color-border) bg-white p-5 shadow-sm sm:p-8">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-(--color-primary)">
               {document.summaryTitle}
             </p>
@@ -74,7 +74,7 @@ export function LegalDocumentContent({
             <aside className="hidden lg:block lg:self-start">
               <nav
                 aria-label={document.sectionNavTitle}
-                className="sticky top-28 rounded-4xl border border-(--color-border) bg-white p-4 shadow-sm"
+                className="sticky top-28 rounded-2xl border border-(--color-border) bg-white p-4 shadow-sm"
               >
                 <p className="px-4 pb-3 text-xs font-bold uppercase tracking-[0.2em] text-(--color-primary)">
                   {document.sectionNavTitle}
@@ -95,7 +95,7 @@ export function LegalDocumentContent({
 
             <article
               aria-labelledby={titleId}
-              className="rounded-4xl border border-(--color-border) bg-white p-6 shadow-sm sm:p-8 lg:p-10"
+              className="rounded-2xl border border-(--color-border) bg-white p-6 shadow-sm sm:p-8 lg:p-10"
             >
               <div className="space-y-10">
                 {document.sections.map((section) => (
@@ -125,7 +125,7 @@ export function LegalDocumentContent({
                   </section>
                 ))}
 
-                <section className="rounded-4xl bg-(--color-primary-light) p-6 sm:p-8">
+                <section className="rounded-2xl bg-(--color-primary-light) p-6 sm:p-8">
                   <p className="text-sm font-semibold uppercase tracking-[0.22em] text-(--color-primary)">
                     MemoApp support
                   </p>

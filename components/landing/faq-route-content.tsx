@@ -56,7 +56,7 @@ export function FaqRouteContent() {
 
       <div className="mx-auto mt-14 grid max-w-7xl gap-8 lg:grid-cols-[0.32fr_1fr]">
         <aside className="lg:sticky lg:top-28 lg:self-start">
-          <div className="rounded-4xl border border-(--color-border) bg-white p-4 shadow-sm">
+          <div className="rounded-2xl border border-(--color-border) bg-white p-4 shadow-sm">
             <div className="space-y-2">
               {groups.map((group) => {
                 const isSelected = selectedGroup === group.key;
@@ -98,7 +98,7 @@ export function FaqRouteContent() {
           <div className="space-y-4">
             {filteredFaqs.map((faq) => (
               <details
-                className="group rounded-4xl border border-(--color-border) bg-white p-6 shadow-sm"
+                className="group rounded-2xl border border-(--color-border) bg-white p-6 shadow-sm"
                 key={faq.question}
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold">
@@ -118,7 +118,7 @@ export function FaqRouteContent() {
               </details>
             ))}
             {filteredFaqs.length === 0 ? (
-              <div className="rounded-4xl border border-dashed border-(--color-border) bg-white p-8 text-center">
+              <div className="rounded-2xl border border-dashed border-(--color-border) bg-white p-8 text-center">
                 <h3 className="text-2xl font-semibold">
                   {content.faqPage.emptyTitle}
                 </h3>

@@ -21,7 +21,7 @@ export function WorkflowRouteHighlights() {
           <div className="mt-14 grid gap-5">
             {routeContent.timeline.map((step) => (
               <article
-                className="grid gap-5 rounded-4xl border border-(--color-border) bg-white p-6 shadow-sm lg:grid-cols-[auto_1fr_auto] lg:items-center"
+                className="grid gap-5 rounded-2xl border border-(--color-border) bg-white p-6 shadow-sm lg:grid-cols-[auto_1fr_auto] lg:items-center"
                 key={step.step}
               >
                 <span className="grid size-14 shrink-0 place-items-center rounded-2xl bg-(--color-primary) text-lg font-semibold text-white">
@@ -56,7 +56,7 @@ export function WorkflowRouteHighlights() {
           <div className="grid gap-5 md:grid-cols-3">
             {routeContent.roles.map((role) => (
               <article
-                className="rounded-4xl border border-(--color-border) bg-(--color-background) p-7 shadow-sm"
+                className="rounded-2xl border border-(--color-border) bg-(--color-background) p-7 shadow-sm"
                 key={role.title}
               >
                 <h2 className="text-2xl font-semibold">{role.title}</h2>
@@ -73,7 +73,7 @@ export function WorkflowRouteHighlights() {
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">
           {content.workflowHighlights.map((item) => (
             <article
-              className="rounded-4xl border border-(--color-border) bg-white p-7 shadow-sm"
+              className="rounded-2xl border border-(--color-border) bg-white p-7 shadow-sm"
               key={item.title}
             >
               <h2 className="text-2xl font-semibold">{item.title}</h2>

@@ -114,7 +114,7 @@ export function Footer() {
           </nav>
         </div>
 
-        <section className="mb-10 rounded-4xl border border-white/10 bg-white/5 p-5 shadow-xl shadow-black/5 sm:p-6 lg:flex lg:items-center lg:justify-between lg:gap-8">
+        <section className="mb-10 rounded-2xl border border-white/10 bg-white/5 p-5  lg:flex lg:items-center lg:justify-between lg:gap-8">
           <div className="max-w-2xl">
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-(--color-info)">
               {footer.contactTitle}

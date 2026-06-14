@@ -63,16 +63,15 @@ export const landingContent = {
       ],
     },
     assistant: {
-      title: "MemoAI Guide",
-      subtitle:
-        "Ask me about MemoApp, pricing, workflow, features, or support.",
-      launcherLabel: "Ask MemoAI",
-      closeLabel: "Close assistant",
+      title: "Ayat",
+      subtitle: "AI Business Assistant",
+      launcherLabel: "Talk with Ayat",
+      closeLabel: "Close Ayat assistant",
       placeholder: "Type your question...",
       sendLabel: "Send",
-      typingLabel: "MemoAI is thinking...",
+      typingLabel: "Ayat is thinking...",
       welcomeMessage:
-        "Hi, I am MemoAI Guide. I can help you understand MemoApp features, pricing, workflow, Google backup, OroraSoft, and support options.",
+        "Hi, I am Ayat, your AI Business Assistant. I can help you understand MemoApp features, pricing, workflow, Google backup, OroraSoft, and support options.",
       fallbackMessage:
         "I can answer common MemoApp landing-page questions, but I do not want to guess. You can ask about pricing, features, workflow, Google backup, OroraSoft, Bangla support, or contact support.",
       whatsappSupportLabel: "WhatsApp support",
@@ -108,6 +107,14 @@ export const landingContent = {
       description:
         "Built with AI to simplify daily operations and help businesses grow faster.",
     },
+    heroStats: [
+      { value: "৳48,320", label: "today's counter sales" },
+      { value: "৳11,420", label: "estimated profit today" },
+      { value: "12 items", label: "low-stock products" },
+      { value: "৳38K", label: "customer baki due" },
+      { value: "5 days", label: "predicted stockout" },
+      { value: "3 actions", label: "AI suggested tasks" },
+    ],
     stats: [
       { value: "All-in-One", label: "business management platform" },
       { value: "AI", label: "AI powered insights & automation" },
@@ -240,7 +247,8 @@ export const landingContent = {
       eyebrow: "Owner-ready view",
       title: "Beautiful enough for the owner, fast enough for the counter.",
       description:
-        "The landing page uses abstract product mockups so it can show the MemoApp experience without copying third-party design assets.",
+        "A real MemoApp dashboard preview shows owners the sales, stock, dues, reports, and daily signals they can act on.",
+      dashboardLabel: "Live dashboard preview",
       points: [
         "Offline-first workflows keep selling possible during network drops.",
         "Bengali-friendly shop terms make the product feel familiar to local teams.",
@@ -377,6 +385,10 @@ export const landingContent = {
       title: "A product story that speaks to real retail pain.",
       description:
         "The page focuses on outcomes buyers understand quickly: faster billing, tighter dues control, stock confidence, and clear daily reports.",
+      scrollHint: "Browse real shop-owner feedback one story at a time",
+      reviewLabel: "Show product story",
+      previousLabel: "Show previous product story",
+      nextLabel: "Show next product story",
     },
     testimonials: [
       {
@@ -390,6 +402,30 @@ export const landingContent = {
           "The best part is seeing counter sales, baki collection, and inventory together instead of in separate notebooks.",
         name: "Operations manager",
         role: "Multi-counter store",
+      },
+      {
+        quote:
+          "Honest feedback: I did not know any software in Bangladesh could give this kind of facility for a small shop.",
+        name: "Shop owner",
+        role: "Grocery store · Narayanganj",
+      },
+      {
+        quote:
+          "Before this, we checked stock by memory. Now I can see which items are low before customers ask for them.",
+        name: "Retail owner",
+        role: "Daily needs shop · Chattogram",
+      },
+      {
+        quote:
+          "My staff can make bills quickly, and I can still understand sales and dues from outside the shop.",
+        name: "Business owner",
+        role: "Hardware shop · Gazipur",
+      },
+      {
+        quote:
+          "It feels made for Bangladeshi shops because it understands baki, daily cash, stock pressure, and simple counter work.",
+        name: "Owner-operator",
+        role: "Pharmacy and retail · Dhaka",
       },
     ],
     faqHeading: {
@@ -931,16 +967,15 @@ export const landingContent = {
       ],
     },
     assistant: {
-      title: "MemoAI Guide",
-      subtitle:
-        "MemoApp, pricing, workflow, feature বা support নিয়ে প্রশ্ন করুন।",
-      launcherLabel: "MemoAI-কে জিজ্ঞাসা করুন",
-      closeLabel: "Assistant বন্ধ করুন",
+      title: "Ayat",
+      subtitle: "AI Business Assistant",
+      launcherLabel: "Talk with Ayat",
+      closeLabel: "Ayat assistant বন্ধ করুন",
       placeholder: "আপনার প্রশ্ন লিখুন...",
       sendLabel: "পাঠান",
-      typingLabel: "MemoAI ভাবছে...",
+      typingLabel: "Ayat ভাবছে...",
       welcomeMessage:
-        "হ্যালো, আমি MemoAI Guide। MemoApp feature, pricing, workflow, Google backup, OroraSoft ও support option বুঝতে সাহায্য করতে পারি।",
+        "হ্যালো, আমি Ayat, আপনার AI Business Assistant। MemoApp feature, pricing, workflow, Google backup, OroraSoft ও support option বুঝতে সাহায্য করতে পারি।",
       fallbackMessage:
         "আমি MemoApp landing page-এর সাধারণ প্রশ্নের উত্তর দিতে পারি, কিন্তু অনুমান করতে চাই না। Pricing, feature, workflow, Google backup, OroraSoft, Bangla support বা support contact সম্পর্কে জিজ্ঞাসা করুন।",
       whatsappSupportLabel: "WhatsApp support",
@@ -977,6 +1012,14 @@ export const landingContent = {
       description:
         "AI দিয়ে তৈরি, যাতে দৈনন্দিন কাজ সহজ হয় এবং ব্যবসা আরও দ্রুত বড় হতে পারে।",
     },
+    heroStats: [
+      { value: "৳৪৮,৩২০", label: "আজকের কাউন্টার সেলস" },
+      { value: "৳১১,৪২০", label: "আজকের আনুমানিক প্রফিট" },
+      { value: "১২ আইটেম", label: "লো-স্টক প্রোডাক্ট" },
+      { value: "৳৩৮K", label: "কাস্টমার বাকি" },
+      { value: "৫ দিন", label: "সম্ভাব্য স্টকআউট" },
+      { value: "৩ কাজ", label: "AI সাজেস্টেড টাস্ক" },
+    ],
     stats: [
       { value: "All-in-One", label: "বিজনেস ম্যানেজমেন্ট প্ল্যাটফর্ম" },
       { value: "AI", label: "AI-পাওয়ারড ইনসাইট ও অটোমেশন" },
@@ -1109,7 +1152,8 @@ export const landingContent = {
       eyebrow: "মালিকের জন্য প্রস্তুত ভিউ",
       title: "মালিকের জন্য সুন্দর, কাউন্টারের জন্য দ্রুত।",
       description:
-        "থার্ড-পার্টি ডিজাইন কপি না করে MemoApp অভিজ্ঞতা দেখাতে এখানে অ্যাবস্ট্রাক্ট প্রোডাক্ট মকআপ ব্যবহার করা হয়েছে।",
+        "বাস্তব MemoApp ড্যাশবোর্ড প্রিভিউতে মালিকরা সেলস, স্টক, বাকি, রিপোর্ট ও দৈনিক সিগন্যাল একসঙ্গে দেখতে পারেন।",
+      dashboardLabel: "লাইভ ড্যাশবোর্ড প্রিভিউ",
       points: [
         "নেটওয়ার্ক ড্রপ হলেও অফলাইন-ফার্স্ট ওয়ার্কফ্লো বিক্রি চালু রাখে।",
         "বাংলা-ফ্রেন্ডলি দোকানি ভাষা লোকাল টিমের কাছে পণ্যটিকে পরিচিত করে।",
@@ -1238,6 +1282,10 @@ export const landingContent = {
       title: "বাস্তব রিটেইল সমস্যার ভাষায় পণ্যের গল্প।",
       description:
         "পেজটি দ্রুত বিলিং, শক্ত বাকি কন্ট্রোল, স্টক কনফিডেন্স ও পরিষ্কার দৈনিক রিপোর্টের মতো সহজে বোঝা যায় এমন ফলাফলে ফোকাস করে।",
+      scrollHint: "বাস্তব দোকান মালিকদের মতামত একে একে দেখুন",
+      reviewLabel: "পণ্যের গল্প দেখুন",
+      previousLabel: "আগের পণ্যের গল্প দেখুন",
+      nextLabel: "পরের পণ্যের গল্প দেখুন",
     },
     testimonials: [
       {
@@ -1251,6 +1299,30 @@ export const landingContent = {
           "কাউন্টার সেলস, বাকি কালেকশন ও ইনভেন্টরি আলাদা খাতার বদলে একসঙ্গে দেখা সবচেয়ে ভালো লাগে।",
         name: "অপারেশন ম্যানেজার",
         role: "মাল্টি-কাউন্টার স্টোর",
+      },
+      {
+        quote:
+          "সত্যি কথা বলতে, বাংলাদেশে ছোট দোকানের জন্য এমন সুবিধা দেয় এমন সফটওয়্যার আছে জানতাম না।",
+        name: "দোকান মালিক",
+        role: "গ্রোসারি দোকান · নারায়ণগঞ্জ",
+      },
+      {
+        quote:
+          "আগে স্টক অনেকটা মনে রেখে চালাতাম। এখন কাস্টমার চাওয়ার আগেই কোন পণ্য কমে যাচ্ছে বুঝতে পারি।",
+        name: "রিটেইল মালিক",
+        role: "দৈনন্দিন পণ্যের দোকান · চট্টগ্রাম",
+      },
+      {
+        quote:
+          "স্টাফ দ্রুত বিল করতে পারে, আর আমি দোকানের বাইরে থেকেও সেলস আর বাকি হিসাব বুঝতে পারি।",
+        name: "ব্যবসা মালিক",
+        role: "হার্ডওয়্যার দোকান · গাজীপুর",
+      },
+      {
+        quote:
+          "বাকি, দৈনিক ক্যাশ, স্টকের চাপ আর সহজ কাউন্টার কাজ বুঝে বানানো বলে এটা বাংলাদেশি দোকানের জন্য মানানসই লাগে।",
+        name: "মালিক-অপারেটর",
+        role: "ফার্মেসি ও রিটেইল · ঢাকা",
       },
     ],
     faqHeading: {

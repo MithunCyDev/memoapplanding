@@ -29,7 +29,7 @@ export function FeaturesRouteContent() {
           <div className="mt-14 grid gap-5 lg:grid-cols-2">
             {routeContent.deepDiveGroups.map((group, index) => (
               <article
-                className="rounded-4xl border border-(--color-border) bg-(--color-background) p-7 shadow-sm"
+                className="rounded-2xl border border-(--color-border) bg-(--color-background) p-7 shadow-sm"
                 id={featureSectionIds[index]}
                 key={group.title}
               >
@@ -68,7 +68,7 @@ export function FeaturesRouteContent() {
           <div className="grid gap-4 sm:grid-cols-2">
             {routeContent.audiences.map((audience) => (
               <article
-                className="rounded-4xl bg-white p-6 shadow-sm"
+                className="rounded-2xl bg-white p-6 shadow-sm"
                 key={audience.title}
               >
                 <h2 className="text-xl font-semibold">{audience.title}</h2>
@@ -91,7 +91,7 @@ export function FeaturesRouteContent() {
           <div className="mt-12 grid gap-4 lg:grid-cols-2">
             {routeContent.faqs.map((faq) => (
               <details
-                className="group rounded-4xl border border-(--color-border) bg-white p-6 shadow-sm"
+                className="group rounded-2xl border border-(--color-border) bg-white p-6 shadow-sm"
                 key={faq.question}
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold">

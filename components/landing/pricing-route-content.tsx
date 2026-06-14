@@ -15,7 +15,7 @@ export function PricingRouteContent() {
   return (
     <>
       <section className="px-5 py-10 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-5 rounded-4xl border border-(--color-border) bg-white p-4 shadow-sm lg:grid-cols-[1fr_auto] lg:items-center">
+        <div className="mx-auto grid max-w-7xl gap-5 rounded-2xl border border-(--color-border) bg-white p-4 shadow-sm lg:grid-cols-[1fr_auto] lg:items-center">
           <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
             {content.pricingBenefits.map((benefit) => (
               <span
@@ -58,7 +58,7 @@ export function PricingRouteContent() {
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 xl:grid-cols-4">
           {content.pricingPlans.map((plan) => (
             <article
-              className={`relative rounded-4xl border p-7 ${
+              className={`relative flex h-full flex-col rounded-2xl border p-7 ${
                 plan.highlighted
                   ? "border-(--color-primary) bg-(--color-secondary) text-white shadow-2xl shadow-[rgba(1,64,52,0.18)]"
                   : "border-(--color-border) bg-white shadow-sm"
@@ -136,16 +136,18 @@ export function PricingRouteContent() {
                 ))}
               </ul>
 
-              <a
-                className={`mt-8 inline-flex w-full justify-center rounded-full px-5 py-3 text-sm font-bold ${
-                  plan.highlighted
-                    ? "bg-(--color-info) text-(--color-secondary)"
-                    : "primary-button"
-                }`}
-                href={appLoginUrl}
-              >
-                {plan.cta}
-              </a>
+              <div className="mt-auto pt-8">
+                <a
+                  className={`inline-flex w-full justify-center rounded-full px-5 py-3 text-sm font-bold ${
+                    plan.highlighted
+                      ? "bg-(--color-info) text-(--color-secondary)"
+                      : "primary-button"
+                  }`}
+                  href={appLoginUrl}
+                >
+                  {plan.cta}
+                </a>
+              </div>
             </article>
           ))}
         </div>
@@ -159,7 +161,7 @@ export function PricingRouteContent() {
             description={content.pricingRoute.comparisonDescription}
           />
 
-          <div className="mt-12 overflow-x-auto rounded-4xl border border-(--color-border) bg-white shadow-sm">
+          <div className="mt-12 overflow-x-auto rounded-2xl border border-(--color-border) bg-white shadow-sm">
             <table className="w-full min-w-240 border-collapse text-left">
               <caption className="sr-only">
                 {content.pricingRoute.comparisonTitle}
@@ -230,7 +232,7 @@ export function PricingRouteContent() {
           <div className="mt-12 grid gap-4 lg:grid-cols-2">
             {content.pricingRoute.faqs.map((faq) => (
               <details
-                className="group rounded-4xl border border-(--color-border) bg-white p-6 shadow-sm"
+                className="group rounded-2xl border border-(--color-border) bg-white p-6 shadow-sm"
                 key={faq.question}
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold">
@@ -266,7 +268,7 @@ export function PricingRouteContent() {
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">
           {content.whyMemoApp.map((item) => (
             <article
-              className="rounded-4xl bg-white p-7 shadow-sm"
+              className="rounded-2xl bg-white p-7 shadow-sm"
               key={item.title}
             >
               <h2 className="text-2xl font-semibold">{item.title}</h2>

@@ -2,17 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { Footer } from "@/components/landing/footer";
 import { HeaderNav } from "@/components/landing/header-nav";
 import { LandingAssistant } from "@/components/landing/landing-assistant";
 import { LanguageToggle } from "@/components/landing/language-toggle";
 import { useLanguage } from "@/components/landing/language-provider";
 import { SectionHeading } from "@/components/landing/section-heading";
-import {
-  AnalyticsMockup,
-  HeroDashboardMockup,
-  MobileCounterMockup,
-} from "@/components/landing/product-mockups";
+import { MobileCounterMockup } from "@/components/landing/product-mockups";
 import { appLoginUrl, ororaSoftAboutUrl } from "@/lib/landing-content";
 import { siteConfig } from "@/lib/site";
 
@@ -74,42 +71,62 @@ export function Header() {
 }
 
 function HeroSection() {
-  const { content } = useLanguage();
+  const { content, language } = useLanguage();
+  const isBangla = language === "bn";
 
   return (
     <section
-      className="relative isolate bg-(--color-secondary) pt-32 text-white sm:pt-36"
+      className="relative isolate overflow-hidden bg-(--color-secondary) pt-32 text-white sm:pt-36"
       id="top"
     >
       <div className="absolute inset-0 -z-10 surface-grid opacity-20" />
-      <div className="absolute left-1/2 top-12 -z-10 h-80 w-80 -translate-x-1/2 rounded-full bg-(--color-secondary-light)/20 blur-3xl" />
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-24 lg:grid-cols-[0.95fr_1.05fr] lg:px-8 lg:pb-28">
-        <div>
-          <div className="inline-flex max-w-76 flex-col gap-2 rounded-3xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-medium text-white/80 sm:max-w-none sm:flex-row sm:items-center sm:gap-3 sm:rounded-full sm:py-2">
+      <div className="hero-flow-orb hero-flow-orb-primary" />
+      <div className="hero-flow-orb hero-flow-orb-secondary" />
+      <div className="hero-flow-orb hero-flow-orb-accent" />
+      <div className="hero-flow-ribbon" />
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-12 px-5 pb-24 text-center lg:px-8 lg:pb-28">
+        <div className="mx-auto max-w-5xl">
+          <div className="inline-flex max-w-76 flex-col gap-2 rounded-3xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-medium text-white/80 shadow-xl shadow-black/10 backdrop-blur-xl sm:max-w-none sm:flex-row sm:items-center sm:gap-3 sm:rounded-full sm:py-2">
             <span className="flex items-center gap-2">
               <span className="size-2 shrink-0 rounded-full bg-(--color-info)" />
               <span>{content.hero.eyebrow}</span>
             </span>
             <span className="hidden h-4 w-px bg-white/20 sm:block" />
             <a
-              className="pl-4 text-sm font-semibold text-(--color-info) transition hover:text-(--color-info-light) sm:pl-0"
+              className="text-sm font-semibold text-(--color-info) transition hover:text-(--color-info-light)"
               href={ororaSoftAboutUrl}
               rel="noreferrer"
               target="_blank"
             >
-              {content.common.productBy} OroraSoft
+              Powered by OroraSoft
             </a>
           </div>
-          <h1 className="text-balance mt-7 text-5xl font-semibold tracking-[-0.04em] sm:text-6xl lg:text-6xl">
+          <h1
+            className={`text-balance mx-auto mt-8 max-w-4xl font-semibold tracking-tighter ${
+              isBangla
+                ? "text-4xl leading-tight sm:text-5xl lg:text-6xl"
+                : "text-5xl sm:text-6xl lg:text-7xl"
+            }`}
+          >
             {content.hero.titlePrefix}{" "}
-            <span className="inline-flex -translate-y-1 items-center rounded-2xl bg-(--color-info) px-3 py-1 text-3xl font-bold leading-none text-(--color-secondary) shadow-xl shadow-[rgba(255,153,51,0.2)] sm:text-4xl lg:text-4xl">
+            <span
+              className={`inline-flex -translate-y-1 items-center rounded-2xl bg-(--color-info) px-3 py-1 font-bold leading-none text-(--color-secondary) shadow-xl shadow-[rgba(255,153,51,0.2)] ${
+                isBangla
+                  ? "text-2xl sm:text-3xl lg:text-4xl"
+                  : "text-3xl sm:text-4xl lg:text-5xl"
+              }`}
+            >
               {content.hero.titleHighlight}
             </span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70 sm:text-xl">
+          <p
+            className={`mx-auto mt-6 max-w-3xl leading-8 text-white/70 ${
+              isBangla ? "text-base sm:text-lg" : "text-lg sm:text-xl"
+            }`}
+          >
             {content.hero.description}
           </p>
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
             <a
               className="rounded-full bg-(--color-info) px-7 py-4 text-center text-sm font-bold text-(--color-secondary) shadow-xl shadow-[rgba(255,153,51,0.22)] transition hover:bg-(--color-info-light)"
               href={appLoginUrl}
@@ -124,8 +141,8 @@ function HeroSection() {
             </Link>
           </div>
         </div>
-        <HeroDashboardMockup />
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:col-span-2 lg:grid-cols-6">
+        <HeroDashboardPreview stats={content.heroStats} />
+        <div className="grid w-full grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
           {content.stats.map((stat) => (
             <div
               className="glass-card rounded-2xl p-3 lg:p-2.5"
@@ -142,6 +159,136 @@ function HeroSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+function HeroDashboardPreview({
+  stats,
+}: {
+  stats: ReadonlyArray<{ label: string; value: string }>;
+}) {
+  return (
+    <div className="relative w-screen max-w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-3rem)]">
+      <div className="absolute -inset-x-8 bottom-0 top-16 -z-10 rounded-[3rem] bg-(--color-secondary-light)/12 blur-3xl" />
+      <div className="absolute -top-5 right-3 z-20 hidden max-w-80 items-start gap-3 rounded-2xl border border-white/25 bg-white/95 p-3 text-left text-(--color-ink) shadow-2xl shadow-black/20 backdrop-blur-xl sm:flex lg:right-10">
+        <span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-(--color-info) text-sm font-bold text-(--color-secondary)">
+          AI
+        </span>
+        <div>
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-(--color-primary)">
+            Low stock alert
+          </p>
+          <p className="mt-1 text-sm font-semibold leading-5">
+            Rice Premium may run out in 5 days. Create a purchase note now.
+          </p>
+        </div>
+      </div>
+      <div className="mx-auto w-full max-w-368 rounded-2xl border border-white/15 bg-white/10 p-2 shadow-2xl shadow-black/25 backdrop-blur-xl sm:p-3">
+        <div className="overflow-hidden rounded-2xl bg-[#f8f9f5] text-(--color-ink)">
+          <div className="flex items-center justify-between border-b border-(--color-border) bg-(--color-background) px-4 py-3">
+            <div className="flex items-center gap-1.5" aria-hidden="true">
+              <span className="size-2.5 rounded-full bg-[#ff5f57]" />
+              <span className="size-2.5 rounded-full bg-[#ffbd2e]" />
+              <span className="size-2.5 rounded-full bg-[#28c840]" />
+            </div>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-(--color-primary)">
+              Business pulse
+            </p>
+          </div>
+          <div className="grid gap-4 p-4 sm:p-5 lg:grid-cols-[1.28fr_0.72fr]">
+            <section className="rounded-2xl border border-(--color-border) bg-white p-4 shadow-sm sm:p-5">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-(--color-primary)">
+                    Owner overview
+                  </p>
+                  <h2 className="mt-2 text-2xl font-semibold tracking-tight text-(--color-secondary)">
+                    Live business stats
+                  </h2>
+                </div>
+                <span className="rounded-full bg-(--color-primary-light) px-3 py-1 text-xs font-bold text-(--color-primary-dark)">
+                  Synced now
+                </span>
+              </div>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {stats.map((stat) => (
+                  <div
+                    className="rounded-2xl border border-(--color-border) bg-(--color-background) p-4"
+                    key={stat.label}
+                  >
+                    <p className="text-2xl font-semibold text-(--color-primary)">
+                      {stat.value}
+                    </p>
+                    <p className="mt-2 text-sm font-medium leading-5 text-(--color-muted)">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-5 rounded-2xl bg-(--color-primary-light) p-4">
+                <div className="flex flex-wrap items-center justify-between gap-3 text-sm font-semibold text-(--color-primary-dark)">
+                  <span>Daily operating health</span>
+                  <span>Strong momentum</span>
+                </div>
+                <div className="mt-3 h-2 rounded-full bg-white">
+                  <div className="h-2 w-[78%] rounded-full bg-(--color-primary)" />
+                </div>
+              </div>
+            </section>
+
+            <section className="grid gap-4">
+              <div className="rounded-2xl bg-(--color-secondary) p-5 text-left text-white shadow-xl shadow-[rgba(1,64,52,0.18)]">
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.22em] text-(--color-info)">
+                      MemoAI Assistant
+                    </p>
+                    <p className="mt-2 text-xl font-semibold leading-7">
+                      “Which products should I restock before Eid?”
+                    </p>
+                  </div>
+                  <span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-white/10 text-lg">
+                    AI
+                  </span>
+                </div>
+                <div className="mt-5 space-y-2">
+                  {[
+                    "Cooking oil · Critical",
+                    "Rice premium · Low",
+                    "Sugar · Restock soon",
+                  ].map((item) => (
+                    <div
+                      className="rounded-2xl bg-white/8 px-3 py-2 text-sm font-semibold"
+                      key={item}
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-(--color-border) bg-white p-5 text-left shadow-sm">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-(--color-primary)">
+                  Counter snapshot
+                </p>
+                <div className="mt-4 grid grid-cols-2 gap-3">
+                  {["Print memo", "Share PDF", "Due paid", "Stock alert"].map(
+                    (action) => (
+                      <span
+                        className="rounded-2xl bg-(--color-background) px-3 py-3 text-center text-sm font-semibold"
+                        key={action}
+                      >
+                        {action}
+                      </span>
+                    ),
+                  )}
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -217,7 +364,7 @@ export function FeatureSection() {
               {[...row, ...row].map((feature, index) => (
                 <article
                   aria-hidden={index >= row.length}
-                  className="feature-marquee-card group rounded-4xl border border-(--color-border) bg-white/95 p-6 shadow-sm shadow-[rgba(1,64,52,0.04)] ring-1 ring-white/70 transition  hover:border-(--color-primary) hover:shadow-2xl hover:shadow-[rgba(1,64,52,0.1)]"
+                  className="feature-marquee-card group rounded-2xl border border-(--color-border) bg-white/95 p-6 shadow-sm shadow-[rgba(1,64,52,0.04)] ring-1 ring-white/70 transition  hover:border-(--color-primary) hover:shadow-2xl hover:shadow-[rgba(1,64,52,0.1)]"
                   key={`${feature.title}-${index}`}
                 >
                   <div className="mb-7 flex items-center justify-between gap-4">
@@ -239,7 +386,7 @@ export function FeatureSection() {
       </div>
 
       <div className="mx-auto mt-10 max-w-7xl">
-        <div className="rounded-4xl border border-(--color-border) bg-(--color-primary-light) p-5 text-center text-sm font-semibold text-(--color-primary-dark) sm:p-6">
+        <div className="rounded-2xl border border-(--color-border) bg-(--color-primary-light) p-5 text-center text-sm font-semibold text-(--color-primary-dark) sm:p-6">
           {content.featureSummary}
         </div>
       </div>
@@ -266,7 +413,7 @@ export function WorkflowSection() {
           <div className="grid gap-5">
             {content.workflowSteps.map((step) => (
               <article
-                className="grid gap-5 rounded-4xl bg-white p-6 shadow-sm sm:grid-cols-[auto_1fr]"
+                className="grid gap-5 rounded-2xl bg-white p-6 shadow-sm sm:grid-cols-[auto_1fr]"
                 key={step.step}
               >
                 <span className="grid size-14 place-items-center rounded-2xl bg-(--color-primary) text-lg font-semibold text-white">
@@ -301,7 +448,7 @@ function ShowcaseSection() {
           description={content.showcase.description}
         />
         <div className="mt-14 grid gap-8 lg:grid-cols-[1fr_0.7fr] lg:items-center">
-          <AnalyticsMockup />
+          <ProductDashboardCard label={content.showcase.dashboardLabel} />
           <div className="space-y-5">
             {content.showcase.points.map((item) => (
               <div className="glass-card rounded-3xl p-5" key={item}>
@@ -312,6 +459,34 @@ function ShowcaseSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+function ProductDashboardCard({ label }: { label: string }) {
+  return (
+    <div className="rounded-2xl border border-white/15 bg-white/10 p-3 shadow-2xl shadow-black/20 backdrop-blur">
+      <div className="overflow-hidden rounded-2xl bg-white shadow-xl shadow-black/10">
+        <div className="flex items-center justify-between border-b border-(--color-border) bg-(--color-background) px-4 py-3">
+          <div className="flex items-center gap-1.5" aria-hidden="true">
+            <span className="size-2.5 rounded-full bg-[#ff5f57]" />
+            <span className="size-2.5 rounded-full bg-[#ffbd2e]" />
+            <span className="size-2.5 rounded-full bg-[#28c840]" />
+          </div>
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-(--color-primary)">
+            {label}
+          </p>
+        </div>
+        <div className="relative aspect-979/465">
+          <Image
+            alt="MemoApp dashboard showing sales, purchases, customers, products, profit chart, low-stock products, and recent sales."
+            className="object-cover object-top-left"
+            fill
+            sizes="(min-width: 1024px) 58vw, 100vw"
+            src="/product-dashboard.png"
+          />
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -329,7 +504,7 @@ export function PricingSection() {
         <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {content.pricingPlans.map((plan) => (
             <article
-              className={`rounded-4xl border p-7 ${
+              className={`flex h-full flex-col rounded-2xl border p-7 ${
                 plan.highlighted
                   ? "border-(--color-primary) bg-(--color-secondary) text-white shadow-2xl shadow-[rgba(1,64,52,0.18)]"
                   : "border-(--color-border) bg-white"
@@ -381,16 +556,18 @@ export function PricingSection() {
                   </li>
                 ))}
               </ul>
-              <a
-                className={`mt-8 inline-flex w-full justify-center rounded-full px-5 py-3 text-sm font-bold ${
-                  plan.highlighted
-                    ? "bg-(--color-info) text-(--color-secondary)"
-                    : "primary-button"
-                }`}
-                href={appLoginUrl}
-              >
-                {plan.cta}
-              </a>
+              <div className="mt-auto pt-8">
+                <a
+                  className={`inline-flex w-full justify-center rounded-full px-5 py-3 text-sm font-bold ${
+                    plan.highlighted
+                      ? "bg-(--color-info) text-(--color-secondary)"
+                      : "primary-button"
+                  }`}
+                  href={appLoginUrl}
+                >
+                  {plan.cta}
+                </a>
+              </div>
             </article>
           ))}
         </div>
@@ -401,35 +578,139 @@ export function PricingSection() {
 
 function TestimonialsSection() {
   const { content } = useLanguage();
+  const testimonials = content.testimonials;
+  const [activeTestimonialIndex, setActiveTestimonialIndex] = useState(0);
+  const [carouselInteractionVersion, setCarouselInteractionVersion] =
+    useState(0);
+  const activeTestimonial = testimonials[activeTestimonialIndex];
+  const totalTestimonials = testimonials.length;
+
+  useEffect(() => {
+    if (totalTestimonials <= 1) {
+      return;
+    }
+
+    const intervalId = window.setInterval(() => {
+      setActiveTestimonialIndex((currentIndex) =>
+        currentIndex === totalTestimonials - 1 ? 0 : currentIndex + 1,
+      );
+    }, 4500);
+
+    return () => window.clearInterval(intervalId);
+  }, [carouselInteractionVersion, totalTestimonials]);
+
+  if (!activeTestimonial) {
+    return null;
+  }
+
+  const resetCarouselTimer = () => {
+    setCarouselInteractionVersion((currentVersion) => currentVersion + 1);
+  };
+
+  const showPreviousTestimonial = () => {
+    resetCarouselTimer();
+    setActiveTestimonialIndex((currentIndex) =>
+      currentIndex === 0 ? totalTestimonials - 1 : currentIndex - 1,
+    );
+  };
+
+  const showNextTestimonial = () => {
+    resetCarouselTimer();
+    setActiveTestimonialIndex((currentIndex) =>
+      currentIndex === totalTestimonials - 1 ? 0 : currentIndex + 1,
+    );
+  };
 
   return (
     <section className="bg-white px-5 py-24 lg:px-8">
-      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-        <div>
+      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
+        <div className="min-w-0">
           <SectionHeading
             align="left"
             eyebrow={content.testimonialsHeading.eyebrow}
             title={content.testimonialsHeading.title}
             description={content.testimonialsHeading.description}
           />
+          <p className="mt-6 inline-flex rounded-full border border-(--color-border) bg-(--color-primary-light) px-4 py-2 text-sm font-bold text-(--color-primary-dark)">
+            {content.testimonialsHeading.scrollHint}
+          </p>
         </div>
-        <div className="grid gap-5">
-          {content.testimonials.map((testimonial) => (
-            <figure
-              className="rounded-4xl border border-(--color-border) bg-(--color-background) p-7"
-              key={testimonial.name}
+        <div className="min-w-0 rounded-2xl border border-(--color-border) bg-(--color-background) p-4 shadow-sm sm:p-6">
+          <div
+            aria-live="polite"
+            className="min-w-0 overflow-hidden rounded-2xl bg-white"
+          >
+            <div
+              className="flex w-full transition-transform duration-700 ease-out motion-reduce:transition-none"
+              style={{
+                transform: `translateX(-${activeTestimonialIndex * 100}%)`,
+              }}
             >
-              <blockquote className="text-xl font-medium leading-9">
-                “{testimonial.quote}”
-              </blockquote>
-              <figcaption className="mt-6">
-                <p className="font-semibold">{testimonial.name}</p>
-                <p className="text-sm text-(--color-muted)">
-                  {testimonial.role}
-                </p>
-              </figcaption>
-            </figure>
-          ))}
+              {testimonials.map((testimonial, index) => (
+                <figure
+                  aria-hidden={index !== activeTestimonialIndex}
+                  className="min-h-92 w-full shrink-0 p-7 sm:min-h-80 sm:p-9"
+                  key={testimonial.quote}
+                >
+                  <div className="mb-6 flex items-center justify-between gap-4">
+                    <span className="inline-flex rounded-full bg-(--color-primary-light) px-3 py-1 text-xs font-bold tracking-[0.18em] text-(--color-primary)">
+                      {String(index + 1).padStart(2, "0")} /{" "}
+                      {String(totalTestimonials).padStart(2, "0")}
+                    </span>
+                    <span className="text-sm font-semibold text-(--color-muted)">
+                      {testimonial.role}
+                    </span>
+                  </div>
+                  <blockquote className="text-balance text-2xl font-semibold leading-10 tracking-tight sm:text-3xl sm:leading-11">
+                    “{testimonial.quote}”
+                  </blockquote>
+                  <figcaption className="mt-6">
+                    <p className="font-semibold text-(--color-primary-dark)">
+                      {testimonial.name}
+                    </p>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+          <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-start sm:gap-6">
+            <div className="flex gap-2">
+              {testimonials.map((testimonial, index) => (
+                <button
+                  aria-label={`${content.testimonialsHeading.reviewLabel} ${index + 1}`}
+                  className={`h-2.5 rounded-full transition-all ${
+                    index === activeTestimonialIndex
+                      ? "w-8 bg-(--color-primary)"
+                      : "w-2.5 bg-(--color-border) hover:bg-(--color-primary-light)"
+                  }`}
+                  key={testimonial.quote}
+                  onClick={() => {
+                    resetCarouselTimer();
+                    setActiveTestimonialIndex(index);
+                  }}
+                  type="button"
+                />
+              ))}
+            </div>
+            <div className="flex gap-3">
+              <button
+                aria-label={content.testimonialsHeading.previousLabel}
+                className="rounded-full border border-(--color-border) bg-white px-5 py-3 text-sm font-bold text-(--color-secondary) transition hover:border-(--color-primary) hover:text-(--color-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-primary)"
+                onClick={showPreviousTestimonial}
+                type="button"
+              >
+                ←
+              </button>
+              <button
+                aria-label={content.testimonialsHeading.nextLabel}
+                className="rounded-full bg-(--color-secondary) px-5 py-3 text-sm font-bold text-white transition hover:bg-(--color-primary-dark) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-primary)"
+                onClick={showNextTestimonial}
+                type="button"
+              >
+                →
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -450,7 +731,7 @@ export function FaqSection() {
         <div className="mt-12 grid gap-4 lg:grid-cols-2">
           {content.faqs.map((faq) => (
             <details
-              className="group rounded-4xl border border-(--color-border) bg-white p-6 shadow-sm"
+              className="group rounded-2xl border border-(--color-border) bg-white p-6 shadow-sm"
               key={faq.question}
             >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold">

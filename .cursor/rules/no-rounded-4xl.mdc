@@ -1,0 +1,20 @@
+---
+description: Prevent overly large Tailwind border radius in the landing app
+alwaysApply: true
+---
+
+# No `rounded-4xl`
+
+Do not use Tailwind's `rounded-4xl` utility anywhere in this app.
+
+- Prefer `rounded-2xl` for cards, panels, FAQ items, pricing blocks, and similar UI surfaces.
+- Use smaller radii such as `rounded-xl`, `rounded-lg`, or `rounded-md` when the component needs a tighter shape.
+- Existing `rounded-4xl` classes should be replaced instead of copied into new code.
+
+```tsx
+// Bad
+<div className="rounded-4xl border p-6" />
+
+// Good
+<div className="rounded-2xl border p-6" />
+```

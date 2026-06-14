@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import {
   FormEvent,
@@ -187,13 +188,19 @@ export function LandingAssistant() {
   );
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex w-[calc(100%-2.5rem)] max-w-100 flex-col items-end gap-3 sm:bottom-6 sm:right-6 sm:w-auto">
+    <div
+      className={
+        isOpen
+          ? "fixed inset-0 z-50 flex h-dvh flex-col items-stretch sm:inset-x-auto sm:bottom-6 sm:left-auto sm:right-6 sm:top-auto sm:h-auto sm:w-auto sm:items-end"
+          : "fixed inset-x-3 bottom-3 z-50 flex max-h-[calc(100dvh-1.5rem)] flex-col items-end gap-2 sm:inset-x-auto sm:bottom-6 sm:right-6 sm:w-auto sm:gap-3"
+      }
+    >
       {isOpen ? (
         <section
           aria-label={assistant.title}
-          className="w-full overflow-hidden rounded-4xl border border-(--color-border) bg-white shadow-2xl shadow-(--color-secondary)/20 sm:w-100"
+          className="flex h-full w-full flex-col overflow-hidden border border-(--color-border) bg-white shadow-2xl shadow-(--color-secondary)/20 sm:h-auto sm:max-h-[min(82vh,42rem)] sm:w-100 sm:rounded-3xl"
         >
-          <header className="flex items-start justify-between gap-4 bg-(--color-secondary) p-5 text-white">
+          <header className="flex shrink-0 items-start justify-between gap-4 bg-(--color-secondary) p-5 text-white">
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.2em] text-(--color-info)">
                 {assistant.title}
@@ -212,7 +219,7 @@ export function LandingAssistant() {
             </button>
           </header>
 
-          <div className="max-h-[min(65vh,32rem)] overflow-y-auto bg-(--color-background) p-4">
+          <div className="min-h-0 flex-1 overflow-y-auto bg-(--color-background) p-4">
             <div className="space-y-3">
               <div className="max-w-[85%] rounded-3xl rounded-tl-md bg-white p-4 text-sm leading-6 text-(--color-muted) shadow-sm">
                 {assistant.welcomeMessage}
@@ -285,7 +292,7 @@ export function LandingAssistant() {
           </div>
 
           <form
-            className="border-t border-(--color-border) bg-white p-3"
+            className="shrink-0 border-t border-(--color-border) bg-white p-3"
             onSubmit={handleSubmit}
           >
             <div className="flex gap-2">
@@ -307,34 +314,52 @@ export function LandingAssistant() {
               </button>
             </div>
           </form>
+
+          <div className="shrink-0 border-t border-(--color-border) bg-white p-3">
+            <div className="flex flex-wrap gap-2">
+              {supportLinks.map((link) => (
+                <AssistantLink
+                  href={link.href}
+                  key={link.href}
+                  label={link.label}
+                />
+              ))}
+            </div>
+          </div>
         </section>
       ) : null}
 
-      <div className="flex flex-wrap justify-end gap-2">
-        {isOpen
-          ? supportLinks.map((link) => (
-              <AssistantLink
-                href={link.href}
-                key={link.href}
-                label={link.label}
-              />
-            ))
-          : null}
-        <button
-          aria-label={assistant.launcherLabel}
-          className="assistant-launcher inline-flex items-center gap-3 rounded-full border border-white/80 bg-white/92 px-5 py-4 text-sm font-bold text-(--color-secondary) backdrop-blur-xl transition hover:bg-white hover:text-(--color-primary-dark) focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--color-info)"
-          onClick={() => setIsOpen((current) => !current)}
-          type="button"
-        >
-          <span
-            className="assistant-launcher-badge grid h-9 w-9 place-items-center rounded-full bg-(--color-primary) text-base text-white"
-            aria-hidden="true"
+      {!isOpen ? (
+        <div className="flex flex-wrap justify-end gap-2">
+          <button
+            aria-label={assistant.launcherLabel}
+            className="assistant-launcher group inline-flex h-16 w-16 items-center justify-start gap-3 overflow-hidden rounded-full border border-white/80 bg-white/95 p-1.5 text-left text-sm font-bold text-(--color-secondary) backdrop-blur-xl transition-[width,background-color,color] duration-300 hover:bg-white hover:text-(--color-primary-dark) focus-visible:w-58 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--color-info) sm:hover:w-58"
+            onClick={() => setIsOpen((current) => !current)}
+            type="button"
           >
-            AI
-          </span>
-          <span>{assistant.launcherLabel}</span>
-        </button>
-      </div>
+            <span
+              className="assistant-launcher-badge relative grid size-13 shrink-0 overflow-hidden rounded-full border-2 border-white bg-(--color-primary-light)"
+              aria-hidden="true"
+            >
+              <Image
+                alt=""
+                className="object-cover"
+                fill
+                sizes="52px"
+                src="/female_assistent2.png"
+              />
+            </span>
+            <span className="max-w-0 overflow-hidden opacity-0 transition-all duration-300 group-focus-visible:max-w-36 group-focus-visible:opacity-100 sm:group-hover:max-w-36 sm:group-hover:opacity-100">
+              <span className="block whitespace-nowrap leading-5">
+                {assistant.launcherLabel}
+              </span>
+              <span className="block whitespace-nowrap text-[0.7rem] font-semibold leading-4 text-(--color-muted)">
+                {assistant.subtitle}
+              </span>
+            </span>
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 }

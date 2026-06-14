@@ -148,7 +148,7 @@ export function HeroDashboardMockup() {
 
 export function AnalyticsMockup() {
   return (
-    <div className="rounded-4xl border border-(--color-border) bg-white p-5 shadow-xl shadow-[rgba(1,64,52,0.08)]">
+    <div className="rounded-2xl border border-(--color-border) bg-white p-5 shadow-xl shadow-[rgba(1,64,52,0.08)]">
       <div className="flex items-center justify-between gap-4">
         <div>
           <p className="text-sm font-semibold text-(--color-primary)">

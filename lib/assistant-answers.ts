@@ -300,6 +300,92 @@ function buildFallbackAnswer(content: LandingContent): AssistantAnswer {
   };
 }
 
+type GreetingKind = "general" | "salam" | "thanks";
+
+function getGreetingKind(question: string): GreetingKind | null {
+  const normalizedQuestion = question
+    .replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  const compactQuestion = normalizedQuestion.replace(/\s/g, "");
+  const words = new Set(normalizedQuestion.split(" "));
+
+  if (
+    words.has("thanks") ||
+    words.has("thank") ||
+    words.has("dhonnobad") ||
+    words.has("ধন্যবাদ")
+  ) {
+    return "thanks";
+  }
+
+  if (
+    compactQuestion.includes("assalamualaikum") ||
+    compactQuestion.includes("asslamualaikum") ||
+    compactQuestion.includes("asslammulakum") ||
+    compactQuestion.includes("asslammualaikum") ||
+    compactQuestion.includes("walaikumassalam") ||
+    compactQuestion.includes("walikumsalam") ||
+    compactQuestion.includes("ওয়ালাইকুমসালাম") ||
+    compactQuestion.includes("আসসালামুয়ালাইকুম")
+  ) {
+    return "salam";
+  }
+
+  if (
+    words.has("hello") ||
+    words.has("hi") ||
+    words.has("hlw") ||
+    words.has("hey") ||
+    normalizedQuestion.includes("how are you") ||
+    normalizedQuestion.includes("good morning") ||
+    normalizedQuestion.includes("good evening") ||
+    normalizedQuestion.includes("kemon aso") ||
+    normalizedQuestion.includes("kemon achen") ||
+    normalizedQuestion.includes("কেমন আছ") ||
+    normalizedQuestion.includes("কেমন আছেন")
+  ) {
+    return "general";
+  }
+
+  return null;
+}
+
+function buildGreetingAnswer(
+  content: LandingContent,
+  language: Language,
+  greetingKind: GreetingKind,
+): AssistantAnswer {
+  const suggestions = content.assistant.quickPrompts
+    .slice(0, 3)
+    .map((prompt) => prompt.query);
+  const textByKind: Record<GreetingKind, string> =
+    language === "bn"
+      ? {
+          general:
+            "হ্যালো! আমি Ayat, আপনার AI Business Assistant। আমি ভালো আছি এবং MemoApp pricing, feature, workflow, Google backup বা support নিয়ে সাহায্য করতে প্রস্তুত।",
+          salam:
+            "ওয়ালাইকুম আসসালাম। আমি Ayat, আপনার AI Business Assistant। MemoApp সম্পর্কে যেকোনো সাধারণ প্রশ্ন করলে আমি সাহায্য করব।",
+          thanks:
+            "আপনাকে স্বাগতম। MemoApp নিয়ে pricing, feature, workflow বা support সম্পর্কে আর কিছু জানতে চাইলে আমাকে জিজ্ঞাসা করুন।",
+        }
+      : {
+          general:
+            "Hello! I am Ayat, your AI Business Assistant. I am doing well and ready to help with MemoApp pricing, features, workflow, Google backup, or support.",
+          salam:
+            "Wa alaikum assalam. I am Ayat, your AI Business Assistant. Ask me anything common about MemoApp and I will guide you.",
+          thanks:
+            "You are welcome. Ask me anytime about MemoApp pricing, features, workflow, Google backup, or support.",
+        };
+
+  return {
+    text: textByKind[greetingKind],
+    suggestions,
+    links: [],
+    matched: true,
+  };
+}
+
 export function getAssistantAnswer({
   content,
   language,
@@ -311,6 +397,11 @@ export function getAssistantAnswer({
 }): AssistantAnswer {
   const normalizedQuestion = normalizeQuestion(question);
   const isBangla = language === "bn";
+  const greetingKind = getGreetingKind(normalizedQuestion);
+
+  if (greetingKind) {
+    return buildGreetingAnswer(content, language, greetingKind);
+  }
 
   if (
     includesAny(normalizedQuestion, [
