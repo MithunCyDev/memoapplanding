@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useLanguage } from "@/components/landing/language-provider";
-import { PricingTrialBanner } from "@/components/landing/pricing-trial-banner";
 import { SectionHeading } from "@/components/landing/section-heading";
 import { appLoginUrl } from "@/lib/landing-content";
 import { splitPricingPlans } from "@/lib/pricing-plans";
@@ -13,7 +12,7 @@ type BillingCycle = "monthly" | "yearly";
 export function PricingRouteContent() {
   const { content } = useLanguage();
   const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
-  const { trialPlan, paidPlans } = useMemo(
+  const { paidPlans } = useMemo(
     () => splitPricingPlans(content.pricingPlans),
     [content.pricingPlans],
   );
@@ -62,15 +61,6 @@ export function PricingRouteContent() {
 
       <section className="px-5 pb-24 pt-10 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          {trialPlan ? (
-            <PricingTrialBanner
-              badge={content.trialBanner.badge}
-              plan={trialPlan}
-              subtitle={content.trialBanner.subtitle}
-              title={content.trialBanner.title}
-            />
-          ) : null}
-
           <div className="mb-6">
             <h2 className="text-2xl font-bold text-(--color-ink)">
               {content.paidPlansHeading.title}

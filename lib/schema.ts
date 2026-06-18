@@ -130,7 +130,7 @@ const pricingOffers = [
   },
   {
     name: "Business",
-    price: "2999",
+    price: "2599",
     description:
       "Monthly plan for established teams with unlimited records, full employee roles, and priority support.",
   },
