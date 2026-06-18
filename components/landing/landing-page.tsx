@@ -2,15 +2,17 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Footer } from "@/components/landing/footer";
 import { HeaderNav } from "@/components/landing/header-nav";
 import { LandingAssistant } from "@/components/landing/landing-assistant";
 import { LanguageToggle } from "@/components/landing/language-toggle";
 import { useLanguage } from "@/components/landing/language-provider";
 import { SectionHeading } from "@/components/landing/section-heading";
+import { PricingTrialBanner } from "@/components/landing/pricing-trial-banner";
 import { MobileCounterMockup } from "@/components/landing/product-mockups";
 import { appLoginUrl, ororaSoftAboutUrl } from "@/lib/landing-content";
+import { splitPricingPlans } from "@/lib/pricing-plans";
 import { siteConfig } from "@/lib/site";
 
 export function LandingPage() {
@@ -492,6 +494,10 @@ function ProductDashboardCard({ label }: { label: string }) {
 
 export function PricingSection() {
   const { content } = useLanguage();
+  const { trialPlan, paidPlans } = useMemo(
+    () => splitPricingPlans(content.pricingPlans),
+    [content.pricingPlans],
+  );
 
   return (
     <section className="px-5 py-24 lg:px-8" id="pricing">
@@ -501,8 +507,29 @@ export function PricingSection() {
           title={content.pricingHeading.title}
           description={content.pricingHeading.description}
         />
-        <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {content.pricingPlans.map((plan) => (
+
+        {trialPlan ? (
+          <div className="mt-10">
+            <PricingTrialBanner
+              badge={content.trialBanner.badge}
+              plan={trialPlan}
+              subtitle={content.trialBanner.subtitle}
+              title={content.trialBanner.title}
+            />
+          </div>
+        ) : null}
+
+        <div className="mb-6 mt-2">
+          <h2 className="text-2xl font-bold text-(--color-ink)">
+            {content.paidPlansHeading.title}
+          </h2>
+          <p className="mt-2 max-w-3xl text-sm leading-7 text-(--color-muted) lg:text-base">
+            {content.paidPlansHeading.subtitle}
+          </p>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {paidPlans.map((plan) => (
             <article
               className={`flex h-full flex-col rounded-2xl border p-7 ${
                 plan.highlighted
@@ -546,10 +573,10 @@ export function PricingSection() {
                 {plan.features.map((feature) => (
                   <li className="flex gap-3" key={feature}>
                     <span
-                      className={`mt-1 size-5 rounded-full ${
+                      className={`mt-1.5 size-2 shrink-0 rounded-full ${
                         plan.highlighted
                           ? "bg-(--color-info)"
-                          : "bg-(--color-primary-light)"
+                          : "bg-(--color-primary)"
                       }`}
                     />
                     <span>{feature}</span>
@@ -563,7 +590,11 @@ export function PricingSection() {
                       ? "bg-(--color-info) text-(--color-secondary)"
                       : "primary-button"
                   }`}
-                  href={appLoginUrl}
+                  href={
+                    "ctaHref" in plan && plan.ctaHref
+                      ? plan.ctaHref
+                      : appLoginUrl
+                  }
                 >
                   {plan.cta}
                 </a>

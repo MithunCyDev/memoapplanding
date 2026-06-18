@@ -1,16 +1,22 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useLanguage } from "@/components/landing/language-provider";
+import { PricingTrialBanner } from "@/components/landing/pricing-trial-banner";
 import { SectionHeading } from "@/components/landing/section-heading";
 import { appLoginUrl } from "@/lib/landing-content";
+import { splitPricingPlans } from "@/lib/pricing-plans";
 
 type BillingCycle = "monthly" | "yearly";
 
 export function PricingRouteContent() {
   const { content } = useLanguage();
   const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
+  const { trialPlan, paidPlans } = useMemo(
+    () => splitPricingPlans(content.pricingPlans),
+    [content.pricingPlans],
+  );
 
   return (
     <>
@@ -55,101 +61,125 @@ export function PricingRouteContent() {
       </section>
 
       <section className="px-5 pb-24 pt-10 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {content.pricingPlans.map((plan) => (
-            <article
-              className={`relative flex h-full flex-col rounded-2xl border p-7 ${
-                plan.highlighted
-                  ? "border-(--color-primary) bg-(--color-secondary) text-white shadow-2xl shadow-[rgba(1,64,52,0.18)]"
-                  : "border-(--color-border) bg-white shadow-sm"
-              }`}
-              key={plan.name}
-            >
-              <div className="mb-8 flex items-center justify-between gap-3">
+        <div className="mx-auto max-w-7xl">
+          {trialPlan ? (
+            <PricingTrialBanner
+              badge={content.trialBanner.badge}
+              plan={trialPlan}
+              subtitle={content.trialBanner.subtitle}
+              title={content.trialBanner.title}
+            />
+          ) : null}
+
+          <div className="mb-6">
+            <h2 className="text-2xl font-bold text-(--color-ink)">
+              {content.paidPlansHeading.title}
+            </h2>
+            <p className="mt-2 max-w-3xl text-sm leading-7 text-(--color-muted) lg:text-base">
+              {content.paidPlansHeading.subtitle}
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {paidPlans.map((plan) => (
+              <article
+                className={`relative flex h-full flex-col rounded-2xl border p-7 ${
+                  plan.highlighted
+                    ? "border-(--color-primary) bg-(--color-secondary) text-white shadow-2xl shadow-[rgba(1,64,52,0.18)]"
+                    : "border-(--color-border) bg-white shadow-sm"
+                }`}
+                key={plan.name}
+              >
+                <div className="mb-8 flex items-center justify-between gap-3">
+                  <p
+                    className={`text-sm font-semibold uppercase tracking-[0.22em] ${
+                      plan.highlighted
+                        ? "text-(--color-info)"
+                        : "text-(--color-primary)"
+                    }`}
+                  >
+                    {plan.name}
+                  </p>
+                  <span
+                    className={`rounded-full px-3 py-1 text-xs font-bold ${
+                      plan.highlighted
+                        ? "bg-(--color-info) text-(--color-secondary)"
+                        : "bg-(--color-primary-light) text-(--color-primary-dark)"
+                    }`}
+                  >
+                    {plan.badge}
+                  </span>
+                </div>
+
                 <p
-                  className={`text-sm font-semibold uppercase tracking-[0.22em] ${
-                    plan.highlighted
-                      ? "text-(--color-info)"
-                      : "text-(--color-primary)"
+                  className={`text-sm font-semibold ${
+                    plan.highlighted ? "text-white/70" : "text-(--color-muted)"
                   }`}
                 >
-                  {plan.name}
+                  {plan.target}
                 </p>
-                <span
-                  className={`rounded-full px-3 py-1 text-xs font-bold ${
-                    plan.highlighted
-                      ? "bg-(--color-info) text-(--color-secondary)"
-                      : "bg-(--color-primary-light) text-(--color-primary-dark)"
-                  }`}
-                >
-                  {plan.badge}
-                </span>
-              </div>
 
-              <p
-                className={`text-sm font-semibold ${
-                  plan.highlighted ? "text-white/70" : "text-(--color-muted)"
-                }`}
-              >
-                {plan.target}
-              </p>
-
-              <h2 className="text-4xl font-semibold">
-                {billingCycle === "monthly"
-                  ? plan.monthlyPrice
-                  : plan.yearlyPrice}
-                <span className="text-base font-medium opacity-70">
+                <h2 className="text-4xl font-semibold">
                   {billingCycle === "monthly"
-                    ? plan.monthlyTerm
-                    : plan.yearlyTerm}
-                </span>
-              </h2>
-              <p
-                className={`mt-2 text-sm ${
-                  plan.highlighted ? "text-white/65" : "text-(--color-muted)"
-                }`}
-              >
-                {billingCycle === "yearly" && plan.yearlyWasPrice
-                  ? `${content.billing.wasLabel} ${plan.yearlyWasPrice} · ${plan.yearlyNote}`
-                  : plan.yearly}
-              </p>
-              <p
-                className={`mt-5 min-h-24 leading-7 ${
-                  plan.highlighted ? "text-white/70" : "text-(--color-muted)"
-                }`}
-              >
-                {plan.blurb}
-              </p>
-
-              <ul className="mt-7 space-y-3">
-                {plan.features.map((feature) => (
-                  <li className="flex gap-3" key={feature}>
-                    <span
-                      className={`mt-1 size-5 rounded-full ${
-                        plan.highlighted
-                          ? "bg-(--color-info)"
-                          : "bg-(--color-primary-light)"
-                      }`}
-                    />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-auto pt-8">
-                <a
-                  className={`inline-flex w-full justify-center rounded-full px-5 py-3 text-sm font-bold ${
-                    plan.highlighted
-                      ? "bg-(--color-info) text-(--color-secondary)"
-                      : "primary-button"
+                    ? plan.monthlyPrice
+                    : plan.yearlyPrice}
+                  <span className="text-base font-medium opacity-70">
+                    {billingCycle === "monthly"
+                      ? plan.monthlyTerm
+                      : plan.yearlyTerm}
+                  </span>
+                </h2>
+                <p
+                  className={`mt-2 text-sm ${
+                    plan.highlighted ? "text-white/65" : "text-(--color-muted)"
                   }`}
-                  href={appLoginUrl}
                 >
-                  {plan.cta}
-                </a>
-              </div>
-            </article>
-          ))}
+                  {billingCycle === "yearly" && plan.yearlyWasPrice
+                    ? `${content.billing.wasLabel} ${plan.yearlyWasPrice} · ${plan.yearlyNote}`
+                    : plan.yearly}
+                </p>
+                <p
+                  className={`mt-5 min-h-24 leading-7 ${
+                    plan.highlighted ? "text-white/70" : "text-(--color-muted)"
+                  }`}
+                >
+                  {plan.blurb}
+                </p>
+
+                <ul className="mt-7 space-y-3">
+                  {plan.features.map((feature) => (
+                    <li className="flex gap-3" key={feature}>
+                      <span
+                        className={`mt-1.5 size-2 shrink-0 rounded-full ${
+                          plan.highlighted
+                            ? "bg-(--color-info)"
+                            : "bg-(--color-primary)"
+                        }`}
+                      />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-auto pt-8">
+                  <a
+                    className={`inline-flex w-full justify-center rounded-full px-5 py-3 text-sm font-bold ${
+                      plan.highlighted
+                        ? "bg-(--color-info) text-(--color-secondary)"
+                        : "primary-button"
+                    }`}
+                    href={
+                      "ctaHref" in plan && plan.ctaHref
+                        ? plan.ctaHref
+                        : appLoginUrl
+                    }
+                  >
+                    {plan.cta}
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -203,13 +233,16 @@ export function PricingRouteContent() {
                     <td className="px-5 py-4 text-(--color-muted)">
                       {row.pro}
                     </td>
+                    <td className="px-5 py-4 text-(--color-muted)">
+                      {row.enterprise}
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {content.pricingRoute.assurance.map((item) => (
               <div
                 className="rounded-3xl bg-(--color-primary-light) p-5 text-sm font-semibold leading-6 text-(--color-primary-dark)"

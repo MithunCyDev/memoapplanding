@@ -50,16 +50,19 @@ function buildPricingAnswer(
   content: LandingContent,
   language: Language,
 ): AssistantAnswer {
-  const highlightedPlan =
+  const growthPlan =
+    content.pricingPlans.find((plan) => plan.name === "Growth") ??
+    content.pricingPlans[2];
+  const businessPlan =
     content.pricingPlans.find((plan) => plan.highlighted) ??
-    content.pricingPlans[0];
+    content.pricingPlans[3];
   const planSummary = content.pricingPlans
     .map((plan) => `${plan.name}: ${formatPlanPrice(plan)} - ${plan.target}`)
     .join("\n");
   const recommendation =
     language === "bn"
-      ? `ঘুরে দেখতে চাইলে ${content.pricingPlans[0].name} দিয়ে শুরু করুন। ব্যস্ত দোকানের জন্য ${highlightedPlan.name} ভালো, কারণ এতে আছে ${formatList(highlightedPlan.features, 4)}।`
-      : `Most visitors should start with ${content.pricingPlans[0].name} if they want to explore first. ${highlightedPlan.name} is highlighted for busy shops because it adds ${formatList(highlightedPlan.features, 4)}.`;
+      ? `ঘুরে দেখতে চাইলে ${content.pricingPlans[0].name} দিয়ে শুরু করুন। প্রথম টিম যোগ করা ব্যস্ত কাউন্টারের জন্য ${growthPlan.name} ভালো। প্রতিষ্ঠিত মাল্টি-কাউন্টার টিমের জন্য ${businessPlan.name} সবচেয়ে উপযুক্ত।`
+      : `Most visitors should start with ${content.pricingPlans[0].name} if they want to explore first. ${growthPlan.name} fits busy counters adding their first manager and staff. ${businessPlan.name} is the highlighted plan for established multi-counter teams.`;
 
   return {
     text: `${content.pricingHeading.title}\n\n${planSummary}\n\n${recommendation}`,
