@@ -106,7 +106,29 @@ export const landingContent = {
       titlePrefix: "Your Business Assistant, Inventory Manager, and POS",
       titleHighlight: "All-in-One",
       description:
-        "Built with AI to simplify daily operations and help businesses grow faster. Start with zero cost.",
+        "MemoApp is a POS and shop management app for Bangladeshi retailers — handle billing, inventory, customer dues, purchases, and reports in one place, with optional Google Contacts import and Google Drive backup. Start free.",
+    },
+    googleData: {
+      eyebrow: "Google permissions",
+      title: "Why MemoApp asks for Google access",
+      description:
+        "MemoApp is a business management tool. We request Google permissions only for the optional features below, and only when you choose to use them. You can revoke access anytime from your Google Account.",
+      items: [
+        {
+          tag: "Google Contacts",
+          title: "Import contacts as customers",
+          description:
+            "With your permission, MemoApp reads your Google Contacts (read-only) so you can add them as customers in one tap instead of typing each one. MemoApp never edits, deletes, or shares your contacts.",
+        },
+        {
+          tag: "Google Drive",
+          title: "Back up your shop data",
+          description:
+            "When you enable backup, MemoApp creates and updates backup files of your shop data in your own Google Drive so your records stay safe. MemoApp only accesses the backup files it creates.",
+        },
+      ],
+      note: "MemoApp's use of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements. Google user data is never sold or used for advertising.",
+      privacyLinkLabel: "Read our Privacy Policy",
     },
     heroStats: [
       { value: "৳48,320", label: "today's counter sales" },
@@ -275,6 +297,41 @@ export const landingContent = {
           title: "Keep selling when the internet drops",
           description:
             "Billing and stock updates keep working during network issues, then sync when you are back online.",
+        },
+      ],
+    },
+    posPreview: {
+      eyebrow: "Point of sale",
+      title: "A counter built for speed, even on the busiest day.",
+      description:
+        "MemoApp's POS keeps every sale fast and accurate — scan products, juggle multiple bills, take any payment type, and print a memo in seconds.",
+      previewLabel: "Live POS preview",
+      previewAlt:
+        "MemoApp POS screen showing the product grid, current bill, payment options, and totals.",
+      cards: [
+        {
+          tag: "Find fast",
+          title: "Scan or search any product",
+          description:
+            "Scan a barcode or search by name, filter by category, and add items to the bill with live stock counts always in view.",
+        },
+        {
+          tag: "Multi-bill",
+          title: "Serve many customers at once",
+          description:
+            "Park and resume orders with Bill 1, Bill 2, and more, so a paused sale never blocks the next customer in line.",
+        },
+        {
+          tag: "Any payment",
+          title: "Cash, due, or mixed in one tap",
+          description:
+            "Take cash, put it on baki, or split across methods. Tendered cash, change, discount, and tax are calculated for you.",
+        },
+        {
+          tag: "Print ready",
+          title: "Save & print with one shortcut",
+          description:
+            "Close a sale with Ctrl+S or Ctrl+P — the memo prints instantly while stock and reports update in the background.",
         },
       ],
     },
@@ -1130,7 +1187,29 @@ export const landingContent = {
       titlePrefix: "আপনার বিজনেস অ্যাসিস্ট্যান্ট, ইনভেন্টরি ম্যানেজার এবং POS",
       titleHighlight: "সব একসাথে",
       description:
-        "AI দিয়ে তৈরি, যাতে দৈনন্দিন কাজ সহজ হয় এবং ব্যবসা আরও দ্রুত বড় হতে পারে। শূন্য খরচে শুরু করুন।",
+        "MemoApp বাংলাদেশি দোকানের জন্য একটি POS ও শপ ম্যানেজমেন্ট অ্যাপ — বিলিং, ইনভেন্টরি, কাস্টমার বাকি, ক্রয় ও রিপোর্ট এক জায়গায়, সাথে ঐচ্ছিক Google Contacts import ও Google Drive backup। ফ্রি শুরু করুন।",
+    },
+    googleData: {
+      eyebrow: "Google পারমিশন",
+      title: "MemoApp কেন Google access চায়",
+      description:
+        "MemoApp একটি বিজনেস ম্যানেজমেন্ট টুল। আমরা শুধু নিচের ঐচ্ছিক ফিচারগুলোর জন্য এবং আপনি ব্যবহার করতে চাইলে তবেই Google permission চাই। আপনি যেকোনো সময় আপনার Google Account থেকে access revoke করতে পারেন।",
+      items: [
+        {
+          tag: "Google Contacts",
+          title: "কন্টাক্ট কাস্টমার হিসেবে import",
+          description:
+            "আপনার অনুমতিতে MemoApp আপনার Google Contacts (read-only) পড়ে, যাতে এক ট্যাপেই কন্টাক্টগুলো কাস্টমার হিসেবে যোগ করা যায় — হাতে টাইপ করার দরকার নেই। MemoApp আপনার কন্টাক্ট edit, delete বা শেয়ার করে না।",
+        },
+        {
+          tag: "Google Drive",
+          title: "শপ ডাটা ব্যাকআপ",
+          description:
+            "ব্যাকআপ চালু করলে MemoApp আপনার নিজের Google Drive-এ শপ ডাটার backup file তৈরি ও update করে, যাতে রেকর্ড নিরাপদ থাকে। MemoApp শুধু নিজের তৈরি backup file-ই access করে।",
+        },
+      ],
+      note: "Google API থেকে পাওয়া তথ্যের ব্যবহারে MemoApp Google API Services User Data Policy মেনে চলে, যার মধ্যে Limited Use requirements অন্তর্ভুক্ত। Google user data কখনো বিক্রি বা বিজ্ঞাপনে ব্যবহার করা হয় না।",
+      privacyLinkLabel: "আমাদের Privacy Policy পড়ুন",
     },
     heroStats: [
       { value: "৳৪৮,৩২০", label: "আজকের কাউন্টার সেলস" },
@@ -1299,6 +1378,41 @@ export const landingContent = {
           title: "ইন্টারনেট না থাকলেও বিক্রি চালু রাখুন",
           description:
             "নেটওয়ার্ক সমস্যায়ও বিলিং ও স্টক আপডেট চলতে থাকে, অনলাইনে ফিরলে সব সিঙ্ক হয়ে যায়।",
+        },
+      ],
+    },
+    posPreview: {
+      eyebrow: "পয়েন্ট অব সেল",
+      title: "ব্যস্ততম দিনেও দ্রুত কাজের জন্য তৈরি কাউন্টার।",
+      description:
+        "MemoApp-এর POS প্রতিটি বিক্রি দ্রুত ও নির্ভুল রাখে — প্রোডাক্ট স্ক্যান করুন, একসাথে একাধিক বিল সামলান, যেকোনো পেমেন্ট নিন আর সেকেন্ডেই মেমো প্রিন্ট করুন।",
+      previewLabel: "লাইভ POS প্রিভিউ",
+      previewAlt:
+        "MemoApp POS স্ক্রিন — প্রোডাক্ট গ্রিড, কারেন্ট বিল, পেমেন্ট অপশন ও টোটাল দেখাচ্ছে।",
+      cards: [
+        {
+          tag: "দ্রুত খুঁজুন",
+          title: "যেকোনো প্রোডাক্ট স্ক্যান বা সার্চ করুন",
+          description:
+            "বারকোড স্ক্যান করুন বা নাম দিয়ে সার্চ করুন, ক্যাটাগরি দিয়ে ফিল্টার করুন আর লাইভ স্টক সংখ্যা দেখে বিলে আইটেম যোগ করুন।",
+        },
+        {
+          tag: "মাল্টি-বিল",
+          title: "একসাথে অনেক কাস্টমার সামলান",
+          description:
+            "Bill 1, Bill 2 সহ অর্ডার হোল্ড ও রিজিউম করুন, যাতে থেমে থাকা বিক্রি পরের কাস্টমারকে আটকে না রাখে।",
+        },
+        {
+          tag: "যেকোনো পেমেন্ট",
+          title: "ক্যাশ, বাকি বা মিক্সড — এক ট্যাপে",
+          description:
+            "ক্যাশ নিন, বাকিতে রাখুন বা একাধিক মাধ্যমে ভাগ করুন। দেওয়া ক্যাশ, ফেরত, ডিসকাউন্ট ও ট্যাক্স স্বয়ংক্রিয়ভাবে হিসাব হয়।",
+        },
+        {
+          tag: "প্রিন্ট-রেডি",
+          title: "এক শর্টকাটেই সেভ ও প্রিন্ট",
+          description:
+            "Ctrl+S বা Ctrl+P দিয়ে বিক্রি শেষ করুন — মেমো সঙ্গে সঙ্গে প্রিন্ট হয় আর স্টক ও রিপোর্ট ব্যাকগ্রাউন্ডে আপডেট হয়।",
         },
       ],
     },

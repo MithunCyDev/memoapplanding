@@ -24,9 +24,11 @@ export function LandingPage() {
         <FeatureSection />
         <WorkflowSection />
         <ShowcaseSection />
+        <PosShowcaseSection />
         <PricingSection />
         <TestimonialsSection />
         <FaqSection />
+        <GoogleDataSection />
         <FinalCtaSection />
       </main>
       <Footer />
@@ -435,6 +437,53 @@ export function WorkflowSection() {
   );
 }
 
+function GoogleDataSection() {
+  const { content } = useLanguage();
+  const googleData = content.googleData;
+
+  return (
+    <section
+      className="bg-(--color-primary-light) px-5 py-24 lg:px-8"
+      id="google-data"
+    >
+      <div className="mx-auto max-w-7xl">
+        <SectionHeading
+          eyebrow={googleData.eyebrow}
+          title={googleData.title}
+          description={googleData.description}
+        />
+        <div className="mx-auto mt-14 grid max-w-5xl gap-5 sm:grid-cols-2">
+          {googleData.items.map((item) => (
+            <article
+              className="rounded-2xl border border-(--color-border) bg-white p-6 shadow-sm"
+              key={item.tag}
+            >
+              <span className="inline-flex rounded-full bg-(--color-primary-light) px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-(--color-primary-dark)">
+                {item.tag}
+              </span>
+              <h3 className="mt-4 text-xl font-semibold tracking-tight">
+                {item.title}
+              </h3>
+              <p className="mt-3 leading-7 text-(--color-muted)">
+                {item.description}
+              </p>
+            </article>
+          ))}
+        </div>
+        <div className="mx-auto mt-6 max-w-5xl rounded-2xl border border-(--color-border) bg-(--color-paper) p-5 text-center text-sm leading-7 text-(--color-muted) sm:p-6">
+          <p>{googleData.note}</p>
+          <Link
+            className="mt-3 inline-flex font-semibold text-(--color-primary) underline-offset-4 transition hover:underline"
+            href="/privacy-policy"
+          >
+            {googleData.privacyLinkLabel}
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ShowcaseSection() {
   const { content } = useLanguage();
 
@@ -450,19 +499,19 @@ function ShowcaseSection() {
         />
         <div className="mt-14 grid gap-8 lg:grid-cols-[1.05fr_0.9fr] lg:items-center">
           <ProductDashboardCard label={content.showcase.dashboardLabel} />
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-3.5 sm:grid-cols-2">
             {content.showcase.points.map((feature) => (
               <article
-                className="rounded-2xl border border-white/12 bg-white/[0.06] p-4 backdrop-blur transition hover:border-(--color-info)/60 hover:bg-white/10"
+                className="rounded-2xl border border-white/12 bg-white/[0.06] p-4.5 backdrop-blur transition hover:border-(--color-info)/60 hover:bg-white/10"
                 key={feature.title}
               >
-                <span className="inline-flex rounded-full bg-white/10 px-2 py-0.5 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-(--color-info)">
+                <span className="inline-flex rounded-full bg-white/10 px-2 py-0.5 text-[0.68rem] font-bold uppercase tracking-[0.15em] text-(--color-info)">
                   {feature.tag}
                 </span>
-                <h3 className="mt-2 text-sm font-semibold leading-5 text-white">
+                <h3 className="mt-2.5 text-[0.9375rem] font-semibold leading-snug text-white">
                   {feature.title}
                 </h3>
-                <p className="mt-1.5 text-xs leading-5 text-white/70">
+                <p className="mt-2 text-[0.8125rem] leading-[1.45] text-white/72">
                   {feature.description}
                 </p>
               </article>
@@ -495,6 +544,72 @@ function ProductDashboardCard({ label }: { label: string }) {
             fill
             sizes="(min-width: 1024px) 58vw, 100vw"
             src="/product-dashboard.png"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PosShowcaseSection() {
+  const { content } = useLanguage();
+  const pos = content.posPreview;
+
+  return (
+    <section className="bg-(--color-primary-light) px-5 py-24 lg:px-8" id="pos">
+      <div className="mx-auto max-w-7xl">
+        <SectionHeading
+          eyebrow={pos.eyebrow}
+          title={pos.title}
+          description={pos.description}
+        />
+        <div className="mt-14 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch">
+          <PosPreviewCard label={pos.previewLabel} alt={pos.previewAlt} />
+          <div className="grid gap-3 sm:grid-cols-2 sm:grid-rows-2 lg:h-full">
+            {pos.cards.map((card) => (
+              <article
+                className="flex h-full flex-col rounded-2xl border border-(--color-border) bg-white p-4 shadow-sm transition hover:border-(--color-primary) hover:shadow-xl hover:shadow-[rgba(1,64,52,0.08)]"
+                key={card.title}
+              >
+                <span className="inline-flex rounded-full bg-(--color-primary-light) px-2.5 py-0.5 text-[0.65rem] font-bold uppercase tracking-[0.15em] text-(--color-primary-dark)">
+                  {card.tag}
+                </span>
+                <h3 className="mt-2.5 text-[0.9375rem] font-semibold leading-snug tracking-tight text-(--color-ink)">
+                  {card.title}
+                </h3>
+                <p className="mt-2 text-[0.8125rem] leading-6 text-(--color-muted)">
+                  {card.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PosPreviewCard({ label, alt }: { label: string; alt: string }) {
+  return (
+    <div className="rounded-2xl border border-(--color-border) bg-white p-3 shadow-2xl shadow-[rgba(1,64,52,0.1)]">
+      <div className="overflow-hidden rounded-2xl bg-white shadow-xl shadow-black/10">
+        <div className="flex items-center justify-between border-b border-(--color-border) bg-(--color-background) px-4 py-3">
+          <div className="flex items-center gap-1.5" aria-hidden="true">
+            <span className="size-2.5 rounded-full bg-[#ff5f57]" />
+            <span className="size-2.5 rounded-full bg-[#ffbd2e]" />
+            <span className="size-2.5 rounded-full bg-[#28c840]" />
+          </div>
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-(--color-primary)">
+            {label}
+          </p>
+        </div>
+        <div className="relative aspect-1024/546">
+          <Image
+            alt={alt}
+            className="object-cover object-top"
+            fill
+            sizes="(min-width: 1024px) 62vw, 100vw"
+            src="/pos.png"
           />
         </div>
       </div>
@@ -763,48 +878,56 @@ export function FinalCtaSection() {
 
   return (
     <section className="px-5 pb-24 lg:px-8" id="contact">
-      <div className="mx-auto grid max-w-7xl overflow-hidden rounded-5xl bg-(--color-secondary) lg:grid-cols-[1fr_0.82fr]">
-        <div className="p-8 text-white sm:p-12 lg:p-16">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-(--color-info)">
-            {content.finalCta.eyebrow}
-          </p>
-          <h2 className="text-balance mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-            {content.finalCta.title}
-          </h2>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-white/70">
-            {content.finalCta.description}
-          </p>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <a
-              className="rounded-full bg-(--color-info) px-7 py-4 text-center text-sm font-bold text-(--color-secondary)"
-              href={`mailto:${siteConfig.contactEmail}`}
-            >
-              {content.common.contactMemoApp}
-            </a>
-            <Link
-              className="rounded-full border border-white/20 px-7 py-4 text-center text-sm font-bold text-white"
-              href="/features"
-            >
-              {content.common.reviewFeatures}
-            </Link>
-          </div>
-        </div>
-        <div className="relative flex items-center justify-center overflow-hidden bg-(--color-primary-light) p-8 lg:p-12">
-          <div className="absolute z-10 right-8 top-8 rounded-3xl bg-white/80 px-5 py-4 shadow-xl shadow-[rgba(1,64,52,0.1)] backdrop-blur">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-(--color-primary)">
-              Live counter
+      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl bg-(--color-secondary) text-white">
+        <div className="absolute inset-0 surface-grid opacity-10" />
+        <div className="absolute -left-24 -top-24 size-72 rounded-full bg-(--color-primary)/30 blur-3xl" />
+        <div className="absolute -bottom-28 right-1/3 size-80 rounded-full bg-(--color-secondary-light)/20 blur-3xl" />
+
+        <div className="relative grid items-center gap-14 p-8 sm:p-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:p-16">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-(--color-info)">
+              {content.finalCta.eyebrow}
             </p>
-            <p className="mt-1 text-2xl font-semibold text-(--color-secondary)">
-              ৳48,320
+            <h2 className="text-balance mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+              {content.finalCta.title}
+            </h2>
+            <p className="mt-5 max-w-xl text-lg leading-8 text-white/70">
+              {content.finalCta.description}
             </p>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <a
+                className="rounded-full bg-(--color-info) px-7 py-4 text-center text-sm font-bold text-(--color-secondary) shadow-xl shadow-[rgba(255,153,51,0.22)] transition hover:bg-(--color-info-light)"
+                href={`mailto:${siteConfig.contactEmail}`}
+              >
+                {content.common.contactMemoApp}
+              </a>
+              <Link
+                className="rounded-full border border-white/20 px-7 py-4 text-center text-sm font-bold text-white transition hover:bg-white/10"
+                href="/features"
+              >
+                {content.common.reviewFeatures}
+              </Link>
+            </div>
           </div>
-          <div className="absolute z-10 bottom-8 left-8 hidden rounded-3xl bg-(--color-secondary) px-5 py-4 text-white shadow-xl shadow-[rgba(1,64,52,0.16)] sm:block">
-            <p className="text-xs text-white/65">AI reminder</p>
-            <p className="mt-1 max-w-44 text-sm font-semibold leading-5">
-              Restock oil and rice before the weekend rush.
-            </p>
-          </div>
-          <div className="relative rounded-[2.75rem] border border-white/70 bg-white/35 p-5 shadow-2xl shadow-[rgba(1,64,52,0.16)] backdrop-blur">
+
+          <div className="relative isolate mx-auto w-full max-w-sm">
+            <div className="absolute inset-x-6 bottom-6 top-6 -z-10 rounded-3xl bg-(--color-secondary-light)/15 blur-2xl" />
+            <div className="absolute -top-4 right-0 z-10 rounded-2xl border border-white/15 bg-white/95 px-4 py-3 text-(--color-ink) shadow-2xl shadow-black/25 backdrop-blur sm:-right-3">
+              <p className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-(--color-primary)">
+                Live counter
+              </p>
+              <p className="mt-1 text-xl font-semibold text-(--color-secondary)">
+                ৳48,320
+              </p>
+            </div>
+            <div className="absolute -bottom-7 left-0 z-10 hidden max-w-48 rounded-2xl border border-white/12 bg-(--color-secondary) px-4 py-3 text-white shadow-2xl shadow-black/25 ring-1 ring-white/10 sm:block sm:-left-6">
+              <p className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-(--color-info)">
+                AI reminder
+              </p>
+              <p className="mt-1 text-sm font-semibold leading-5">
+                Restock oil and rice before the weekend rush.
+              </p>
+            </div>
             <MobileCounterMockup />
           </div>
         </div>
