@@ -25,6 +25,10 @@ html {
   scroll-behavior: smooth;
 }
 
+html[lang="en"] {
+  font-size: 15px;
+}
+
 html[lang="bn"] {
   font-size: 15px;
 }

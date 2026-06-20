@@ -113,9 +113,9 @@ const featureNames = landingContent.en.featureCards.map(
 
 const pricingOffers = [
   {
-    name: "Trial",
+    name: "Free",
     price: "0",
-    description: "14-day trial access for exploring core MemoApp workflows.",
+    description: "30 days of free access for exploring core MemoApp workflows.",
   },
   {
     name: "Basic",
@@ -130,7 +130,7 @@ const pricingOffers = [
   },
   {
     name: "Business",
-    price: "2599",
+    price: "2499",
     description:
       "Monthly plan for established teams with unlimited records, full employee roles, and priority support.",
   },

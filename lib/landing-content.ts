@@ -51,7 +51,7 @@ export const landingContent = {
       ],
       companyLinks: [
         { label: "About Us", href: ororaSoftAboutUrl, external: true },
-        { label: "Start free trial", href: appLoginUrl, external: true },
+        { label: "Start free", href: appLoginUrl, external: true },
       ],
       legalLinks: [
         { label: "Privacy Policy", href: "/privacy-policy", external: false },
@@ -105,7 +105,7 @@ export const landingContent = {
       titlePrefix: "Your Business Assistant, Inventory Manager, and POS",
       titleHighlight: "All-in-One",
       description:
-        "Built with AI to simplify daily operations and help businesses grow faster.",
+        "Built with AI to simplify daily operations and help businesses grow faster. Start with zero cost.",
     },
     heroStats: [
       { value: "৳48,320", label: "today's counter sales" },
@@ -260,7 +260,7 @@ export const landingContent = {
       title:
         "Simple packaging for small shops, busy counters, and growing teams.",
       description:
-        "Start with a 14-day trial, then choose a paid plan in the live app. Upgrade anytime as your shop adds staff, reports, AI, and backup.",
+        "Start with the free plan for 30 days, then choose a paid plan in the live app. Upgrade anytime as your shop adds staff, reports, AI, and backup.",
     },
     pricingBenefits: [
       "Invoices",
@@ -279,10 +279,10 @@ export const landingContent = {
       wasLabel: "Was",
     },
     trialBanner: {
-      title: "Start with a free trial",
+      title: "Start with the free plan",
       subtitle:
-        "Explore MemoApp free for 14 days before you choose a paid plan.",
-      badge: "14-day free trial",
+        "Explore MemoApp free for 30 days before you choose a paid plan.",
+      badge: "30 days free",
     },
     paidPlansHeading: {
       title: "Paid plans",
@@ -291,24 +291,25 @@ export const landingContent = {
     },
     pricingPlans: [
       {
-        name: "Trial",
+        name: "Free",
         price: "Free",
-        term: "14 days",
+        term: "30 days",
         yearly: "Explore before choosing a paid plan",
         description:
           "Try MemoApp with guided access to core shop workflows before your team commits.",
         monthlyPrice: "Free",
         yearlyPrice: "Free",
         yearlyWasPrice: "",
-        monthlyTerm: "14 days",
-        yearlyTerm: "14 days",
+        monthlyTerm: "30 days",
+        yearlyTerm: "30 days",
         target: "New shops · first-time setup · early exploration",
         blurb:
-          "Try onboarding, invoicing, catalog, dues, expense tracking, and baseline reports.",
-        cta: "Start free trial",
-        yearlyNote: "Trial access stays free while you explore MemoApp.",
+          "Try onboarding, invoicing, catalog, dues, expense tracking, and baseline reports — free for 30 days.",
+        cta: "Get started free",
+        yearlyNote: "Free access stays active while you explore MemoApp.",
+        teamSeats: "1 team member",
         features: [
-          "14-day guided trial for setting up your shop",
+          "30 days of full free access to set up your shop",
           "Try memos, stock, dues, reports, notes, team pages, and AI",
           "Experience core shop workflows — billing, inventory, purchases, and suppliers",
           "Start free with no credit card — upgrade when your shop is ready",
@@ -331,15 +332,15 @@ export const landingContent = {
         yearlyTerm: "/year",
         target: "Small shops · grocery · mini mart · pharmacy",
         blurb:
-          "Run one shop confidently with dashboards, dues, backups, and up to 200 core records.",
+          "Run one shop confidently with dashboards, dues, backups, and smart data limits sized for a single counter.",
         cta: "Get started",
         yearlyNote: "2 months free yearly",
+        teamSeats: "1 team member",
         features: [
           "Create memos, customers, dues, and stock",
           "Purchases, suppliers, cashflow, and expenses",
           "Core dashboard and daily shop controls",
-          "Up to 200 memos, customers, dues, and products",
-          "Up to 100 purchases and suppliers",
+          "Limited data import sized for one shop",
         ],
         highlighted: false,
         badge: "Basics",
@@ -361,11 +362,12 @@ export const landingContent = {
           "Add staff with role-based logins, plus reports, AI, and import/export for a busy counter.",
         cta: "Choose growth",
         yearlyNote: "2 months free yearly",
+        teamSeats: "Up to 3 team members",
         features: [
           "Employee management: add a manager and a staff member, each with role-based login",
           "Reports, notes, and the AI assistant",
           "Import, export, and download operational data from any grid",
-          "Up to 500 memos, customers, and dues",
+          "Higher data limits for a growing, busy counter",
           "Everything in Basic, built for shops adding their first team",
         ],
         highlighted: false,
@@ -373,14 +375,14 @@ export const landingContent = {
       },
       {
         name: "Business",
-        price: "৳2,599",
+        price: "৳2,499",
         term: "/month",
-        yearly: "৳25,990/year",
+        yearly: "৳24,990/year",
         description:
           "For established teams that need unlimited records, full employee roles, and priority support.",
-        monthlyPrice: "৳2,599",
-        yearlyPrice: "৳25,990",
-        yearlyWasPrice: "৳31,188",
+        monthlyPrice: "৳2,499",
+        yearlyPrice: "৳24,990",
+        yearlyWasPrice: "৳29,988",
         monthlyTerm: "/month",
         yearlyTerm: "/year",
         target: "Established shops running a team across multiple counters",
@@ -388,6 +390,7 @@ export const landingContent = {
           "For businesses with staff — unlimited records, full employee roles, and the deepest insights.",
         cta: "Upgrade to Business",
         yearlyNote: "2 months free yearly",
+        teamSeats: "Up to 6 team members",
         features: [
           "Everything in Growth, with no limits and a full team setup",
           "Multiple owners, managers, and staff with role-based access",
@@ -548,7 +551,7 @@ export const landingContent = {
       {
         title: "Simple buying path",
         description:
-          "Use the live app login to start trial access and choose the right plan from your account.",
+          "Use the live app login to start free access and choose the right plan from your account.",
       },
     ],
     featuresRoute: {
@@ -662,7 +665,7 @@ export const landingContent = {
         {
           question: "Which plan should I choose for these features?",
           answer:
-            "Start with Trial if you are exploring. Basic fits smaller shops, Growth is better for busy counters adding their first team, and Business is best for established multi-counter teams that need unlimited records, backup, and priority support.",
+            "Start with the free plan if you are exploring. Basic fits smaller shops, Growth is better for busy counters adding their first team, and Business is best for established multi-counter teams that need unlimited records, backup, and priority support.",
         },
       ],
       ctaTitle: "See how these features work during a real shop day",
@@ -759,7 +762,7 @@ export const landingContent = {
         "Use this table to quickly match your shop size with the billing, inventory, dues, reports, AI, backup, and team features you need.",
       comparisonColumns: [
         "Feature",
-        "Trial",
+        "Free",
         "Basic",
         "Growth",
         "Business",
@@ -768,7 +771,7 @@ export const landingContent = {
       comparisonRows: [
         {
           feature: "Invoices & memos",
-          trial: "Trial quotas",
+          trial: "Free plan quotas",
           basic: "Up to 200 core records",
           growth: "500 core records + exporters",
           pro: "Unlimited records",
@@ -848,7 +851,7 @@ export const landingContent = {
         },
       ],
       assurance: [
-        "Start with the free trial before choosing a paid plan.",
+        "Start with the free plan before choosing a paid plan.",
         "Yearly billing gives two bonus months compared with monthly billing.",
         "Upgrade when your shop needs richer reports, AI, backup, or employee workflows.",
         "Need chains, wholesalers, or multi-branch rollout? Contact sales for Enterprise.",
@@ -856,14 +859,14 @@ export const landingContent = {
       faqEyebrow: "Pricing FAQ",
       faqTitle: "Questions before choosing a plan",
       faqDescription:
-        "These answers help shop owners understand trial access, yearly savings, upgrades, and what to verify before payment.",
+        "These answers help shop owners understand free plan access, yearly savings, upgrades, and what to verify before payment.",
       featuresLink: "Review MemoApp features",
       faqLink: "Read public FAQ",
       faqs: [
         {
-          question: "What happens after the 14-day trial?",
+          question: "What happens after the 30-day free plan?",
           answer:
-            "After the trial, choose the plan that matches your shop size. Basic covers smaller counters, Growth fits busy retailers adding their first team, and Business supports established multi-counter teams.",
+            "After 30 days, choose the plan that matches your shop size. Basic covers smaller counters, Growth fits busy retailers adding their first team, and Business supports established multi-counter teams.",
         },
         {
           question: "Can I change plans later?",
@@ -962,7 +965,7 @@ export const landingContent = {
       {
         question: "Which plan should I start with?",
         answer:
-          "Start with the trial if you want to explore. Basic fits smaller shops, Growth is best for busy counters adding their first team, and Business is built for established multi-counter teams.",
+          "Start with the free plan if you want to explore. Basic fits smaller shops, Growth is best for busy counters adding their first team, and Business is built for established multi-counter teams.",
         category: "Billing & plans",
       },
     ],
@@ -1022,7 +1025,7 @@ export const landingContent = {
       ],
       companyLinks: [
         { label: "About Us", href: ororaSoftAboutUrl, external: true },
-        { label: "Free trial শুরু করুন", href: appLoginUrl, external: true },
+        { label: "ফ্রি শুরু করুন", href: appLoginUrl, external: true },
       ],
       legalLinks: [
         { label: "Privacy Policy", href: "/privacy-policy", external: false },
@@ -1077,7 +1080,7 @@ export const landingContent = {
       titlePrefix: "আপনার বিজনেস অ্যাসিস্ট্যান্ট, ইনভেন্টরি ম্যানেজার এবং POS",
       titleHighlight: "সব একসাথে",
       description:
-        "AI দিয়ে তৈরি, যাতে দৈনন্দিন কাজ সহজ হয় এবং ব্যবসা আরও দ্রুত বড় হতে পারে।",
+        "AI দিয়ে তৈরি, যাতে দৈনন্দিন কাজ সহজ হয় এবং ব্যবসা আরও দ্রুত বড় হতে পারে। শূন্য খরচে শুরু করুন।",
     },
     heroStats: [
       { value: "৳৪৮,৩২০", label: "আজকের কাউন্টার সেলস" },
@@ -1231,7 +1234,7 @@ export const landingContent = {
       eyebrow: "প্রতিটি ধাপের জন্য প্ল্যান",
       title: "ছোট দোকান, ব্যস্ত কাউন্টার ও বড় টিমের জন্য সহজ প্যাকেজিং।",
       description:
-        "১৪ দিনের ট্রায়াল দিয়ে শুরু করুন, তারপর লাইভ অ্যাপ থেকে পেইড প্ল্যান বেছে নিন। স্টাফ, রিপোর্ট, AI ও ব্যাকআপ বাড়লে যেকোনো সময় আপগ্রেড করুন।",
+        "৩০ দিনের ফ্রি প্ল্যান দিয়ে শুরু করুন, তারপর লাইভ অ্যাপ থেকে পেইড প্ল্যান বেছে নিন। স্টাফ, রিপোর্ট, AI ও ব্যাকআপ বাড়লে যেকোনো সময় আপগ্রেড করুন।",
     },
     pricingBenefits: ["ইনভয়েস", "স্টক", "কালেকশন", "ক্রয়", "ইনসাইট", "AI"],
     billing: {
@@ -1243,10 +1246,9 @@ export const landingContent = {
       wasLabel: "আগে",
     },
     trialBanner: {
-      title: "ফ্রি ট্রায়াল দিয়ে শুরু করুন",
-      subtitle:
-        "পেইড প্ল্যান নেওয়ার আগে ১৪ দিন MemoApp ফ্রিতে ব্যবহার করে দেখুন।",
-      badge: "১৪ দিন ফ্রি ট্রায়াল",
+      title: "ফ্রি প্ল্যান দিয়ে শুরু করুন",
+      subtitle: "পেইড প্ল্যান নেওয়ার আগে ৩০ দিন MemoApp ফ্রি ব্যবহার করুন।",
+      badge: "৩০ দিন ফ্রি",
     },
     paidPlansHeading: {
       title: "পেইড প্ল্যান",
@@ -1255,25 +1257,26 @@ export const landingContent = {
     },
     pricingPlans: [
       {
-        name: "ট্রায়াল",
+        name: "ফ্রি",
         price: "ফ্রি",
-        term: "১৪ দিন",
+        term: "৩০ দিন",
         yearly: "পেইড প্ল্যান নেওয়ার আগে ঘুরে দেখুন",
         description:
           "টিম কমিট করার আগে কোর দোকান ওয়ার্কফ্লোসহ MemoApp ব্যবহার করে দেখুন।",
         monthlyPrice: "ফ্রি",
         yearlyPrice: "ফ্রি",
         yearlyWasPrice: "",
-        monthlyTerm: "১৪ দিন",
-        yearlyTerm: "১৪ দিন",
+        monthlyTerm: "৩০ দিন",
+        yearlyTerm: "৩০ দিন",
         target: "নতুন দোকান · প্রথম সেটআপ · শুরুতে ঘুরে দেখা",
         blurb:
-          "অনবোর্ডিং, ইনভয়েসিং, ক্যাটালগ, বাকি, খরচ ট্র্যাকিং ও বেসলাইন রিপোর্ট ব্যবহার করে দেখুন।",
-        cta: "ফ্রি ট্রায়াল শুরু করুন",
-        yearlyNote: "MemoApp ঘুরে দেখার সময় ট্রায়াল অ্যাক্সেস ফ্রি থাকে।",
+          "অনবোর্ডিং, ইনভয়েসিং, ক্যাটালগ, বাকি, খরচ ট্র্যাকিং ও বেসলাইন রিপোর্ট — ৩০ দিন ফ্রি।",
+        cta: "ফ্রি শুরু করুন",
+        yearlyNote: "MemoApp ঘুরে দেখার সময় ফ্রি অ্যাক্সেস চালু থাকে।",
+        teamSeats: "১ জন টিম সদস্য",
         features: [
-          "দোকান সেটআপের জন্য ১৪ দিনের গাইডেড ট্রায়াল",
-          "মেমো, স্টক, বাকি, রিপোর্ট, নোটস, টিম পেজ ও এআই ট্রাই করুন",
+          "দোকান সেটআপের জন্য ৩০ দিনের সম্পূর্ণ ফ্রি অ্যাক্সেস",
+          "মেমো, স্টক, বাকি, রিপোর্ট, নোটস, টিম পেজ ও এআই ব্যবহার করুন",
           "মেমো, স্টক, বাকি, ক্রয় ও সাপ্লায়ারসহ মূল দোকান ওয়ার্কফ্লো ব্যবহার করুন",
           "ক্রেডিট কার্ড ছাড়াই ফ্রি শুরু — দোকান প্রস্তুত হলে আপগ্রেড করুন",
           "ডিজিটাল পেমেন্টে যেকোনো সময় আপগ্রেড করুন",
@@ -1295,15 +1298,15 @@ export const landingContent = {
         yearlyTerm: "/বছর",
         target: "ছোট দোকান · গ্রোসারি · মিনি মার্ট · ফার্মেসি",
         blurb:
-          "এক দোকানের জন্য ড্যাশবোর্ড, বাকি, ব্যাকআপ ও সর্বোচ্চ ২০০টি কোর রেকর্ড।",
+          "এক দোকানের জন্য ড্যাশবোর্ড, বাকি, ব্যাকআপ ও এক দোকানের জন্য উপযুক্ত স্মার্ট ডেটা সীমা।",
         cta: "শুরু করুন",
         yearlyNote: "ইয়ারলি প্ল্যানে ২ মাস ফ্রি",
+        teamSeats: "১ জন টিম সদস্য",
         features: [
           "মেমো তৈরি, গ্রাহক ম্যানেজ, বাকি ট্র্যাক ও স্টক নিয়ন্ত্রণ",
           "ক্রয়, সাপ্লায়ার, ক্যাশফ্লো ও খরচ ট্র্যাকিং",
           "কোর ড্যাশবোর্ড ও দৈনন্দিন দোকান নিয়ন্ত্রণ",
-          "মেমো, গ্রাহক, বাকি ও পণ্য ২০০টি পর্যন্ত",
-          "ক্রয় ও সাপ্লায়ার ১০০টি পর্যন্ত",
+          "এক দোকানের জন্য সীমিত ডেটা ইমপোর্ট",
         ],
         highlighted: false,
         badge: "Basics",
@@ -1325,11 +1328,12 @@ export const landingContent = {
           "রোল-ভিত্তিক লগইনসহ স্টাফ যোগ করুন, সাথে রিপোর্ট, এআই ও ইমপোর্ট/এক্সপোর্ট ব্যস্ত কাউন্টারের জন্য।",
         cta: "Growth বেছে নিন",
         yearlyNote: "ইয়ারলি প্ল্যানে ২ মাস ফ্রি",
+        teamSeats: "সর্বোচ্চ ৩ জন টিম সদস্য",
         features: [
           "কর্মচারী ম্যানেজমেন্ট: একজন ম্যানেজার ও একজন স্টাফ যোগ করুন, প্রত্যেকের আলাদা রোল-ভিত্তিক লগইন",
           "রিপোর্ট, নোটস ও এআই সহকারী আনলক করুন",
           "যেকোনো গ্রিড থেকে অপারেশনাল ডেটা ইমপোর্ট, এক্সপোর্ট ও ডাউনলোড",
-          "মেমো, গ্রাহক ও বাকি ৫০০টি পর্যন্ত",
+          "ক্রমবর্ধমান ব্যস্ত কাউন্টারের জন্য উচ্চতর ডেটা সীমা",
           "Basic-এর সব, প্রথম টিম যোগ করা দোকানের জন্য তৈরি",
         ],
         highlighted: false,
@@ -1337,14 +1341,14 @@ export const landingContent = {
       },
       {
         name: "বিজনেস",
-        price: "৳২,৫৯৯",
+        price: "৳২,৪৯৯",
         term: "/মাস",
-        yearly: "৳২৫,৯৯০/বছর",
+        yearly: "৳২৪,৯৯০/বছর",
         description:
           "প্রতিষ্ঠিত টিমের জন্য — আনলিমিটেড রেকর্ড, পূর্ণ কর্মচারী রোল ও প্রায়োরিটি সাপোর্ট।",
-        monthlyPrice: "৳২,৫৯৯",
-        yearlyPrice: "৳২৫,৯৯০",
-        yearlyWasPrice: "৳৩১,১৮৮",
+        monthlyPrice: "৳২,৪৯৯",
+        yearlyPrice: "৳২৪,৯৯০",
+        yearlyWasPrice: "৳২৯,৯৮৮",
         monthlyTerm: "/মাস",
         yearlyTerm: "/বছর",
         target: "একাধিক কাউন্টারে টিম চালানো প্রতিষ্ঠিত দোকান",
@@ -1352,6 +1356,7 @@ export const landingContent = {
           "স্টাফসহ ব্যবসার জন্য — আনলিমিটেড রেকর্ড, পূর্ণ কর্মচারী রোল ও গভীর ইনসাইট।",
         cta: "বিজনেসে আপগ্রেড করুন",
         yearlyNote: "ইয়ারলি প্ল্যানে ২ মাস ফ্রি",
+        teamSeats: "সর্বোচ্চ ৬ জন টিম সদস্য",
         features: [
           "Growth-এর সব, কোনো সীমা ছাড়াই ও পূর্ণ টিম সেটআপ",
           "একাধিক মালিক, ম্যানেজার ও স্টাফ রোল-ভিত্তিক অ্যাক্সেস",
@@ -1509,7 +1514,7 @@ export const landingContent = {
       {
         title: "সহজ কেনার পথ",
         description:
-          "লাইভ অ্যাপ লগইন দিয়ে ট্রায়াল শুরু করুন এবং আপনার অ্যাকাউন্ট থেকে সঠিক প্ল্যান বেছে নিন।",
+          "লাইভ অ্যাপ লগইন দিয়ে ফ্রি অ্যাক্সেস শুরু করুন এবং আপনার অ্যাকাউন্ট থেকে সঠিক প্ল্যান বেছে নিন।",
       },
     ],
     featuresRoute: {
@@ -1624,7 +1629,7 @@ export const landingContent = {
         {
           question: "এই ফিচারগুলোর জন্য কোন প্ল্যান বেছে নেব?",
           answer:
-            "ঘুরে দেখতে Trial দিয়ে শুরু করুন। ছোট দোকানের জন্য Basic, প্রথম টিম যোগ করা ব্যস্ত কাউন্টারের জন্য Growth, আর আনলিমিটেড রেকর্ড, ব্যাকআপ ও প্রায়োরিটি সাপোর্ট লাগলে বিজনেস ভালো।",
+            "ঘুরে দেখতে ফ্রি প্ল্যান দিয়ে শুরু করুন। ছোট দোকানের জন্য Basic, প্রথম টিম যোগ করা ব্যস্ত কাউন্টারের জন্য Growth, আর আনলিমিটেড রেকর্ড, ব্যাকআপ ও প্রায়োরিটি সাপোর্ট লাগলে বিজনেস ভালো।",
         },
       ],
       ctaTitle: "বাস্তব দোকানের দিনে এই ফিচারগুলো কীভাবে কাজ করে দেখুন",
@@ -1721,7 +1726,7 @@ export const landingContent = {
         "বিলিং, ইনভেন্টরি, বাকি, রিপোর্ট, AI, ব্যাকআপ ও টিম ফিচারের সঙ্গে আপনার দোকানের আকার মিলিয়ে নিতে এই টেবিলটি ব্যবহার করুন।",
       comparisonColumns: [
         "ফিচার",
-        "Trial",
+        "ফ্রি",
         "Basic",
         "Growth",
         "বিজনেস",
@@ -1730,7 +1735,7 @@ export const landingContent = {
       comparisonRows: [
         {
           feature: "ইনভয়েস ও মেমো",
-          trial: "ট্রায়াল সীমা",
+          trial: "ফ্রি প্ল্যান সীমা",
           basic: "সর্বোচ্চ ২০০টি কোর রেকর্ড",
           growth: "৫০০ কোর রেকর্ড + এক্সপোর্ট",
           pro: "আনলিমিটেড রেকর্ড",
@@ -1810,7 +1815,7 @@ export const landingContent = {
         },
       ],
       assurance: [
-        "পেইড প্ল্যান নেওয়ার আগে ফ্রি ট্রায়াল দিয়ে শুরু করুন।",
+        "পেইড প্ল্যান নেওয়ার আগে ফ্রি প্ল্যান দিয়ে শুরু করুন।",
         "মাসিক বিলিংয়ের তুলনায় ইয়ারলি বিলিংয়ে দুই মাস বোনাস পাওয়া যায়।",
         "রিপোর্ট, AI, ব্যাকআপ বা এমপ্লয়ি workflow দরকার হলে আপগ্রেড করুন।",
         "চেইন, হোলসেল বা মাল্টি-ব্রাঞ্চ রোলআউট? এন্টারপ্রাইজের জন্য সেলসে যোগাযোগ করুন।",
@@ -1818,14 +1823,14 @@ export const landingContent = {
       faqEyebrow: "প্রাইসিং FAQ",
       faqTitle: "প্ল্যান বেছে নেওয়ার আগে সাধারণ প্রশ্ন",
       faqDescription:
-        "ট্রায়াল অ্যাক্সেস, ইয়ারলি সেভিং, আপগ্রেড ও পেমেন্টের আগে কী যাচাই করবেন তা বুঝতে এই উত্তরগুলো সাহায্য করবে।",
+        "ফ্রি প্ল্যান অ্যাক্সেস, ইয়ারলি সেভিং, আপগ্রেড ও পেমেন্টের আগে কী যাচাই করবেন তা বুঝতে এই উত্তরগুলো সাহায্য করবে।",
       featuresLink: "MemoApp ফিচার দেখুন",
       faqLink: "পাবলিক FAQ পড়ুন",
       faqs: [
         {
-          question: "১৪ দিনের ট্রায়ালের পর কী হবে?",
+          question: "৩০ দিনের ফ্রি প্ল্যানের পর কী হবে?",
           answer:
-            "ট্রায়ালের পর দোকানের আকার অনুযায়ী প্ল্যান বেছে নিন। Basic ছোট কাউন্টার, Growth প্রথম টিম যোগ করা ব্যস্ত রিটেইলার এবং বিজনেস প্রতিষ্ঠিত মাল্টি-কাউন্টার টিমের জন্য।",
+            "৩০ দিনের পর দোকানের আকার অনুযায়ী প্ল্যান বেছে নিন। Basic ছোট কাউন্টার, Growth প্রথম টিম যোগ করা ব্যস্ত রিটেইলার এবং বিজনেস প্রতিষ্ঠিত মাল্টি-কাউন্টার টিমের জন্য।",
         },
         {
           question: "পরে কি প্ল্যান পরিবর্তন করা যাবে?",
@@ -1924,7 +1929,7 @@ export const landingContent = {
       {
         question: "কোন প্ল্যান দিয়ে শুরু করব?",
         answer:
-          "ঘুরে দেখতে চাইলে ট্রায়াল দিয়ে শুরু করুন। ছোট দোকানের জন্য Basic, প্রথম টিম যোগ করা ব্যস্ত কাউন্টারের জন্য Growth, আর প্রতিষ্ঠিত মাল্টি-কাউন্টার টিমের জন্য বিজনেস।",
+          "ঘুরে দেখতে চাইলে ফ্রি প্ল্যান দিয়ে শুরু করুন। ছোট দোকানের জন্য Basic, প্রথম টিম যোগ করা ব্যস্ত কাউন্টারের জন্য Growth, আর প্রতিষ্ঠিত মাল্টি-কাউন্টার টিমের জন্য বিজনেস।",
         category: "Billing & plans",
       },
     ],

@@ -135,6 +135,17 @@ export function PricingRouteContent() {
                 >
                   {plan.blurb}
                 </p>
+                {"teamSeats" in plan && plan.teamSeats ? (
+                  <p
+                    className={`mt-3 text-sm font-semibold ${
+                      plan.highlighted
+                        ? "text-(--color-info)"
+                        : "text-(--color-primary-dark)"
+                    }`}
+                  >
+                    {plan.teamSeats}
+                  </p>
+                ) : null}
 
                 <ul className="mt-7 space-y-3">
                   {plan.features.map((feature) => (

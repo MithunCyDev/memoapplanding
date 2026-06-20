@@ -112,7 +112,7 @@ function HeroSection() {
           >
             {content.hero.titlePrefix}{" "}
             <span
-              className={`inline-flex -translate-y-1 items-center rounded-2xl bg-(--color-info) px-3 py-1 font-bold leading-none text-(--color-secondary) shadow-xl shadow-[rgba(255,153,51,0.2)] ${
+              className={`inline-flex -translate-y-1 items-center rounded-xl bg-(--color-info) px-3 py-1 font-bold leading-none text-(--color-secondary) shadow-xl shadow-[rgba(255,153,51,0.2)] ${
                 isBangla
                   ? "text-2xl sm:text-3xl lg:text-4xl"
                   : "text-3xl sm:text-4xl lg:text-5xl"
@@ -569,6 +569,17 @@ export function PricingSection() {
               >
                 {plan.description}
               </p>
+              {"teamSeats" in plan && plan.teamSeats ? (
+                <p
+                  className={`mt-3 text-sm font-semibold ${
+                    plan.highlighted
+                      ? "text-(--color-info)"
+                      : "text-(--color-primary-dark)"
+                  }`}
+                >
+                  {plan.teamSeats}
+                </p>
+              ) : null}
               <ul className="mt-7 space-y-3">
                 {plan.features.map((feature) => (
                   <li className="flex gap-3" key={feature}>

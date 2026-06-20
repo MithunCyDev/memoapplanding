@@ -65,6 +65,11 @@ export function PricingTrialBanner({
               <p className="mt-2 text-sm leading-6 text-(--color-muted)">
                 {plan.blurb}
               </p>
+              {"teamSeats" in plan && plan.teamSeats ? (
+                <p className="mt-2 text-sm font-semibold text-(--color-primary-dark)">
+                  {plan.teamSeats}
+                </p>
+              ) : null}
             </div>
           </div>
 
