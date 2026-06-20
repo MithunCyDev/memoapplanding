@@ -140,15 +140,6 @@ export function Footer() {
         </section>
 
         <div className="border-t border-white/12 py-6">
-          <p className="mb-4 max-w-3xl text-xs leading-6 text-white/55">
-            {footer.googleDataNote}{" "}
-            <Link
-              className="font-semibold text-white/62 underline decoration-white/25 underline-offset-4 transition hover:text-(--color-info)"
-              href="/privacy-policy"
-            >
-              Privacy Policy
-            </Link>
-          </p>
           <div className="flex flex-col gap-5 text-xs text-white/55 lg:flex-row lg:items-center lg:justify-between">
             <p>{`© ${year} ${siteConfig.name}. ${content.common.copyright}`}</p>
             <nav

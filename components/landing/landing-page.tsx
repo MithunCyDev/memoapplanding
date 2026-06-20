@@ -9,7 +9,6 @@ import { LandingAssistant } from "@/components/landing/landing-assistant";
 import { LanguageToggle } from "@/components/landing/language-toggle";
 import { useLanguage } from "@/components/landing/language-provider";
 import { SectionHeading } from "@/components/landing/section-heading";
-import { PricingTrialBanner } from "@/components/landing/pricing-trial-banner";
 import { MobileCounterMockup } from "@/components/landing/product-mockups";
 import { appLoginUrl, ororaSoftAboutUrl } from "@/lib/landing-content";
 import { splitPricingPlans } from "@/lib/pricing-plans";
@@ -22,7 +21,6 @@ export function LandingPage() {
       <main>
         <HeroSection />
         <LogoStrip />
-        <AppPurposeSection />
         <FeatureSection />
         <WorkflowSection />
         <ShowcaseSection />
@@ -335,85 +333,6 @@ function LogoStrip() {
   );
 }
 
-function AppPurposeSection() {
-  const { content } = useLanguage();
-  const purpose = content.appPurpose;
-
-  return (
-    <section
-      aria-labelledby="app-purpose-heading"
-      className="border-b border-(--color-border) bg-white px-5 py-24 lg:px-8"
-      id="about"
-    >
-      <div className="mx-auto max-w-7xl">
-        <SectionHeading
-          eyebrow={purpose.eyebrow}
-          title={purpose.title}
-          description={purpose.description}
-          id="app-purpose-heading"
-        />
-
-        <div className="mt-14">
-          <h3 className="text-center text-sm font-bold uppercase tracking-[0.22em] text-(--color-primary)">
-            {purpose.functionalityTitle}
-          </h3>
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {purpose.functionalityItems.map((item, index) => (
-              <li
-                className="rounded-2xl border border-(--color-border) bg-(--color-background) p-5"
-                key={item}
-              >
-                <span className="text-xs font-bold uppercase tracking-[0.18em] text-(--color-primary)">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <p className="mt-3 text-sm font-medium leading-7 text-(--color-ink)">
-                  {item}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="mt-14 overflow-hidden rounded-2xl border border-(--color-border) bg-(--color-secondary) text-white">
-          <div className="border-b border-white/10 px-6 py-8 sm:px-10 sm:py-10">
-            <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-              {purpose.googleDataTitle}
-            </h3>
-            <p className="mt-4 max-w-3xl text-sm leading-7 text-white/72 sm:text-base">
-              {purpose.googleDataDescription}
-            </p>
-          </div>
-
-          <div className="grid gap-px bg-white/10 lg:grid-cols-2">
-            {purpose.googleDataItems.map((item) => (
-              <article
-                className="bg-(--color-secondary) px-6 py-8 sm:px-10"
-                key={item.title}
-              >
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-(--color-info)">
-                  {item.title}
-                </p>
-                <p className="mt-4 text-sm leading-7 text-white/78 sm:text-base">
-                  {item.description}
-                </p>
-              </article>
-            ))}
-          </div>
-
-          <div className="border-t border-white/10 px-6 py-6 sm:px-10">
-            <Link
-              className="inline-flex rounded-full border border-white/20 px-5 py-3 text-sm font-bold text-white transition hover:border-(--color-info) hover:text-(--color-info)"
-              href="/privacy-policy"
-            >
-              {purpose.privacyLinkLabel}
-            </Link>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export function FeatureSection() {
   const { content } = useLanguage();
   const midpoint = Math.ceil(content.featureCards.length / 2);
@@ -529,13 +448,24 @@ function ShowcaseSection() {
           title={content.showcase.title}
           description={content.showcase.description}
         />
-        <div className="mt-14 grid gap-8 lg:grid-cols-[1fr_0.7fr] lg:items-center">
+        <div className="mt-14 grid gap-8 lg:grid-cols-[1.05fr_0.9fr] lg:items-center">
           <ProductDashboardCard label={content.showcase.dashboardLabel} />
-          <div className="space-y-5">
-            {content.showcase.points.map((item) => (
-              <div className="glass-card rounded-3xl p-5" key={item}>
-                <p className="leading-7 text-white/80">{item}</p>
-              </div>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {content.showcase.points.map((feature) => (
+              <article
+                className="rounded-2xl border border-white/12 bg-white/[0.06] p-4 backdrop-blur transition hover:border-(--color-info)/60 hover:bg-white/10"
+                key={feature.title}
+              >
+                <span className="inline-flex rounded-full bg-white/10 px-2 py-0.5 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-(--color-info)">
+                  {feature.tag}
+                </span>
+                <h3 className="mt-2 text-sm font-semibold leading-5 text-white">
+                  {feature.title}
+                </h3>
+                <p className="mt-1.5 text-xs leading-5 text-white/70">
+                  {feature.description}
+                </p>
+              </article>
             ))}
           </div>
         </div>
@@ -574,124 +504,79 @@ function ProductDashboardCard({ label }: { label: string }) {
 
 export function PricingSection() {
   const { content } = useLanguage();
-  const { trialPlan, paidPlans } = useMemo(
+  const { trialPlan } = useMemo(
     () => splitPricingPlans(content.pricingPlans),
     [content.pricingPlans],
   );
+  const cta = content.homeFreeCta;
 
   return (
     <section className="px-5 py-24 lg:px-8" id="pricing">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
-          eyebrow={content.pricingHeading.eyebrow}
-          title={content.pricingHeading.title}
-          description={content.pricingHeading.description}
+          eyebrow={cta.eyebrow}
+          title={cta.title}
+          description={cta.description}
         />
 
-        {trialPlan ? (
-          <div className="mt-10">
-            <PricingTrialBanner
-              badge={content.trialBanner.badge}
-              plan={trialPlan}
-              subtitle={content.trialBanner.subtitle}
-              title={content.trialBanner.title}
-            />
-          </div>
-        ) : null}
-
-        <div className="mb-6 mt-2">
-          <h2 className="text-2xl font-bold text-(--color-ink)">
-            {content.paidPlansHeading.title}
-          </h2>
-          <p className="mt-2 max-w-3xl text-sm leading-7 text-(--color-muted) lg:text-base">
-            {content.paidPlansHeading.subtitle}
-          </p>
-        </div>
-
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {paidPlans.map((plan) => (
-            <article
-              className={`flex h-full flex-col rounded-2xl border p-7 ${
-                plan.highlighted
-                  ? "border-(--color-primary) bg-(--color-secondary) text-white shadow-2xl shadow-[rgba(1,64,52,0.18)]"
-                  : "border-(--color-border) bg-white"
-              }`}
-              key={plan.name}
-            >
-              <p
-                className={`text-sm font-semibold uppercase tracking-[0.22em] ${
-                  plan.highlighted
-                    ? "text-(--color-info)"
-                    : "text-(--color-primary)"
-                }`}
+        <div className="mt-14 grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
+          <div className="grid gap-4 sm:grid-cols-2">
+            {cta.benefits.map((benefit) => (
+              <article
+                className="rounded-2xl border border-(--color-border) bg-white p-6 shadow-sm"
+                key={benefit.title}
               >
-                {plan.name}
-              </p>
-              <div className="mt-4">
-                <h3 className="text-3xl font-semibold">
-                  {plan.price}
-                  <span className="text-base font-medium opacity-70">
-                    {plan.term}
-                  </span>
+                <h3 className="text-lg font-semibold text-(--color-ink)">
+                  {benefit.title}
                 </h3>
-                <p
-                  className={`mt-2 text-sm ${
-                    plan.highlighted ? "text-white/65" : "text-(--color-muted)"
-                  }`}
-                >
-                  {plan.yearly}
+                <p className="mt-2 text-sm leading-7 text-(--color-muted)">
+                  {benefit.description}
                 </p>
-              </div>
-              <p
-                className={`mt-4 leading-7 ${
-                  plan.highlighted ? "text-white/70" : "text-(--color-muted)"
-                }`}
-              >
-                {plan.description}
-              </p>
-              {"teamSeats" in plan && plan.teamSeats ? (
-                <p
-                  className={`mt-3 text-sm font-semibold ${
-                    plan.highlighted
-                      ? "text-(--color-info)"
-                      : "text-(--color-primary-dark)"
-                  }`}
-                >
-                  {plan.teamSeats}
-                </p>
-              ) : null}
-              <ul className="mt-7 space-y-3">
-                {plan.features.map((feature) => (
-                  <li className="flex gap-3" key={feature}>
+              </article>
+            ))}
+          </div>
+
+          <article className="relative flex flex-col overflow-hidden rounded-2xl border-2 border-(--color-primary) bg-(--color-secondary) p-8 text-white shadow-2xl shadow-[rgba(1,64,52,0.18)]">
+            <span className="inline-flex w-fit rounded-full bg-(--color-info) px-3 py-1 text-xs font-bold text-(--color-secondary)">
+              {content.trialBanner.badge}
+            </span>
+            <h3 className="mt-5 text-2xl font-semibold tracking-tight">
+              {content.trialBanner.title}
+            </h3>
+            <p className="mt-3 leading-7 text-white/75">
+              {content.trialBanner.subtitle}
+            </p>
+            {trialPlan ? (
+              <ul className="mt-6 space-y-3">
+                {trialPlan.features.map((feature) => (
+                  <li
+                    className="flex gap-3 text-sm leading-6 text-white/85"
+                    key={feature}
+                  >
                     <span
-                      className={`mt-1.5 size-2 shrink-0 rounded-full ${
-                        plan.highlighted
-                          ? "bg-(--color-info)"
-                          : "bg-(--color-primary)"
-                      }`}
+                      aria-hidden="true"
+                      className="mt-1.5 size-2 shrink-0 rounded-full bg-(--color-info)"
                     />
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-              <div className="mt-auto pt-8">
-                <a
-                  className={`inline-flex w-full justify-center rounded-full px-5 py-3 text-sm font-bold ${
-                    plan.highlighted
-                      ? "bg-(--color-info) text-(--color-secondary)"
-                      : "primary-button"
-                  }`}
-                  href={
-                    "ctaHref" in plan && plan.ctaHref
-                      ? plan.ctaHref
-                      : appLoginUrl
-                  }
-                >
-                  {plan.cta}
-                </a>
-              </div>
-            </article>
-          ))}
+            ) : null}
+            <div className="mt-auto flex flex-col gap-3 pt-8 sm:flex-row">
+              <a
+                className="inline-flex flex-1 justify-center rounded-full bg-(--color-info) px-6 py-3.5 text-sm font-bold text-(--color-secondary) transition "
+                href={appLoginUrl}
+              >
+                {cta.primaryCta}
+              </a>
+              <Link
+                className="inline-flex flex-1 justify-center rounded-full border border-white/25 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-white/10"
+                href="/pricing"
+              >
+                {cta.secondaryCta}
+              </Link>
+            </div>
+          </article>
         </div>
       </div>
     </section>

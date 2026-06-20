@@ -4,6 +4,8 @@ export const ororaSoftUrl = "https://www.ororasoft.com/";
 
 export type Language = "bn" | "en";
 
+export const defaultLanguage: Language = "en";
+
 export const navItems = [
   { label: "Home", href: "/", external: false },
   { label: "About Us", href: ororaSoftAboutUrl, external: true },
@@ -39,8 +41,6 @@ export const landingContent = {
       whatsappMessage:
         "Hello MemoApp team, I need help choosing a MemoApp plan.",
       tryForFree: "Try MemoApp free",
-      googleDataNote:
-        "Google Contacts and Drive access are used only for customer import and backup features you choose.",
       developedBy: "Developed and maintained by OroraSoft.",
       productBy: "A product of OroraSoft",
       productLinks: [
@@ -135,37 +135,6 @@ export const landingContent = {
         { value: "AI", label: "assistant-ready operations" },
         { value: "360°", label: "billing, stock, dues, reports" },
       ],
-    },
-    appPurpose: {
-      eyebrow: "What MemoApp is",
-      title: "A shop management app for Bangladeshi retailers",
-      description:
-        "MemoApp is a point-of-sale and shop management web application for Bangladeshi retailers. It helps shop owners and staff manage daily counter sales, inventory, customer dues, supplier purchases, expenses, reports, and AI-assisted business insights in one place.",
-      functionalityTitle: "What MemoApp does",
-      functionalityItems: [
-        "Create memos, invoices, and sales records at the counter",
-        "Track products, stock levels, purchases, and low-stock alerts",
-        "Manage customer ledgers, due balances, and payment collection",
-        "Record supplier purchases, expenses, and daily cashflow",
-        "Generate sales, profit, and inventory reports for owners",
-        "Support team workflows with role-based staff access",
-      ],
-      googleDataTitle: "How MemoApp uses Google data",
-      googleDataDescription:
-        "MemoApp requests Google permissions only when you choose features that need them. We do not use Google user data for advertising or sell it to third parties.",
-      googleDataItems: [
-        {
-          title: "Google Contacts",
-          description:
-            "MemoApp requests read-only Contacts access only when you choose to import contacts into customer records. We do not edit, delete, or sync changes back to your Google contacts.",
-        },
-        {
-          title: "Google Drive",
-          description:
-            "MemoApp requests Drive file access only to create or update backup files in your Google Drive when you request a backup or enable automatic backup.",
-        },
-      ],
-      privacyLinkLabel: "Read our Privacy Policy",
     },
     featuresHeading: {
       eyebrow: "Everything a shop needs",
@@ -276,15 +245,37 @@ export const landingContent = {
       },
     ],
     showcase: {
-      eyebrow: "Owner-ready view",
-      title: "Beautiful enough for the owner, fast enough for the counter.",
+      eyebrow: "Set up in minutes",
+      title: "Bring your whole shop into MemoApp in minutes, not days.",
       description:
-        "A real MemoApp dashboard preview shows owners the sales, stock, dues, reports, and daily signals they can act on.",
+        "Start from the data you already have. Import customers, products, and purchase records in a few clicks, then control exactly who on your team can see and do what.",
       dashboardLabel: "Live dashboard preview",
       points: [
-        "Offline-first workflows keep selling possible during network drops.",
-        "Bengali-friendly shop terms make the product feel familiar to local teams.",
-        "Membership-ready positioning supports future pricing and onboarding flows.",
+        {
+          tag: "One click",
+          title: "Import customers from your phone",
+          description:
+            "Bring in all your contacts as customers with one tap using Google Contacts — no manual typing.",
+        },
+        {
+          tag: "Under 30 seconds",
+          title: "Upload products & purchases from Excel",
+          description:
+            "Import products, purchases, or any record from your own Excel file in about 30 seconds.",
+        },
+        {
+          tag: "Role-based",
+          title: "Give the right access to each person",
+          description:
+            "Invite owners, managers, and staff, and control exactly what each person can view and do.",
+        },
+
+        {
+          tag: "Offline-first",
+          title: "Keep selling when the internet drops",
+          description:
+            "Billing and stock updates keep working during network issues, then sync when you are back online.",
+        },
       ],
     },
     pricingHeading: {
@@ -315,6 +306,36 @@ export const landingContent = {
       subtitle:
         "Explore MemoApp free for 30 days before you choose a paid plan.",
       badge: "30 days free",
+    },
+    homeFreeCta: {
+      eyebrow: "Start free",
+      title: "Run your whole shop, free for 30 days.",
+      description:
+        "Try MemoApp with Zero Cost. See how billing, stock, dues, and reports work for your shop, then choose a plan only when you are ready.",
+      benefits: [
+        {
+          title: "Faster billing at the counter",
+          description:
+            "Create memos and invoices in seconds so your queue keeps moving during the busiest hours.",
+        },
+        {
+          title: "Never lose track of dues",
+          description:
+            "See who owes what, collect baki, and send reminders so your cash keeps coming in.",
+        },
+        {
+          title: "Stock clarity without counting",
+          description:
+            "Know what is running low and what to restock before your shelves go empty.",
+        },
+        {
+          title: "Decisions backed by reports and AI",
+          description:
+            "Understand sales, profit, and trends, and ask the AI assistant what to do next.",
+        },
+      ],
+      primaryCta: "Start free for 30 days",
+      secondaryCta: "See full pricing",
     },
     paidPlansHeading: {
       title: "Paid plans",
@@ -1043,8 +1064,6 @@ export const landingContent = {
       whatsappMessage:
         "Hello MemoApp team, I need help choosing a MemoApp plan.",
       tryForFree: "MemoApp ফ্রি ট্রাই করুন",
-      googleDataNote:
-        "Google Contacts ও Drive access শুধু আপনার বেছে নেওয়া customer import ও backup feature-এর জন্য ব্যবহার হয়।",
       developedBy: "OroraSoft ডেভেলপ ও মেইনটেইন করে।",
       productBy: "OroraSoft-এর একটি product",
       productLinks: [
@@ -1140,37 +1159,6 @@ export const landingContent = {
         { value: "AI", label: "অ্যাসিস্ট্যান্ট-রেডি অপারেশন" },
         { value: "360°", label: "বিলিং, স্টক, বাকি, রিপোর্ট" },
       ],
-    },
-    appPurpose: {
-      eyebrow: "MemoApp কী",
-      title: "বাংলাদেশি রিটেইলারদের জন্য দোকান ম্যানেজমেন্ট অ্যাপ",
-      description:
-        "MemoApp বাংলাদেশি রিটেইলারদের জন্য একটি পয়েন্ট-অফ-সেল ও দোকান ম্যানেজমেন্ট ওয়েব অ্যাপ্লিকেশন। এটি দোকান মালিক ও স্টাফকে দৈনন্দিন কাউন্টার সেলস, ইনভেন্টরি, কাস্টমার বাকি, সাপ্লায়ার ক্রয়, খরচ, রিপোর্ট ও AI-সহায়তা এক জায়গায় পরিচালনা করতে সাহায্য করে।",
-      functionalityTitle: "MemoApp কী করে",
-      functionalityItems: [
-        "কাউন্টারে মেমো, ইনভয়েস ও সেলস রেকর্ড তৈরি করা",
-        "প্রোডাক্ট, স্টক লেভেল, ক্রয় ও লো-স্টক অ্যালার্ট ট্র্যাক করা",
-        "কাস্টমার লেজার, বাকি ব্যালেন্স ও পেমেন্ট কালেকশন পরিচালনা করা",
-        "সাপ্লায়ার ক্রয়, খরচ ও দৈনন্দিন ক্যাশফ্লো রেকর্ড করা",
-        "মালিকের জন্য সেলস, লাভ ও ইনভেন্টরি রিপোর্ট তৈরি করা",
-        "রোল-ভিত্তিক স্টাফ অ্যাক্সেসসহ টিম ওয়ার্কফ্লো সাপোর্ট করা",
-      ],
-      googleDataTitle: "MemoApp Google ডেটা কীভাবে ব্যবহার করে",
-      googleDataDescription:
-        "MemoApp শুধুমাত্র আপনি যে ফিচার বেছে নেন সেগুলোর জন্য Google permission চায়। আমরা Google user data বিজ্ঞাপনের জন্য ব্যবহার করি না বা third party-র কাছে বিক্রি করি না।",
-      googleDataItems: [
-        {
-          title: "Google Contacts",
-          description:
-            "আপনি customer record-এ contact import বেছে নিলে MemoApp read-only Contacts access চায়। আমরা আপনার Google contact edit, delete বা Google Contacts-এ পরিবর্তন sync করি না।",
-        },
-        {
-          title: "Google Drive",
-          description:
-            "আপনি backup চাইলে বা automatic backup চালু করলে Google Drive-এ backup file তৈরি বা update করার জন্য MemoApp Drive file access ব্যবহার করে।",
-        },
-      ],
-      privacyLinkLabel: "আমাদের Privacy Policy পড়ুন",
     },
     featuresHeading: {
       eyebrow: "দোকানের সব প্রয়োজন",
@@ -1281,15 +1269,37 @@ export const landingContent = {
       },
     ],
     showcase: {
-      eyebrow: "মালিকের জন্য প্রস্তুত ভিউ",
-      title: "মালিকের জন্য সুন্দর, কাউন্টারের জন্য দ্রুত।",
+      eyebrow: "মিনিটেই সেটআপ",
+      title: "কয়েক দিন নয়, মিনিটেই পুরো দোকান MemoApp-এ আনুন।",
       description:
-        "বাস্তব MemoApp ড্যাশবোর্ড প্রিভিউতে মালিকরা সেলস, স্টক, বাকি, রিপোর্ট ও দৈনিক সিগন্যাল একসঙ্গে দেখতে পারেন।",
+        "আপনার কাছে থাকা ডেটা থেকেই শুরু করুন। কয়েক ক্লিকেই কাস্টমার, প্রোডাক্ট ও ক্রয় রেকর্ড ইমপোর্ট করুন, আর টিমের কে কী দেখবে ও করবে তা নিয়ন্ত্রণ করুন।",
       dashboardLabel: "লাইভ ড্যাশবোর্ড প্রিভিউ",
       points: [
-        "নেটওয়ার্ক ড্রপ হলেও অফলাইন-ফার্স্ট ওয়ার্কফ্লো বিক্রি চালু রাখে।",
-        "বাংলা-ফ্রেন্ডলি দোকানি ভাষা লোকাল টিমের কাছে পণ্যটিকে পরিচিত করে।",
-        "মেম্বারশিপ-রেডি পজিশনিং ভবিষ্যৎ প্রাইসিং ও অনবোর্ডিংকে সাপোর্ট করে।",
+        {
+          tag: "এক ক্লিকেই",
+          title: "ফোন থেকে কাস্টমার ইমপোর্ট করুন",
+          description:
+            "Google Contacts দিয়ে এক ট্যাপেই আপনার সব কন্টাক্ট কাস্টমার হিসেবে যোগ করুন — হাতে টাইপ করার দরকার নেই।",
+        },
+        {
+          tag: "৩০ সেকেন্ডেই",
+          title: "Excel থেকে প্রোডাক্ট ও ক্রয় আপলোড করুন",
+          description:
+            "আপনার নিজের Excel ফাইল থেকে প্রোডাক্ট, ক্রয় বা যেকোনো রেকর্ড প্রায় ৩০ সেকেন্ডেই ইমপোর্ট করুন।",
+        },
+        {
+          tag: "রোল-ভিত্তিক",
+          title: "প্রত্যেককে সঠিক অ্যাক্সেস দিন",
+          description:
+            "মালিক, ম্যানেজার ও স্টাফ যোগ করুন এবং কে কী দেখবে ও করবে তা নিয়ন্ত্রণ করুন।",
+        },
+
+        {
+          tag: "অফলাইন-ফার্স্ট",
+          title: "ইন্টারনেট না থাকলেও বিক্রি চালু রাখুন",
+          description:
+            "নেটওয়ার্ক সমস্যায়ও বিলিং ও স্টক আপডেট চলতে থাকে, অনলাইনে ফিরলে সব সিঙ্ক হয়ে যায়।",
+        },
       ],
     },
     pricingHeading: {
@@ -1311,6 +1321,36 @@ export const landingContent = {
       title: "ফ্রি প্ল্যান দিয়ে শুরু করুন",
       subtitle: "পেইড প্ল্যান নেওয়ার আগে ৩০ দিন MemoApp ফ্রি ব্যবহার করুন।",
       badge: "৩০ দিন ফ্রি",
+    },
+    homeFreeCta: {
+      eyebrow: "ফ্রি শুরু করুন",
+      title: "৩০ দিন ফ্রিতে পুরো দোকান চালান।",
+      description:
+        "ফ্রি MemoApp ব্যবহার করে দেখুন। বিলিং, স্টক, বাকি ও রিপোর্ট আপনার দোকানে কীভাবে কাজ করে দেখুন, তারপর প্রস্তুত হলে প্ল্যান বেছে নিন।",
+      benefits: [
+        {
+          title: "কাউন্টারে দ্রুত বিলিং",
+          description:
+            "সেকেন্ডেই মেমো ও ইনভয়েস তৈরি করুন, যাতে ব্যস্ত সময়েও কিউ চলতে থাকে।",
+        },
+        {
+          title: "বাকির হিসাব আর হারাবে না",
+          description:
+            "কার কত বাকি দেখুন, বাকি কালেক্ট করুন ও রিমাইন্ডার পাঠিয়ে ক্যাশ চালু রাখুন।",
+        },
+        {
+          title: "না গুনেও স্টকের পরিষ্কার ধারণা",
+          description:
+            "কোন পণ্য কমে যাচ্ছে আর কী রিস্টক করতে হবে, শেলফ খালি হওয়ার আগেই জানুন।",
+        },
+        {
+          title: "রিপোর্ট ও AI দিয়ে সিদ্ধান্ত",
+          description:
+            "সেলস, লাভ ও ট্রেন্ড বুঝুন এবং পরবর্তী কাজ নিয়ে AI সহকারীকে জিজ্ঞাসা করুন।",
+        },
+      ],
+      primaryCta: "৩০ দিন ফ্রি শুরু করুন",
+      secondaryCta: "সম্পূর্ণ প্রাইসিং দেখুন",
     },
     paidPlansHeading: {
       title: "পেইড প্ল্যান",

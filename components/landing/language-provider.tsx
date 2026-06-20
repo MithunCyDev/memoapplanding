@@ -10,6 +10,7 @@ import {
   type ReactNode,
 } from "react";
 import {
+  defaultLanguage,
   landingContent,
   type LandingContent,
   type Language,
@@ -23,7 +24,7 @@ interface LanguageContextValue {
 }
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
-const languageStorageKey = "memoapp-language";
+const languageStorageKey = "memoapp-language-pref";
 const languageChangeEvent = "memoapp-language-change";
 
 interface LanguageProviderProps {
@@ -32,14 +33,14 @@ interface LanguageProviderProps {
 
 function getStoredLanguage(): Language {
   if (typeof window === "undefined") {
-    return "en";
+    return defaultLanguage;
   }
 
   const savedLanguage = window.localStorage.getItem(languageStorageKey);
 
   return savedLanguage === "bn" || savedLanguage === "en"
     ? savedLanguage
-    : "en";
+    : defaultLanguage;
 }
 
 function subscribeToLanguageChange(onStoreChange: () => void) {
@@ -56,7 +57,7 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   const language = useSyncExternalStore<Language>(
     subscribeToLanguageChange,
     getStoredLanguage,
-    () => "en",
+    () => defaultLanguage,
   );
 
   useEffect(() => {

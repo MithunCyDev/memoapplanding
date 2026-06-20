@@ -165,8 +165,13 @@ function buildGoogleAnswer(
       ? "Google Contacts ও Google Drive data use সম্পর্কে বিস্তারিত জানতে public Privacy Policy দেখতে পারেন।"
       : "You can also review the public Privacy Policy for more detail about Google Contacts and Google Drive data use.";
 
+  const googleDataSummary =
+    language === "bn"
+      ? "Google Contacts access শুধু read-only customer import-এর জন্য এবং Google Drive access backup file তৈরি বা update করার জন্য ব্যবহার হয়, যখন আপনি সেই feature বেছে নেন।"
+      : "MemoApp uses read-only Google Contacts access for optional customer import and Google Drive access to create or update backup files when you choose those features.";
+
   return {
-    text: `${driveFeature?.description ?? content.footer.googleDataNote}\n\n${content.footer.googleDataNote} ${legalNote}`,
+    text: `${driveFeature?.description ?? googleDataSummary}\n\n${googleDataSummary} ${legalNote}`,
     suggestions: [
       content.assistant.quickPrompts[0].query,
       content.assistant.quickPrompts[4].query,

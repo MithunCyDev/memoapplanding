@@ -12,18 +12,6 @@ export function LanguageToggle() {
       role="group"
     >
       <button
-        aria-pressed={language === "bn"}
-        className={`rounded-full px-3 py-2 transition ${
-          language === "bn"
-            ? "bg-(--color-primary) text-white"
-            : "text-(--color-muted) hover:text-(--color-primary)"
-        }`}
-        onClick={() => setLanguage("bn")}
-        type="button"
-      >
-        বাংলা
-      </button>
-      <button
         aria-pressed={language === "en"}
         className={`rounded-full px-3 py-2 transition ${
           language === "en"
@@ -34,6 +22,18 @@ export function LanguageToggle() {
         type="button"
       >
         EN
+      </button>
+      <button
+        aria-pressed={language === "bn"}
+        className={`rounded-full px-3 py-2 transition ${
+          language === "bn"
+            ? "bg-(--color-primary) text-white"
+            : "text-(--color-muted) hover:text-(--color-primary)"
+        }`}
+        onClick={() => setLanguage("bn")}
+        type="button"
+      >
+        বাংলা
       </button>
     </div>
   );
