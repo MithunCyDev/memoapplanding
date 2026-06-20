@@ -135,6 +135,37 @@ export const landingContent = {
         { value: "360°", label: "billing, stock, dues, reports" },
       ],
     },
+    appPurpose: {
+      eyebrow: "What MemoApp is",
+      title: "A shop management app for Bangladeshi retailers",
+      description:
+        "MemoApp is a point-of-sale and shop management web application for Bangladeshi retailers. It helps shop owners and staff manage daily counter sales, inventory, customer dues, supplier purchases, expenses, reports, and AI-assisted business insights in one place.",
+      functionalityTitle: "What MemoApp does",
+      functionalityItems: [
+        "Create memos, invoices, and sales records at the counter",
+        "Track products, stock levels, purchases, and low-stock alerts",
+        "Manage customer ledgers, due balances, and payment collection",
+        "Record supplier purchases, expenses, and daily cashflow",
+        "Generate sales, profit, and inventory reports for owners",
+        "Support team workflows with role-based staff access",
+      ],
+      googleDataTitle: "How MemoApp uses Google data",
+      googleDataDescription:
+        "MemoApp requests Google permissions only when you choose features that need them. We do not use Google user data for advertising or sell it to third parties.",
+      googleDataItems: [
+        {
+          title: "Google Contacts",
+          description:
+            "MemoApp requests read-only Contacts access only when you choose to import contacts into customer records. We do not edit, delete, or sync changes back to your Google contacts.",
+        },
+        {
+          title: "Google Drive",
+          description:
+            "MemoApp requests Drive file access only to create or update backup files in your Google Drive when you request a backup or enable automatic backup.",
+        },
+      ],
+      privacyLinkLabel: "Read our Privacy Policy",
+    },
     featuresHeading: {
       eyebrow: "Everything a shop needs",
       title: "A complete retail operating system, not just billing software.",
@@ -782,7 +813,7 @@ export const landingContent = {
           trial: "1 owner account",
           basic: "1 owner account",
           growth: "1 owner, 1 manager, 1 staff",
-          pro: "3 owners, 1 manager, 2 staff",
+          pro: "2 owners, 1 manager, 3 staff",
           enterprise: "Custom access policy",
         },
         {
@@ -790,7 +821,7 @@ export const landingContent = {
           trial: "No staff invites",
           basic: "No staff invites",
           growth: "1 manager + 1 staff (employee management)",
-          pro: "2 staff accounts",
+          pro: "3 staff accounts",
           enterprise: "Unlimited + onboarding squads",
         },
         {
@@ -1109,6 +1140,37 @@ export const landingContent = {
         { value: "AI", label: "অ্যাসিস্ট্যান্ট-রেডি অপারেশন" },
         { value: "360°", label: "বিলিং, স্টক, বাকি, রিপোর্ট" },
       ],
+    },
+    appPurpose: {
+      eyebrow: "MemoApp কী",
+      title: "বাংলাদেশি রিটেইলারদের জন্য দোকান ম্যানেজমেন্ট অ্যাপ",
+      description:
+        "MemoApp বাংলাদেশি রিটেইলারদের জন্য একটি পয়েন্ট-অফ-সেল ও দোকান ম্যানেজমেন্ট ওয়েব অ্যাপ্লিকেশন। এটি দোকান মালিক ও স্টাফকে দৈনন্দিন কাউন্টার সেলস, ইনভেন্টরি, কাস্টমার বাকি, সাপ্লায়ার ক্রয়, খরচ, রিপোর্ট ও AI-সহায়তা এক জায়গায় পরিচালনা করতে সাহায্য করে।",
+      functionalityTitle: "MemoApp কী করে",
+      functionalityItems: [
+        "কাউন্টারে মেমো, ইনভয়েস ও সেলস রেকর্ড তৈরি করা",
+        "প্রোডাক্ট, স্টক লেভেল, ক্রয় ও লো-স্টক অ্যালার্ট ট্র্যাক করা",
+        "কাস্টমার লেজার, বাকি ব্যালেন্স ও পেমেন্ট কালেকশন পরিচালনা করা",
+        "সাপ্লায়ার ক্রয়, খরচ ও দৈনন্দিন ক্যাশফ্লো রেকর্ড করা",
+        "মালিকের জন্য সেলস, লাভ ও ইনভেন্টরি রিপোর্ট তৈরি করা",
+        "রোল-ভিত্তিক স্টাফ অ্যাক্সেসসহ টিম ওয়ার্কফ্লো সাপোর্ট করা",
+      ],
+      googleDataTitle: "MemoApp Google ডেটা কীভাবে ব্যবহার করে",
+      googleDataDescription:
+        "MemoApp শুধুমাত্র আপনি যে ফিচার বেছে নেন সেগুলোর জন্য Google permission চায়। আমরা Google user data বিজ্ঞাপনের জন্য ব্যবহার করি না বা third party-র কাছে বিক্রি করি না।",
+      googleDataItems: [
+        {
+          title: "Google Contacts",
+          description:
+            "আপনি customer record-এ contact import বেছে নিলে MemoApp read-only Contacts access চায়। আমরা আপনার Google contact edit, delete বা Google Contacts-এ পরিবর্তন sync করি না।",
+        },
+        {
+          title: "Google Drive",
+          description:
+            "আপনি backup চাইলে বা automatic backup চালু করলে Google Drive-এ backup file তৈরি বা update করার জন্য MemoApp Drive file access ব্যবহার করে।",
+        },
+      ],
+      privacyLinkLabel: "আমাদের Privacy Policy পড়ুন",
     },
     featuresHeading: {
       eyebrow: "দোকানের সব প্রয়োজন",
@@ -1746,7 +1808,7 @@ export const landingContent = {
           trial: "১ মালিক অ্যাকাউন্ট",
           basic: "১ মালিক অ্যাকাউন্ট",
           growth: "১ মালিক, ১ ম্যানেজার, ১ স্টাফ",
-          pro: "৩ মালিক, ১ ম্যানেজার, ২ স্টাফ",
+          pro: "২ মালিক, ১ ম্যানেজার, ৩ স্টাফ",
           enterprise: "কাস্টম অ্যাক্সেস নীতি",
         },
         {
@@ -1754,7 +1816,7 @@ export const landingContent = {
           trial: "স্টাফ ইনভাইট নেই",
           basic: "স্টাফ ইনভাইট নেই",
           growth: "১ ম্যানেজার + ১ স্টাফ (কর্মচারী ম্যানেজমেন্ট)",
-          pro: "২ স্টাফ অ্যাকাউন্ট",
+          pro: "৩ স্টাফ অ্যাকাউন্ট",
           enterprise: "অসীম + টিম",
         },
         {

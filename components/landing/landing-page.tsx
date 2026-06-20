@@ -22,6 +22,7 @@ export function LandingPage() {
       <main>
         <HeroSection />
         <LogoStrip />
+        <AppPurposeSection />
         <FeatureSection />
         <WorkflowSection />
         <ShowcaseSection />
@@ -328,6 +329,85 @@ function LogoStrip() {
               </p>
             </article>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AppPurposeSection() {
+  const { content } = useLanguage();
+  const purpose = content.appPurpose;
+
+  return (
+    <section
+      aria-labelledby="app-purpose-heading"
+      className="border-b border-(--color-border) bg-white px-5 py-24 lg:px-8"
+      id="about"
+    >
+      <div className="mx-auto max-w-7xl">
+        <SectionHeading
+          eyebrow={purpose.eyebrow}
+          title={purpose.title}
+          description={purpose.description}
+          id="app-purpose-heading"
+        />
+
+        <div className="mt-14">
+          <h3 className="text-center text-sm font-bold uppercase tracking-[0.22em] text-(--color-primary)">
+            {purpose.functionalityTitle}
+          </h3>
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {purpose.functionalityItems.map((item, index) => (
+              <li
+                className="rounded-2xl border border-(--color-border) bg-(--color-background) p-5"
+                key={item}
+              >
+                <span className="text-xs font-bold uppercase tracking-[0.18em] text-(--color-primary)">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <p className="mt-3 text-sm font-medium leading-7 text-(--color-ink)">
+                  {item}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-14 overflow-hidden rounded-2xl border border-(--color-border) bg-(--color-secondary) text-white">
+          <div className="border-b border-white/10 px-6 py-8 sm:px-10 sm:py-10">
+            <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+              {purpose.googleDataTitle}
+            </h3>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-white/72 sm:text-base">
+              {purpose.googleDataDescription}
+            </p>
+          </div>
+
+          <div className="grid gap-px bg-white/10 lg:grid-cols-2">
+            {purpose.googleDataItems.map((item) => (
+              <article
+                className="bg-(--color-secondary) px-6 py-8 sm:px-10"
+                key={item.title}
+              >
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-(--color-info)">
+                  {item.title}
+                </p>
+                <p className="mt-4 text-sm leading-7 text-white/78 sm:text-base">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="border-t border-white/10 px-6 py-6 sm:px-10">
+            <Link
+              className="inline-flex rounded-full border border-white/20 px-5 py-3 text-sm font-bold text-white transition hover:border-(--color-info) hover:text-(--color-info)"
+              href="/privacy-policy"
+            >
+              {purpose.privacyLinkLabel}
+            </Link>
+          </div>
         </div>
       </div>
     </section>

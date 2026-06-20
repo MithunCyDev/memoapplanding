@@ -4,6 +4,7 @@ interface SectionHeadingProps {
   description: string;
   align?: "left" | "center";
   inverse?: boolean;
+  id?: string;
 }
 
 export function SectionHeading({
@@ -12,6 +13,7 @@ export function SectionHeading({
   description,
   align = "center",
   inverse = false,
+  id,
 }: SectionHeadingProps) {
   const alignment = align === "center" ? "mx-auto text-center" : "";
   const textColor = inverse ? "text-white" : "text-(--color-ink)";
@@ -24,6 +26,7 @@ export function SectionHeading({
       </p>
       <h2
         className={`text-balance text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl ${textColor}`}
+        id={id}
       >
         {title}
       </h2>
