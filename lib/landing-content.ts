@@ -11,6 +11,7 @@ export const navItems = [
   { label: "Workflow", href: "/workflow", external: false },
   { label: "Pricing", href: "/pricing", external: false },
   { label: "FAQ", href: "/faq", external: false },
+  { label: "Privacy", href: "/privacy-policy", external: false },
 ] as const;
 
 export const landingContent = {
@@ -518,11 +519,10 @@ export const landingContent = {
         "These FAQs are written for SEO and conversion while leaving space for future product, pricing, and support updates.",
     },
     finalCta: {
-      eyebrow: "Ready for launch",
-      title:
-        "Turn MemoApp into a website that sells the product before the demo.",
+      eyebrow: "Get started",
+      title: "Start managing your shop with MemoApp",
       description:
-        "Capture interest from shop owners, explain the value clearly, and keep the page ready for backend-powered lead capture when needed.",
+        "Create your shop account, try core workflows free for 30 days, and upgrade when your counter, team, and reports need more.",
     },
     routeHeroes: {
       features: {
@@ -1514,10 +1514,10 @@ export const landingContent = {
         "এই FAQ গুলো SEO ও কনভার্সনের জন্য লেখা, ভবিষ্যৎ প্রোডাক্ট, প্রাইসিং ও সাপোর্ট আপডেটের জায়গা রেখে।",
     },
     finalCta: {
-      eyebrow: "লঞ্চের জন্য প্রস্তুত",
-      title: "ডেমোর আগেই MemoApp-এর মূল্য বোঝায় এমন ওয়েবসাইট তৈরি করুন।",
+      eyebrow: "শুরু করুন",
+      title: "MemoApp দিয়ে আপনার দোকান পরিচালনা শুরু করুন",
       description:
-        "দোকান মালিকদের আগ্রহ ধরুন, ভ্যালু পরিষ্কারভাবে বুঝান এবং ভবিষ্যতে ব্যাকএন্ড-পাওয়ারড লিড ক্যাপচারের জন্য পেজ প্রস্তুত রাখুন।",
+        "দোকান অ্যাকাউন্ট তৈরি করুন, ৩০ দিন ফ্রি কোর ওয়ার্কফ্লো ব্যবহার করুন, এবং কাউন্টার, টিম ও রিপোর্ট বাড়লে আপগ্রেড করুন।",
     },
     routeHeroes: {
       features: {

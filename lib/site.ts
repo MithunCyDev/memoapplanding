@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "MemoApp",
   url: "https://memoappbd.com",
   description:
-    "MemoApp is a Modern, AI-powered cloud-ready POS and shop management platform for Bangladeshi all types of retailers, combining billing, inventory, dues, purchases, reports, and AI assistance.",
+    "MemoApp is a POS and shop management web application for Bangladeshi retailers. Manage billing, inventory, customer dues, purchases, reports, and optional Google Contacts import and Google Drive backup.",
   keywords: [
     "MemoApp",
     "SaaS POS",
