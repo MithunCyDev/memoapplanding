@@ -106,7 +106,7 @@ export const landingContent = {
       titlePrefix: "Your Business Assistant, Inventory Manager, and POS",
       titleHighlight: "All-in-One",
       description:
-        "MemoApp is a POS and shop management app for Bangladeshi retailers — handle billing, inventory, customer dues, purchases, and reports in one place, with optional Google Contacts import and Google Drive backup. Start free.",
+        "Bill in seconds, track stock in real time, collect dues without chasing, and see what’s selling — all from one counter app built for Bangladeshi shops. Start free for 30 days.",
     },
     googleData: {
       eyebrow: "Google permissions",
@@ -1187,7 +1187,7 @@ export const landingContent = {
       titlePrefix: "আপনার বিজনেস অ্যাসিস্ট্যান্ট, ইনভেন্টরি ম্যানেজার এবং POS",
       titleHighlight: "সব একসাথে",
       description:
-        "MemoApp বাংলাদেশি দোকানের জন্য একটি POS ও শপ ম্যানেজমেন্ট অ্যাপ — বিলিং, ইনভেন্টরি, কাস্টমার বাকি, ক্রয় ও রিপোর্ট এক জায়গায়, সাথে ঐচ্ছিক Google Contacts import ও Google Drive backup। ফ্রি শুরু করুন।",
+        "সেকেন্ডেই বিল করুন, মালের স্টক ঠিক রাখুন, বাকির হিসাব হাতের মুঠোয় রাখুন আর কোন পণ্য কত চলছে তা এক নজরে দেখুন। বাংলাদেশের দোকানের জন্য তৈরি — ৩০ দিন ফ্রি ব্যবহার করুন।",
     },
     googleData: {
       eyebrow: "Google পারমিশন",

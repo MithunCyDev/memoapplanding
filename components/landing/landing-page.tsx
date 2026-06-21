@@ -556,7 +556,7 @@ function PosShowcaseSection() {
   const pos = content.posPreview;
 
   return (
-    <section className="bg-(--color-primary-light) px-5 py-24 lg:px-8" id="pos">
+    <section className="bg-(--color-background) px-5 py-24 lg:px-8" id="pos">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow={pos.eyebrow}
@@ -568,16 +568,16 @@ function PosShowcaseSection() {
           <div className="grid gap-3 sm:grid-cols-2 sm:grid-rows-2 lg:h-full">
             {pos.cards.map((card) => (
               <article
-                className="flex h-full flex-col rounded-2xl border border-(--color-border) bg-white p-4 shadow-sm transition hover:border-(--color-primary) hover:shadow-xl hover:shadow-[rgba(1,64,52,0.08)]"
+                className="flex h-full flex-col rounded-2xl border border-(--color-border) bg-white p-4.5 shadow-sm transition hover:border-(--color-info)/60 hover:shadow-lg hover:shadow-[rgba(1,64,52,0.08)]"
                 key={card.title}
               >
-                <span className="inline-flex rounded-full bg-(--color-primary-light) px-2.5 py-0.5 text-[0.65rem] font-bold uppercase tracking-[0.15em] text-(--color-primary-dark)">
+                <span className="inline-flex w-fit rounded-full bg-(--color-info)/12 px-2 py-0.5 text-[0.68rem] font-bold uppercase tracking-[0.15em] text-(--color-info-dark)">
                   {card.tag}
                 </span>
-                <h3 className="mt-2.5 text-[0.9375rem] font-semibold leading-snug tracking-tight text-(--color-ink)">
+                <h3 className="mt-2.5 text-[0.9375rem] font-semibold leading-snug text-(--color-ink)">
                   {card.title}
                 </h3>
-                <p className="mt-2 text-[0.8125rem] leading-6 text-(--color-muted)">
+                <p className="mt-2 text-[0.8125rem] leading-[1.45] text-(--color-muted)">
                   {card.description}
                 </p>
               </article>
