@@ -14,35 +14,36 @@ export const pageSeo = {
     description: siteConfig.description,
   },
   features: {
-    title: "AI-Powered Features - Modern POS, Inventory & Dues",
+    title: "MemoApp Features | memo app bd — POS, Inventory & Baki",
     openGraphTitle:
-      "MemoApp AI-Powered Features - Modern POS, Inventory & Dues",
+      "MemoApp Features | memo app bd — POS, Inventory & Baki for Bangladesh Shops",
     description:
-      "Explore MemoApp's AI-powered features for modern Bangladeshi shops: POS billing, memo sharing, inventory, purchase and supplier ledgers, customer dues, reports, backup, team workflows, and smart business assistance.",
+      "Explore MemoApp features for Bangladesh shops: POS billing, Excel/CSV product import, Google Contacts customer import, inventory, baki ledgers, reports, Google Drive backup, team access, and AI in one memo app.",
     keywords: [
       "MemoApp features",
+      "memoapp features",
+      "memo app features",
+      "memo app bd",
       "POS software features Bangladesh",
       "inventory management software BD",
-      "Dues tracking app",
-      "customer due tracking software",
+      "baki tracking app",
       "Bangla POS app",
-      "Google Drive backup POS",
-      "AI shop assistant",
     ],
     path: "/features",
   },
   workflow: {
-    title: "How MemoApp Works - AI-Powered Modern Shop Workflow",
-    openGraphTitle: "How MemoApp Works - AI-Powered Modern Shop Workflow",
+    title: "MemoApp Workflow | How the memo app runs your shop day",
+    openGraphTitle:
+      "MemoApp Workflow | memo app bd daily shop operations guide",
     description:
-      "See how MemoApp supports a modern AI-powered shop day from opening the counter to billing, stock updates, due collection, purchases, expenses, reports, sync, and backup.",
+      "See how memoapp supports onboarding, counter billing, baki collection, restocking, expenses, reports, sync, and Google Drive backup for Bangladesh retail teams.",
     keywords: [
+      "MemoApp workflow",
+      "memo app workflow",
+      "memo app bd",
       "shop daily workflow software",
       "POS workflow Bangladesh",
-      "retail workflow management",
-      "shop counter software",
       "offline POS workflow",
-      "memo billing workflow",
     ],
     path: "/workflow",
   },
@@ -63,30 +64,31 @@ export const pageSeo = {
     path: "/pricing",
   },
   faq: {
-    title: "FAQ - AI-Powered POS, Inventory, Pricing & Support",
+    title: "MemoApp FAQ | memo app bd support & setup answers",
     openGraphTitle:
-      "MemoApp FAQ - AI-Powered POS, Inventory, Pricing & Support",
+      "MemoApp FAQ | memo app bd — POS, Inventory, Pricing & Support",
     description:
-      "Find answers about MemoApp's modern AI-powered POS setup, memos, inventory, dues, team access, pricing plans, offline sync, backup, and support options.",
+      "Find answers about memoapp setup, POS billing, inventory, baki, pricing, offline sync, Google backup, bKash payment, and support for Bangladeshi shop owners.",
     keywords: [
       "MemoApp FAQ",
-      "MemoApp support",
+      "memo app faq",
+      "memo app bd",
+      "memoapp support",
       "POS software questions Bangladesh",
-      "inventory app help",
-      "shop management software support",
     ],
     path: "/faq",
   },
   privacyPolicy: {
-    title: "Privacy Policy - MemoApp Data & Google API Use",
-    openGraphTitle: "MemoApp Privacy Policy - Data & Google API Use",
+    title: "MemoApp Privacy Policy | memo app bd data protection",
+    openGraphTitle:
+      "MemoApp Privacy Policy | memo app bd data & Google API use",
     description:
-      "Read how MemoApp collects, uses, stores, shares, and protects account, shop, customer, Google Contacts, and Google Drive backup data.",
+      "Read how MemoApp (memo app bd) collects, uses, stores, and protects shop, customer, Google Contacts, and Google Drive backup data. Product of OroraSoft.",
     keywords: [
       "MemoApp privacy policy",
+      "memo app privacy",
+      "memo app bd privacy",
       "MemoApp Google Contacts privacy",
-      "MemoApp Google Drive backup privacy",
-      "POS app privacy policy",
       "shop management data policy",
     ],
     path: "/privacy-policy",
@@ -176,9 +178,15 @@ export function buildOrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "MemoApp",
+    alternateName: ["memoapp", "memo app", "memo app bd"],
     url: siteConfig.url,
     email: siteConfig.contactEmail,
     logo: absoluteUrl("/logo.png"),
+    parentOrganization: {
+      "@type": "Organization",
+      name: "OroraSoft",
+      url: "https://www.ororasoft.com/",
+    },
   };
 }
 
@@ -240,14 +248,22 @@ export function buildFeaturesPageSchema() {
       mainEntity: {
         "@type": "ItemList",
         name: "MemoApp feature list",
-        itemListElement: landingContent.en.featureCards.map(
-          (feature, index) => ({
+        itemListElement: [
+          ...landingContent.en.featureCards.map((feature, index) => ({
             "@type": "ListItem",
             position: index + 1,
             name: feature.title,
             description: feature.description,
-          }),
-        ),
+          })),
+          ...landingContent.en.featuresRoute.setupJourney.steps.map(
+            (step, index) => ({
+              "@type": "ListItem",
+              position: landingContent.en.featureCards.length + index + 1,
+              name: step.title,
+              description: step.description,
+            }),
+          ),
+        ],
       },
     },
   ];
@@ -262,13 +278,25 @@ export function buildWorkflowPageSchema() {
       name: "Run a retail shop day with MemoApp",
       description: pageSeo.workflow.description,
       totalTime: "P1D",
-      step: landingContent.en.workflowRoute.timeline.map((step, index) => ({
-        "@type": "HowToStep",
-        position: index + 1,
-        name: step.title,
-        text: step.description,
-        url: absoluteUrl("/workflow"),
-      })),
+      step: [
+        ...landingContent.en.workflowRoute.onboardingSteps.map(
+          (step, index) => ({
+            "@type": "HowToStep",
+            position: index + 1,
+            name: step.title,
+            text: step.description,
+            url: absoluteUrl("/workflow"),
+          }),
+        ),
+        ...landingContent.en.workflowRoute.timeline.map((step, index) => ({
+          "@type": "HowToStep",
+          position:
+            landingContent.en.workflowRoute.onboardingSteps.length + index + 1,
+          name: step.title,
+          text: step.description,
+          url: absoluteUrl("/workflow"),
+        })),
+      ],
     },
   ];
 }
@@ -337,6 +365,11 @@ export function buildPrivacyPolicyPageSchema() {
       name: pageSeo.privacyPolicy.openGraphTitle,
       url: absoluteUrl(pageSeo.privacyPolicy.path),
       description: pageSeo.privacyPolicy.description,
+      publisher: {
+        "@type": "Organization",
+        name: "OroraSoft",
+        url: "https://www.ororasoft.com/",
+      },
       isPartOf: {
         "@type": "WebSite",
         name: siteConfig.name,

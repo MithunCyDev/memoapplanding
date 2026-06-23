@@ -63,72 +63,13 @@ export const landingContent = {
         },
       ],
     },
-    assistant: {
-      title: "Ayat",
-      subtitle: "AI Business Assistant",
-      launcherLabel: "Talk with Ayat",
-      closeLabel: "Close Ayat assistant",
-      placeholder: "Type your question...",
-      sendLabel: "Send",
-      typingLabel: "Ayat is thinking...",
-      welcomeMessage:
-        "Hi, I am Ayat, your AI Business Assistant. I can help you understand MemoApp features, pricing, workflow, Google backup, OroraSoft, and support options.",
-      fallbackMessage:
-        "I can answer common MemoApp landing-page questions, but I do not want to guess. You can ask about pricing, features, workflow, Google backup, OroraSoft, Bangla support, or contact support.",
-      whatsappSupportLabel: "WhatsApp support",
-      emailSupportLabel: "Email support",
-      quickPrompts: [
-        {
-          label: "Which plan is right for me?",
-          query: "Which MemoApp plan is right for my shop?",
-        },
-        {
-          label: "What features are included?",
-          query: "What features does MemoApp include?",
-        },
-        {
-          label: "How does workflow work?",
-          query: "How does MemoApp workflow work during a shop day?",
-        },
-        {
-          label: "Google backup",
-          query: "How does Google Drive backup work in MemoApp?",
-        },
-        {
-          label: "Who built MemoApp?",
-          query: "Who built MemoApp and what is OroraSoft?",
-        },
-      ],
-    },
     hero: {
       eyebrow: "Built for BD SMEs and modern retail counters",
       title: "Your Business Assistant, Inventory Manager, and POS — All in One",
       titlePrefix: "Your Business Assistant, Inventory Manager, and POS",
       titleHighlight: "All-in-One",
       description:
-        "Bill in seconds, track stock in real time, collect dues without chasing, and see what’s selling — all from one counter app built for Bangladeshi shops. Start free for 30 days.",
-    },
-    googleData: {
-      eyebrow: "Google permissions",
-      title: "Why MemoApp asks for Google access",
-      description:
-        "MemoApp is a business management tool. We request Google permissions only for the optional features below, and only when you choose to use them. You can revoke access anytime from your Google Account.",
-      items: [
-        {
-          tag: "Google Contacts",
-          title: "Import contacts as customers",
-          description:
-            "With your permission, MemoApp reads your Google Contacts (read-only) so you can add them as customers in one tap instead of typing each one. MemoApp never edits, deletes, or shares your contacts.",
-        },
-        {
-          tag: "Google Drive",
-          title: "Back up your shop data",
-          description:
-            "When you enable backup, MemoApp creates and updates backup files of your shop data in your own Google Drive so your records stay safe. MemoApp only accesses the backup files it creates.",
-        },
-      ],
-      note: "MemoApp's use of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements. Google user data is never sold or used for advertising.",
-      privacyLinkLabel: "Read our Privacy Policy",
+        "Bill in seconds, track stock in real time, collect dues without chasing, and see what's selling — all from one counter app built for Bangladeshi shops. Start free for 30 days.",
     },
     heroStats: [
       { value: "৳48,320", label: "today's counter sales" },
@@ -594,8 +535,41 @@ export const landingContent = {
       eyebrow: "Questions",
       title: "Clear answers for early landing page visitors.",
       description:
-        "These FAQs are written for SEO and conversion while leaving space for future product, pricing, and support updates.",
+        "A quick preview of common MemoApp questions. Visit the FAQ page for the full list on setup, billing, inventory, baki, and plans.",
+      viewAllLabel: "Browse all FAQs",
     },
+    homeFaqs: [
+      {
+        question: "Is MemoApp only a POS system?",
+        answer:
+          "No. POS billing is the front counter, but MemoApp (memo app bd) also covers inventory, customers, dues, suppliers, purchases, expenses, reports, and AI-assisted insights.",
+      },
+      {
+        question: "What is MemoApp and who is it for?",
+        answer:
+          "MemoApp is a shop management and POS web app for Bangladeshi retailers — grocery, pharmacy, hardware, wholesale, and general stores that need billing, stock, baki, and reports in one place.",
+      },
+      {
+        question: "Can my shop work when the internet is unstable?",
+        answer:
+          "Yes. MemoApp is designed around offline-friendly workflows, so key counter work can continue and sync when the connection returns.",
+      },
+      {
+        question: "Can I track customer baki and due collection?",
+        answer:
+          "Yes. Customer ledgers, due balances, payments, and WhatsApp or SMS reminders help shops keep collection work organized.",
+      },
+      {
+        question: "Which plan should I start with?",
+        answer:
+          "Start with the free 30-day plan to explore. Basic fits smaller shops, Growth is best for busy counters adding their first team, and Business suits established multi-counter teams.",
+      },
+      {
+        question: "Does MemoApp support Bangla?",
+        answer:
+          "Yes. MemoApp is built for local teams with English, Bangla, and Banglish-friendly usage across important shop workflows.",
+      },
+    ],
     finalCta: {
       eyebrow: "Get started",
       title: "Start managing your shop with MemoApp",
@@ -604,17 +578,18 @@ export const landingContent = {
     },
     routeHeroes: {
       features: {
-        eyebrow: "MemoApp features",
+        eyebrow: "MemoApp features | memo app bd",
         title:
-          "Everything your shop needs from the counter to the owner dashboard.",
+          "MemoApp features for Bangladesh shops — POS, inventory, baki, and reports in one memo app.",
         description:
-          "MemoApp brings POS billing, inventory, dues, purchasing, reporting, team workflows, backups, sharing, and AI assistance into one clean retail workspace.",
+          "memoapp brings counter-fast billing, stock control, customer dues, supplier purchases, team access, Google Drive backup, and AI insights into one retail workspace built for Bangladeshi shop owners.",
       },
       workflow: {
-        eyebrow: "Shop workflow",
-        title: "A daily operating rhythm designed for real retail teams.",
+        eyebrow: "MemoApp workflow | memo app bd",
+        title:
+          "How the memo app runs your shop day — from first sale to closing report.",
         description:
-          "From the first sale of the day to closing reports, MemoApp keeps counter work simple and owner visibility strong.",
+          "See how MemoApp supports onboarding, counter billing, baki collection, restocking, and owner reporting in a daily rhythm designed for real Bangladesh retail teams.",
       },
       pricing: {
         eyebrow: "Simple pricing",
@@ -623,10 +598,11 @@ export const landingContent = {
           "Track sales, stock, dues, purchases, suppliers, expenses, P&L, and AI from one plan that grows with your shop.",
       },
       faq: {
-        eyebrow: "Help center",
-        title: "Search answers, read FAQs, or send us feedback.",
+        eyebrow: "MemoApp FAQ | memo app bd",
+        title:
+          "Frequently asked questions about MemoApp — the memo app for Bangladesh shops.",
         description:
-          "We are here to help your shop run smoothly. Browse common public questions here, then sign in to use the full in-app Help Center.",
+          "Find answers about memoapp setup, POS billing, inventory, baki, pricing, offline sync, Google backup, and support for Bangladeshi retailers.",
       },
     },
     workflowHighlights: [
@@ -664,60 +640,125 @@ export const landingContent = {
       },
     ],
     featuresRoute: {
-      deepDiveEyebrow: "Feature details",
-      deepDiveTitle: "How MemoApp facilities support daily shop work",
-      deepDiveDescription:
-        "Each MemoApp feature is designed to remove a common retail bottleneck: slow billing, unclear stock, scattered baki records, manual reports, and weak backup discipline.",
-      deepDiveGroups: [
+      setupJourney: {
+        eyebrow: "Feature details",
+        title: "Open your shop and start selling in minutes",
+        description:
+          "MemoApp is built so a new shop can go from signup to first POS sale quickly — import products and customers instead of typing everything by hand.",
+        underOneMinuteLabel: "Under 1 minute",
+        shopDemo: {
+          shopNameLabel: "Shop name",
+          shopName: "Rahim & Sons Grocery",
+          phoneLabel: "Phone",
+          phone: "017XX-XXXXXX",
+          categoryLabel: "Category",
+          category: "Grocery",
+          roleLabel: "Your role",
+          role: "Owner",
+          createdLabel: "Shop created",
+        },
+        posDemo: {
+          header: "MemoApp POS",
+          currentMemo: "Current memo",
+          synced: "Synced",
+          due: "Due",
+          shareButton: "Print / Share memo",
+        },
+        importChrome: {
+          productsTitle: "Import products",
+          customersTitle: "Import customers",
+          browseLabel: "Browse files",
+          uploadingLabel: "Importing rows…",
+          completeLabel: "Import complete",
+          googleHint: "Read-only · one tap",
+          orLabel: "or",
+          mappedLabel: "Columns matched automatically",
+          productColumns: ["Name", "Price", "Stock", "Unit"],
+          customerColumns: ["Name", "Phone", "Email"],
+          contactCount: "+35",
+        },
+        steps: [
+          {
+            step: "01",
+            title: "Open your shop",
+            description:
+              "Create your shop profile with name, phone, address, and category — ready for products and customers next.",
+            highlights: [
+              "Owner or manager setup in a few fields",
+              "Your shop workspace is ready for import and POS",
+            ],
+            visual: "shop",
+          },
+          {
+            step: "02",
+            title: "Upload products from Excel or CSV",
+            description:
+              "Drag your product list in or download the template, fill it in, and import stock, prices, and units in under a minute.",
+            highlights: [
+              "Excel and CSV supported",
+              "Bulk stock, price, and units in one import",
+            ],
+            visual: "products",
+            dropZoneTitle: "Drop Excel or CSV here",
+            dropZoneHint: "Drag a file in, or click to browse",
+            downloadTemplateLabel: "Download import template",
+            successMessage: "52 products imported · 48 seconds",
+            exampleFile: "shop-products.xlsx",
+          },
+          {
+            step: "03",
+            title: "Add customers from Google Contacts or Excel/CSV",
+            description:
+              "Import your full contact list in one tap from Google, or upload a customer spreadsheet for bulk ledgers.",
+            highlights: [
+              "Google Contacts read-only import",
+              "Excel/CSV for bulk customer records",
+            ],
+            visual: "customers",
+            googleContactsLabel: "Import from Google Contacts",
+            dropZoneTitle: "Or drop customer Excel/CSV here",
+            dropZoneHint: "Drag a file in, or click to browse",
+            successMessage: "38 customers imported · 41 seconds",
+            exampleFile: "customer-list.csv",
+          },
+          {
+            step: "04",
+            title: "Start selling on POS",
+            description:
+              "Bill at the counter, record cash or baki, and print or share memos — stock and reports update with every sale.",
+            highlights: [
+              "Barcode search and multi-bill tabs",
+              "Stock updates automatically with each sale",
+            ],
+            visual: "pos",
+          },
+        ],
+      },
+      trustStripEyebrow: "Why memo app bd",
+      trustStripTitle:
+        "Built for Bangladesh retail, not generic billing software",
+      trustStripDescription:
+        "MemoApp is shaped for local shop counters, payment habits, and languages — not imported billing tools that ignore baki, bKash, and offline reality.",
+      trustStripItems: [
         {
-          title: "Billing & POS",
+          title: "Offline-first counter",
           description:
-            "Create fast memos at the counter while keeping every sale ready for printing, PDF sharing, social sharing, and later reporting.",
-          bullets: [
-            "Make sales memos, invoices, quotations, and challans from one billing flow.",
-            "Record paid, partial paid, and due sales without opening separate ledgers.",
-            "Share customer-ready documents through print, PDF, and social channels.",
-          ],
+            "Sell and record memos when internet drops — memoapp syncs your shop data when the connection returns.",
         },
         {
-          title: "Inventory & Purchases",
+          title: "Bangla & Banglish ready",
           description:
-            "Keep product lists, stock movement, purchase records, supplier activity, and low-stock signals connected to the sales counter.",
-          bullets: [
-            "Track products by category, unit, quantity, purchase price, and sale price.",
-            "Connect supplier purchases to stock updates and payable context.",
-            "Spot low-stock risks before important items disappear from the shelf.",
-          ],
+            "Switch UI language and ask AI questions in the language your team actually speaks at the counter.",
         },
         {
-          title: "Customers & Dues",
+          title: "BDT pricing & local payments",
           description:
-            "MemoApp helps shops manage baki professionally with customer ledgers, payment history, reminders, and clearer collection decisions.",
-          bullets: [
-            "See who owes money, how much they owe, and when the balance changed.",
-            "Collect full or partial payments and keep the ledger updated instantly.",
-            "Use due reminders to reduce forgotten customer payments.",
-          ],
+            "Plans in taka with bKash and Nagad support for dues, supplier payments, and membership.",
         },
         {
-          title: "Reports & AI",
+          title: "Sector-fit for BD shops",
           description:
-            "Owners can review sales, cash, profit, expenses, dues, and stock signals without waiting for manual spreadsheet work.",
-          bullets: [
-            "Review daily sales, stock value, dues, purchases, and expense context.",
-            "Ask the AI assistant practical questions about stock, cashflow, or sales trends.",
-            "Use reports to decide what to restock, who to follow up with, and where profit is moving.",
-          ],
-        },
-        {
-          title: "Team, Backup & Security",
-          description:
-            "As a shop grows, MemoApp supports employee records, role-aware workflows, Google Drive backup, and offline-friendly sync.",
-          bullets: [
-            "Organize team workflows with employee and salary-related operations.",
-            "Protect business data with scheduled Google Drive backup.",
-            "Keep important counter work moving when internet quality is uneven.",
-          ],
+            "Designed for grocery, pharmacy, hardware, electronics, wholesale, and general retail counters.",
         },
       ],
       audienceEyebrow: "Best-fit shops",
@@ -759,17 +800,37 @@ export const landingContent = {
         {
           question: "Can MemoApp replace my sales notebook and Excel sheet?",
           answer:
-            "Yes. MemoApp keeps memos, products, customers, dues, purchases, expenses, and reports together so owners do not need to maintain separate notebooks for daily shop data.",
+            "Yes. MemoApp keeps memos, products, customers, dues, purchases, expenses, and reports together so owners do not need separate notebooks for daily shop data.",
         },
         {
           question: "Does MemoApp help if customers buy on baki?",
           answer:
-            "Yes. Customer ledgers show due balances and payment history, while reminders help the team follow up with customers more consistently.",
+            "Yes. Customer ledgers show due balances and payment history, while WhatsApp and SMS reminders help the team follow up more consistently.",
         },
         {
           question: "Can I understand stock without counting everything daily?",
           answer:
-            "MemoApp connects sales and purchases to inventory, so owners can monitor quantities, low-stock signals, and purchase context without starting from a blank spreadsheet.",
+            "MemoApp connects sales and purchases to inventory, so owners monitor quantities, low-stock signals, and purchase context without starting from a blank spreadsheet.",
+        },
+        {
+          question: "Can I use MemoApp on mobile at the counter?",
+          answer:
+            "Yes. MemoApp is a web app that works on phones, tablets, and desktops — ideal for counters that need billing on the shop floor.",
+        },
+        {
+          question: "Does MemoApp support thermal receipt printing in Bangla?",
+          answer:
+            "Yes. MemoApp supports 58mm and 80mm thermal printer setup. Bangla print quality depends on your printer model — check Settings for printer configuration guidance.",
+        },
+        {
+          question: "Can I import products or customers from Excel?",
+          answer:
+            "Yes. MemoApp supports import and export workflows so shops can migrate from spreadsheets or share data with accountants.",
+        },
+        {
+          question: "How do I pay for a MemoApp membership with bKash?",
+          answer:
+            "Paid plans can be activated through manual bKash payment. Contact MemoApp support or use the in-app membership flow to confirm current payment steps and activation timing.",
         },
         {
           question: "Which plan should I choose for these features?",
@@ -777,17 +838,50 @@ export const landingContent = {
             "Start with the free plan if you are exploring. Basic fits smaller shops, Growth is better for busy counters adding their first team, and Business is best for established multi-counter teams that need unlimited records, backup, and priority support.",
         },
       ],
-      ctaTitle: "See how these features work during a real shop day",
+      ctaTitle: "See how these MemoApp features work during a real shop day",
       ctaDescription:
-        "Review the workflow page for the daily operating flow, or compare pricing to choose the right plan for your counter.",
+        "Review the workflow page for the daily operating flow, browse the FAQ, or compare pricing to choose the right plan for your counter.",
       workflowLink: "See the daily workflow",
       pricingLink: "Compare pricing plans",
+      faqLink: "Browse all FAQs",
     },
     workflowRoute: {
+      seoIntro:
+        "This is the memo app bd daily workflow — how MemoApp supports real Bangladesh shop operations from first setup through counter sales, baki collection, restocking, and owner reporting.",
+      onboardingEyebrow: "Getting started",
+      onboardingTitle: "First sale in under 30 minutes",
+      onboardingDescription:
+        "New memoapp shops follow a simple onboarding path before the daily counter rhythm begins.",
+      onboardingSteps: [
+        {
+          step: "A",
+          title: "Create your shop profile",
+          description:
+            "Add shop name, phone, address, category, and your role as owner or manager.",
+        },
+        {
+          step: "B",
+          title: "Add your first products",
+          description:
+            "Enter product name, sale price, stock quantity, unit, and optional barcode or photo.",
+        },
+        {
+          step: "C",
+          title: "Add a customer",
+          description:
+            "Create walk-in or regular customers manually, or import from Google Contacts when you connect Google.",
+        },
+        {
+          step: "D",
+          title: "Create your first memo",
+          description:
+            "Bill at the counter, record payment or baki, and print or share the memo to the customer.",
+        },
+      ],
       timelineEyebrow: "Full-day workflow",
       timelineTitle: "From opening counter to evening report",
       timelineDescription:
-        "MemoApp follows the way a shop actually runs, so each action at the counter updates the records owners need later.",
+        "MemoApp follows the way a Bangladesh shop actually runs — each counter action updates the records owners need later.",
       timeline: [
         {
           step: "01",
@@ -795,15 +889,15 @@ export const landingContent = {
           description:
             "Start the day with product shortcuts, opening cash context, and ready memo actions for the first customers.",
           featureLabel: "POS billing and cash visibility",
-          featureHref: "/features#billing-pos",
+          featureHref: "/features#feature-details",
         },
         {
           step: "02",
           title: "Sell and print or share memos",
           description:
-            "Create paid, partial paid, or due sales and send customer-ready memos through print, PDF, or social channels.",
+            "Create paid, partial paid, or due sales and send customer-ready memos through thermal print, PDF, or WhatsApp.",
           featureLabel: "Memos, invoices, and sharing",
-          featureHref: "/features#billing-pos",
+          featureHref: "/features#feature-details",
         },
         {
           step: "03",
@@ -811,7 +905,7 @@ export const landingContent = {
           description:
             "Product quantities stay connected to counter activity, helping owners see low-stock risk earlier.",
           featureLabel: "Inventory and low-stock alerts",
-          featureHref: "/features#inventory-purchases",
+          featureHref: "/features#feature-details",
         },
         {
           step: "04",
@@ -819,7 +913,7 @@ export const landingContent = {
           description:
             "Customer baki, supplier purchases, and payable context stay organized beside the daily sales flow.",
           featureLabel: "Customer and supplier ledgers",
-          featureHref: "/features#customers-dues",
+          featureHref: "/features#feature-details",
         },
         {
           step: "05",
@@ -827,15 +921,67 @@ export const landingContent = {
           description:
             "Record daily costs, team notes, and important shop updates before details are forgotten.",
           featureLabel: "Expenses and business notes",
-          featureHref: "/features#team-backup-security",
+          featureHref: "/features#feature-details",
         },
         {
           step: "06",
           title: "Review reports, sync, and back up",
           description:
-            "Close the day with sales, profit, dues, stock, AI guidance, sync status, and backup confidence.",
+            "Close the day with sales, profit, dues, stock, AI guidance, sync status, and Google Drive backup confidence.",
           featureLabel: "Reports, AI, sync, and backup",
-          featureHref: "/features#reports-ai",
+          featureHref: "/features#feature-details",
+        },
+      ],
+      bakiFlowEyebrow: "Baki collection",
+      bakiFlowTitle: "How MemoApp handles customer due (baki) work",
+      bakiFlowDescription:
+        "Credit sales are common in Bangladesh retail — memoapp keeps baki visible and collectible without a separate notebook.",
+      bakiFlowSteps: [
+        {
+          title: "Due accrues from credit memos",
+          description:
+            "When a customer buys on baki, the memo records the due balance on their ledger automatically.",
+        },
+        {
+          title: "Aging and risk visibility",
+          description:
+            "The Due page shows aging buckets and warning status so owners know who needs follow-up first.",
+        },
+        {
+          title: "Collect via cash or mobile money",
+          description:
+            "Record full or partial collection through cash, bKash, Nagad, card, or bank transfer.",
+        },
+        {
+          title: "Remind customers professionally",
+          description:
+            "Send WhatsApp reminders or enable SMS auto-reminders (paid add-on) at Bangladesh-friendly times.",
+        },
+      ],
+      restockFlowEyebrow: "Restock loop",
+      restockFlowTitle: "From low stock to shelf refill",
+      restockFlowDescription:
+        "MemoApp connects sales, alerts, purchases, and supplier payments into one restock rhythm.",
+      restockFlowSteps: [
+        {
+          title: "Low-stock signal on dashboard",
+          description:
+            "Sales and reorder points trigger alerts before important items run out.",
+        },
+        {
+          title: "Create a supplier purchase",
+          description:
+            "Record purchase line items, quantities, and costs — stock increases when the purchase is saved.",
+        },
+        {
+          title: "Track supplier payable",
+          description:
+            "Pay suppliers via cash, bKash, Nagad, or bank and keep payable balances accurate.",
+        },
+        {
+          title: "Shelf ready for next sale",
+          description:
+            "Updated stock flows back to the POS counter for the next customer.",
         },
       ],
       rolesEyebrow: "Team clarity",
@@ -846,23 +992,39 @@ export const landingContent = {
         {
           title: "Owner",
           description:
-            "Reviews sales, profit, dues, stock value, expenses, AI suggestions, and backup status from one business view.",
+            "Full business visibility: sales, profit, dues, stock value, expenses, reports, AI, team settings, and backup.",
+          permissions: [
+            "Approve plans and team invites",
+            "View all reports and exports",
+            "Manage Google backup and shop settings",
+          ],
         },
         {
           title: "Cashier",
           description:
-            "Focuses on fast memo creation, payment collection, due recording, printing, and customer sharing.",
+            "Counter-focused access for fast memo creation, payment collection, due recording, printing, and sharing.",
+          permissions: [
+            "Create and print memos",
+            "Record cash and due payments at counter",
+            "Search products and customers quickly",
+          ],
         },
         {
           title: "Manager",
           description:
-            "Checks purchases, suppliers, low-stock items, team operations, and daily closing context.",
+            "Back-office support: purchases, suppliers, low-stock checks, employee operations, and daily closing context.",
+          permissions: [
+            "Manage purchases and supplier payments",
+            "Review inventory and low-stock lists",
+            "Support team records and daily closing",
+          ],
         },
       ],
       ctaTitle: "Choose the plan that matches your shop workflow",
       ctaDescription:
         "Small shops can start simple, while busy counters and growing teams can add stronger reports, AI, backup, and staff features.",
       pricingLink: "Compare MemoApp pricing",
+      featuresLink: "Explore MemoApp features",
     },
     pricingRoute: {
       comparisonEyebrow: "Plan comparison",
@@ -1032,32 +1194,75 @@ export const landingContent = {
       {
         question: "Is MemoApp only a POS system?",
         answer:
-          "No. POS billing is the front counter, but MemoApp also covers inventory, customers, dues, suppliers, purchases, expenses, reports, and AI-assisted insights.",
+          "No. POS billing is the front counter, but MemoApp (memo app bd) also covers inventory, customers, dues, suppliers, purchases, expenses, reports, and AI-assisted insights.",
+        category: "General",
+      },
+      {
+        question: "What is MemoApp and who is it for?",
+        answer:
+          "MemoApp is a shop management and POS web app for Bangladeshi retailers — grocery, pharmacy, hardware, wholesale, and general stores that need billing, stock, baki, and reports in one place.",
         category: "General",
       },
       {
         question: "Can my shop work when the internet is unstable?",
         answer:
-          "MemoApp is designed around offline-friendly workflows, so key counter work can continue and sync when the connection returns.",
+          "Yes. MemoApp is designed around offline-friendly workflows, so key counter work can continue and sync when the connection returns.",
+        category: "General",
+      },
+      {
+        question: "What happens if the internet drops during a sale?",
+        answer:
+          "Counter work can continue offline. When internet returns, memoapp syncs pending memos and updates so your shop records stay consistent.",
+        category: "General",
+      },
+      {
+        question: "Does MemoApp work on mobile phones and tablets?",
+        answer:
+          "Yes. MemoApp runs in the browser on phones, tablets, and desktops — useful for shop counters that need mobility.",
         category: "General",
       },
       {
         question: "Can I create and share memos quickly?",
         answer:
-          "Yes. MemoApp supports fast memo creation plus customer-ready sharing flows for PDF, print, and social channels.",
+          "Yes. MemoApp supports fast memo creation plus customer-ready sharing through thermal print, PDF, and WhatsApp.",
+        category: "Memos & sales",
+      },
+      {
+        question:
+          "What is the difference between a memo, quotation, and delivery challan?",
+        answer:
+          "A memo records a completed sale. A quotation is a price offer you can convert to a memo when the customer confirms. A delivery challan tracks goods dispatched, often for wholesale or bulk orders.",
+        category: "Memos & sales",
+      },
+      {
+        question: "Can I share a memo PDF on WhatsApp to customers?",
+        answer:
+          "Yes. After saving a memo, you can share a customer-ready PDF through WhatsApp or other channels your team already uses.",
+        category: "Memos & sales",
+      },
+      {
+        question: "Can I track customer baki and due collection?",
+        answer:
+          "Yes. Customer ledgers, due balances, payments, and WhatsApp or SMS reminders help shops keep collection work organized.",
         category: "Memos & sales",
       },
       {
         question: "Does MemoApp help with low stock?",
         answer:
-          "Yes. Product and stock workflows help owners monitor quantities, units, purchase context, and low-stock risk.",
+          "Yes. Product and stock workflows help owners monitor quantities, units, purchase context, and low-stock risk on the dashboard.",
         category: "Stock & inventory",
       },
       {
-        question: "Can I track customer baki and due collection?",
+        question: "Can I print barcode labels for products?",
         answer:
-          "Yes. Customer ledgers, due balances, payments, and reminders help shops keep collection work organized.",
-        category: "Memos & sales",
+          "Yes. MemoApp supports barcode label printing and barcode search during billing for faster counter work.",
+        category: "Stock & inventory",
+      },
+      {
+        question: "How do I set up a thermal receipt printer?",
+        answer:
+          "Open Settings → Printer setup in MemoApp. The app supports 58mm and 80mm thermal printers — follow the in-app guide for your printer model.",
+        category: "Stock & inventory",
       },
       {
         question: "Does MemoApp support Bangla?",
@@ -1068,13 +1273,43 @@ export const landingContent = {
       {
         question: "Can my team members use MemoApp?",
         answer:
-          "Paid plans support team-oriented workflows such as manager access, employee records, and salary-related operations.",
+          "Paid plans support team workflows with owner, manager, and staff roles, employee records, and salary-related operations on Growth+ plans.",
+        category: "Account & team",
+      },
+      {
+        question: "Is my shop data backed up?",
+        answer:
+          "Yes. MemoApp supports Google Drive backup to your own Drive account, plus import and export options so you are not locked in.",
         category: "Account & team",
       },
       {
         question: "Which plan should I start with?",
         answer:
-          "Start with the free plan if you want to explore. Basic fits smaller shops, Growth is best for busy counters adding their first team, and Business is built for established multi-counter teams.",
+          "Start with the free 30-day plan to explore. Basic fits smaller shops, Growth is best for busy counters adding their first team, and Business suits established multi-counter teams.",
+        category: "Billing & plans",
+      },
+      {
+        question: "How do I pay for MemoApp with bKash or Nagad?",
+        answer:
+          "Membership can be paid through manual bKash payment. Use the in-app membership flow or contact MemoApp support to confirm current payment steps and activation timing.",
+        category: "Billing & plans",
+      },
+      {
+        question: "What shop types fit MemoApp plans?",
+        answer:
+          "MemoApp works for grocery, pharmacy, hardware, electronics, clothing, restaurant, and general retail. Basic suits solo counters; Growth and Business fit teams with more records, reports, and backup needs.",
+        category: "Billing & plans",
+      },
+      {
+        question: "How much do SMS due reminders cost?",
+        answer:
+          "SMS auto-reminders for customer dues are available as a paid add-on (around ৳250/month). WhatsApp reminders are also supported for manual follow-up.",
+        category: "Billing & plans",
+      },
+      {
+        question: "Can I upgrade or change plans later?",
+        answer:
+          "Yes. Start with a smaller plan and upgrade when you need richer reports, AI, backup, employees, or priority support.",
         category: "Billing & plans",
       },
     ],
@@ -1143,43 +1378,6 @@ export const landingContent = {
         },
       ],
     },
-    assistant: {
-      title: "Ayat",
-      subtitle: "AI Business Assistant",
-      launcherLabel: "Talk with Ayat",
-      closeLabel: "Ayat assistant বন্ধ করুন",
-      placeholder: "আপনার প্রশ্ন লিখুন...",
-      sendLabel: "পাঠান",
-      typingLabel: "Ayat ভাবছে...",
-      welcomeMessage:
-        "হ্যালো, আমি Ayat, আপনার AI Business Assistant। MemoApp feature, pricing, workflow, Google backup, OroraSoft ও support option বুঝতে সাহায্য করতে পারি।",
-      fallbackMessage:
-        "আমি MemoApp landing page-এর সাধারণ প্রশ্নের উত্তর দিতে পারি, কিন্তু অনুমান করতে চাই না। Pricing, feature, workflow, Google backup, OroraSoft, Bangla support বা support contact সম্পর্কে জিজ্ঞাসা করুন।",
-      whatsappSupportLabel: "WhatsApp support",
-      emailSupportLabel: "Support-এ ইমেইল করুন",
-      quickPrompts: [
-        {
-          label: "কোন প্ল্যান ভালো?",
-          query: "আমার দোকানের জন্য কোন MemoApp plan ভালো?",
-        },
-        {
-          label: "কী কী feature আছে?",
-          query: "MemoApp-এ কী কী feature আছে?",
-        },
-        {
-          label: "Workflow কীভাবে চলে?",
-          query: "দোকানের দিনে MemoApp workflow কীভাবে কাজ করে?",
-        },
-        {
-          label: "Google backup",
-          query: "MemoApp-এ Google Drive backup কীভাবে কাজ করে?",
-        },
-        {
-          label: "OroraSoft কে?",
-          query: "MemoApp কে তৈরি করেছে এবং OroraSoft কী?",
-        },
-      ],
-    },
     hero: {
       eyebrow: "বাংলাদেশের SME ও আধুনিক দোকানের জন্য তৈরি",
       title:
@@ -1188,28 +1386,6 @@ export const landingContent = {
       titleHighlight: "সব একসাথে",
       description:
         "সেকেন্ডেই বিল করুন, মালের স্টক ঠিক রাখুন, বাকির হিসাব হাতের মুঠোয় রাখুন আর কোন পণ্য কত চলছে তা এক নজরে দেখুন। বাংলাদেশের দোকানের জন্য তৈরি — ৩০ দিন ফ্রি ব্যবহার করুন।",
-    },
-    googleData: {
-      eyebrow: "Google পারমিশন",
-      title: "MemoApp কেন Google access চায়",
-      description:
-        "MemoApp একটি বিজনেস ম্যানেজমেন্ট টুল। আমরা শুধু নিচের ঐচ্ছিক ফিচারগুলোর জন্য এবং আপনি ব্যবহার করতে চাইলে তবেই Google permission চাই। আপনি যেকোনো সময় আপনার Google Account থেকে access revoke করতে পারেন।",
-      items: [
-        {
-          tag: "Google Contacts",
-          title: "কন্টাক্ট কাস্টমার হিসেবে import",
-          description:
-            "আপনার অনুমতিতে MemoApp আপনার Google Contacts (read-only) পড়ে, যাতে এক ট্যাপেই কন্টাক্টগুলো কাস্টমার হিসেবে যোগ করা যায় — হাতে টাইপ করার দরকার নেই। MemoApp আপনার কন্টাক্ট edit, delete বা শেয়ার করে না।",
-        },
-        {
-          tag: "Google Drive",
-          title: "শপ ডাটা ব্যাকআপ",
-          description:
-            "ব্যাকআপ চালু করলে MemoApp আপনার নিজের Google Drive-এ শপ ডাটার backup file তৈরি ও update করে, যাতে রেকর্ড নিরাপদ থাকে। MemoApp শুধু নিজের তৈরি backup file-ই access করে।",
-        },
-      ],
-      note: "Google API থেকে পাওয়া তথ্যের ব্যবহারে MemoApp Google API Services User Data Policy মেনে চলে, যার মধ্যে Limited Use requirements অন্তর্ভুক্ত। Google user data কখনো বিক্রি বা বিজ্ঞাপনে ব্যবহার করা হয় না।",
-      privacyLinkLabel: "আমাদের Privacy Policy পড়ুন",
     },
     heroStats: [
       { value: "৳৪৮,৩২০", label: "আজকের কাউন্টার সেলস" },
@@ -1665,8 +1841,41 @@ export const landingContent = {
       eyebrow: "প্রশ্ন",
       title: "প্রথমবারের ভিজিটরদের জন্য পরিষ্কার উত্তর।",
       description:
-        "এই FAQ গুলো SEO ও কনভার্সনের জন্য লেখা, ভবিষ্যৎ প্রোডাক্ট, প্রাইসিং ও সাপোর্ট আপডেটের জায়গা রেখে।",
+        "MemoApp সম্পর্কে সাধারণ প্রশ্নের সংক্ষিপ্ত preview। সেটআপ, বিলিং, ইনভেন্টরি, বাকি ও প্ল্যানের পূর্ণ তালিকার জন্য FAQ পেজ দেখুন।",
+      viewAllLabel: "সব FAQ দেখুন",
     },
+    homeFaqs: [
+      {
+        question: "MemoApp কি শুধু POS সিস্টেম?",
+        answer:
+          "না। POS কাউন্টারের অংশ, কিন্তু MemoApp (memo app bd) ইনভেন্টরি, কাস্টমার, বাকি, সাপ্লায়ার, ক্রয়, খরচ, রিপোর্ট ও AI ইনসাইটও কভার করে।",
+      },
+      {
+        question: "MemoApp কী এবং কার জন্য?",
+        answer:
+          "MemoApp বাংলাদেশি রিটেইলারদের জন্য শপ ম্যানেজমেন্ট ও POS ওয়েব অ্যাপ — গ্রোসারি, ফার্মেসি, হার্ডওয়্যার, হোলসেল ও জেনারেল স্টোর।",
+      },
+      {
+        question: "ইন্টারনেট দুর্বল হলে দোকান চালানো যাবে?",
+        answer:
+          "হ্যাঁ। MemoApp অফলাইন-ফ্রেন্ডলি — জরুরি কাউন্টার কাজ চলতে পারে, কানেকশন ফিরলে সিঙ্ক হয়।",
+      },
+      {
+        question: "কাস্টমার বাকি ও কালেকশন ট্র্যাক করা যাবে?",
+        answer:
+          "হ্যাঁ। লেজার, বাকি ব্যালেন্স, WhatsApp/SMS রিমাইন্ডার দিয়ে কালেকশন গুছিয়ে রাখা যায়।",
+      },
+      {
+        question: "কোন প্ল্যান দিয়ে শুরু করব?",
+        answer:
+          "৩০ দিন ফ্রি দিয়ে ঘুরে দেখুন। ছোট দোকান Basic, ব্যস্ত কাউন্টার Growth, প্রতিষ্ঠিত টিম বিজনেস।",
+      },
+      {
+        question: "MemoApp কি বাংলা সাপোর্ট করে?",
+        answer:
+          "হ্যাঁ। ইংরেজি, বাংলা ও Banglish-ফ্রেন্ডলি — গুরুত্বপূর্ণ ওয়ার্কফ্লোতে।",
+      },
+    ],
     finalCta: {
       eyebrow: "শুরু করুন",
       title: "MemoApp দিয়ে আপনার দোকান পরিচালনা শুরু করুন",
@@ -1675,16 +1884,18 @@ export const landingContent = {
     },
     routeHeroes: {
       features: {
-        eyebrow: "MemoApp ফিচার",
-        title: "কাউন্টার থেকে মালিকের ড্যাশবোর্ড পর্যন্ত দোকানের সব প্রয়োজন।",
+        eyebrow: "MemoApp ফিচার | memo app bd",
+        title:
+          "বাংলাদেশের দোকানের জন্য MemoApp ফিচার — POS, ইনভেন্টরি, বাকি ও রিপোর্ট এক memo app-এ।",
         description:
-          "MemoApp POS বিলিং, ইনভেন্টরি, বাকি, ক্রয়, রিপোর্টিং, টিম ওয়ার্কফ্লো, ব্যাকআপ, শেয়ারিং ও AI সহায়তা এক পরিষ্কার রিটেইল ওয়ার্কস্পেসে আনে।",
+          "memoapp কাউন্টার-দ্রুত বিলিং, স্টক কন্ট্রোল, কাস্টমার বাকি, সাপ্লায়ার ক্রয়, টিম অ্যাক্সেস, Google Drive ব্যাকআপ ও AI ইনসাইট এক রিটেইল ওয়ার্কস্পেসে আনে।",
       },
       workflow: {
-        eyebrow: "দোকানের ওয়ার্কফ্লো",
-        title: "বাস্তব রিটেইল টিমের জন্য তৈরি দৈনিক অপারেটিং রিদম।",
+        eyebrow: "MemoApp workflow | memo app bd",
+        title:
+          "memo app কীভাবে আপনার দোকানের দিন চালায় — প্রথম বিক্রি থেকে ক্লোজিং রিপোর্ট।",
         description:
-          "দিনের প্রথম বিক্রি থেকে ক্লোজিং রিপোর্ট পর্যন্ত MemoApp কাউন্টার কাজ সহজ রাখে এবং মালিককে শক্তিশালী ভিজিবিলিটি দেয়।",
+          "MemoApp অনবোর্ডিং, কাউন্টার বিলিং, বাকি কালেকশন, রিস্টক ও মালিক রিপোর্টিং — বাংলাদেশের রিটেইল টিমের জন্য তৈরি দৈনিক রিদম।",
       },
       pricing: {
         eyebrow: "সহজ প্রাইসিং",
@@ -1693,10 +1904,10 @@ export const landingContent = {
           "বিক্রি, স্টক, বাকি, ক্রয়, সাপ্লায়ার, খরচ, লাভ-ক্ষতি ও AI এক প্ল্যানে — দোকান বাড়লে সঙ্গে স্কেল করুন।",
       },
       faq: {
-        eyebrow: "হেল্প সেন্টার",
-        title: "উত্তর খুঁজুন, FAQ পড়ুন অথবা ফিডব্যাক পাঠান।",
+        eyebrow: "MemoApp FAQ | memo app bd",
+        title: "MemoApp সম্পর্কে প্রশ্ন — বাংলাদেশের দোকানের জন্য memo app।",
         description:
-          "আপনার দোকান মসৃণভাবে চালাতে আমরা পাশে আছি। এখানে সাধারণ পাবলিক প্রশ্ন দেখুন, তারপর লগইন করে পূর্ণ ইন-অ্যাপ Help Center ব্যবহার করুন।",
+          "memoapp সেটআপ, POS বিলিং, ইনভেন্টরি, বাকি, প্রাইসিং, অফলাইন সিঙ্ক, Google ব্যাকআপ ও সাপোর্ট সম্পর্কে উত্তর খুঁজুন।",
       },
     },
     workflowHighlights: [
@@ -1734,61 +1945,125 @@ export const landingContent = {
       },
     ],
     featuresRoute: {
-      deepDiveEyebrow: "ফিচার বিস্তারিত",
-      deepDiveTitle:
-        "MemoApp সুবিধাগুলো কীভাবে দৈনন্দিন দোকান চালাতে সাহায্য করে",
-      deepDiveDescription:
-        "প্রতিটি MemoApp ফিচার দোকানের সাধারণ বাধা কমানোর জন্য তৈরি: ধীর বিলিং, অস্পষ্ট স্টক, ছড়ানো বাকি হিসাব, ম্যানুয়াল রিপোর্ট ও দুর্বল ব্যাকআপ অভ্যাস।",
-      deepDiveGroups: [
+      setupJourney: {
+        eyebrow: "ফিচার বিস্তারিত",
+        title: "দোকান খুলে মিনিটের মধ্যে বিক্রি শুরু করুন",
+        description:
+          "MemoApp নতুন দোকানকে সাইনআপ থেকে প্রথম POS বিক্রি পর্যন্ত দ্রুত নিয়ে যেতে তৈরি — হাতে টাইপ না করে প্রোডাক্ট ও কাস্টমার ইমপোর্ট করুন।",
+        underOneMinuteLabel: "১ মিনিটের কম",
+        shopDemo: {
+          shopNameLabel: "দোকানের নাম",
+          shopName: "রহিম অ্যান্ড সন্স মুদি",
+          phoneLabel: "ফোন",
+          phone: "017XX-XXXXXX",
+          categoryLabel: "ক্যাটাগরি",
+          category: "মুদি",
+          roleLabel: "আপনার ভূমিকা",
+          role: "মালিক",
+          createdLabel: "দোকান তৈরি হয়েছে",
+        },
+        posDemo: {
+          header: "MemoApp POS",
+          currentMemo: "বর্তমান মেমো",
+          synced: "সিঙ্কড",
+          due: "বাকি",
+          shareButton: "প্রিন্ট / শেয়ার মেমো",
+        },
+        importChrome: {
+          productsTitle: "প্রোডাক্ট ইমপোর্ট",
+          customersTitle: "কাস্টমার ইমপোর্ট",
+          browseLabel: "ফাইল ব্রাউজ করুন",
+          uploadingLabel: "রো ইমপোর্ট হচ্ছে…",
+          completeLabel: "ইমপোর্ট সম্পন্ন",
+          googleHint: "রিড-অনলি · এক ট্যাপ",
+          orLabel: "অথবা",
+          mappedLabel: "কলাম স্বয়ংক্রিয়ভাবে ম্যাচ হয়েছে",
+          productColumns: ["নাম", "দাম", "স্টক", "ইউনিট"],
+          customerColumns: ["নাম", "ফোন", "ইমেইল"],
+          contactCount: "+৩৫",
+        },
+        steps: [
+          {
+            step: "01",
+            title: "দোকান খুলুন",
+            description:
+              "নাম, ফোন, ঠিকানা ও ক্যাটাগরি দিয়ে দোকান প্রোফাইল তৈরি করুন — পরের ধাপে প্রোডাক্ট ও কাস্টমারের জন্য প্রস্তুত।",
+            highlights: [
+              "কয়েকটি ফিল্ডে মালিক বা ম্যানেজার সেটআপ",
+              "ইমপোর্ট ও POS-এর জন্য আপনার ওয়ার্কস্পেস প্রস্তুত",
+            ],
+            visual: "shop",
+          },
+          {
+            step: "02",
+            title: "Excel বা CSV থেকে প্রোডাক্ট আপলোড করুন",
+            description:
+              "প্রোডাক্ট লিস্ট ড্র্যাগ করুন বা টেমপ্লেট ডাউনলোড করে পূরণ করুন — এক মিনিটের কমে স্টক, দাম ও ইউনিট ইমপোর্ট করুন।",
+            highlights: [
+              "Excel ও CSV সাপোর্ট",
+              "এক ইমপোর্টে বাল্ক স্টক, দাম ও ইউনিট",
+            ],
+            visual: "products",
+            dropZoneTitle: "Excel বা CSV এখানে ড্রপ করুন",
+            dropZoneHint: "ফাইল ড্র্যাগ করুন, অথবা ব্রাউজ করতে ক্লিক করুন",
+            downloadTemplateLabel: "ইমপোর্ট টেমপ্লেট ডাউনলোড",
+            successMessage: "৫২টি প্রোডাক্ট ইমপোর্ট · ৪৮ সেকেন্ড",
+            exampleFile: "shop-products.xlsx",
+          },
+          {
+            step: "03",
+            title: "Google Contacts বা Excel/CSV থেকে কাস্টমার যোগ করুন",
+            description:
+              "Google থেকে এক ট্যাপে পুরো কন্টাক্ট লিস্ট ইমপোর্ট করুন, অথবা বাল্ক লেজারের জন্য কাস্টমার স্প্রেডশিট আপলোড করুন।",
+            highlights: [
+              "Google Contacts read-only ইমপোর্ট",
+              "বাল্ক কাস্টমার রেকর্ডের জন্য Excel/CSV",
+            ],
+            visual: "customers",
+            googleContactsLabel: "Google Contacts থেকে ইমপোর্ট",
+            dropZoneTitle: "অথবা কাস্টমার Excel/CSV এখানে ড্রপ করুন",
+            dropZoneHint: "ফাইল ড্র্যাগ করুন, অথবা ব্রাউজ করতে ক্লিক করুন",
+            successMessage: "৩৮ জন কাস্টমার ইমপোর্ট · ৪১ সেকেন্ড",
+            exampleFile: "customer-list.csv",
+          },
+          {
+            step: "04",
+            title: "POS-এ বিক্রি শুরু করুন",
+            description:
+              "কাউন্টারে বিল করুন, ক্যাশ বা বাকি রেকর্ড করুন, মেমো প্রিন্ট বা শেয়ার করুন — প্রতিটি বিক্রির সঙ্গে স্টক ও রিপোর্ট আপডেট।",
+            highlights: [
+              "বারকোড সার্চ ও মাল্টি-বিল ট্যাব",
+              "প্রতিটি বিক্রির সঙ্গে স্বয়ংক্রিয় স্টক আপডেট",
+            ],
+            visual: "pos",
+          },
+        ],
+      },
+      trustStripEyebrow: "কেন memo app bd",
+      trustStripTitle:
+        "বাংলাদেশের রিটেইলের জন্য তৈরি, জেনেরিক বিলিং সফটওয়্যার নয়",
+      trustStripDescription:
+        "MemoApp স্থানীয় কাউন্টার, পেমেন্ট অভ্যাস ও ভাষার জন্য তৈরি — baki, bKash ও offline বাস্তবতা উপেক্ষা করা ইমপোর্টেড বিলিং টুল নয়।",
+      trustStripItems: [
         {
-          title: "বিলিং ও POS",
+          title: "অফলাইন-ফার্স্ট কাউন্টার",
           description:
-            "কাউন্টারে দ্রুত মেমো তৈরি করুন, আবার প্রতিটি সেল প্রিন্ট, PDF শেয়ার, সোশ্যাল শেয়ার ও পরের রিপোর্টের জন্য প্রস্তুত রাখুন।",
-          bullets: [
-            "এক বিলিং ফ্লো থেকে সেলস মেমো, ইনভয়েস, কোটেশন ও চালান তৈরি করুন।",
-            "পেইড, পারশিয়াল পেইড ও বাকি সেল আলাদা লেজার না খুলেই রেকর্ড করুন।",
-            "প্রিন্ট, PDF ও সোশ্যাল চ্যানেলে কাস্টমার-রেডি ডকুমেন্ট শেয়ার করুন।",
-          ],
+            "ইন্টারনেট না থাকলেও বিক্রি ও মেমো রেকর্ড — অনলাইন হলে memoapp সিঙ্ক করে।",
         },
         {
-          title: "ইনভেন্টরি ও ক্রয়",
+          title: "বাংলা ও Banglish",
           description:
-            "প্রোডাক্ট লিস্ট, স্টক মুভমেন্ট, ক্রয় রেকর্ড, সাপ্লায়ার অ্যাক্টিভিটি ও লো-স্টক সিগন্যাল সেলস কাউন্টারের সঙ্গে যুক্ত রাখুন।",
-          bullets: [
-            "ক্যাটাগরি, ইউনিট, পরিমাণ, ক্রয় মূল্য ও বিক্রয় মূল্য দিয়ে প্রোডাক্ট ট্র্যাক করুন।",
-            "সাপ্লায়ার ক্রয়কে স্টক আপডেট ও পেমেন্ট কনটেক্সটের সঙ্গে যুক্ত করুন।",
-            "গুরুত্বপূর্ণ আইটেম শেষ হওয়ার আগে লো-স্টক ঝুঁকি ধরুন।",
-          ],
+            "UI ভাষা বদলান এবং AI-কে দোকানে যে ভাষায় কথা বলেন সেই ভাষায় জিজ্ঞাসা করুন।",
         },
         {
-          title: "কাস্টমার ও বাকি",
+          title: "BDT প্রাইসিং ও লোকাল পেমেন্ট",
           description:
-            "কাস্টমার লেজার, পেমেন্ট হিস্ট্রি, রিমাইন্ডার ও পরিষ্কার কালেকশন সিদ্ধান্ত দিয়ে দোকানের বাকি হিসাব পেশাদারভাবে গুছিয়ে রাখে MemoApp।",
-          bullets: [
-            "কার কত বাকি, কখন ব্যালেন্স বদলেছে ও কাকে ফলোআপ দরকার তা দেখুন।",
-            "পূর্ণ বা আংশিক পেমেন্ট কালেক্ট করে সঙ্গে সঙ্গে লেজার আপডেট করুন।",
-            "বাকি রিমাইন্ডার দিয়ে ভুলে যাওয়া পেমেন্ট কমাতে সাহায্য করুন।",
-          ],
+            "টাকায় প্ল্যান, bKash ও Nagad দিয়ে বাকি, সাপ্লায়ার ও মেম্বারশিপ পেমেন্ট।",
         },
         {
-          title: "রিপোর্ট ও AI",
+          title: "BD দোকানের জন্য ফিট",
           description:
-            "ম্যানুয়াল স্প্রেডশিট ছাড়াই মালিক সেলস, ক্যাশ, লাভ, খরচ, বাকি ও স্টক সিগন্যাল রিভিউ করতে পারেন।",
-          bullets: [
-            "দৈনিক সেলস, স্টক ভ্যালু, বাকি, ক্রয় ও খরচের কনটেক্সট দেখুন।",
-            "স্টক, ক্যাশফ্লো বা সেলস ট্রেন্ড নিয়ে AI সহকারীকে প্র্যাকটিক্যাল প্রশ্ন করুন।",
-            "কী রিস্টক করবেন, কাকে ফলোআপ করবেন ও লাভ কোথায় যাচ্ছে তা সিদ্ধান্ত নিন।",
-          ],
-        },
-        {
-          title: "টিম, ব্যাকআপ ও সিকিউরিটি",
-          description:
-            "দোকান বড় হলে MemoApp এমপ্লয়ি রেকর্ড, রোল-ভিত্তিক ওয়ার্কফ্লো, Google Drive ব্যাকআপ ও অফলাইন-ফ্রেন্ডলি সিঙ্ক সাপোর্ট করে।",
-          bullets: [
-            "এমপ্লয়ি ও স্যালারি-সম্পর্কিত অপারেশন দিয়ে টিম ওয়ার্কফ্লো গুছিয়ে নিন।",
-            "শিডিউলড Google Drive ব্যাকআপ দিয়ে বিজনেস ডাটা সুরক্ষিত রাখুন।",
-            "ইন্টারনেট দুর্বল হলেও জরুরি কাউন্টার কাজ চালু রাখুন।",
-          ],
+            "গ্রোসারি, ফার্মেসি, হার্ডওয়্যার, ইলেকট্রনিক্স, হোলসেল ও জেনারেল রিটেইল কাউন্টার।",
         },
       ],
       audienceEyebrow: "যে দোকানের জন্য মানানসই",
@@ -1830,110 +2105,229 @@ export const landingContent = {
         {
           question: "MemoApp কি আমার সেলস খাতা ও Excel শিটের বদলে কাজ করবে?",
           answer:
-            "হ্যাঁ। MemoApp মেমো, প্রোডাক্ট, কাস্টমার, বাকি, ক্রয়, খরচ ও রিপোর্ট একসঙ্গে রাখে, তাই দৈনন্দিন দোকানের ডাটার জন্য আলাদা খাতা কম লাগে।",
+            "হ্যাঁ। MemoApp মেমো, প্রোডাক্ট, কাস্টমার, বাকি, ক্রয়, খরচ ও রিপোর্ট একসঙ্গে রাখে, তাই আলাদা খাতা কম লাগে।",
         },
         {
           question: "কাস্টমার বাকি নিলে MemoApp সাহায্য করবে?",
           answer:
-            "হ্যাঁ। কাস্টমার লেজারে বাকি ব্যালেন্স ও পেমেন্ট হিস্ট্রি দেখা যায়, আর রিমাইন্ডার টিমকে নিয়মিত ফলোআপ করতে সাহায্য করে।",
+            "হ্যাঁ। কাস্টমার লেজার, WhatsApp ও SMS রিমাইন্ডার দিয়ে বাকি কালেকশন গুছিয়ে রাখতে সাহায্য করে।",
         },
         {
           question: "প্রতিদিন সব পণ্য না গুনেও স্টক বুঝতে পারব?",
           answer:
-            "MemoApp সেলস ও ক্রয়কে ইনভেন্টরির সঙ্গে যুক্ত করে, তাই পরিমাণ, লো-স্টক সিগন্যাল ও ক্রয় কনটেক্সট স্প্রেডশিট ছাড়াই দেখা যায়।",
+            "MemoApp সেলস ও ক্রয়কে ইনভেন্টরির সঙ্গে যুক্ত করে, তাই পরিমাণ ও লো-স্টক সিগন্যাল স্প্রেডশিট ছাড়াই দেখা যায়।",
+        },
+        {
+          question: "কাউন্টারে মোবাইলে MemoApp ব্যবহার করা যাবে?",
+          answer:
+            "হ্যাঁ। MemoApp ফোন, ট্যাবলেট ও ডেস্কটপে ব্রাউজারে চলে — দোকানের ফ্লোরে বিলিংয়ের জন্য আদর্শ।",
+        },
+        {
+          question: "বাংলায় থার্মাল রিসিপ্ট প্রিন্ট করা যাবে?",
+          answer:
+            "হ্যাঁ। ৫৮mm ও ৮০mm থার্মাল প্রিন্টার সাপোর্ট। প্রিন্টার মডেল অনুযায়ী বাংলা কোয়ালিটি ভিন্ন হতে পারে — Settings-এ গাইড দেখুন।",
+        },
+        {
+          question: "Excel থেকে প্রোডাক্ট বা কাস্টমার ইমপোর্ট করা যাবে?",
+          answer:
+            "হ্যাঁ। ইমপোর্ট/এক্সপোর্ট দিয়ে স্প্রেডশিট থেকে মাইগ্রেট বা হিসাবরক্ষকের কাছে ডাটা পাঠানো যায়।",
+        },
+        {
+          question: "bKash দিয়ে MemoApp মেম্বারশিপ কীভাবে পেমেন্ট করব?",
+          answer:
+            "ম্যানুয়াল bKash পেমেন্টে পেইড প্ল্যান অ্যাক্টিভেট করা যায়। ইন-অ্যাপ মেম্বারশিপ ফ্লো বা সাপোর্টে যোগাযোগ করে বর্তমান স্টেপ নিশ্চিত করুন।",
         },
         {
           question: "এই ফিচারগুলোর জন্য কোন প্ল্যান বেছে নেব?",
           answer:
-            "ঘুরে দেখতে ফ্রি প্ল্যান দিয়ে শুরু করুন। ছোট দোকানের জন্য Basic, প্রথম টিম যোগ করা ব্যস্ত কাউন্টারের জন্য Growth, আর আনলিমিটেড রেকর্ড, ব্যাকআপ ও প্রায়োরিটি সাপোর্ট লাগলে বিজনেস ভালো।",
+            "ঘুরে দেখতে ফ্রি প্ল্যান দিয়ে শুরু করুন। ছোট দোকান Basic, ব্যস্ত কাউন্টার Growth, আনলিমিটেড রেকর্ড ও ব্যাকআপ লাগলে বিজনেস।",
         },
       ],
-      ctaTitle: "বাস্তব দোকানের দিনে এই ফিচারগুলো কীভাবে কাজ করে দেখুন",
+      ctaTitle: "বাস্তব দোকানের দিনে MemoApp ফিচার কীভাবে কাজ করে দেখুন",
       ctaDescription:
-        "দৈনন্দিন অপারেটিং ফ্লোর জন্য workflow পেজ দেখুন, অথবা আপনার কাউন্টারের জন্য সঠিক প্ল্যান বেছে নিতে pricing তুলনা করুন।",
+        "workflow পেজে দৈনন্দিন ফ্লো দেখুন, FAQ ব্রাউজ করুন, অথবা pricing তুলনা করে সঠিক প্ল্যান বেছে নিন।",
       workflowLink: "দৈনন্দিন workflow দেখুন",
       pricingLink: "প্রাইসিং প্ল্যান তুলনা করুন",
+      faqLink: "সব FAQ দেখুন",
     },
     workflowRoute: {
+      seoIntro:
+        "এটি memo app bd-এর দৈনন্দিন workflow — MemoApp কীভাবে বাংলাদেশের দোকানে সেটআপ থেকে কাউন্টার, বাকি, রিস্টক ও রিপোর্ট চালায়।",
+      onboardingEyebrow: "শুরু করা",
+      onboardingTitle: "৩০ মিনিটের মধ্যে প্রথম বিক্রি",
+      onboardingDescription:
+        "নতুন memoapp দোকান দৈনন্দিন কাউন্টার রিদমের আগে সহজ অনবোর্ডিং পথ অনুসরণ করে।",
+      onboardingSteps: [
+        {
+          step: "ক",
+          title: "দোকান প্রোফাইল তৈরি করুন",
+          description:
+            "দোকানের নাম, ফোন, ঠিকানা, ক্যাটাগরি ও মালিক/ম্যানেজার রোল যোগ করুন।",
+        },
+        {
+          step: "খ",
+          title: "প্রথম প্রোডাক্ট যোগ করুন",
+          description:
+            "নাম, বিক্রয় মূল্য, স্টক, ইউনিট ও ঐচ্ছিক বারকোড/ছবি দিন।",
+        },
+        {
+          step: "গ",
+          title: "কাস্টমার যোগ করুন",
+          description:
+            "হাতে তৈরি করুন বা Google কানেক্ট করলে Google Contacts থেকে ইমপোর্ট করুন।",
+        },
+        {
+          step: "ঘ",
+          title: "প্রথম মেমো তৈরি করুন",
+          description:
+            "কাউন্টারে বিল করুন, পেমেন্ট বা বাকি রেকর্ড করুন, প্রিন্ট বা শেয়ার করুন।",
+        },
+      ],
       timelineEyebrow: "পুরো দিনের workflow",
       timelineTitle: "কাউন্টার খোলা থেকে সন্ধ্যার রিপোর্ট পর্যন্ত",
       timelineDescription:
-        "দোকান যেভাবে বাস্তবে চলে MemoApp সেই ফ্লো অনুসরণ করে, তাই কাউন্টারের প্রতিটি কাজ মালিকের দরকারি রেকর্ড আপডেট করে।",
+        "বাংলাদেশের দোকান যেভাবে চলে MemoApp সেই ফ্লো অনুসরণ করে — প্রতিটি কাউন্টার কাজ মালিকের রেকর্ড আপডেট করে।",
       timeline: [
         {
           step: "০১",
           title: "কাউন্টার খুলুন",
           description:
-            "প্রোডাক্ট শর্টকাট, ওপেনিং ক্যাশ কনটেক্সট ও প্রস্তুত মেমো অ্যাকশন দিয়ে প্রথম কাস্টমারের জন্য দিন শুরু করুন।",
+            "প্রোডাক্ট শর্টকাট, ওপেনিং ক্যাশ ও প্রস্তুত মেমো অ্যাকশন দিয়ে দিন শুরু করুন।",
           featureLabel: "POS বিলিং ও ক্যাশ ভিজিবিলিটি",
-          featureHref: "/features#billing-pos",
+          featureHref: "/features#feature-details",
         },
         {
           step: "০২",
           title: "মেমো বিক্রি, প্রিন্ট বা শেয়ার করুন",
           description:
-            "পেইড, পারশিয়াল পেইড বা বাকি সেল তৈরি করুন এবং প্রিন্ট, PDF বা সোশ্যাল চ্যানেলে কাস্টমার-রেডি মেমো পাঠান।",
+            "পেইড, পারশিয়াল বা বাকি সেল তৈরি করুন — থার্মাল, PDF বা WhatsApp-এ পাঠান।",
           featureLabel: "মেমো, ইনভয়েস ও শেয়ারিং",
-          featureHref: "/features#billing-pos",
+          featureHref: "/features#feature-details",
         },
         {
           step: "০৩",
           title: "সেলের সঙ্গে স্টক আপডেট হতে দিন",
           description:
-            "প্রোডাক্ট পরিমাণ কাউন্টার অ্যাক্টিভিটির সঙ্গে যুক্ত থাকে, তাই মালিক আগে থেকেই লো-স্টক ঝুঁকি দেখতে পারেন।",
+            "প্রোডাক্ট পরিমাণ কাউন্টারের সঙ্গে যুক্ত — লো-স্টক ঝুঁকি আগে দেখুন।",
           featureLabel: "ইনভেন্টরি ও লো-স্টক অ্যালার্ট",
-          featureHref: "/features#inventory-purchases",
+          featureHref: "/features#feature-details",
         },
         {
           step: "০৪",
           title: "বাকি কালেক্ট করুন ও ক্রয় রেকর্ড করুন",
           description:
-            "কাস্টমার বাকি, সাপ্লায়ার ক্রয় ও পেমেন্ট কনটেক্সট দৈনিক সেলস ফ্লোর পাশেই গুছানো থাকে।",
+            "কাস্টমার বাকি, সাপ্লায়ার ক্রয় ও পেমেন্ট দৈনিক সেলস ফ্লোর পাশেই গুছানো।",
           featureLabel: "কাস্টমার ও সাপ্লায়ার লেজার",
-          featureHref: "/features#customers-dues",
+          featureHref: "/features#feature-details",
         },
         {
           step: "০৫",
           title: "খরচ ও বিজনেস নোট যোগ করুন",
           description:
-            "ডিটেইল ভুলে যাওয়ার আগে দৈনিক খরচ, টিম নোট ও জরুরি দোকান আপডেট রেকর্ড করুন।",
-          featureLabel: "খরচ ও বিজনেস নোট",
-          featureHref: "/features#team-backup-security",
+            "ডিটেইল ভুলে যাওয়ার আগে দৈনিক খরচ ও দোকান আপডেট রেকর্ড করুন।",
+          featureLabel: "খরচ ও কর্মচারী",
+          featureHref: "/features#feature-details",
         },
         {
           step: "০৬",
           title: "রিপোর্ট, সিঙ্ক ও ব্যাকআপ রিভিউ করুন",
           description:
-            "দিন শেষ করুন সেলস, লাভ, বাকি, স্টক, AI গাইডেন্স, সিঙ্ক স্ট্যাটাস ও ব্যাকআপ কনফিডেন্স দিয়ে।",
+            "সেলস, লাভ, বাকি, স্টক, AI, সিঙ্ক ও Google Drive ব্যাকআপ দিয়ে দিন শেষ করুন।",
           featureLabel: "রিপোর্ট, AI, সিঙ্ক ও ব্যাকআপ",
-          featureHref: "/features#reports-ai",
+          featureHref: "/features#feature-details",
+        },
+      ],
+      bakiFlowEyebrow: "বাকি কালেকশন",
+      bakiFlowTitle: "MemoApp কীভাবে কাস্টমার বাকি (baki) হ্যান্ডল করে",
+      bakiFlowDescription:
+        "বাংলাদেশে ক্রেডিট সেল সাধারণ — memoapp আলাদা খাতা ছাড়াই বাকি দৃশ্যমান ও কালেক্টেবল রাখে।",
+      bakiFlowSteps: [
+        {
+          title: "ক্রেডিট মেমো থেকে বাকি জমা",
+          description:
+            "বাকিতে কেনা হলে মেমো কাস্টমার লেজারে ব্যালেন্স রেকর্ড করে।",
+        },
+        {
+          title: "Aging ও ঝুঁকি দৃশ্যমানতা",
+          description:
+            "Due পেজে aging bucket ও warning — কাকে আগে ফলোআপ করবেন তা জানুন।",
+        },
+        {
+          title: "ক্যাশ বা মোবাইল মানি দিয়ে কালেক্ট",
+          description:
+            "ক্যাশ, bKash, Nagad, কার্ড বা ব্যাংকে পূর্ণ/আংশিক কালেকশন।",
+        },
+        {
+          title: "পেশাদার রিমাইন্ডার",
+          description:
+            "WhatsApp রিমাইন্ডার বা SMS অটো-রিমাইন্ডার (পেইড অ্যাড-অন)।",
+        },
+      ],
+      restockFlowEyebrow: "রিস্টক লুপ",
+      restockFlowTitle: "লো স্টক থেকে শেলফ রিফিল",
+      restockFlowDescription:
+        "সেলস, অ্যালার্ট, ক্রয় ও সাপ্লায়ার পেমেন্ট এক রিস্টক রিদমে যুক্ত।",
+      restockFlowSteps: [
+        {
+          title: "ড্যাশবোর্ডে লো-স্টক সিগন্যাল",
+          description:
+            "সেলস ও reorder point-এ অ্যালার্ট — গুরুত্বপূর্ণ আইটেম শেষ হওয়ার আগে।",
+        },
+        {
+          title: "সাপ্লায়ার ক্রয় তৈরি",
+          description: "লাইন আইটেম, পরিমাণ, কস্ট — সেভ করলে স্টক বাড়ে।",
+        },
+        {
+          title: "সাপ্লায়ার পেমেন্ট ট্র্যাক",
+          description:
+            "ক্যাশ, bKash, Nagad বা ব্যাংকে পেমেন্ট — payable সঠিক রাখুন।",
+        },
+        {
+          title: "পরের বিক্রির জন্য প্রস্তুত",
+          description: "আপডেট স্টক POS কাউন্টারে ফিরে আসে।",
         },
       ],
       rolesEyebrow: "টিমের পরিষ্কার ভূমিকা",
       rolesTitle: "প্রতিটি রোল নিজের দরকারি কাজ দেখে",
       rolesDescription:
-        "MemoApp স্টাফের জন্য কাউন্টার স্পিড সহজ রাখে, আর মালিককে সিদ্ধান্ত নেওয়ার জন্য বড় ছবিটা দেখায়।",
+        "MemoApp স্টাফের জন্য কাউন্টার স্পিড সহজ রাখে, মালিককে বড় ছবি দেখায়।",
       roles: [
         {
           title: "মালিক",
           description:
-            "এক বিজনেস ভিউ থেকে সেলস, লাভ, বাকি, স্টক ভ্যালু, খরচ, AI সাজেশন ও ব্যাকআপ স্ট্যাটাস দেখেন।",
+            "সম্পূর্ণ বিজনেস ভিউ: সেলস, লাভ, বাকি, স্টক, খরচ, রিপোর্ট, AI, টিম ও ব্যাকআপ।",
+          permissions: [
+            "প্ল্যান ও টিম ইনভাইট অনুমোদন",
+            "সব রিপোর্ট ও এক্সপোর্ট দেখা",
+            "Google ব্যাকআপ ও দোকান সেটিংস",
+          ],
         },
         {
           title: "ক্যাশিয়ার",
           description:
-            "দ্রুত মেমো তৈরি, পেমেন্ট কালেকশন, বাকি রেকর্ড, প্রিন্টিং ও কাস্টমার শেয়ারিংয়ে ফোকাস করেন।",
+            "কাউন্টার-ফোকাস: দ্রুত মেমো, পেমেন্ট, বাকি, প্রিন্ট ও শেয়ার।",
+          permissions: [
+            "মেমো তৈরি ও প্রিন্ট",
+            "কাউন্টারে ক্যাশ ও বাকি রেকর্ড",
+            "প্রোডাক্ট ও কাস্টমার দ্রুত সার্চ",
+          ],
         },
         {
           title: "ম্যানেজার",
           description:
-            "ক্রয়, সাপ্লায়ার, লো-স্টক আইটেম, টিম অপারেশন ও দৈনিক ক্লোজিং কনটেক্সট চেক করেন।",
+            "ব্যাক-অফিস: ক্রয়, সাপ্লায়ার, লো-স্টক, কর্মচারী ও দৈনিক ক্লোজিং।",
+          permissions: [
+            "ক্রয় ও সাপ্লায়ার পেমেন্ট ম্যানেজ",
+            "ইনভেন্টরি ও লো-স্টক লিস্ট",
+            "টিম রেকর্ড ও দৈনিক ক্লোজিং সাপোর্ট",
+          ],
         },
       ],
       ctaTitle: "আপনার দোকানের workflow অনুযায়ী প্ল্যান বেছে নিন",
       ctaDescription:
-        "ছোট দোকান সহজভাবে শুরু করতে পারে, আর ব্যস্ত কাউন্টার ও বড় টিম রিপোর্ট, AI, ব্যাকআপ ও স্টাফ ফিচার যোগ করতে পারে।",
+        "ছোট দোকান সহজভাবে শুরু করতে পারে, ব্যস্ত কাউন্টার রিপোর্ট, AI, ব্যাকআপ ও স্টাফ যোগ করতে পারে।",
       pricingLink: "MemoApp প্রাইসিং তুলনা করুন",
+      featuresLink: "MemoApp ফিচার দেখুন",
     },
     pricingRoute: {
       comparisonEyebrow: "প্ল্যান তুলনা",
@@ -2103,49 +2497,119 @@ export const landingContent = {
       {
         question: "MemoApp কি শুধু POS সিস্টেম?",
         answer:
-          "না। POS বিলিং কাউন্টারের অংশ, কিন্তু MemoApp ইনভেন্টরি, কাস্টমার, বাকি, সাপ্লায়ার, ক্রয়, খরচ, রিপোর্ট ও AI ইনসাইটও কভার করে।",
+          "না। POS কাউন্টারের অংশ, কিন্তু MemoApp (memo app bd) ইনভেন্টরি, কাস্টমার, বাকি, সাপ্লায়ার, ক্রয়, খরচ, রিপোর্ট ও AI ইনসাইটও কভার করে।",
+        category: "General",
+      },
+      {
+        question: "MemoApp কী এবং কার জন্য?",
+        answer:
+          "MemoApp বাংলাদেশের রিটেইলারদের জন্য শপ ম্যানেজমেন্ট ও POS ওয়েব অ্যাপ — গ্রোসারি, ফার্মেসি, হার্ডওয়্যার, হোলসেল ও জেনারেল স্টোর।",
         category: "General",
       },
       {
         question: "ইন্টারনেট দুর্বল হলে দোকান চালানো যাবে?",
         answer:
-          "MemoApp অফলাইন-ফ্রেন্ডলি ওয়ার্কফ্লো মাথায় রেখে তৈরি, তাই জরুরি কাউন্টার কাজ চলতে পারে এবং কানেকশন ফিরলে সিঙ্ক হয়।",
+          "হ্যাঁ। MemoApp অফলাইন-ফ্রেন্ডলি — জরুরি কাউন্টার কাজ চলতে পারে, কানেকশন ফিরলে সিঙ্ক হয়।",
+        category: "General",
+      },
+      {
+        question: "বিক্রির সময় ইন্টারনেট চলে গেলে কী হবে?",
+        answer:
+          "কাউন্টার কাজ অফলাইনে চালু থাকতে পারে। অনলাইন হলে memoapp পending মেমো সিঙ্ক করে।",
+        category: "General",
+      },
+      {
+        question: "মোবাইল ও ট্যাবলেটে MemoApp চলবে?",
+        answer:
+          "হ্যাঁ। ফোন, ট্যাবলেট ও ডেস্কটপ ব্রাউজারে চলে — দোকানের ফ্লোরে বিলিংয়ের জন্য উপযোগী।",
         category: "General",
       },
       {
         question: "দ্রুত মেমো তৈরি ও শেয়ার করা যাবে?",
         answer:
-          "হ্যাঁ। MemoApp দ্রুত মেমো তৈরি এবং PDF, প্রিন্ট ও সোশ্যাল চ্যানেলে কাস্টমার-রেডি শেয়ারিং সাপোর্ট করে।",
+          "হ্যাঁ। থার্মাল প্রিন্ট, PDF ও WhatsApp-এ দ্রুত মেমো শেয়ার সাপোর্ট।",
+        category: "Memos & sales",
+      },
+      {
+        question: "মেমো, কোটেশন ও ডেলিভারি চালানের পার্থক্য কী?",
+        answer:
+          "মেমো সম্পন্ন বিক্রি। কোটেশন দামের প্রস্তাব — কনফার্ম হলে মেমোতে রূপান্তর। চালান পণ্য পাঠানোর ট্র্যাক, প্রায়ই হোলসেলে।",
+        category: "Memos & sales",
+      },
+      {
+        question: "WhatsApp-এ কাস্টমারকে মেমো PDF পাঠানো যাবে?",
+        answer:
+          "হ্যাঁ। মেমো সেভের পর PDF WhatsApp বা অন্য চ্যানেলে শেয়ার করা যায়।",
+        category: "Memos & sales",
+      },
+      {
+        question: "কাস্টমার বাকি ও কালেকশন ট্র্যাক করা যাবে?",
+        answer:
+          "হ্যাঁ। লেজার, বাকি ব্যালেন্স, WhatsApp/SMS রিমাইন্ডার দিয়ে কালেকশন গুছিয়ে রাখা যায়।",
         category: "Memos & sales",
       },
       {
         question: "লো স্টক বুঝতে MemoApp সাহায্য করে?",
         answer:
-          "হ্যাঁ। প্রোডাক্ট ও স্টক ওয়ার্কফ্লো মালিককে পরিমাণ, ইউনিট, ক্রয় কনটেক্সট ও লো-স্টক ঝুঁকি দেখতে সাহায্য করে।",
+          "হ্যাঁ। ড্যাশবোর্ডে পরিমাণ, ইউনিট, ক্রয় কনটেক্সট ও লো-স্টক ঝুঁকি দেখা যায়।",
         category: "Stock & inventory",
       },
       {
-        question: "কাস্টমার বাকি ও কালেকশন ট্র্যাক করা যাবে?",
+        question: "প্রোডাক্টের বারকোড লেবেল প্রিন্ট করা যাবে?",
+        answer: "হ্যাঁ। বারকোড লেবেল প্রিন্ট ও বিলিংয়ে বারকোড সার্চ সাপোর্ট।",
+        category: "Stock & inventory",
+      },
+      {
+        question: "থার্মাল রিসিপ্ট প্রিন্টার কীভাবে সেটআপ করব?",
         answer:
-          "হ্যাঁ। কাস্টমার লেজার, বাকি ব্যালেন্স, পেমেন্ট ও রিমাইন্ডার কালেকশন কাজ গুছিয়ে রাখতে সাহায্য করে।",
-        category: "Memos & sales",
+          "MemoApp-এ Settings → Printer setup খুলুন। ৫৮mm ও ৮০mm থার্মাল প্রিন্টার — ইন-অ্যাপ গাইড অনুসরণ করুন।",
+        category: "Stock & inventory",
       },
       {
         question: "MemoApp কি বাংলা সাপোর্ট করে?",
         answer:
-          "হ্যাঁ। MemoApp লোকাল টিমের জন্য ইংরেজি, বাংলা ও Banglish-ফ্রেন্ডলি ব্যবহারের কথা মাথায় রেখে তৈরি।",
+          "হ্যাঁ। ইংরেজি, বাংলা ও Banglish-ফ্রেন্ডলি — গুরুত্বপূর্ণ ওয়ার্কফ্লোতে।",
         category: "Account & team",
       },
       {
         question: "আমার টিম মেম্বাররা MemoApp ব্যবহার করতে পারবে?",
         answer:
-          "পেইড প্ল্যানে ম্যানেজার অ্যাক্সেস, এমপ্লয়ি রেকর্ড ও স্যালারি-সম্পর্কিত টিম ওয়ার্কফ্লো সাপোর্ট করে।",
+          "পেইড প্ল্যানে মালিক, ম্যানেজার, স্টাফ রোল, এমপ্লয়ি রেকর্ড ও Growth+ এ বেতন ফিচার।",
+        category: "Account & team",
+      },
+      {
+        question: "আমার দোকানের ডাটা ব্যাকআপ আছে?",
+        answer: "হ্যাঁ। Google Drive ব্যাকআপ, ইমপোর্ট/এক্সপোর্ট — লক-ইন নেই।",
         category: "Account & team",
       },
       {
         question: "কোন প্ল্যান দিয়ে শুরু করব?",
         answer:
-          "ঘুরে দেখতে চাইলে ফ্রি প্ল্যান দিয়ে শুরু করুন। ছোট দোকানের জন্য Basic, প্রথম টিম যোগ করা ব্যস্ত কাউন্টারের জন্য Growth, আর প্রতিষ্ঠিত মাল্টি-কাউন্টার টিমের জন্য বিজনেস।",
+          "৩০ দিন ফ্রি দিয়ে ঘুরে দেখুন। ছোট দোকান Basic, ব্যস্ত কাউন্টার Growth, প্রতিষ্ঠিত টিম বিজনেস।",
+        category: "Billing & plans",
+      },
+      {
+        question: "bKash বা Nagad দিয়ে MemoApp পেমেন্ট কীভাবে?",
+        answer:
+          "ম্যানুয়াল bKash পেমেন্টে মেম্বারশিপ। ইন-অ্যাপ ফ্লো বা সাপোর্টে যোগাযোগ করে স্টেপ নিশ্চিত করুন।",
+        category: "Billing & plans",
+      },
+      {
+        question: "কোন ধরনের দোকানে কোন প্ল্যান মানানসই?",
+        answer:
+          "গ্রোসারি, ফার্মেসি, হার্ডওয়্যার, ইলেকট্রনিক্স, রেস্টুরেন্ট, জেনারেল রিটেইল। Basic solo কাউন্টার; Growth/Business টিম ও বেশি রেকর্ড।",
+        category: "Billing & plans",
+      },
+      {
+        question: "SMS বাকি রিমাইন্ডারের খরচ কত?",
+        answer:
+          "SMS অটো-রিমাইন্ডার পেইড অ্যাড-অন (প্রায় ৳২৫০/মাস)। WhatsApp ম্যানুয়াল ফলোআপও সাপোর্ট।",
+        category: "Billing & plans",
+      },
+      {
+        question: "পরে প্ল্যান বদল বা আপগ্রেড করা যাবে?",
+        answer:
+          "হ্যাঁ। ছোট প্ল্যান দিয়ে শুরু করে রিপোর্ট, AI, ব্যাকআপ, কর্মচারী বা প্রায়োরিটি সাপোর্ট লাগলে আপগ্রেড করুন।",
         category: "Billing & plans",
       },
     ],

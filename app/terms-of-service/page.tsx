@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/landing/footer";
-import { LandingAssistant } from "@/components/landing/landing-assistant";
 import { LegalDocumentContent } from "@/components/landing/legal-document-content";
 import { Header } from "@/components/landing/landing-page";
 import {
@@ -50,7 +49,6 @@ export default function TermsOfServicePage() {
         <LegalDocumentContent documentKey="termsOfService" />
       </main>
       <Footer />
-      <LandingAssistant />
     </div>
   );
 }

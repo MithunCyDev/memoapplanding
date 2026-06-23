@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { FaqRouteContent } from "@/components/landing/faq-route-content";
 import { Footer } from "@/components/landing/footer";
-import { LandingAssistant } from "@/components/landing/landing-assistant";
 import { Header } from "@/components/landing/landing-page";
 import { RouteHero } from "@/components/landing/route-hero";
 import {
@@ -52,7 +51,6 @@ export default function FaqPage() {
         <FaqRouteContent />
       </main>
       <Footer />
-      <LandingAssistant />
     </div>
   );
 }

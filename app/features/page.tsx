@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
 import { FeaturesRouteContent } from "@/components/landing/features-route-content";
 import { Footer } from "@/components/landing/footer";
-import { LandingAssistant } from "@/components/landing/landing-assistant";
-import {
-  FeatureSection,
-  FinalCtaSection,
-  Header,
-} from "@/components/landing/landing-page";
+import { FeatureSection, Header } from "@/components/landing/landing-page";
 import { RouteHero } from "@/components/landing/route-hero";
 import {
   buildFeaturesPageSchema,
@@ -55,10 +50,8 @@ export default function FeaturesPage() {
         <RouteHero contentKey="features" />
         <FeatureSection />
         <FeaturesRouteContent />
-        <FinalCtaSection />
       </main>
       <Footer />
-      <LandingAssistant />
     </div>
   );
 }

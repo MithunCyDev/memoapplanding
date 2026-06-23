@@ -7,19 +7,36 @@ export interface LegalDocumentSection {
   items?: readonly string[];
 }
 
+export interface LegalGooglePermissionItem {
+  tag: string;
+  title: string;
+  description: string;
+}
+
 export interface LegalDocumentContent {
   eyebrow: string;
   title: string;
   intro: string;
   lastUpdatedLabel: string;
   lastUpdatedDate: string;
+  trustBarItems?: readonly string[];
+  businessIdentityTitle?: string;
+  businessIdentityBody?: string;
+  googlePermissionsTitle?: string;
+  googlePermissionsDescription?: string;
+  googlePermissionsItems?: readonly LegalGooglePermissionItem[];
+  googlePermissionsNote?: string;
   summaryTitle: string;
   summaryItems: readonly string[];
   sectionNavTitle: string;
+  mobileNavToggleLabel?: string;
   sections: readonly LegalDocumentSection[];
+  contactSupportEyebrow?: string;
   contactTitle: string;
   contactBody: string;
   contactEmailLabel: string;
+  whatsappSupportLabel?: string;
+  ororaSoftLinkLabel?: string;
   backToHome: string;
 }
 
@@ -32,11 +49,39 @@ export const legalContent = {
   en: {
     privacyPolicy: {
       eyebrow: "Privacy Policy",
-      title: "Your business data stays private with MemoApp.",
+      title: "Professional data protection for MemoApp shop owners.",
       intro:
-        "This Privacy Policy explains how MemoApp collects, uses, stores, shares, and protects information when you use our shop management tools, customer records, Google Contacts import, and Google Drive backup features.",
+        "MemoApp (memo app bd) is a business management product developed and maintained by OroraSoft. This Privacy Policy explains how we collect, use, store, share, and protect information when you use shop management tools, customer records, Google Contacts import, and Google Drive backup.",
       lastUpdatedLabel: "Last updated",
       lastUpdatedDate: "June 3, 2026",
+      trustBarItems: [
+        "Product of OroraSoft",
+        "Serving Bangladesh retailers",
+        "memoappbd.com",
+        "memoappbd@gmail.com",
+      ],
+      businessIdentityTitle: "About MemoApp",
+      businessIdentityBody:
+        "MemoApp is an established shop management platform for lawful retail operations in Bangladesh. The product is developed and maintained by OroraSoft, with support available by email and WhatsApp for shop owners, managers, and growing retail teams.",
+      googlePermissionsTitle: "Google permissions we request",
+      googlePermissionsDescription:
+        "MemoApp requests Google permissions only for the optional features below, and only when you choose to use them. You can revoke access anytime from your Google Account.",
+      googlePermissionsItems: [
+        {
+          tag: "Google Contacts",
+          title: "Import contacts as customers",
+          description:
+            "Read-only access lets you add Google contacts as customers in one tap. MemoApp never edits, deletes, or shares your contacts.",
+        },
+        {
+          tag: "Google Drive",
+          title: "Back up your shop data",
+          description:
+            "When you enable backup, MemoApp creates and updates backup files in your own Google Drive. MemoApp only accesses files it creates.",
+        },
+      ],
+      googlePermissionsNote:
+        "MemoApp's use of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements. Google user data is never sold or used for advertising.",
       summaryTitle: "Our privacy commitments",
       summaryItems: [
         "We do not sell, rent, trade, or share your personal, customer, or business data for advertising or marketing.",
@@ -45,10 +90,16 @@ export const legalContent = {
         "You can revoke Google access from your Google Account permissions page at any time.",
       ],
       sectionNavTitle: "Policy sections",
+      mobileNavToggleLabel: "Browse policy sections",
       sections: [
         {
+          id: "about-memoapp",
+          title: "1. About MemoApp",
+          body: "MemoApp is a shop management and POS web application for Bangladeshi retailers. It is intended for lawful business record keeping — billing, inventory, customer dues (baki), purchases, expenses, reports, and optional Google integrations. By using MemoApp, you agree that your shop data will be processed according to this policy and our Terms of Service.",
+        },
+        {
           id: "information-we-collect",
-          title: "1. Information we collect",
+          title: "2. Information we collect",
           body: "Depending on how you use MemoApp, we may collect or process:",
           items: [
             "Account information such as your name, email address, phone number, login provider, shop name, role, and authentication status.",
@@ -60,7 +111,7 @@ export const legalContent = {
         },
         {
           id: "how-we-use-information",
-          title: "2. How we use information",
+          title: "3. How we use information",
           body: "We use information only for legitimate MemoApp purposes, including:",
           items: [
             "Providing shop management features, account access, role-based permissions, sync, exports, reports, backup, and customer support.",
@@ -71,7 +122,7 @@ export const legalContent = {
         },
         {
           id: "google-user-data",
-          title: "3. Google Contacts and Google Drive data",
+          title: "4. Google Contacts and Google Drive data",
           body: "MemoApp asks for Google permissions only when a feature needs them, and we limit Google user data use to the feature you choose.",
           items: [
             "Google Contacts: MemoApp requests read-only Contacts access to show contacts for customer import. We do not edit, delete, message, or sync changes back to your Google contacts.",
@@ -82,39 +133,42 @@ export const legalContent = {
         },
         {
           id: "data-sharing",
-          title: "4. Data sharing",
+          title: "5. Data sharing",
           body: "We do not sell, rent, trade, or share your personal, customer, Google, or business records with anyone for advertising, marketing, or unrelated business purposes. Your shop data is yours. Data may be processed only by infrastructure and service providers required to operate MemoApp, protect the service, respond to support requests, or comply with applicable law.",
         },
         {
           id: "security",
-          title: "5. Security",
+          title: "6. Security",
           body: "We use reasonable technical and organizational safeguards such as encrypted connections, authentication, per-shop data separation, role-based access, and monitoring to help protect your information. No online service can guarantee absolute security, so you should keep your login credentials and connected Google account secure and promptly report suspicious activity.",
         },
         {
           id: "retention-deletion",
-          title: "6. Data retention and deletion",
+          title: "7. Data retention and deletion",
           body: "We keep information while your account is active or as needed to provide MemoApp, meet legal requirements, resolve disputes, prevent abuse, and maintain reliable backups. Google Drive backup files are stored in your Google Drive and remain under your control. You may export or delete records where the app provides those controls, revoke Google access, and contact us for account or data deletion requests.",
         },
         {
           id: "acceptable-use",
-          title: "7. Illegal activity, abuse, and account bans",
+          title: "8. Illegal activity, abuse, and account bans",
           body: "MemoApp is intended for lawful business management. If an account is used for illegal activity, fraud, harassment, unauthorized access, harmful automation, data theft, policy violations, or activity that risks other users or the platform, MemoApp may restrict features, suspend access, ban the account, preserve evidence where required, or cooperate with lawful requests from authorities.",
         },
         {
           id: "children",
-          title: "8. Children's privacy",
+          title: "9. Children's privacy",
           body: "MemoApp is a business tool and is not intended for children. Users should be old enough to create a business account and agree to this policy under applicable law.",
         },
         {
           id: "changes",
-          title: "9. Changes to this policy",
+          title: "10. Changes to this policy",
           body: "We may update this Privacy Policy from time to time to reflect product, legal, or operational changes. When meaningful updates are made, we will update the date above and may provide additional notice inside the app before using Google user data in a new way or for a different purpose.",
         },
       ],
+      contactSupportEyebrow: "MemoApp support",
       contactTitle: "Questions or data requests",
       contactBody:
-        "If you have questions about this Privacy Policy, Google permissions, data deletion, or account access, contact MemoApp support.",
+        "If you have questions about this Privacy Policy, Google permissions, data deletion, or account access, contact the MemoApp support team.",
       contactEmailLabel: "Email support",
+      whatsappSupportLabel: "WhatsApp support",
+      ororaSoftLinkLabel: "About OroraSoft",
       backToHome: "Back to home",
     },
     termsOfService: {
@@ -234,11 +288,39 @@ export const legalContent = {
   bn: {
     privacyPolicy: {
       eyebrow: "গোপনীয়তা নীতি",
-      title: "MemoApp-এ আপনার ব্যবসার তথ্য ব্যক্তিগত থাকে।",
+      title: "MemoApp দোকান মালিকদের জন্য পেশাদার ডাটা সুরক্ষা।",
       intro:
-        "এই গোপনীয়তা নীতিতে ব্যাখ্যা করা হয়েছে MemoApp কীভাবে দোকান পরিচালনা, গ্রাহক রেকর্ড, Google Contacts import এবং Google Drive backup ফিচারের তথ্য সংগ্রহ, ব্যবহার, সংরক্ষণ, শেয়ার ও সুরক্ষা করে।",
+        "MemoApp (memo app bd) OroraSoft ডেভেলপ ও মেইনটেইন করে। এই Privacy Policy ব্যাখ্যা করে আমরা দোকান পরিচালনা, গ্রাহক রেকর্ড, Google Contacts import ও Google Drive backup-এর তথ্য কীভাবে সংগ্রহ, ব্যবহার, সংরক্ষণ ও সুরক্ষা করি।",
       lastUpdatedLabel: "সর্বশেষ আপডেট",
       lastUpdatedDate: "৩ জুন, ২০২৬",
+      trustBarItems: [
+        "OroraSoft-এর একটি product",
+        "বাংলাদেশের রিটেইলারদের সেবা",
+        "memoappbd.com",
+        "memoappbd@gmail.com",
+      ],
+      businessIdentityTitle: "MemoApp সম্পর্কে",
+      businessIdentityBody:
+        "MemoApp বাংলাদেশে আইনসম্মত রিটেইল অপারেশনের জন্য প্রতিষ্ঠিত শপ ম্যানেজমেন্ট প্ল্যাটফর্ম। OroraSoft প্রোডাক্টটি ডেভেলপ ও মেইনটেইন করে; দোকান মালিক, ম্যানেজার ও টিমের জন্য ইমেইল ও WhatsApp সাপোর্ট পাওয়া যায়।",
+      googlePermissionsTitle: "আমরা যে Google permission চাই",
+      googlePermissionsDescription:
+        "MemoApp শুধু নিচের ঐচ্ছিক ফিচারের জন্য এবং আপনি ব্যবহার করতে চাইলে তবেই Google permission চায়। Google Account থেকে যেকোনো সময় access revoke করতে পারেন।",
+      googlePermissionsItems: [
+        {
+          tag: "Google Contacts",
+          title: "কন্টাক্ট কাস্টমার হিসেবে import",
+          description:
+            "Read-only access দিয়ে Google contact এক ট্যাপে কাস্টমার যোগ। MemoApp contact edit, delete বা share করে না।",
+        },
+        {
+          tag: "Google Drive",
+          title: "শপ ডাটা ব্যাকআপ",
+          description:
+            "ব্যাকআপ চালু করলে নিজের Google Drive-এ backup file তৈরি/আপডেট। MemoApp শুধু নিজের তৈরি file access করে।",
+        },
+      ],
+      googlePermissionsNote:
+        "Google API থেকে পাওয়া তথ্যের ব্যবহারে MemoApp Google API Services User Data Policy মেনে চলে (Limited Use সহ)। Google user data বিক্রি বা বিজ্ঞাপনে ব্যবহার হয় না।",
       summaryTitle: "আমাদের গোপনীয়তার অঙ্গীকার",
       summaryItems: [
         "আমরা বিজ্ঞাপন বা মার্কেটিংয়ের জন্য আপনার ব্যক্তিগত, গ্রাহক বা ব্যবসার তথ্য বিক্রি, ভাড়া, বিনিময় বা শেয়ার করি না।",
@@ -247,10 +329,16 @@ export const legalContent = {
         "আপনি যেকোনো সময় Google Account permissions page থেকে Google access revoke করতে পারেন।",
       ],
       sectionNavTitle: "নীতির অংশ",
+      mobileNavToggleLabel: "নীতির অংশ দেখুন",
       sections: [
         {
+          id: "about-memoapp",
+          title: "১. MemoApp সম্পর্কে",
+          body: "MemoApp বাংলাদেশি রিটেইলারদের জন্য শপ ম্যানেজমেন্ট ও POS ওয়েব অ্যাপ। এটি আইনসম্মত business record keeping — বিলিং, ইনভেন্টরি, বাকি, ক্রয়, খরচ, রিপোর্ট ও ঐচ্ছিক Google integration-এর জন্য। MemoApp ব্যবহার করলে আপনি এই policy ও Terms of Service অনুযায়ী ডাটা process-এ সম্মত হন।",
+        },
+        {
           id: "information-we-collect",
-          title: "১. আমরা যে তথ্য সংগ্রহ করি",
+          title: "২. আমরা যে তথ্য সংগ্রহ করি",
           body: "আপনি MemoApp কীভাবে ব্যবহার করেন তার উপর নির্ভর করে আমরা নিচের তথ্য সংগ্রহ বা process করতে পারি:",
           items: [
             "আপনার নাম, ইমেইল, ফোন নম্বর, login provider, দোকানের নাম, role এবং authentication status-এর মতো account তথ্য।",
@@ -262,7 +350,7 @@ export const legalContent = {
         },
         {
           id: "how-we-use-information",
-          title: "২. আমরা তথ্য কীভাবে ব্যবহার করি",
+          title: "৩. আমরা তথ্য কীভাবে ব্যবহার করি",
           body: "আমরা শুধু MemoApp-এর বৈধ উদ্দেশ্যে তথ্য ব্যবহার করি, যেমন:",
           items: [
             "Shop management feature, account access, role-based permission, sync, export, report, backup এবং customer support দেওয়া।",
@@ -273,7 +361,7 @@ export const legalContent = {
         },
         {
           id: "google-user-data",
-          title: "৩. Google Contacts ও Google Drive data",
+          title: "৪. Google Contacts ও Google Drive data",
           body: "MemoApp শুধু feature-এর প্রয়োজন হলে Google permission চায় এবং আপনার নির্বাচিত feature-এর মধ্যেই Google user data ব্যবহার সীমিত রাখে।",
           items: [
             "Google Contacts: customer import-এর জন্য contact দেখাতে MemoApp read-only Contacts access চায়। আমরা আপনার Google contact edit, delete, message বা Google Contacts-এ পরিবর্তন sync করি না।",
@@ -284,39 +372,42 @@ export const legalContent = {
         },
         {
           id: "data-sharing",
-          title: "৪. তথ্য শেয়ারিং",
+          title: "৫. তথ্য শেয়ারিং",
           body: "আমরা বিজ্ঞাপন, মার্কেটিং বা অপ্রাসঙ্গিক business purpose-এর জন্য আপনার personal, customer, Google বা business record কারও কাছে বিক্রি, ভাড়া, বিনিময় বা শেয়ার করি না। আপনার shop data আপনারই। MemoApp চালানো, service সুরক্ষা, support request-এর উত্তর দেওয়া বা প্রযোজ্য আইন মানার জন্য প্রয়োজনীয় infrastructure ও service provider শুধু data process করতে পারে।",
         },
         {
           id: "security",
-          title: "৫. নিরাপত্তা",
+          title: "৬. নিরাপত্তা",
           body: "আপনার তথ্য সুরক্ষার জন্য আমরা encrypted connection, authentication, per-shop data separation, role-based access এবং monitoring-এর মতো যুক্তিসঙ্গত technical ও organizational safeguard ব্যবহার করি। কোনো online service সম্পূর্ণ নিরাপত্তা guarantee করতে পারে না, তাই login credential ও connected Google account নিরাপদ রাখুন এবং সন্দেহজনক activity দ্রুত report করুন।",
         },
         {
           id: "retention-deletion",
-          title: "৬. তথ্য সংরক্ষণ ও deletion",
+          title: "৭. তথ্য সংরক্ষণ ও deletion",
           body: "আপনার account active থাকা পর্যন্ত বা MemoApp দেওয়া, legal requirement মানা, dispute resolve করা, abuse প্রতিরোধ এবং reliable backup রাখার জন্য প্রয়োজনীয় সময় পর্যন্ত আমরা তথ্য রাখি। Google Drive backup file আপনার Google Drive-এ থাকে এবং আপনার নিয়ন্ত্রণে থাকে। App-এ control থাকলে আপনি record export বা delete করতে পারেন, Google access revoke করতে পারেন, এবং account বা data deletion request-এর জন্য আমাদের সাথে যোগাযোগ করতে পারেন।",
         },
         {
           id: "acceptable-use",
-          title: "৭. অবৈধ activity, abuse ও account ban",
+          title: "৮. অবৈধ activity, abuse ও account ban",
           body: "MemoApp আইনসম্মত business management-এর জন্য তৈরি। কোনো account অবৈধ activity, fraud, harassment, unauthorized access, harmful automation, data theft, policy violation বা platform/অন্য user-এর ঝুঁকিপূর্ণ কাজে ব্যবহার হলে MemoApp feature সীমিত করতে, access suspend করতে, account ban করতে, প্রয়োজন হলে evidence preserve করতে বা lawful authority request-এ সহযোগিতা করতে পারে।",
         },
         {
           id: "children",
-          title: "৮. শিশুদের গোপনীয়তা",
+          title: "৯. শিশুদের গোপনীয়তা",
           body: "MemoApp একটি business tool এবং শিশুদের জন্য নয়। Applicable law অনুযায়ী business account তৈরি ও এই policy মেনে নেওয়ার মতো বয়সী user-দের জন্য এটি তৈরি।",
         },
         {
           id: "changes",
-          title: "৯. এই policy পরিবর্তন",
+          title: "১০. এই policy পরিবর্তন",
           body: "Product, legal বা operational পরিবর্তন অনুযায়ী আমরা সময়ে সময়ে এই Privacy Policy update করতে পারি। গুরুত্বপূর্ণ update হলে উপরের date পরিবর্তন করা হবে এবং Google user data নতুনভাবে বা ভিন্ন উদ্দেশ্যে ব্যবহার করার আগে app-এর ভিতরে অতিরিক্ত notice দেওয়া হতে পারে।",
         },
       ],
+      contactSupportEyebrow: "MemoApp support",
       contactTitle: "প্রশ্ন বা data request",
       contactBody:
-        "এই Privacy Policy, Google permission, data deletion বা account access সম্পর্কে প্রশ্ন থাকলে MemoApp support-এ যোগাযোগ করুন।",
+        "Privacy Policy, Google permission, data deletion বা account access সম্পর্কে প্রশ্ন থাকলে MemoApp support টিমের সাথে যোগাযোগ করুন।",
       contactEmailLabel: "Support-এ ইমেইল করুন",
+      whatsappSupportLabel: "WhatsApp support",
+      ororaSoftLinkLabel: "OroraSoft সম্পর্কে",
       backToHome: "হোমে ফিরে যান",
     },
     termsOfService: {

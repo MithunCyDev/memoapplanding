@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/landing/footer";
-import { LandingAssistant } from "@/components/landing/landing-assistant";
-import {
-  FinalCtaSection,
-  Header,
-  WorkflowSection,
-} from "@/components/landing/landing-page";
+import { Header, WorkflowSection } from "@/components/landing/landing-page";
 import { RouteHero } from "@/components/landing/route-hero";
 import { WorkflowRouteHighlights } from "@/components/landing/workflow-route-content";
 import {
@@ -55,10 +50,8 @@ export default function WorkflowPage() {
         <RouteHero contentKey="workflow" />
         <WorkflowSection />
         <WorkflowRouteHighlights />
-        <FinalCtaSection />
       </main>
       <Footer />
-      <LandingAssistant />
     </div>
   );
 }

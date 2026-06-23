@@ -142,30 +142,6 @@ select {
   color: #ffffff;
 }
 
-.assistant-launcher {
-  position: relative;
-  isolation: isolate;
-  animation: assistant-launcher-float 3.8s ease-in-out infinite;
-  box-shadow:
-    0 18px 45px rgba(1, 64, 52, 0.24),
-    0 0 0 1px rgba(2, 115, 74, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
-}
-
-.assistant-launcher::before {
-  position: absolute;
-  inset: -0.45rem;
-  z-index: -1;
-  border-radius: 9999px;
-  background: radial-gradient(circle, rgba(255, 153, 51, 0.28), transparent 68%);
-  content: "";
-  animation: assistant-launcher-halo 2.8s ease-in-out infinite;
-}
-
-.assistant-launcher-badge {
-  animation: assistant-badge-pulse 2.4s ease-in-out infinite;
-}
-
 .feature-card {
   animation: feature-card-enter 620ms ease both;
   transform-origin: center bottom;
@@ -260,41 +236,96 @@ select {
   }
 }
 
-@keyframes assistant-launcher-float {
+.journey-enter {
+  animation: journey-enter 560ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
 
-  0%,
-  100% {
+@keyframes journey-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.journey-progress-bar {
+  animation: journey-progress linear forwards;
+}
+
+@keyframes journey-progress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.hero-pop-in {
+  animation: hero-pop-in 480ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes hero-pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
     transform: translateY(0);
   }
+}
 
-  50% {
-    transform: translateY(-5px);
+.hero-bar-fill {
+  animation: hero-bar-fill 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: left;
+}
+
+@keyframes hero-bar-fill {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
   }
 }
 
-@keyframes assistant-launcher-halo {
+.hero-pulse {
+  animation: hero-pulse 2s ease-in-out infinite;
+}
+
+@keyframes hero-pulse {
 
   0%,
   100% {
-    opacity: 0.5;
-    transform: scale(0.96);
+    opacity: 1;
   }
 
   50% {
-    opacity: 0.9;
-    transform: scale(1.06);
+    opacity: 0.82;
   }
 }
 
-@keyframes assistant-badge-pulse {
+.hero-alert-enter {
+  animation: hero-alert-enter 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
 
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(3, 166, 120, 0.32);
+@keyframes hero-alert-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.97);
   }
 
-  50% {
-    box-shadow: 0 0 0 0.45rem rgba(3, 166, 120, 0);
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -353,13 +384,13 @@ select {
 
   .hero-flow-orb,
   .hero-flow-ribbon,
-  .assistant-launcher,
-  .assistant-launcher::before,
-  .assistant-launcher-badge {
-    animation: none;
-  }
-
-  .feature-card {
+  .feature-card,
+  .journey-enter,
+  .journey-progress-bar,
+  .hero-pop-in,
+  .hero-bar-fill,
+  .hero-pulse,
+  .hero-alert-enter {
     animation: none;
   }
 

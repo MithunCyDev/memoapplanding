@@ -5,10 +5,10 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { Footer } from "@/components/landing/footer";
 import { HeaderNav } from "@/components/landing/header-nav";
-import { LandingAssistant } from "@/components/landing/landing-assistant";
 import { LanguageToggle } from "@/components/landing/language-toggle";
 import { useLanguage } from "@/components/landing/language-provider";
 import { SectionHeading } from "@/components/landing/section-heading";
+import { usePrefersReducedMotion } from "@/components/landing/use-prefers-reduced-motion";
 import { MobileCounterMockup } from "@/components/landing/product-mockups";
 import { appLoginUrl, ororaSoftAboutUrl } from "@/lib/landing-content";
 import { splitPricingPlans } from "@/lib/pricing-plans";
@@ -28,11 +28,9 @@ export function LandingPage() {
         <PricingSection />
         <TestimonialsSection />
         <FaqSection />
-        <GoogleDataSection />
         <FinalCtaSection />
       </main>
       <Footer />
-      <LandingAssistant />
     </div>
   );
 }
@@ -165,16 +163,83 @@ function HeroSection() {
   );
 }
 
+const HERO_SYSTEM_COUNT = 4;
+const HERO_STEP_MS = 2200;
+
+const HERO_AI_RESTOCK_ITEMS = [
+  "Cooking oil · Critical",
+  "Rice premium · Low",
+  "Sugar · Restock soon",
+] as const;
+
+const HERO_COUNTER_ACTIONS = [
+  "Print memo",
+  "Share PDF",
+  "Due paid",
+  "Stock alert",
+] as const;
+
+function getHeroPanelClass(
+  panelIndex: number,
+  activeSystem: number,
+  animate: boolean,
+): string {
+  if (!animate) {
+    return "";
+  }
+
+  const isActive = panelIndex === activeSystem;
+  return [
+    "transition-all duration-500 ease-out",
+    isActive
+      ? "z-10 scale-[1.008] shadow-lg shadow-[rgba(1,64,52,0.12)] ring-2 ring-(--color-primary)/35"
+      : "opacity-[0.72]",
+  ].join(" ");
+}
+
 function HeroDashboardPreview({
   stats,
 }: {
   stats: ReadonlyArray<{ label: string; value: string }>;
 }) {
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const animate = !prefersReducedMotion;
+  const [activeSystem, setActiveSystem] = useState(0);
+  const [replayKey, setReplayKey] = useState(0);
+
+  useEffect(() => {
+    if (!animate) {
+      return;
+    }
+
+    const timerId = window.setInterval(() => {
+      setActiveSystem((current) => (current + 1) % HERO_SYSTEM_COUNT);
+      setReplayKey((current) => current + 1);
+    }, HERO_STEP_MS);
+
+    return () => window.clearInterval(timerId);
+  }, [animate]);
+
   return (
     <div className="relative w-screen max-w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-3rem)]">
       <div className="absolute -inset-x-8 bottom-0 top-16 -z-10 rounded-[3rem] bg-(--color-secondary-light)/12 blur-3xl" />
-      <div className="absolute -top-5 right-3 z-20 hidden max-w-80 items-start gap-3 rounded-2xl border border-white/25 bg-white/95 p-3 text-left text-(--color-ink) shadow-2xl shadow-black/20 backdrop-blur-xl sm:flex lg:right-10">
-        <span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-(--color-info) text-sm font-bold text-(--color-secondary)">
+      <div
+        className={`absolute -top-5 right-3 z-20 max-w-80 items-start gap-3 rounded-2xl border border-white/25 bg-white/95 p-3 text-left text-(--color-ink) shadow-2xl shadow-black/20 backdrop-blur-xl lg:right-10 ${
+          animate
+            ? activeSystem === 3
+              ? "flex scale-[1.008] shadow-lg shadow-[rgba(1,64,52,0.12)] ring-2 ring-(--color-primary)/35 hero-alert-enter"
+              : "hidden"
+            : "hidden sm:flex"
+        }`}
+        key={
+          animate && activeSystem === 3 ? `alert-${replayKey}` : "alert-static"
+        }
+      >
+        <span
+          className={`grid size-10 shrink-0 place-items-center rounded-2xl bg-(--color-info) text-sm font-bold text-(--color-secondary) ${
+            animate && activeSystem === 3 ? "hero-pulse" : ""
+          }`}
+        >
           AI
         </span>
         <div>
@@ -199,7 +264,9 @@ function HeroDashboardPreview({
             </p>
           </div>
           <div className="grid gap-4 p-4 sm:p-5 lg:grid-cols-[1.28fr_0.72fr]">
-            <section className="rounded-2xl border border-(--color-border) bg-white p-4 shadow-sm sm:p-5">
+            <section
+              className={`rounded-2xl border border-(--color-border) bg-white p-4 shadow-sm sm:p-5 ${getHeroPanelClass(0, activeSystem, animate)}`}
+            >
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.22em] text-(--color-primary)">
@@ -209,15 +276,30 @@ function HeroDashboardPreview({
                     Live business stats
                   </h2>
                 </div>
-                <span className="rounded-full bg-(--color-primary-light) px-3 py-1 text-xs font-bold text-(--color-primary-dark)">
+                <span
+                  className={`rounded-full bg-(--color-primary-light) px-3 py-1 text-xs font-bold text-(--color-primary-dark) ${
+                    animate ? "hero-pulse" : ""
+                  }`}
+                >
                   Synced now
                 </span>
               </div>
               <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {stats.map((stat) => (
+                {stats.map((stat, index) => (
                   <div
-                    className="rounded-2xl border border-(--color-border) bg-(--color-background) p-4"
-                    key={stat.label}
+                    className={`rounded-2xl border border-(--color-border) bg-(--color-background) p-4 ${
+                      animate && activeSystem === 0 ? "hero-pop-in" : ""
+                    }`}
+                    key={
+                      animate && activeSystem === 0
+                        ? `${stat.label}-${replayKey}`
+                        : stat.label
+                    }
+                    style={
+                      animate && activeSystem === 0
+                        ? { animationDelay: `${index * 80}ms` }
+                        : undefined
+                    }
                   >
                     <p className="text-2xl font-semibold text-(--color-primary)">
                       {stat.value}
@@ -234,13 +316,24 @@ function HeroDashboardPreview({
                   <span>Strong momentum</span>
                 </div>
                 <div className="mt-3 h-2 rounded-full bg-white">
-                  <div className="h-2 w-[78%] rounded-full bg-(--color-primary)" />
+                  <div
+                    className={`h-2 w-[78%] rounded-full bg-(--color-primary) ${
+                      animate && activeSystem === 0 ? "hero-bar-fill" : ""
+                    }`}
+                    key={
+                      animate && activeSystem === 0
+                        ? `health-${replayKey}`
+                        : "health-static"
+                    }
+                  />
                 </div>
               </div>
             </section>
 
             <section className="grid gap-4">
-              <div className="rounded-2xl bg-(--color-secondary) p-5 text-left text-white shadow-xl shadow-[rgba(1,64,52,0.18)]">
+              <div
+                className={`rounded-2xl bg-(--color-secondary) p-5 text-left text-white shadow-xl shadow-[rgba(1,64,52,0.18)] ${getHeroPanelClass(1, activeSystem, animate)}`}
+              >
                 <div className="flex items-center justify-between gap-3">
                   <div>
                     <p className="text-xs font-bold uppercase tracking-[0.22em] text-(--color-info)">
@@ -250,19 +343,30 @@ function HeroDashboardPreview({
                       “Which products should I restock before Eid?”
                     </p>
                   </div>
-                  <span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-white/10 text-lg">
+                  <span
+                    className={`grid size-10 shrink-0 place-items-center rounded-2xl bg-white/10 text-lg ${
+                      animate && activeSystem === 1 ? "hero-pulse" : ""
+                    }`}
+                  >
                     AI
                   </span>
                 </div>
                 <div className="mt-5 space-y-2">
-                  {[
-                    "Cooking oil · Critical",
-                    "Rice premium · Low",
-                    "Sugar · Restock soon",
-                  ].map((item) => (
+                  {HERO_AI_RESTOCK_ITEMS.map((item, index) => (
                     <div
-                      className="rounded-2xl bg-white/8 px-3 py-2 text-sm font-semibold"
-                      key={item}
+                      className={`rounded-2xl bg-white/8 px-3 py-2 text-sm font-semibold ${
+                        animate && activeSystem === 1 ? "hero-pop-in" : ""
+                      }`}
+                      key={
+                        animate && activeSystem === 1
+                          ? `${item}-${replayKey}`
+                          : item
+                      }
+                      style={
+                        animate && activeSystem === 1
+                          ? { animationDelay: `${index * 120}ms` }
+                          : undefined
+                      }
                     >
                       {item}
                     </div>
@@ -270,21 +374,34 @@ function HeroDashboardPreview({
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-(--color-border) bg-white p-5 text-left shadow-sm">
+              <div
+                className={`rounded-2xl border border-(--color-border) bg-white p-5 text-left shadow-sm ${getHeroPanelClass(2, activeSystem, animate)}`}
+              >
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-(--color-primary)">
                   Counter snapshot
                 </p>
                 <div className="mt-4 grid grid-cols-2 gap-3">
-                  {["Print memo", "Share PDF", "Due paid", "Stock alert"].map(
-                    (action) => (
-                      <span
-                        className="rounded-2xl bg-(--color-background) px-3 py-3 text-center text-sm font-semibold"
-                        key={action}
-                      >
-                        {action}
-                      </span>
-                    ),
-                  )}
+                  {HERO_COUNTER_ACTIONS.map((action, index) => (
+                    <span
+                      className={`rounded-2xl px-3 py-3 text-center text-sm font-semibold ${
+                        animate && activeSystem === 2
+                          ? "hero-pop-in bg-(--color-primary-light) text-(--color-primary-dark)"
+                          : "bg-(--color-background)"
+                      }`}
+                      key={
+                        animate && activeSystem === 2
+                          ? `${action}-${replayKey}`
+                          : action
+                      }
+                      style={
+                        animate && activeSystem === 2
+                          ? { animationDelay: `${index * 100}ms` }
+                          : undefined
+                      }
+                    >
+                      {action}
+                    </span>
+                  ))}
                 </div>
               </div>
             </section>
@@ -431,53 +548,6 @@ export function WorkflowSection() {
               </article>
             ))}
           </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function GoogleDataSection() {
-  const { content } = useLanguage();
-  const googleData = content.googleData;
-
-  return (
-    <section
-      className="bg-(--color-primary-light) px-5 py-24 lg:px-8"
-      id="google-data"
-    >
-      <div className="mx-auto max-w-7xl">
-        <SectionHeading
-          eyebrow={googleData.eyebrow}
-          title={googleData.title}
-          description={googleData.description}
-        />
-        <div className="mx-auto mt-14 grid max-w-5xl gap-5 sm:grid-cols-2">
-          {googleData.items.map((item) => (
-            <article
-              className="rounded-2xl border border-(--color-border) bg-white p-6 shadow-sm"
-              key={item.tag}
-            >
-              <span className="inline-flex rounded-full bg-(--color-primary-light) px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-(--color-primary-dark)">
-                {item.tag}
-              </span>
-              <h3 className="mt-4 text-xl font-semibold tracking-tight">
-                {item.title}
-              </h3>
-              <p className="mt-3 leading-7 text-(--color-muted)">
-                {item.description}
-              </p>
-            </article>
-          ))}
-        </div>
-        <div className="mx-auto mt-6 max-w-5xl rounded-2xl border border-(--color-border) bg-(--color-paper) p-5 text-center text-sm leading-7 text-(--color-muted) sm:p-6">
-          <p>{googleData.note}</p>
-          <Link
-            className="mt-3 inline-flex font-semibold text-(--color-primary) underline-offset-4 transition hover:underline"
-            href="/privacy-policy"
-          >
-            {googleData.privacyLinkLabel}
-          </Link>
         </div>
       </div>
     </section>
@@ -851,7 +921,7 @@ export function FaqSection() {
           description={content.faqHeading.description}
         />
         <div className="mt-12 grid gap-4 lg:grid-cols-2">
-          {content.faqs.map((faq) => (
+          {content.homeFaqs.map((faq) => (
             <details
               className="group rounded-2xl border border-(--color-border) bg-white p-6 shadow-sm"
               key={faq.question}
@@ -867,6 +937,14 @@ export function FaqSection() {
               </p>
             </details>
           ))}
+        </div>
+        <div className="mt-10 text-center">
+          <Link
+            className="inline-flex rounded-full border border-(--color-border) bg-white px-6 py-3 text-sm font-bold text-(--color-primary-dark) transition hover:border-(--color-primary) hover:text-(--color-primary)"
+            href="/faq"
+          >
+            {content.faqHeading.viewAllLabel}
+          </Link>
         </div>
       </div>
     </section>

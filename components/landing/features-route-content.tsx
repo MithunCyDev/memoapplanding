@@ -2,15 +2,8 @@
 
 import Link from "next/link";
 import { useLanguage } from "@/components/landing/language-provider";
+import { FeaturesSetupJourney } from "@/components/landing/features-setup-journey";
 import { SectionHeading } from "@/components/landing/section-heading";
-
-const featureSectionIds = [
-  "billing-pos",
-  "inventory-purchases",
-  "customers-dues",
-  "reports-ai",
-  "team-backup-security",
-] as const;
 
 export function FeaturesRouteContent() {
   const { content } = useLanguage();
@@ -18,37 +11,26 @@ export function FeaturesRouteContent() {
 
   return (
     <>
-      <section className="bg-white px-5 py-24 lg:px-8">
+      <FeaturesSetupJourney />
+
+      <section className="bg-(--color-secondary) px-5 py-20 text-white lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
-            eyebrow={routeContent.deepDiveEyebrow}
-            title={routeContent.deepDiveTitle}
-            description={routeContent.deepDiveDescription}
+            inverse
+            eyebrow={routeContent.trustStripEyebrow}
+            title={routeContent.trustStripTitle}
+            description={routeContent.trustStripDescription}
           />
-
-          <div className="mt-14 grid gap-5 lg:grid-cols-2">
-            {routeContent.deepDiveGroups.map((group, index) => (
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {routeContent.trustStripItems.map((item) => (
               <article
-                className="rounded-2xl border border-(--color-border) bg-(--color-background) p-7 shadow-sm"
-                id={featureSectionIds[index]}
-                key={group.title}
+                className="rounded-2xl border border-white/12 bg-white/[0.06] p-6 backdrop-blur"
+                key={item.title}
               >
-                <h2 className="text-2xl font-semibold tracking-tight">
-                  {group.title}
-                </h2>
-                <p className="mt-4 leading-7 text-(--color-muted)">
-                  {group.description}
+                <h2 className="text-lg font-semibold">{item.title}</h2>
+                <p className="mt-3 text-sm leading-7 text-white/72">
+                  {item.description}
                 </p>
-                <ul className="mt-6 space-y-3">
-                  {group.bullets.map((bullet) => (
-                    <li className="flex gap-3" key={bullet}>
-                      <span className="mt-2 size-2 shrink-0 rounded-full bg-(--color-primary)" />
-                      <span className="leading-7 text-(--color-muted)">
-                        {bullet}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
               </article>
             ))}
           </div>
@@ -114,7 +96,7 @@ export function FeaturesRouteContent() {
             <p className="mt-4 max-w-3xl leading-7 text-white/70">
               {routeContent.ctaDescription}
             </p>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 className="rounded-full bg-(--color-info) px-6 py-3 text-center text-sm font-bold text-(--color-secondary)"
                 href="/workflow"
@@ -126,6 +108,12 @@ export function FeaturesRouteContent() {
                 href="/pricing"
               >
                 {routeContent.pricingLink}
+              </Link>
+              <Link
+                className="rounded-full border border-white/20 px-6 py-3 text-center text-sm font-bold text-white"
+                href="/faq"
+              >
+                {routeContent.faqLink}
               </Link>
             </div>
           </div>
