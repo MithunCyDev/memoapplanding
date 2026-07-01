@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
 import { LanguageProvider } from "@/components/landing/language-provider";
+import { FloatingTalkButton } from "@/components/landing/floating-talk-button";
+import { PageVisibilityRoot } from "@/components/landing/page-visibility-root";
 import { openGraphImage, pageSeo } from "@/lib/schema";
 import { siteConfig } from "@/lib/site";
 
@@ -17,14 +19,12 @@ export const metadata: Metadata = {
   authors: [{ name: "MemoApp" }],
   creator: "MemoApp",
   publisher: "MemoApp",
-  manifest: "/manifest.webmanifest",
   alternates: {
     canonical: "/",
   },
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
-    apple: "/favicon.png",
   },
   openGraph: {
     type: "website",
@@ -56,7 +56,6 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#02734A",
   colorScheme: "light",
 };
 
@@ -68,7 +67,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body>
-        <LanguageProvider>{children}</LanguageProvider>
+        <LanguageProvider>
+          <PageVisibilityRoot>{children}</PageVisibilityRoot>
+          <FloatingTalkButton />
+        </LanguageProvider>
       </body>
     </html>
   );

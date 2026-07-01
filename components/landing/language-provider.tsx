@@ -6,12 +6,14 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useState,
   useSyncExternalStore,
   type ReactNode,
 } from "react";
 import {
   defaultLanguage,
-  landingContent,
+  enLandingContent,
+  loadLandingContent,
   type LandingContent,
   type Language,
 } from "@/lib/landing-content";
@@ -59,17 +61,24 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     getStoredLanguage,
     () => defaultLanguage,
   );
-
-  useEffect(() => {
-    const timeoutId = window.setTimeout(() => {
-      window.dispatchEvent(new Event(languageChangeEvent));
-    }, 0);
-
-    return () => window.clearTimeout(timeoutId);
-  }, []);
+  const [content, setContent] = useState<LandingContent>(enLandingContent);
 
   useEffect(() => {
     document.documentElement.lang = language === "bn" ? "bn" : "en";
+  }, [language]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    void loadLandingContent(language).then((nextContent) => {
+      if (!cancelled) {
+        setContent(nextContent);
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
   }, [language]);
 
   const setLanguage = useCallback((nextLanguage: Language) => {
@@ -79,12 +88,12 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
 
   const value = useMemo<LanguageContextValue>(
     () => ({
-      content: landingContent[language],
+      content,
       language,
       setLanguage,
       toggleLanguage: () => setLanguage(language === "bn" ? "en" : "bn"),
     }),
-    [language, setLanguage],
+    [content, language, setLanguage],
   );
 
   return (

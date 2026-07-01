@@ -79,9 +79,8 @@ select {
   position: absolute;
   z-index: -1;
   border-radius: 9999px;
-  filter: blur(56px);
-  opacity: 0.72;
-  will-change: transform;
+  filter: blur(40px);
+  opacity: 0.58;
 }
 
 .hero-flow-orb-primary {
@@ -121,11 +120,10 @@ select {
       rgba(3, 166, 120, 0.16),
       rgba(255, 153, 51, 0.1),
       transparent);
-  filter: blur(22px);
-  opacity: 0.8;
+  filter: blur(16px);
+  opacity: 0.65;
   transform: rotate(-6deg);
   animation: hero-flow-ribbon 22s ease-in-out infinite;
-  will-change: transform;
 }
 
 .text-balance {
@@ -165,7 +163,41 @@ select {
   width: max-content;
   gap: 1.25rem;
   animation: feature-marquee-left 42s linear infinite;
-  will-change: transform;
+}
+
+.feature-marquee-paused .feature-marquee-track {
+  animation-play-state: paused;
+}
+
+html[data-page-visible="false"] .hero-flow-orb,
+html[data-page-visible="false"] .hero-flow-ribbon,
+html[data-page-visible="false"] .feature-marquee-track,
+html[data-page-visible="false"] .hero-pulse,
+html[data-page-visible="false"] .journey-progress-bar {
+  animation-play-state: paused !important;
+}
+
+@media (min-width: 1024px) {
+  .feature-marquee {
+    overflow: visible;
+    mask-image: none;
+  }
+
+  .feature-marquee-track,
+  .feature-marquee-track-reverse {
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: none;
+  }
+
+  .feature-marquee-card {
+    flex: 1 1 18rem;
+  }
+
+  .feature-marquee-card[aria-hidden="true"] {
+    display: none;
+  }
 }
 
 .feature-marquee-track-reverse {
@@ -377,6 +409,22 @@ select {
   }
 }
 
+@keyframes workflow-detail-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.workflow-detail-enter {
+  animation: workflow-detail-enter 0.45s ease-out;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -390,7 +438,8 @@ select {
   .hero-pop-in,
   .hero-bar-fill,
   .hero-pulse,
-  .hero-alert-enter {
+  .hero-alert-enter,
+  .workflow-detail-enter {
     animation: none;
   }
 

@@ -11,6 +11,31 @@ export function FeaturesRouteContent() {
 
   return (
     <>
+      <section className="border-b border-(--color-border) bg-white px-5 py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading
+            eyebrow={routeContent.platformSection.eyebrow}
+            title={routeContent.platformSection.title}
+            description={routeContent.platformSection.description}
+          />
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {routeContent.platformSection.items.map((item) => (
+              <article
+                className="rounded-lg border border-(--color-border) bg-(--color-background) p-6 shadow-sm"
+                key={item.title}
+              >
+                <h2 className="text-lg font-semibold text-(--color-ink)">
+                  {item.title}
+                </h2>
+                <p className="mt-3 text-sm leading-7 text-(--color-muted)">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <FeaturesSetupJourney />
 
       <section className="bg-(--color-secondary) px-5 py-20 text-white lg:px-8">

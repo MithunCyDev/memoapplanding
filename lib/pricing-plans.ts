@@ -3,7 +3,8 @@ import type { LandingContent } from "@/lib/landing-content";
 export type PricingPlan = LandingContent["pricingPlans"][number];
 
 export function isTrialPlan(plan: PricingPlan) {
-  return plan.monthlyPrice === "Free" || plan.monthlyPrice === "ফ্রি";
+  const price = plan.monthlyPrice as string;
+  return price === "Free" || price === "ফ্রি";
 }
 
 export function splitPricingPlans(plans: readonly PricingPlan[]) {

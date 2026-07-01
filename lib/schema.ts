@@ -5,20 +5,20 @@ export const openGraphImage = {
   url: "/og.png",
   width: 1200,
   height: 630,
-  alt: "MemoApp SaaS POS dashboard, billing, stock, dues, and AI preview",
+  alt: "MemoApp business management dashboard — billing, stock, dues, and AI preview",
 } as const;
 
 export const pageSeo = {
   home: {
-    title: "MemoApp | AI-Powered POS, Inventory & Business Management",
+    title: "MemoApp | AI-Powered Business Management Software for Bangladesh",
     description: siteConfig.description,
   },
   features: {
-    title: "MemoApp Features | memo app bd — POS, Inventory & Baki",
+    title: "MemoApp Features | Billing, Inventory & Dues",
     openGraphTitle:
-      "MemoApp Features | memo app bd — POS, Inventory & Baki for Bangladesh Shops",
+      "MemoApp Features | Billing, Inventory & Dues for Bangladesh Shops",
     description:
-      "Explore MemoApp features for Bangladesh shops: POS billing, Excel/CSV product import, Google Contacts customer import, inventory, baki ledgers, reports, Google Drive backup, team access, and AI in one memo app.",
+      "Explore MemoApp features: POS billing, Excel/CSV import, inventory, customer dues, reports, team access, and AI — a modern web app that runs on any device.",
     keywords: [
       "MemoApp features",
       "memoapp features",
@@ -36,7 +36,7 @@ export const pageSeo = {
     openGraphTitle:
       "MemoApp Workflow | memo app bd daily shop operations guide",
     description:
-      "See how memoapp supports onboarding, counter billing, baki collection, restocking, expenses, reports, sync, and Google Drive backup for Bangladesh retail teams.",
+      "See how memoapp supports onboarding, counter billing, baki collection, restocking, expenses, reports, and sync for Bangladesh retail teams.",
     keywords: [
       "MemoApp workflow",
       "memo app workflow",
@@ -48,11 +48,12 @@ export const pageSeo = {
     path: "/workflow",
   },
   pricing: {
-    title: "Pricing & Plans - AI-Powered POS Software in Bangladesh",
+    title:
+      "Pricing & Plans — AI-Powered Business Management Software in Bangladesh",
     openGraphTitle:
-      "MemoApp Pricing & Plans - AI-Powered POS Software in Bangladesh",
+      "MemoApp Pricing & Plans — AI-Powered Business Management Software in Bangladesh",
     description:
-      "Compare MemoApp Trial, Basic, Growth, Business, and Enterprise plans for modern AI-powered POS billing, inventory, dues, reports, backup, team access, and growing shop workflows in Bangladesh.",
+      "Compare MemoApp Trial, Basic, Growth, Business, and Enterprise plans for billing, inventory, dues, reports, backup, team access, and AI-assisted shop workflows in Bangladesh.",
     keywords: [
       "MemoApp pricing",
       "POS software price Bangladesh",
@@ -64,11 +65,10 @@ export const pageSeo = {
     path: "/pricing",
   },
   faq: {
-    title: "MemoApp FAQ | memo app bd support & setup answers",
-    openGraphTitle:
-      "MemoApp FAQ | memo app bd — POS, Inventory, Pricing & Support",
+    title: "MemoApp FAQ | Setup, Billing, Inventory & Support",
+    openGraphTitle: "MemoApp FAQ | Billing, Inventory, Dues & Pricing Answers",
     description:
-      "Find answers about memoapp setup, POS billing, inventory, baki, pricing, offline sync, Google backup, bKash payment, and support for Bangladeshi shop owners.",
+      "Find answers about MemoApp setup, billing, inventory, customer dues, pricing, offline sync, bKash payment, and support for Bangladeshi shop owners.",
     keywords: [
       "MemoApp FAQ",
       "memo app faq",
@@ -79,16 +79,14 @@ export const pageSeo = {
     path: "/faq",
   },
   privacyPolicy: {
-    title: "MemoApp Privacy Policy | memo app bd data protection",
-    openGraphTitle:
-      "MemoApp Privacy Policy | memo app bd data & Google API use",
+    title: "MemoApp Privacy Policy",
+    openGraphTitle: "MemoApp Privacy Policy",
     description:
-      "Read how MemoApp (memo app bd) collects, uses, stores, and protects shop, customer, Google Contacts, and Google Drive backup data. Product of OroraSoft.",
+      "How MemoApp collects, uses, stores, and protects shop and customer data. Developed and maintained by OroraSoft.",
     keywords: [
       "MemoApp privacy policy",
       "memo app privacy",
       "memo app bd privacy",
-      "MemoApp Google Contacts privacy",
       "shop management data policy",
     ],
     path: "/privacy-policy",
@@ -97,13 +95,12 @@ export const pageSeo = {
     title: "Terms of Service - MemoApp",
     openGraphTitle: "MemoApp Terms of Service",
     description:
-      "Review the terms for using MemoApp, including account responsibilities, lawful shop data use, Google integrations, backups, subscriptions, and acceptable use.",
+      "Review the terms for using MemoApp, including account responsibilities, lawful shop data use, exports, subscriptions, and acceptable use.",
     keywords: [
       "MemoApp terms of service",
       "MemoApp terms",
       "POS app terms",
       "shop management software terms",
-      "Google Drive backup terms",
     ],
     path: "/terms-of-service",
   },
@@ -377,9 +374,8 @@ export function buildPrivacyPolicyPageSchema() {
       },
       about: [
         "Privacy policy",
-        "Google Contacts data use",
-        "Google Drive backup data use",
         "Shop management data protection",
+        "Customer data use",
       ],
     },
   ];
@@ -399,12 +395,7 @@ export function buildTermsOfServicePageSchema() {
         name: siteConfig.name,
         url: siteConfig.url,
       },
-      about: [
-        "Terms of service",
-        "Acceptable use",
-        "Google Contacts import",
-        "Google Drive backup",
-      ],
+      about: ["Terms of service", "Acceptable use", "Data export"],
     },
   ];
 }

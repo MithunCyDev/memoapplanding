@@ -17,7 +17,9 @@ function FlowStepsGrid({
           key={step.title}
         >
           <h3 className="text-lg font-semibold">{step.title}</h3>
-          <p className="mt-3 leading-7 text-(--color-muted)">{step.description}</p>
+          <p className="mt-3 leading-7 text-(--color-muted)">
+            {step.description}
+          </p>
         </article>
       ))}
     </div>
@@ -142,9 +144,14 @@ export function WorkflowRouteHighlights() {
                 {"permissions" in role && role.permissions ? (
                   <ul className="mt-5 space-y-2">
                     {role.permissions.map((permission) => (
-                      <li className="flex gap-2 text-sm leading-6" key={permission}>
+                      <li
+                        className="flex gap-2 text-sm leading-6"
+                        key={permission}
+                      >
                         <span className="mt-2 size-1.5 shrink-0 rounded-full bg-(--color-primary)" />
-                        <span className="text-(--color-muted)">{permission}</span>
+                        <span className="text-(--color-muted)">
+                          {permission}
+                        </span>
                       </li>
                     ))}
                   </ul>

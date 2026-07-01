@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/components/landing/language-provider";
-import { SectionHeading } from "@/components/landing/section-heading";
+import { useMotionAllowed } from "@/components/landing/use-motion-allowed";
 import { usePrefersReducedMotion } from "@/components/landing/use-prefers-reduced-motion";
+import { SectionHeading } from "@/components/landing/section-heading";
 
 type DemoPhase = "idle" | "active" | "success";
 
@@ -22,7 +23,9 @@ function useDemoCycle(stepCount: number, enabled: boolean) {
       return;
     }
 
-    setPhase("idle");
+    setTimeout(() => {
+      setPhase("idle");
+    }, 0);
     const phaseTimers = [
       window.setTimeout(() => setPhase("active"), PHASE_ACTIVE_AT_MS),
       window.setTimeout(() => setPhase("success"), PHASE_SUCCESS_AT_MS),
@@ -44,10 +47,11 @@ function useDemoCycle(stepCount: number, enabled: boolean) {
 export function FeaturesSetupJourney() {
   const { content } = useLanguage();
   const journey = content.featuresRoute.setupJourney;
+  const motionAllowed = useMotionAllowed();
   const prefersReducedMotion = usePrefersReducedMotion();
   const { activeStepIndex, phase } = useDemoCycle(
     journey.steps.length,
-    !prefersReducedMotion,
+    motionAllowed,
   );
   const displayStepIndex = prefersReducedMotion
     ? journey.steps.length - 1
@@ -195,7 +199,7 @@ export function FeaturesSetupJourney() {
                 />
               ) : null}
               {activeStep.visual === "customers" &&
-              "googleContactsLabel" in activeStep ? (
+              "dropZoneTitle" in activeStep ? (
                 <ImportVisual
                   chrome={journey.importChrome}
                   phase={phase}
@@ -293,7 +297,6 @@ type ImportStepContent = {
   downloadTemplateLabel?: string;
   successMessage?: string;
   exampleFile?: string;
-  googleContactsLabel?: string;
 };
 
 type ImportChromeLabels = {
@@ -302,19 +305,10 @@ type ImportChromeLabels = {
   browseLabel: string;
   uploadingLabel: string;
   completeLabel: string;
-  googleHint: string;
-  orLabel: string;
   mappedLabel: string;
   productColumns: readonly string[];
   customerColumns: readonly string[];
-  contactCount: string;
 };
-
-const GOOGLE_AVATARS = [
-  { initial: "A", className: "bg-[#4285f4]" },
-  { initial: "S", className: "bg-[#ea4335]" },
-  { initial: "M", className: "bg-[#34a853]" },
-] as const;
 
 function UploadCloudIcon({ className }: { className?: string }) {
   return (
@@ -394,49 +388,6 @@ function ImportVisual({
       </div>
 
       <div className="space-y-3.5 p-5">
-        {variant === "customers" && step.googleContactsLabel ? (
-          <>
-            <div
-              className={`flex items-center gap-3 rounded-2xl border px-3.5 py-3 transition ${
-                phase === "idle"
-                  ? "border-[#4285f4]/40 bg-[#4285f4]/8 shadow-sm"
-                  : "border-(--color-border) bg-white"
-              }`}
-            >
-              <span className="grid size-10 shrink-0 place-items-center rounded-xl border border-(--color-border) bg-white text-base font-bold text-[#4285f4]">
-                G
-              </span>
-              <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-semibold">
-                  {step.googleContactsLabel}
-                </p>
-                <p className="text-xs text-(--color-muted)">
-                  {chrome.googleHint}
-                </p>
-              </div>
-              <div className="flex items-center -space-x-2">
-                {GOOGLE_AVATARS.map((avatar) => (
-                  <span
-                    className={`grid size-7 place-items-center rounded-full text-[0.65rem] font-bold text-white ring-2 ring-white ${avatar.className}`}
-                    key={avatar.initial}
-                  >
-                    {avatar.initial}
-                  </span>
-                ))}
-                <span className="grid size-7 place-items-center rounded-full bg-(--color-primary-light) text-[0.6rem] font-bold text-(--color-primary-dark) ring-2 ring-white">
-                  {chrome.contactCount}
-                </span>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-(--color-muted)">
-              <span className="h-px flex-1 bg-(--color-border)" />
-              {chrome.orLabel}
-              <span className="h-px flex-1 bg-(--color-border)" />
-            </div>
-          </>
-        ) : null}
-
         {variant === "products" && step.downloadTemplateLabel ? (
           <button
             className="flex w-full items-center justify-between gap-3 rounded-2xl border border-(--color-info)/30 bg-(--color-info)/10 px-3.5 py-3 text-left"

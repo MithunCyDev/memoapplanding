@@ -1,40 +1,49 @@
 "use client";
 
 import { useLanguage } from "@/components/landing/language-provider";
+import type { Language } from "@/lib/landing-content";
 
-export function LanguageToggle() {
+const languageOptions: {
+  value: Language;
+  label: string;
+  ariaLabel: string;
+}[] = [
+  { value: "en", label: "ENG", ariaLabel: "English" },
+  { value: "bn", label: "BN", ariaLabel: "Bengali" },
+];
+
+export function LanguageToggle({ className }: { className?: string }) {
   const { language, setLanguage } = useLanguage();
 
   return (
     <div
-      aria-label="Switch language"
-      className="flex rounded-full border border-(--color-border) bg-white p-1 text-xs font-bold shadow-sm"
+      aria-label="Language"
+      className={
+        className ??
+        "inline-flex rounded-full border border-(--color-border) bg-(--color-background) p-0.5"
+      }
       role="group"
     >
-      <button
-        aria-pressed={language === "en"}
-        className={`rounded-full px-3 py-2 transition ${
-          language === "en"
-            ? "bg-(--color-primary) text-white"
-            : "text-(--color-muted) hover:text-(--color-primary)"
-        }`}
-        onClick={() => setLanguage("en")}
-        type="button"
-      >
-        EN
-      </button>
-      <button
-        aria-pressed={language === "bn"}
-        className={`rounded-full px-3 py-2 transition ${
-          language === "bn"
-            ? "bg-(--color-primary) text-white"
-            : "text-(--color-muted) hover:text-(--color-primary)"
-        }`}
-        onClick={() => setLanguage("bn")}
-        type="button"
-      >
-        বাংলা
-      </button>
+      {languageOptions.map((option) => {
+        const isSelected = option.value === language;
+
+        return (
+          <button
+            aria-label={option.ariaLabel}
+            aria-pressed={isSelected}
+            className={`rounded-full px-2 py-1.5 text-[0.58rem] font-bold tracking-[0.06em] transition ${
+              isSelected
+                ? "bg-white text-(--color-primary-dark) shadow-sm"
+                : "text-(--color-muted) hover:text-(--color-primary-dark)"
+            }`}
+            key={option.value}
+            onClick={() => setLanguage(option.value)}
+            type="button"
+          >
+            {option.label}
+          </button>
+        );
+      })}
     </div>
   );
 }

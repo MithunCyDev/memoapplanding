@@ -2,15 +2,21 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Footer } from "@/components/landing/footer";
 import { HeaderNav } from "@/components/landing/header-nav";
 import { LanguageToggle } from "@/components/landing/language-toggle";
+import {
+  MobileNavMenu,
+  MobileNavMenuButton,
+} from "@/components/landing/mobile-nav-menu";
 import { useLanguage } from "@/components/landing/language-provider";
 import { SectionHeading } from "@/components/landing/section-heading";
-import { usePrefersReducedMotion } from "@/components/landing/use-prefers-reduced-motion";
+import { useInView } from "@/components/landing/use-in-view";
+import { useMotionAllowed } from "@/components/landing/use-motion-allowed";
 import { MobileCounterMockup } from "@/components/landing/product-mockups";
-import { appLoginUrl, ororaSoftAboutUrl } from "@/lib/landing-content";
+import { WorkflowFlowDiagram } from "@/components/landing/workflow-flow-diagram";
+import { appLoginUrl, installUrl } from "@/lib/landing-content";
 import { splitPricingPlans } from "@/lib/pricing-plans";
 import { siteConfig } from "@/lib/site";
 
@@ -37,6 +43,7 @@ export function LandingPage() {
 
 export function Header() {
   const { content } = useLanguage();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[rgba(248,249,245,0.84)] backdrop-blur-xl">
@@ -58,15 +65,24 @@ export function Header() {
         <HeaderNav />
 
         <div className="flex items-center gap-2">
-          <LanguageToggle />
+          <LanguageToggle className="hidden md:inline-flex rounded-full border border-(--color-border) bg-(--color-background) p-0.5" />
           <a
-            className="primary-button hidden rounded-full px-5 py-3 text-sm font-semibold shadow-lg shadow-[rgba(1,64,52,0.18)] transition sm:inline-flex"
-            href={appLoginUrl}
+            className="primary-button hidden rounded-full px-5 py-3 text-sm font-semibold shadow-lg shadow-[rgba(1,64,52,0.18)] transition md:inline-flex"
+            href={installUrl}
           >
-            {content.common.tryForFree}
+            {content.common.downloadMemoApp}
           </a>
+          <MobileNavMenuButton
+            onToggle={() => setMobileMenuOpen((current) => !current)}
+            open={mobileMenuOpen}
+          />
         </div>
       </nav>
+
+      <MobileNavMenu
+        onClose={() => setMobileMenuOpen(false)}
+        open={mobileMenuOpen}
+      />
     </header>
   );
 }
@@ -92,15 +108,6 @@ function HeroSection() {
               <span className="size-2 shrink-0 rounded-full bg-(--color-info)" />
               <span>{content.hero.eyebrow}</span>
             </span>
-            <span className="hidden h-4 w-px bg-white/20 sm:block" />
-            <a
-              className="text-sm font-semibold text-(--color-info) transition hover:text-(--color-info-light)"
-              href={ororaSoftAboutUrl}
-              rel="noreferrer"
-              target="_blank"
-            >
-              Powered by OroraSoft
-            </a>
           </div>
           <h1
             className={`text-balance mx-auto mt-8 max-w-4xl font-semibold tracking-tighter ${
@@ -127,19 +134,19 @@ function HeroSection() {
           >
             {content.hero.description}
           </p>
-          <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
+          <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap">
             <a
               className="rounded-full bg-(--color-info) px-7 py-4 text-center text-sm font-bold text-(--color-secondary) shadow-xl shadow-[rgba(255,153,51,0.22)] transition hover:bg-(--color-info-light)"
               href={appLoginUrl}
             >
               {content.common.startWithMemoApp}
             </a>
-            <Link
+            <a
               className="rounded-full border border-white/20 px-7 py-4 text-center text-sm font-bold text-white transition hover:bg-white/10"
-              href="/features"
+              href={installUrl}
             >
-              {content.common.exploreFeatures}
-            </Link>
+              {content.common.downloadMemoApp}
+            </a>
           </div>
         </div>
         <HeroDashboardPreview stats={content.heroStats} />
@@ -163,9 +170,6 @@ function HeroSection() {
   );
 }
 
-const HERO_SYSTEM_COUNT = 4;
-const HERO_STEP_MS = 2200;
-
 const HERO_AI_RESTOCK_ITEMS = [
   "Cooking oil · Critical",
   "Rice premium · Low",
@@ -179,67 +183,16 @@ const HERO_COUNTER_ACTIONS = [
   "Stock alert",
 ] as const;
 
-function getHeroPanelClass(
-  panelIndex: number,
-  activeSystem: number,
-  animate: boolean,
-): string {
-  if (!animate) {
-    return "";
-  }
-
-  const isActive = panelIndex === activeSystem;
-  return [
-    "transition-all duration-500 ease-out",
-    isActive
-      ? "z-10 scale-[1.008] shadow-lg shadow-[rgba(1,64,52,0.12)] ring-2 ring-(--color-primary)/35"
-      : "opacity-[0.72]",
-  ].join(" ");
-}
-
 function HeroDashboardPreview({
   stats,
 }: {
   stats: ReadonlyArray<{ label: string; value: string }>;
 }) {
-  const prefersReducedMotion = usePrefersReducedMotion();
-  const animate = !prefersReducedMotion;
-  const [activeSystem, setActiveSystem] = useState(0);
-  const [replayKey, setReplayKey] = useState(0);
-
-  useEffect(() => {
-    if (!animate) {
-      return;
-    }
-
-    const timerId = window.setInterval(() => {
-      setActiveSystem((current) => (current + 1) % HERO_SYSTEM_COUNT);
-      setReplayKey((current) => current + 1);
-    }, HERO_STEP_MS);
-
-    return () => window.clearInterval(timerId);
-  }, [animate]);
-
   return (
     <div className="relative w-screen max-w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-3rem)]">
-      <div className="absolute -inset-x-8 bottom-0 top-16 -z-10 rounded-[3rem] bg-(--color-secondary-light)/12 blur-3xl" />
-      <div
-        className={`absolute -top-5 right-3 z-20 max-w-80 items-start gap-3 rounded-2xl border border-white/25 bg-white/95 p-3 text-left text-(--color-ink) shadow-2xl shadow-black/20 backdrop-blur-xl lg:right-10 ${
-          animate
-            ? activeSystem === 3
-              ? "flex scale-[1.008] shadow-lg shadow-[rgba(1,64,52,0.12)] ring-2 ring-(--color-primary)/35 hero-alert-enter"
-              : "hidden"
-            : "hidden sm:flex"
-        }`}
-        key={
-          animate && activeSystem === 3 ? `alert-${replayKey}` : "alert-static"
-        }
-      >
-        <span
-          className={`grid size-10 shrink-0 place-items-center rounded-2xl bg-(--color-info) text-sm font-bold text-(--color-secondary) ${
-            animate && activeSystem === 3 ? "hero-pulse" : ""
-          }`}
-        >
+      <div className="absolute -inset-x-8 bottom-0 top-16 -z-10 rounded-[3rem] bg-(--color-secondary-light)/12 blur-2xl" />
+      <div className="absolute -top-5 right-3 z-20 hidden max-w-80 items-start gap-3 rounded-2xl border border-white/25 bg-white/95 p-3 text-left text-(--color-ink) shadow-2xl shadow-black/20 sm:flex lg:right-10">
+        <span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-(--color-info) text-sm font-bold text-(--color-secondary)">
           AI
         </span>
         <div>
@@ -251,7 +204,7 @@ function HeroDashboardPreview({
           </p>
         </div>
       </div>
-      <div className="mx-auto w-full max-w-368 rounded-2xl border border-white/15 bg-white/10 p-2 shadow-2xl shadow-black/25 backdrop-blur-xl sm:p-3">
+      <div className="mx-auto w-full max-w-368 rounded-2xl border border-white/15 bg-white/10 p-2 shadow-2xl shadow-black/25 backdrop-blur-sm sm:p-3">
         <div className="overflow-hidden rounded-2xl bg-[#f8f9f5] text-(--color-ink)">
           <div className="flex items-center justify-between border-b border-(--color-border) bg-(--color-background) px-4 py-3">
             <div className="flex items-center gap-1.5" aria-hidden="true">
@@ -264,9 +217,7 @@ function HeroDashboardPreview({
             </p>
           </div>
           <div className="grid gap-4 p-4 sm:p-5 lg:grid-cols-[1.28fr_0.72fr]">
-            <section
-              className={`rounded-2xl border border-(--color-border) bg-white p-4 shadow-sm sm:p-5 ${getHeroPanelClass(0, activeSystem, animate)}`}
-            >
+            <section className="rounded-2xl border border-(--color-border) bg-white p-4 shadow-sm sm:p-5">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.22em] text-(--color-primary)">
@@ -276,30 +227,15 @@ function HeroDashboardPreview({
                     Live business stats
                   </h2>
                 </div>
-                <span
-                  className={`rounded-full bg-(--color-primary-light) px-3 py-1 text-xs font-bold text-(--color-primary-dark) ${
-                    animate ? "hero-pulse" : ""
-                  }`}
-                >
+                <span className="rounded-full bg-(--color-primary-light) px-3 py-1 text-xs font-bold text-(--color-primary-dark)">
                   Synced now
                 </span>
               </div>
               <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {stats.map((stat, index) => (
+                {stats.map((stat) => (
                   <div
-                    className={`rounded-2xl border border-(--color-border) bg-(--color-background) p-4 ${
-                      animate && activeSystem === 0 ? "hero-pop-in" : ""
-                    }`}
-                    key={
-                      animate && activeSystem === 0
-                        ? `${stat.label}-${replayKey}`
-                        : stat.label
-                    }
-                    style={
-                      animate && activeSystem === 0
-                        ? { animationDelay: `${index * 80}ms` }
-                        : undefined
-                    }
+                    className="rounded-2xl border border-(--color-border) bg-(--color-background) p-4"
+                    key={stat.label}
                   >
                     <p className="text-2xl font-semibold text-(--color-primary)">
                       {stat.value}
@@ -316,24 +252,13 @@ function HeroDashboardPreview({
                   <span>Strong momentum</span>
                 </div>
                 <div className="mt-3 h-2 rounded-full bg-white">
-                  <div
-                    className={`h-2 w-[78%] rounded-full bg-(--color-primary) ${
-                      animate && activeSystem === 0 ? "hero-bar-fill" : ""
-                    }`}
-                    key={
-                      animate && activeSystem === 0
-                        ? `health-${replayKey}`
-                        : "health-static"
-                    }
-                  />
+                  <div className="h-2 w-[78%] rounded-full bg-(--color-primary)" />
                 </div>
               </div>
             </section>
 
             <section className="grid gap-4">
-              <div
-                className={`rounded-2xl bg-(--color-secondary) p-5 text-left text-white shadow-xl shadow-[rgba(1,64,52,0.18)] ${getHeroPanelClass(1, activeSystem, animate)}`}
-              >
+              <div className="rounded-2xl bg-(--color-secondary) p-5 text-left text-white shadow-xl shadow-[rgba(1,64,52,0.18)]">
                 <div className="flex items-center justify-between gap-3">
                   <div>
                     <p className="text-xs font-bold uppercase tracking-[0.22em] text-(--color-info)">
@@ -343,30 +268,15 @@ function HeroDashboardPreview({
                       “Which products should I restock before Eid?”
                     </p>
                   </div>
-                  <span
-                    className={`grid size-10 shrink-0 place-items-center rounded-2xl bg-white/10 text-lg ${
-                      animate && activeSystem === 1 ? "hero-pulse" : ""
-                    }`}
-                  >
+                  <span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-white/10 text-lg">
                     AI
                   </span>
                 </div>
                 <div className="mt-5 space-y-2">
-                  {HERO_AI_RESTOCK_ITEMS.map((item, index) => (
+                  {HERO_AI_RESTOCK_ITEMS.map((item) => (
                     <div
-                      className={`rounded-2xl bg-white/8 px-3 py-2 text-sm font-semibold ${
-                        animate && activeSystem === 1 ? "hero-pop-in" : ""
-                      }`}
-                      key={
-                        animate && activeSystem === 1
-                          ? `${item}-${replayKey}`
-                          : item
-                      }
-                      style={
-                        animate && activeSystem === 1
-                          ? { animationDelay: `${index * 120}ms` }
-                          : undefined
-                      }
+                      className="rounded-2xl bg-white/8 px-3 py-2 text-sm font-semibold"
+                      key={item}
                     >
                       {item}
                     </div>
@@ -374,30 +284,15 @@ function HeroDashboardPreview({
                 </div>
               </div>
 
-              <div
-                className={`rounded-2xl border border-(--color-border) bg-white p-5 text-left shadow-sm ${getHeroPanelClass(2, activeSystem, animate)}`}
-              >
+              <div className="rounded-2xl border border-(--color-border) bg-white p-5 text-left shadow-sm">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-(--color-primary)">
                   Counter snapshot
                 </p>
                 <div className="mt-4 grid grid-cols-2 gap-3">
-                  {HERO_COUNTER_ACTIONS.map((action, index) => (
+                  {HERO_COUNTER_ACTIONS.map((action) => (
                     <span
-                      className={`rounded-2xl px-3 py-3 text-center text-sm font-semibold ${
-                        animate && activeSystem === 2
-                          ? "hero-pop-in bg-(--color-primary-light) text-(--color-primary-dark)"
-                          : "bg-(--color-background)"
-                      }`}
-                      key={
-                        animate && activeSystem === 2
-                          ? `${action}-${replayKey}`
-                          : action
-                      }
-                      style={
-                        animate && activeSystem === 2
-                          ? { animationDelay: `${index * 100}ms` }
-                          : undefined
-                      }
+                      className="rounded-2xl bg-(--color-background) px-3 py-3 text-center text-sm font-semibold"
+                      key={action}
                     >
                       {action}
                     </span>
@@ -454,6 +349,10 @@ function LogoStrip() {
 
 export function FeatureSection() {
   const { content } = useLanguage();
+  const sectionRef = useRef<HTMLElement>(null);
+  const inView = useInView(sectionRef);
+  const motionAllowed = useMotionAllowed();
+  const marqueeActive = motionAllowed && inView;
   const midpoint = Math.ceil(content.featureCards.length / 2);
   const featureRows = [
     content.featureCards.slice(0, midpoint),
@@ -461,7 +360,11 @@ export function FeatureSection() {
   ];
 
   return (
-    <section className="overflow-hidden px-5 py-24 lg:px-8" id="features">
+    <section
+      className={`overflow-hidden px-5 py-24 lg:px-8 ${marqueeActive ? "" : "feature-marquee-paused"}`}
+      id="features"
+      ref={sectionRef}
+    >
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow={content.featuresHeading.eyebrow}
@@ -504,12 +407,6 @@ export function FeatureSection() {
           </div>
         ))}
       </div>
-
-      <div className="mx-auto mt-10 max-w-7xl">
-        <div className="rounded-2xl border border-(--color-border) bg-(--color-primary-light) p-5 text-center text-sm font-semibold text-(--color-primary-dark) sm:p-6">
-          {content.featureSummary}
-        </div>
-      </div>
     </section>
   );
 }
@@ -523,31 +420,14 @@ export function WorkflowSection() {
       id="workflow"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+        <div className="grid gap-14 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-16">
           <SectionHeading
             align="left"
             eyebrow={content.workflowHeading.eyebrow}
             title={content.workflowHeading.title}
             description={content.workflowHeading.description}
           />
-          <div className="grid gap-5">
-            {content.workflowSteps.map((step) => (
-              <article
-                className="grid gap-5 rounded-2xl bg-white p-6 shadow-sm sm:grid-cols-[auto_1fr]"
-                key={step.step}
-              >
-                <span className="grid size-14 place-items-center rounded-2xl bg-(--color-primary) text-lg font-semibold text-white">
-                  {step.step}
-                </span>
-                <div>
-                  <h3 className="text-xl font-semibold">{step.title}</h3>
-                  <p className="mt-2 leading-7 text-(--color-muted)">
-                    {step.description}
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div>
+          <WorkflowFlowDiagram steps={content.workflowSteps} />
         </div>
       </div>
     </section>
@@ -633,7 +513,7 @@ function PosShowcaseSection() {
           title={pos.title}
           description={pos.description}
         />
-        <div className="mt-14 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch">
+        <div className="mt-14 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
           <PosPreviewCard label={pos.previewLabel} alt={pos.previewAlt} />
           <div className="grid gap-3 sm:grid-cols-2 sm:grid-rows-2 lg:h-full">
             {pos.cards.map((card) => (
@@ -673,10 +553,10 @@ function PosPreviewCard({ label, alt }: { label: string; alt: string }) {
             {label}
           </p>
         </div>
-        <div className="relative aspect-1024/546">
+        <div className="relative aspect-1200/568 w-full">
           <Image
             alt={alt}
-            className="object-cover object-top"
+            className="object-contain object-top"
             fill
             sizes="(min-width: 1024px) 62vw, 100vw"
             src="/pos.png"
@@ -770,6 +650,7 @@ export function PricingSection() {
 
 function TestimonialsSection() {
   const { content } = useLanguage();
+  const motionAllowed = useMotionAllowed();
   const testimonials = content.testimonials;
   const [activeTestimonialIndex, setActiveTestimonialIndex] = useState(0);
   const [carouselInteractionVersion, setCarouselInteractionVersion] =
@@ -778,7 +659,7 @@ function TestimonialsSection() {
   const totalTestimonials = testimonials.length;
 
   useEffect(() => {
-    if (totalTestimonials <= 1) {
+    if (!motionAllowed || totalTestimonials <= 1) {
       return;
     }
 
@@ -789,7 +670,7 @@ function TestimonialsSection() {
     }, 4500);
 
     return () => window.clearInterval(intervalId);
-  }, [carouselInteractionVersion, totalTestimonials]);
+  }, [carouselInteractionVersion, motionAllowed, totalTestimonials]);
 
   if (!activeTestimonial) {
     return null;

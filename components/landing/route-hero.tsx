@@ -1,9 +1,9 @@
 "use client";
 
 import { useLanguage } from "@/components/landing/language-provider";
-import type { landingContent } from "@/lib/landing-content";
+import type { LandingContent } from "@/lib/landing-content";
 
-type RouteHeroKey = keyof (typeof landingContent)["en"]["routeHeroes"];
+type RouteHeroKey = keyof LandingContent["routeHeroes"];
 
 interface RouteHeroProps {
   contentKey: RouteHeroKey;

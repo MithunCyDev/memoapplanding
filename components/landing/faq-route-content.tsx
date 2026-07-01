@@ -5,31 +5,35 @@ import { useLanguage } from "@/components/landing/language-provider";
 
 export function FaqRouteContent() {
   const { content } = useLanguage();
-  const [selectedGroup, setSelectedGroup] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
-  const groups = [
-    { key: "all", label: content.faqPage.allGroups },
-    ...content.faqTopics.map((topic) => ({
-      key: topic.title,
-      label: topic.title,
-    })),
-  ];
+  const [selectedTopic, setSelectedTopic] = useState("all");
+
+  const topicFilters = useMemo(
+    () => [
+      { key: "all", label: content.faqPage.allGroups },
+      ...content.faqTopics.map((topic) => ({
+        key: topic.title,
+        label: topic.title,
+      })),
+    ],
+    [content.faqPage.allGroups, content.faqTopics],
+  );
 
   const filteredFaqs = useMemo(() => {
     const normalizedSearchTerm = searchTerm.trim().toLowerCase();
 
     return content.faqs.filter((faq) => {
-      const groupMatches =
-        selectedGroup === "all" || faq.category === selectedGroup;
+      const topicMatches =
+        selectedTopic === "all" || faq.category === selectedTopic;
       const searchMatches =
         normalizedSearchTerm.length === 0 ||
         `${faq.category} ${faq.question} ${faq.answer}`
           .toLowerCase()
           .includes(normalizedSearchTerm);
 
-      return groupMatches && searchMatches;
+      return topicMatches && searchMatches;
     });
-  }, [content, searchTerm, selectedGroup]);
+  }, [content.faqs, searchTerm, selectedTopic]);
 
   return (
     <section className="relative px-5 py-24 lg:px-8">
@@ -51,83 +55,66 @@ export function FaqRouteContent() {
               value={searchTerm}
             />
           </div>
+
+          <div
+            aria-label={content.faqPage.browseTopics}
+            className="mt-4 flex flex-wrap items-center justify-center gap-2"
+            role="group"
+          >
+            {topicFilters.map((topic) => {
+              const isSelected = selectedTopic === topic.key;
+
+              return (
+                <button
+                  aria-pressed={isSelected}
+                  className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-primary) sm:text-sm ${
+                    isSelected
+                      ? "bg-(--color-secondary) text-white shadow-sm"
+                      : "border border-(--color-border) bg-white text-(--color-muted) hover:border-(--color-primary)/35 hover:text-(--color-primary-dark)"
+                  }`}
+                  key={topic.key}
+                  onClick={() => setSelectedTopic(topic.key)}
+                  type="button"
+                >
+                  {topic.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
-      </div>
 
-      <div className="mx-auto mt-14 grid max-w-7xl gap-8 lg:grid-cols-[0.32fr_1fr]">
-        <aside className="lg:sticky lg:top-28 lg:self-start">
-          <div className="rounded-2xl border border-(--color-border) bg-white p-4 shadow-sm">
-            <div className="space-y-2">
-              {groups.map((group) => {
-                const isSelected = selectedGroup === group.key;
-                const groupCount =
-                  group.key === "all"
-                    ? content.faqs.length
-                    : content.faqs.filter((faq) => faq.category === group.key)
-                        .length;
-
-                return (
-                  <button
-                    className={`flex w-full items-center justify-between rounded-3xl px-4 py-3 text-left text-sm font-semibold transition ${
-                      isSelected
-                        ? "bg-(--color-secondary) text-white"
-                        : "bg-(--color-background) text-(--color-muted) hover:bg-(--color-primary-light) hover:text-(--color-primary-dark)"
-                    }`}
-                    key={group.key}
-                    onClick={() => setSelectedGroup(group.key)}
-                    type="button"
-                  >
-                    <span>{group.label}</span>
-                    <span
-                      className={`rounded-full px-2 py-0.5 text-xs ${
-                        isSelected
-                          ? "bg-white/10 text-white"
-                          : "bg-white text-(--color-primary)"
-                      }`}
-                    >
-                      {groupCount}
-                    </span>
-                  </button>
-                );
-              })}
+        <div className="mt-10 grid gap-3 sm:grid-cols-2">
+          {filteredFaqs.map((faq) => (
+            <details
+              className="group rounded-lg border border-(--color-border) bg-white p-4 shadow-sm"
+              key={faq.question}
+            >
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-3 text-base font-semibold leading-snug">
+                <span>
+                  <span className="mb-1.5 block text-[0.65rem] font-bold uppercase tracking-[0.16em] text-(--color-primary)">
+                    {faq.category}
+                  </span>
+                  {faq.question}
+                </span>
+                <span className="shrink-0 text-xl leading-none text-(--color-primary) transition group-open:rotate-45">
+                  +
+                </span>
+              </summary>
+              <p className="mt-3 text-sm leading-6 text-(--color-muted)">
+                {faq.answer}
+              </p>
+            </details>
+          ))}
+          {filteredFaqs.length === 0 ? (
+            <div className="rounded-lg border border-dashed border-(--color-border) bg-white p-8 text-center sm:col-span-2">
+              <h3 className="text-xl font-semibold">
+                {content.faqPage.emptyTitle}
+              </h3>
+              <p className="mt-2 text-sm text-(--color-muted)">
+                {content.faqPage.emptyDescription}
+              </p>
             </div>
-          </div>
-        </aside>
-
-        <div>
-          <div className="space-y-4">
-            {filteredFaqs.map((faq) => (
-              <details
-                className="group rounded-2xl border border-(--color-border) bg-white p-6 shadow-sm"
-                key={faq.question}
-              >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold">
-                  <span>
-                    <span className="mb-2 block text-xs font-bold uppercase tracking-[0.18em] text-(--color-primary)">
-                      {faq.category}
-                    </span>
-                    {faq.question}
-                  </span>
-                  <span className="text-2xl text-(--color-primary) transition group-open:rotate-45">
-                    +
-                  </span>
-                </summary>
-                <p className="mt-4 leading-7 text-(--color-muted)">
-                  {faq.answer}
-                </p>
-              </details>
-            ))}
-            {filteredFaqs.length === 0 ? (
-              <div className="rounded-2xl border border-dashed border-(--color-border) bg-white p-8 text-center">
-                <h3 className="text-2xl font-semibold">
-                  {content.faqPage.emptyTitle}
-                </h3>
-                <p className="mt-3 text-(--color-muted)">
-                  {content.faqPage.emptyDescription}
-                </p>
-              </div>
-            ) : null}
-          </div>
+          ) : null}
         </div>
       </div>
     </section>
