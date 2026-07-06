@@ -63,16 +63,13 @@ export function FeaturesRouteContent() {
       </section>
 
       <section className="bg-(--color-primary-light) px-5 py-24 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
-          <div>
-            <SectionHeading
-              align="left"
-              eyebrow={routeContent.audienceEyebrow}
-              title={routeContent.audienceTitle}
-              description={routeContent.audienceDescription}
-            />
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading
+            eyebrow={routeContent.audienceEyebrow}
+            title={routeContent.audienceTitle}
+            description={routeContent.audienceDescription}
+          />
+          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
             {routeContent.audiences.map((audience) => (
               <article
                 className="rounded-2xl bg-white p-6 shadow-sm"
@@ -95,19 +92,19 @@ export function FeaturesRouteContent() {
             title={routeContent.faqTitle}
             description={routeContent.faqDescription}
           />
-          <div className="mt-12 grid gap-4 lg:grid-cols-2">
+          <div className="mt-12 grid gap-3 lg:grid-cols-2">
             {routeContent.faqs.map((faq) => (
               <details
-                className="group rounded-2xl border border-(--color-border) bg-white p-6 shadow-sm"
+                className="group rounded-2xl border border-(--color-border) bg-white px-5 py-4 shadow-sm"
                 key={faq.question}
               >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-base font-semibold leading-snug">
                   {faq.question}
-                  <span className="text-2xl text-(--color-primary) transition group-open:rotate-45">
+                  <span className="shrink-0 text-xl text-(--color-primary) transition group-open:rotate-45">
                     +
                   </span>
                 </summary>
-                <p className="mt-4 leading-7 text-(--color-muted)">
+                <p className="mt-3 text-sm leading-6 text-(--color-muted)">
                   {faq.answer}
                 </p>
               </details>

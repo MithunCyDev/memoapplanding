@@ -60,7 +60,7 @@ export const enLandingContent = {
     titlePrefix: "Your Business Assistant, Inventory Manager, and POS",
     titleHighlight: "All-in-One",
     description:
-      "Bill in seconds, track stock in real time, collect dues without chasing, and see what's selling — all from one counter app built for Bangladeshi shops. Start free for 30 days.",
+      "Bill in seconds, track stock in real time, collect dues without chasing, and see what's selling — all from one counter app built for Bangladeshi businesses. Start free for 30 days.",
   },
   heroStats: [
     { value: "৳48,320", label: "today's counter sales" },
@@ -802,6 +802,11 @@ export const enLandingContent = {
         description:
           "Invoices, customer history, team records, expenses, and business notes.",
       },
+      {
+        title: "Restaurants and food businesses",
+        description:
+          "Menu-based billing, daily sales tracking, ingredient stock, and customer payment records.",
+      },
     ],
     faqEyebrow: "Feature FAQ",
     faqTitle: "Common feature questions from shop owners",
@@ -837,6 +842,16 @@ export const enLandingContent = {
         question: "Can I import products or customers from Excel?",
         answer:
           "Yes. MemoApp supports import and export workflows so shops can migrate from spreadsheets or share data with accountants.",
+      },
+      {
+        question: "Does MemoApp adapt to different business types?",
+        answer:
+          "Yes. When you set your shop category — grocery, pharmacy, restaurant, hardware, or wholesale — MemoApp adjusts the layout and shortcuts to match how that business sells. Your team sees the right screens from day one, without menus and tools that do not fit your counter.",
+      },
+      {
+        question: "Can I control what staff and managers can access?",
+        answer:
+          "Yes. Invite team members as owner, manager, or staff, and choose which pages each role can open — from counter billing and customer lookup to purchases, reports, and settings. Staff stay focused on their work while owners keep full business visibility.",
       },
       {
         question: "How do I pay for a MemoApp membership with bKash?",
