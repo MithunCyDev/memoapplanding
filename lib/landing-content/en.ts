@@ -235,9 +235,28 @@ export const enLandingContent = {
     title: "A counter built for speed, even on the busiest day.",
     description:
       "MemoApp's POS keeps every sale fast and accurate — scan products, juggle multiple bills, take any payment type, and print a memo in seconds.",
-    previewLabel: "Live POS preview",
-    previewAlt:
-      "MemoApp POS screen showing the product grid, current bill, payment options, and totals.",
+    previews: [
+      {
+        src: "/FashionPOS.png",
+        label: "Fashion",
+        alt: "MemoApp fashion store POS with clothing products, bill tabs, and checkout.",
+      },
+      {
+        src: "/GrosaryPOS.png",
+        label: "Grocery",
+        alt: "MemoApp grocery POS with product grid, categories, stock counts, and current bill.",
+      },
+      {
+        src: "/medicinePOS.png",
+        label: "Pharmacy",
+        alt: "MemoApp pharmacy POS showing medicine cards, MRP, stock, and payment options.",
+      },
+      {
+        src: "/ResturentPOS.png",
+        label: "Restaurant",
+        alt: "MemoApp restaurant POS with menu items, multi-bill tabs, and table checkout.",
+      },
+    ],
     cards: [
       {
         tag: "Find fast",

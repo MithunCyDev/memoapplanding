@@ -487,15 +487,14 @@ function ProductDashboardCard({ label }: { label: string }) {
             {label}
           </p>
         </div>
-        <div className="relative aspect-979/465">
-          <Image
-            alt="MemoApp dashboard showing sales, purchases, customers, products, profit chart, low-stock products, and recent sales."
-            className="object-cover object-top-left"
-            fill
-            sizes="(min-width: 1024px) 58vw, 100vw"
-            src="/product-dashboard.png"
-          />
-        </div>
+        <Image
+          alt="MemoApp dashboard showing sales, purchases, customers, products, profit chart, low-stock products, and recent sales."
+          className="h-auto w-full"
+          height={769}
+          sizes="(min-width: 1024px) 58vw, 100vw"
+          src="/product-dashboard.png"
+          width={1480}
+        />
       </div>
     </div>
   );
@@ -514,7 +513,7 @@ function PosShowcaseSection() {
           description={pos.description}
         />
         <div className="mt-14 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-          <PosPreviewCard label={pos.previewLabel} alt={pos.previewAlt} />
+          <PosPreviewGrid previews={pos.previews} />
           <div className="grid gap-3 sm:grid-cols-2 sm:grid-rows-2 lg:h-full">
             {pos.cards.map((card) => (
               <article
@@ -539,30 +538,38 @@ function PosShowcaseSection() {
   );
 }
 
-function PosPreviewCard({ label, alt }: { label: string; alt: string }) {
+function PosPreviewGrid({
+  previews,
+}: {
+  previews: ReadonlyArray<{ src: string; label: string; alt: string }>;
+}) {
   return (
-    <div className="rounded-2xl border border-(--color-border) bg-white p-3 shadow-2xl shadow-[rgba(1,64,52,0.1)]">
-      <div className="overflow-hidden rounded-2xl bg-white shadow-xl shadow-black/10">
-        <div className="flex items-center justify-between border-b border-(--color-border) bg-(--color-background) px-4 py-3">
-          <div className="flex items-center gap-1.5" aria-hidden="true">
-            <span className="size-2.5 rounded-full bg-[#ff5f57]" />
-            <span className="size-2.5 rounded-full bg-[#ffbd2e]" />
-            <span className="size-2.5 rounded-full bg-[#28c840]" />
+    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+      {previews.map((preview) => (
+        <article
+          className="overflow-hidden rounded-2xl border border-(--color-border) bg-white shadow-sm"
+          key={preview.src}
+        >
+          <div className="flex items-center justify-between border-b border-(--color-border) bg-(--color-background) px-3 py-2">
+            <div className="flex items-center gap-1" aria-hidden="true">
+              <span className="size-2 rounded-full bg-[#ff5f57]" />
+              <span className="size-2 rounded-full bg-[#ffbd2e]" />
+              <span className="size-2 rounded-full bg-[#28c840]" />
+            </div>
+            <p className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-(--color-primary)">
+              {preview.label}
+            </p>
           </div>
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-(--color-primary)">
-            {label}
-          </p>
-        </div>
-        <div className="relative aspect-1200/568 w-full">
           <Image
-            alt={alt}
-            className="object-contain object-top"
-            fill
-            sizes="(min-width: 1024px) 62vw, 100vw"
-            src="/pos.png"
+            alt={preview.alt}
+            className="h-auto w-full"
+            height={911}
+            sizes="(min-width: 1024px) 28vw, (min-width: 640px) 45vw, 100vw"
+            src={preview.src}
+            width={1900}
           />
-        </div>
-      </div>
+        </article>
+      ))}
     </div>
   );
 }

@@ -2,10 +2,10 @@ import { landingContent } from "@/lib/landing-content";
 import { siteConfig } from "@/lib/site";
 
 export const openGraphImage = {
-  url: "/og.png",
+  url: "/memoapp.png",
   width: 1200,
   height: 630,
-  alt: "MemoApp business management dashboard — billing, stock, dues, and AI preview",
+  alt: "MemoApp — business assistant, inventory manager, and POS all in one",
 } as const;
 
 export const pageSeo = {
