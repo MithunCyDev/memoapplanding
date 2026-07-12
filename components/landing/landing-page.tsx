@@ -16,7 +16,7 @@ import { useInView } from "@/components/landing/use-in-view";
 import { useMotionAllowed } from "@/components/landing/use-motion-allowed";
 import { MobileCounterMockup } from "@/components/landing/product-mockups";
 import { WorkflowFlowDiagram } from "@/components/landing/workflow-flow-diagram";
-import { appLoginUrl, installUrl } from "@/lib/landing-content";
+import { appDemoUrl, appLoginUrl, installUrl } from "@/lib/landing-content";
 import { splitPricingPlans } from "@/lib/pricing-plans";
 import { siteConfig } from "@/lib/site";
 
@@ -137,9 +137,9 @@ function HeroSection() {
           <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap">
             <a
               className="rounded-full bg-(--color-info) px-7 py-4 text-center text-sm font-bold text-(--color-secondary) shadow-xl shadow-[rgba(255,153,51,0.22)] transition hover:bg-(--color-info-light)"
-              href={appLoginUrl}
+              href={appDemoUrl}
             >
-              {content.common.startWithMemoApp}
+              {content.common.tryDemo}
             </a>
             <a
               className="rounded-full border border-white/20 px-7 py-4 text-center text-sm font-bold text-white transition hover:bg-white/10"

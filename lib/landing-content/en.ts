@@ -1,10 +1,11 @@
-import { appLoginUrl, ororaSoftAboutUrl, ororaSoftUrl } from "./shared";
+import { appLoginUrl, ororaSoftAboutUrl } from "./shared";
 
 export const enLandingContent = {
   common: {
     tryForFree: "Try for free",
     downloadMemoApp: "Download MemoApp",
     startWithMemoApp: "Start with MemoApp",
+    tryDemo: "Try demo account",
     exploreFeatures: "Explore features",
     reviewFeatures: "Review features",
     contactMemoApp: "Contact MemoApp",

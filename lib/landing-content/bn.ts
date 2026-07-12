@@ -1,10 +1,11 @@
-import { appLoginUrl, ororaSoftAboutUrl, ororaSoftUrl } from "./shared";
+import { appLoginUrl, ororaSoftAboutUrl } from "./shared";
 
 export const bnLandingContent = {
   common: {
     tryForFree: "ফ্রি শুরু করুন",
     downloadMemoApp: "MemoApp ডাউনলোড",
     startWithMemoApp: "MemoApp শুরু করুন",
+    tryDemo: "ডেমো অ্যাকাউন্ট দেখুন",
     exploreFeatures: "ফিচার দেখুন",
     reviewFeatures: "ফিচার দেখুন",
     contactMemoApp: "MemoApp-এ যোগাযোগ করুন",
