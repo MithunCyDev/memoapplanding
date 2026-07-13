@@ -114,7 +114,7 @@ const pricingOffers = [
   {
     name: "Free",
     price: "0",
-    description: "30 days of free access for exploring core MemoApp workflows.",
+    description: "14 days of free access for exploring core MemoApp workflows.",
   },
   {
     name: "Basic",

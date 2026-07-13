@@ -61,7 +61,7 @@ export const enLandingContent = {
     titlePrefix: "Your Business Assistant, Inventory Manager, and POS",
     titleHighlight: "All-in-One",
     description:
-      "Bill in seconds, track stock in real time, collect dues without chasing, and see what's selling — all from one counter app built for Bangladeshi businesses. Start free for 30 days.",
+      "Bill in seconds, track stock in real time, collect dues without chasing, and see what's selling — all from one counter app built for Bangladeshi businesses. Start free for 14 days.",
   },
   heroStats: [
     { value: "৳48,320", label: "today's counter sales" },
@@ -290,7 +290,7 @@ export const enLandingContent = {
     title:
       "Simple packaging for small shops, busy counters, and growing teams.",
     description:
-      "Start with the free plan for 30 days, then choose a paid plan in the live app. Upgrade anytime as your shop adds staff, reports, AI, and backup.",
+      "Start with the free plan for 14 days, then choose a paid plan in the live app. Upgrade anytime as your shop adds staff, reports, AI, and backup.",
   },
   pricingBenefits: [
     "Invoices",
@@ -310,12 +310,12 @@ export const enLandingContent = {
   },
   trialBanner: {
     title: "Start with the free plan",
-    subtitle: "Explore MemoApp free for 30 days before you choose a paid plan.",
-    badge: "30 days free",
+    subtitle: "Explore MemoApp free for 14 days before you choose a paid plan.",
+    badge: "14 days free",
   },
   homeFreeCta: {
     eyebrow: "Start free",
-    title: "Run your whole shop, free for 30 days.",
+    title: "Run your whole shop, free for 14 days.",
     description:
       "Try MemoApp with Zero Cost. See how billing, stock, dues, and reports work for your shop, then choose a plan only when you are ready.",
     benefits: [
@@ -340,7 +340,7 @@ export const enLandingContent = {
           "Understand sales, profit, and trends, and ask the AI assistant what to do next.",
       },
     ],
-    primaryCta: "Start free for 30 days",
+    primaryCta: "Start free for 14 days",
     secondaryCta: "See full pricing",
   },
   paidPlansHeading: {
@@ -352,23 +352,23 @@ export const enLandingContent = {
     {
       name: "Free",
       price: "Free",
-      term: "30 days",
+      term: "14 days",
       yearly: "Explore before choosing a paid plan",
       description:
         "Try MemoApp with guided access to core shop workflows before your team commits.",
       monthlyPrice: "Free",
       yearlyPrice: "Free",
       yearlyWasPrice: "",
-      monthlyTerm: "30 days",
-      yearlyTerm: "30 days",
+      monthlyTerm: "14 days",
+      yearlyTerm: "14 days",
       target: "New shops · first-time setup · early exploration",
       blurb:
-        "Try onboarding, invoicing, catalog, dues, expense tracking, and baseline reports — free for 30 days.",
+        "Try onboarding, invoicing, catalog, dues, expense tracking, and baseline reports — free for 14 days.",
       cta: "Get started free",
       yearlyNote: "Free access stays active while you explore MemoApp.",
       teamSeats: "1 team member",
       features: [
-        "30 days of full free access to set up your shop",
+        "14 days of full free access to set up your shop",
         "Try memos, stock, dues, reports, notes, team pages, and AI",
         "Experience core shop workflows — billing, inventory, purchases, and suppliers",
         "Start free with no credit card — upgrade when your shop is ready",
@@ -570,7 +570,7 @@ export const enLandingContent = {
     {
       question: "Which plan should I start with?",
       answer:
-        "Start with the free 30-day plan to explore. Basic fits smaller shops, Growth is best for busy counters adding their first team, and Business suits established multi-counter teams.",
+        "Start with the free 14-day plan to explore. Basic fits smaller shops, Growth is best for busy counters adding their first team, and Business suits established multi-counter teams.",
     },
     {
       question: "Does MemoApp support Bangla?",
@@ -582,7 +582,7 @@ export const enLandingContent = {
     eyebrow: "Get started",
     title: "Start managing your shop with MemoApp",
     description:
-      "Create your shop account, try core workflows free for 30 days, and upgrade when your counter, team, and reports need more.",
+      "Create your shop account, try core workflows free for 14 days, and upgrade when your counter, team, and reports need more.",
   },
   routeHeroes: {
     features: {
@@ -1181,9 +1181,9 @@ export const enLandingContent = {
     faqLink: "Read public FAQ",
     faqs: [
       {
-        question: "What happens after the 30-day free plan?",
+        question: "What happens after the 14-day free plan?",
         answer:
-          "After 30 days, choose the plan that matches your shop size. Basic covers smaller counters, Growth fits busy retailers adding their first team, and Business supports established multi-counter teams.",
+          "After 14 days, choose the plan that matches your shop size. Basic covers smaller counters, Growth fits busy retailers adding their first team, and Business supports established multi-counter teams.",
       },
       {
         question: "Can I change plans later?",
@@ -1338,7 +1338,7 @@ export const enLandingContent = {
     {
       question: "Which plan should I start with?",
       answer:
-        "Start with the free 30-day plan to explore. Basic fits smaller shops, Growth is best for busy counters adding their first team, and Business suits established multi-counter teams.",
+        "Start with the free 14-day plan to explore. Basic fits smaller shops, Growth is best for busy counters adding their first team, and Business suits established multi-counter teams.",
       category: "Billing & plans",
     },
     {
