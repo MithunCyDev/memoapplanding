@@ -371,6 +371,7 @@ export const enLandingContent = {
         "14 days of full free access to set up your shop",
         "Try memos, stock, dues, reports, notes, team pages, and AI",
         "Experience core shop workflows — billing, inventory, purchases, and suppliers",
+        "2 AI photo scans during trial period",
         "Start free with no credit card — upgrade when your shop is ready",
         "Upgrade anytime with digital payments",
       ],
@@ -425,6 +426,7 @@ export const enLandingContent = {
       features: [
         "Employee management: add a manager and a staff member, each with role-based login",
         "Reports, notes, and the AI assistant",
+        "50 AI photo scans per billing period",
         "Import, export, and download operational data from any grid",
         "Higher data limits for a growing, busy counter",
         "Everything in Basic, built for shops adding their first team",
@@ -449,11 +451,12 @@ export const enLandingContent = {
         "For businesses with staff — unlimited records, full employee roles, and the deepest insights.",
       cta: "Upgrade to Business",
       yearlyNote: "2 months free yearly",
-      teamSeats: "Up to 6 team members",
+      teamSeats: "Up to 5 team members",
       features: [
-        "Everything in Growth, with no limits and a full team setup",
+        "Everything in Growth, with no limits and a full team of up to 5",
         "Multiple owners, managers, and staff with role-based access",
         "Unlimited memos, customers, products, purchases, and notes",
+        "80 AI photo scans per billing period",
         "Advanced reporting, AI insights, and import/export",
         "Automatic backups and premium storage",
         "Priority support for multi-counter operations",
@@ -1099,7 +1102,7 @@ export const enLandingContent = {
         trial: "1 owner account",
         basic: "1 owner account",
         growth: "1 owner, 1 manager, 1 staff",
-        pro: "2 owners, 1 manager, 3 staff",
+        pro: "Up to 5 team members",
         enterprise: "Custom access policy",
       },
       {
@@ -1107,7 +1110,7 @@ export const enLandingContent = {
         trial: "No staff invites",
         basic: "No staff invites",
         growth: "1 manager + 1 staff (employee management)",
-        pro: "3 staff accounts",
+        pro: "Up to 5 team members",
         enterprise: "Unlimited + onboarding squads",
       },
       {
@@ -1125,6 +1128,14 @@ export const enLandingContent = {
         growth: "Assistant basics included",
         pro: "Insight accelerators",
         enterprise: "Custom AI concierge",
+      },
+      {
+        feature: "AI image scan",
+        trial: "2 scans (trial)",
+        basic: "—",
+        growth: "50 scans / period",
+        pro: "80 scans / period",
+        enterprise: "Custom",
       },
       {
         feature: "Analytics",
