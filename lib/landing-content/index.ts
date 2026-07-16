@@ -1,5 +1,4 @@
 export {
-  appDemoUrl,
   appLoginUrl,
   defaultLanguage,
   installUrl,

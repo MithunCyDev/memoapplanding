@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useLanguage } from "@/components/landing/language-provider";
+import { PricingComparisonTable } from "@/components/landing/pricing-comparison-table";
 import { SectionHeading } from "@/components/landing/section-heading";
 import { appLoginUrl } from "@/lib/landing-content";
 import { splitPricingPlans } from "@/lib/pricing-plans";
@@ -102,18 +103,18 @@ export function PricingRouteContent() {
                 </div>
 
                 <p
-                  className={`text-sm font-semibold ${
+                  className={`mt-1 text-sm font-semibold ${
                     plan.highlighted ? "text-white/70" : "text-(--color-muted)"
                   }`}
                 >
                   {plan.target}
                 </p>
 
-                <h2 className="text-4xl font-semibold">
+                <h2 className="mt-5 text-4xl font-semibold tracking-tight">
                   {billingCycle === "monthly"
                     ? plan.monthlyPrice
                     : plan.yearlyPrice}
-                  <span className="text-base font-medium opacity-70">
+                  <span className="ml-1 text-base font-medium opacity-70">
                     {billingCycle === "monthly"
                       ? plan.monthlyTerm
                       : plan.yearlyTerm}
@@ -129,29 +130,29 @@ export function PricingRouteContent() {
                     : plan.yearly}
                 </p>
                 <p
-                  className={`mt-5 min-h-24 leading-7 ${
-                    plan.highlighted ? "text-white/70" : "text-(--color-muted)"
+                  className={`mt-4 min-h-16 text-sm leading-6 ${
+                    plan.highlighted ? "text-white/75" : "text-(--color-muted)"
                   }`}
                 >
                   {plan.blurb}
                 </p>
                 {"teamSeats" in plan && plan.teamSeats ? (
                   <p
-                    className={`mt-3 text-sm font-semibold ${
+                    className={`mt-4 rounded-xl px-3 py-2 text-sm font-semibold ${
                       plan.highlighted
-                        ? "text-(--color-info)"
-                        : "text-(--color-primary-dark)"
+                        ? "bg-white/10 text-(--color-info)"
+                        : "bg-(--color-primary-light) text-(--color-primary-dark)"
                     }`}
                   >
                     {plan.teamSeats}
                   </p>
                 ) : null}
 
-                <ul className="mt-7 space-y-3">
+                <ul className="mt-6 space-y-2.5 text-sm leading-6">
                   {plan.features.map((feature) => (
                     <li className="flex gap-3" key={feature}>
                       <span
-                        className={`mt-1.5 size-2 shrink-0 rounded-full ${
+                        className={`mt-2 size-1.5 shrink-0 rounded-full ${
                           plan.highlighted
                             ? "bg-(--color-info)"
                             : "bg-(--color-primary)"
@@ -192,56 +193,7 @@ export function PricingRouteContent() {
             description={content.pricingRoute.comparisonDescription}
           />
 
-          <div className="mt-12 overflow-x-auto rounded-2xl border border-(--color-border) bg-white shadow-sm">
-            <table className="w-full min-w-240 border-collapse text-left">
-              <caption className="sr-only">
-                {content.pricingRoute.comparisonTitle}
-              </caption>
-              <thead>
-                <tr className="bg-(--color-primary-light)">
-                  {content.pricingRoute.comparisonColumns.map((column) => (
-                    <th
-                      className="px-5 py-4 text-sm font-bold text-(--color-primary-dark)"
-                      key={column}
-                      scope="col"
-                    >
-                      {column}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {content.pricingRoute.comparisonRows.map((row) => (
-                  <tr
-                    className="border-t border-(--color-border)"
-                    key={row.feature}
-                  >
-                    <th
-                      className="px-5 py-4 font-semibold text-(--color-ink)"
-                      scope="row"
-                    >
-                      {row.feature}
-                    </th>
-                    <td className="px-5 py-4 text-(--color-muted)">
-                      {row.trial}
-                    </td>
-                    <td className="px-5 py-4 text-(--color-muted)">
-                      {row.basic}
-                    </td>
-                    <td className="px-5 py-4 text-(--color-muted)">
-                      {row.growth}
-                    </td>
-                    <td className="px-5 py-4 text-(--color-muted)">
-                      {row.pro}
-                    </td>
-                    <td className="px-5 py-4 text-(--color-muted)">
-                      {row.enterprise}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <PricingComparisonTable content={content.pricingRoute} />
 
           <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {content.pricingRoute.assurance.map((item) => (

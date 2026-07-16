@@ -114,11 +114,11 @@ const pricingOffers = [
   {
     name: "Free",
     price: "0",
-    description: "14 days of free access for exploring core MemoApp workflows.",
+    description: "7 days of free access for exploring core MemoApp workflows.",
   },
   {
     name: "Basic",
-    price: "499",
+    price: "699",
     description: "Monthly plan for clean POS billing, stock, and dues.",
   },
   {
@@ -129,7 +129,7 @@ const pricingOffers = [
   },
   {
     name: "Business",
-    price: "2499",
+    price: "2199",
     description:
       "Monthly plan for established teams with unlimited records, full employee roles, and priority support.",
   },
