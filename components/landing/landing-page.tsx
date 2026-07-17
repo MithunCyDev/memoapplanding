@@ -68,9 +68,9 @@ export function Header() {
           <LanguageToggle className="hidden md:inline-flex rounded-full border border-(--color-border) bg-(--color-background) p-0.5" />
           <a
             className="primary-button hidden rounded-full px-5 py-3 text-sm font-semibold shadow-lg shadow-[rgba(1,64,52,0.18)] transition md:inline-flex"
-            href={installUrl}
+            href={appLoginUrl}
           >
-            {content.common.downloadMemoApp}
+            {content.common.tryMemoApp}
           </a>
           <MobileNavMenuButton
             onToggle={() => setMobileMenuOpen((current) => !current)}

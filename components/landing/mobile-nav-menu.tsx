@@ -6,7 +6,7 @@ import { useEffect, useId, useState } from "react";
 import { createPortal } from "react-dom";
 import { LanguageToggle } from "@/components/landing/language-toggle";
 import { useLanguage } from "@/components/landing/language-provider";
-import { installUrl } from "@/lib/landing-content";
+import { appLoginUrl } from "@/lib/landing-content";
 
 interface MobileNavMenuProps {
   open: boolean;
@@ -232,12 +232,10 @@ function MobileNavDrawer({ open, onClose }: MobileNavMenuProps) {
         <div className="border-t border-(--color-border) px-5 py-5">
           <a
             className="primary-button inline-flex w-full justify-center rounded-full px-5 py-3.5 text-sm font-semibold shadow-lg shadow-[rgba(1,64,52,0.18)]"
-            href={installUrl}
+            href={appLoginUrl}
             onClick={onClose}
-            rel="noreferrer"
-            target="_blank"
           >
-            {content.common.downloadMemoApp}
+            {content.common.tryMemoApp}
           </a>
 
           <nav

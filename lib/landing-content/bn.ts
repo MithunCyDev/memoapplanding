@@ -296,9 +296,9 @@ export const bnLandingContent = {
   billing: {
     monthly: "মাসিক",
     yearly: "বার্ষিক",
-    saveLabel: "১০% সেভ",
+    saveLabel: "২০% সেভ",
     yearlyBenefit:
-      "বার্ষিক বিলিংয়ে ১০ মাসের চার্জে ১২ মাস ব্যবহার - দুই মাস বোনাস।",
+      "সীমিত অফার: Growth ও Business-এ প্রথম বার্ষিক পেমেন্টে ২০% ছাড়।",
     wasLabel: "আগে",
   },
   trialBanner: {
@@ -372,7 +372,7 @@ export const bnLandingContent = {
       badge: "Start",
     },
     {
-      name: "Basic",
+      name: "স্টার্টার",
       price: "৳৬৯৯",
       term: "/মাস",
       yearly: "৳৬,৯৯০/বছর",
@@ -384,7 +384,7 @@ export const bnLandingContent = {
       yearlyTerm: "/বছর",
       target: "ছোট দোকান · গ্রোসারি · মিনি মার্ট · ফার্মেসি",
       blurb:
-        "এক মালিক, এক দোকান — মেমো, স্টক, বাকি, কর্মী হিসাব ও নোট এক জায়গায়।",
+        "এক মালিক, এক দোকান — মেমো, স্টক, বাকি ও দৈনন্দিন হিসাব এক জায়গায়।",
       cta: "শুরু করুন",
       yearlyNote: "ইয়ারলি প্ল্যানে ২ মাস ফ্রি",
       teamSeats: "১ জন টিম সদস্য",
@@ -392,50 +392,50 @@ export const bnLandingContent = {
         "দ্রুত কাউন্টার বিলিংয়ের জন্য POS স্ক্রিন",
         "মেমো, গ্রাহক, বাকি ও স্টক নিয়ন্ত্রণ",
         "ক্রয়, সাপ্লায়ার ও দোকানের খরচ",
-        "কর্মী ব্যবস্থাপনা ও ব্যবসার নোট",
         "ড্যাশবোর্ড ও দৈনন্দিন দোকান নিয়ন্ত্রণ",
         "এক কাউন্টারের জন্য পর্যাপ্ত সীমা",
       ],
       highlighted: false,
-      badge: "Basics",
+      badge: "স্টার্টার",
     },
     {
       name: "Growth",
       price: "৳১,১৯৯",
       term: "/মাস",
-      yearly: "৳১১,৯৯০/বছর",
+      yearly: "৳১১,৫১০/বছর",
       description: "বেশি টিম লগইন ও শক্তিশালী টুল দরকার এমন দোকানের জন্য।",
       monthlyPrice: "৳১,১৯৯",
-      yearlyPrice: "৳১১,৯৯০",
+      yearlyPrice: "৳১১,৫১০",
       yearlyWasPrice: "৳১৪,৩৮৮",
       monthlyTerm: "/মাস",
       yearlyTerm: "/বছর",
       target: "বেশি টিম লগইন যোগ করা ব্যস্ত দোকান",
       blurb:
-        "Basic-এর সব সুবিধা, সাথে বেশি টিম লগইন — রিপোর্ট, এআই ও তথ্য আনা-নেওয়া সহ।",
+        "Starter-এর সব সুবিধা, সাথে বেশি টিম লগইন — রিপোর্ট, এআই ও তথ্য আনা-নেওয়া সহ।",
       cta: "Growth বেছে নিন",
       yearlyNote: "ইয়ারলি প্ল্যানে ২ মাস ফ্রি",
       teamSeats: "৩ জন টিম সদস্য পর্যন্ত",
       features: [
-        "Basic-এর সব সুবিধা",
+        "Starter-এর সব সুবিধা",
         "৩ জন পর্যন্ত আলাদা লগইন",
+        "কর্মী ব্যবস্থাপনা ও ব্যবসার নোট",
         "রিপোর্ট (লাভ-ক্ষতি, PDF) ও এআই সহকারী",
         "মাসে ৫০টি এআই ইনভয়েস স্ক্যান",
         "যেকোনো তালিকা থেকে তথ্য আনা-নেওয়া",
         "ব্যস্ত কাউন্টারের জন্য বেশি সীমা",
       ],
-      highlighted: false,
-      badge: "Team",
+      highlighted: true,
+      badge: "Most Popular",
     },
     {
       name: "বিজনেস",
       price: "৳২,১৯৯",
       term: "/মাস",
-      yearly: "৳২১,৯৯০/বছর",
+      yearly: "৳২১,১১০/বছর",
       description:
         "বড় টিম, সীমাহীন রেকর্ড ও অগ্রাধিকার সাপোর্ট চাইলে এই প্ল্যান।",
       monthlyPrice: "৳২,১৯৯",
-      yearlyPrice: "৳২১,৯৯০",
+      yearlyPrice: "৳২১,১১০",
       yearlyWasPrice: "৳২৬,৩৮৮",
       monthlyTerm: "/মাস",
       yearlyTerm: "/বছর",
@@ -455,8 +455,8 @@ export const bnLandingContent = {
         "মাসে ৮০টি এআই ইনভয়েস স্ক্যান",
         "অটো ব্যাকআপ ও অগ্রাধিকার সাপোর্ট",
       ],
-      highlighted: true,
-      badge: "Most Popular",
+      highlighted: false,
+      badge: "Scale",
     },
     {
       name: "এন্টারপ্রাইজ",
@@ -566,7 +566,7 @@ export const bnLandingContent = {
     {
       question: "কোন প্ল্যান দিয়ে শুরু করব?",
       answer:
-        "৭ দিন ফ্রি দিয়ে ঘুরে দেখুন। ছোট দোকান Basic, ব্যস্ত কাউন্টার Growth, প্রতিষ্ঠিত টিম বিজনেস।",
+        "৭ দিন ফ্রি দিয়ে ঘুরে দেখুন। ছোট দোকান স্টার্টার, ব্যস্ত কাউন্টার Growth, প্রতিষ্ঠিত টিম বিজনেস।",
     },
     {
       question: "MemoApp কি বাংলা সাপোর্ট করে?",
@@ -877,7 +877,7 @@ export const bnLandingContent = {
       {
         question: "এই ফিচারগুলোর জন্য কোন প্ল্যান বেছে নেব?",
         answer:
-          "ঘুরে দেখতে ফ্রি প্ল্যান দিয়ে শুরু করুন। ছোট দোকান Basic, ব্যস্ত কাউন্টার Growth, আনলিমিটেড রেকর্ড ও ব্যাকআপ লাগলে বিজনেস।",
+          "ঘুরে দেখতে ফ্রি প্ল্যান দিয়ে শুরু করুন। ছোট দোকান স্টার্টার, ব্যস্ত কাউন্টার Growth, আনলিমিটেড রেকর্ড ও ব্যাকআপ লাগলে বিজনেস।",
       },
     ],
     ctaTitle: "বাস্তব দোকানের দিনে MemoApp ফিচার কীভাবে কাজ করে দেখুন",
@@ -1071,7 +1071,7 @@ export const bnLandingContent = {
     comparisonColumns: {
       feature: "ফিচার",
       popularBadge: "সবচেয়ে জনপ্রিয়",
-      basic: { name: "Basic", price: "৳৬৯৯/মাস" },
+      basic: { name: "স্টার্টার", price: "৳৬৯৯/মাস" },
       growth: { name: "Growth", price: "৳১,১৯৯/মাস" },
       pro: { name: "বিজনেস", price: "৳২,১৯৯/মাস" },
       enterprise: { name: "এন্টারপ্রাইজ", price: "কাস্টম" },
@@ -1079,13 +1079,6 @@ export const bnLandingContent = {
     comparisonRows: [
       {
         feature: "মেমো, বকেয়া, ক্রয় ও খরচ",
-        basic: true,
-        growth: true,
-        pro: true,
-        enterprise: true,
-      },
-      {
-        feature: "PDF ইনভয়েস + WhatsApp শেয়ার",
         basic: true,
         growth: true,
         pro: true,
@@ -1114,14 +1107,14 @@ export const bnLandingContent = {
       },
       {
         feature: "কর্মী ব্যবস্থাপনা",
-        basic: true,
+        basic: false,
         growth: true,
         pro: true,
         enterprise: true,
       },
       {
         feature: "ব্যবসার নোট",
-        basic: true,
+        basic: false,
         growth: true,
         pro: true,
         enterprise: true,
@@ -1141,18 +1134,25 @@ export const bnLandingContent = {
         enterprise: "কাস্টম",
       },
       {
+        feature: "রোল ও অনুমতি",
+        basic: false,
+        growth: true,
+        pro: true,
+        enterprise: true,
+      },
+      {
+        feature: "কোটেশন + ডেলিভারি চালান",
+        basic: false,
+        growth: false,
+        pro: true,
+        enterprise: true,
+      },
+      {
         feature: "এআই ইনভয়েস স্ক্যান",
         basic: false,
         growth: "৫০ / মাস",
         pro: "৮০ / মাস",
         enterprise: "কাস্টম",
-      },
-      {
-        feature: "রিপোর্ট (লাভ-ক্ষতি, PDF)",
-        basic: false,
-        growth: true,
-        pro: true,
-        enterprise: true,
       },
       {
         feature: "তথ্য আনা / পাঠানো (Excel ও PDF)",
@@ -1169,17 +1169,10 @@ export const bnLandingContent = {
         enterprise: true,
       },
       {
-        feature: "অ্যানালিটিক্স",
-        basic: false,
-        growth: true,
-        pro: true,
-        enterprise: true,
-      },
-      {
         feature: "ব্যাকআপ ও স্টোরেজ",
-        basic: "বেসিক",
-        growth: "ঘন ঘন + অটো ব্যাকআপ",
-        pro: "ঘন ঘন + অটো ব্যাকআপ",
+        basic: "সাধারণ স্টোরেজ",
+        growth: "অটো ক্লাউড ব্যাকআপ",
+        pro: "অটো ক্লাউড ব্যাকআপ",
         enterprise: "ডেডিকেটেড",
       },
       {
@@ -1193,27 +1186,6 @@ export const bnLandingContent = {
         feature: "ডেটা রিসেট",
         basic: false,
         growth: false,
-        pro: true,
-        enterprise: true,
-      },
-      {
-        feature: "কোটেশন",
-        basic: false,
-        growth: false,
-        pro: true,
-        enterprise: true,
-      },
-      {
-        feature: "ডেলিভারি চালান",
-        basic: false,
-        growth: false,
-        pro: true,
-        enterprise: true,
-      },
-      {
-        feature: "রোল ও অনুমতি",
-        basic: false,
-        growth: true,
         pro: true,
         enterprise: true,
       },
@@ -1241,7 +1213,7 @@ export const bnLandingContent = {
       {
         question: "৭ দিনের ফ্রি প্ল্যানের পর কী হবে?",
         answer:
-          "৭ দিনের পর দোকানের আকার অনুযায়ী প্ল্যান বেছে নিন। Basic ছোট কাউন্টার, Growth প্রথম টিম যোগ করা ব্যস্ত রিটেইলার এবং বিজনেস প্রতিষ্ঠিত মাল্টি-কাউন্টার টিমের জন্য।",
+          "৭ দিনের পর দোকানের আকার অনুযায়ী প্ল্যান বেছে নিন। স্টার্টার ছোট কাউন্টার, Growth প্রথম টিম যোগ করা ব্যস্ত রিটেইলার এবং বিজনেস প্রতিষ্ঠিত মাল্টি-কাউন্টার টিমের জন্য।",
       },
       {
         question: "পরে কি প্ল্যান পরিবর্তন করা যাবে?",
@@ -1256,7 +1228,7 @@ export const bnLandingContent = {
       {
         question: "ছোট গ্রোসারি দোকানের জন্য কোন প্ল্যান ভালো?",
         answer:
-          "এক দোকানের POS বিলিং, প্রোডাক্ট, স্টক ও কাস্টমার বাকি দরকার হলে Basic সাধারণত সহজ শুরু।",
+          "এক দোকানের POS বিলিং, প্রোডাক্ট, স্টক ও কাস্টমার বাকি দরকার হলে স্টার্টার সাধারণত সহজ শুরু।",
       },
       {
         question: "AI ও শক্তিশালী রিপোর্ট কোন প্ল্যানে আছে?",
@@ -1393,7 +1365,7 @@ export const bnLandingContent = {
     {
       question: "কোন প্ল্যান দিয়ে শুরু করব?",
       answer:
-        "৭ দিন ফ্রি দিয়ে ঘুরে দেখুন। ছোট দোকান Basic, ব্যস্ত কাউন্টার Growth, প্রতিষ্ঠিত টিম বিজনেস।",
+        "৭ দিন ফ্রি দিয়ে ঘুরে দেখুন। ছোট দোকান স্টার্টার, ব্যস্ত কাউন্টার Growth, প্রতিষ্ঠিত টিম বিজনেস।",
       category: "Billing & plans",
     },
     {
@@ -1405,7 +1377,7 @@ export const bnLandingContent = {
     {
       question: "কোন ধরনের দোকানে কোন প্ল্যান মানানসই?",
       answer:
-        "গ্রোসারি, ফার্মেসি, হার্ডওয়্যার, ইলেকট্রনিক্স, রেস্টুরেন্ট, জেনারেল রিটেইল। Basic solo কাউন্টার; Growth/Business টিম ও বেশি রেকর্ড।",
+        "গ্রোসারি, ফার্মেসি, হার্ডওয়্যার, ইলেকট্রনিক্স, রেস্টুরেন্ট, জেনারেল রিটেইল। স্টার্টার এককাউন্টার দোকানের জন্য; Growth/Business টিম ও বেশি রেকর্ডের জন্য।",
       category: "Billing & plans",
     },
     {

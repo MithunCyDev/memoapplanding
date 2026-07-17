@@ -303,9 +303,9 @@ export const enLandingContent = {
   billing: {
     monthly: "Monthly",
     yearly: "Yearly",
-    saveLabel: "Save 10%",
+    saveLabel: "Save 20%",
     yearlyBenefit:
-      "Yearly billing charges for 10 months while you use 12 months - two bonus months baked in.",
+      "Limited-time: 20% off first yearly payment on Growth and Business.",
     wasLabel: "Was",
   },
   trialBanner: {
@@ -379,7 +379,7 @@ export const enLandingContent = {
       badge: "Start",
     },
     {
-      name: "Basic",
+      name: "Starter",
       price: "৳699",
       term: "/month",
       yearly: "৳6,990/year",
@@ -392,7 +392,7 @@ export const enLandingContent = {
       yearlyTerm: "/year",
       target: "Small shops · grocery · mini mart · pharmacy",
       blurb:
-        "One owner, one shop — memos, stock, dues, employee records, and notes in one place.",
+        "One owner, one shop — memos, stock, dues, and daily shop controls in one place.",
       cta: "Get started",
       yearlyNote: "2 months free yearly",
       teamSeats: "1 team member",
@@ -400,51 +400,51 @@ export const enLandingContent = {
         "POS screen for fast counter billing",
         "Memos, customers, dues, and stock control",
         "Purchases, suppliers, and shop expenses",
-        "Employee management and business notes",
         "Dashboard and daily shop controls",
         "Generous limits sized for a single counter",
       ],
       highlighted: false,
-      badge: "Basics",
+      badge: "Starter",
     },
     {
       name: "Growth",
       price: "৳1,199",
       term: "/month",
-      yearly: "৳11,990/year",
+      yearly: "৳11,510/year",
       description:
         "For growing shops that need more team logins and stronger tools.",
       monthlyPrice: "৳1,199",
-      yearlyPrice: "৳11,990",
+      yearlyPrice: "৳11,510",
       yearlyWasPrice: "৳14,388",
       monthlyTerm: "/month",
       yearlyTerm: "/year",
       target: "Busy shops adding more team logins",
       blurb:
-        "Everything in Basic, plus more team logins — with reports, AI, and data import/export.",
+        "Everything in Starter, plus more team logins — with reports, AI, and data import/export.",
       cta: "Choose Growth",
       yearlyNote: "2 months free yearly",
       teamSeats: "Up to 3 team members",
       features: [
-        "Everything in Basic",
+        "Everything in Starter",
         "Up to 3 team members with separate logins",
+        "Employee management and business notes",
         "Reports (P&L, PDF) and AI assistant",
         "50 AI invoice scans per month",
         "Import and export from any data grid",
         "Higher limits for a busier counter",
       ],
-      highlighted: false,
-      badge: "Team",
+      highlighted: true,
+      badge: "Most Popular",
     },
     {
       name: "Business",
       price: "৳2,199",
       term: "/month",
-      yearly: "৳21,990/year",
+      yearly: "৳21,110/year",
       description:
         "For established teams that need unlimited records and priority support.",
       monthlyPrice: "৳2,199",
-      yearlyPrice: "৳21,990",
+      yearlyPrice: "৳21,110",
       yearlyWasPrice: "৳26,388",
       monthlyTerm: "/month",
       yearlyTerm: "/year",
@@ -464,8 +464,8 @@ export const enLandingContent = {
         "80 AI invoice scans per month",
         "Automatic backups and priority support",
       ],
-      highlighted: true,
-      badge: "Most Popular",
+      highlighted: false,
+      badge: "Scale",
     },
     {
       name: "Enterprise",
@@ -576,7 +576,7 @@ export const enLandingContent = {
     {
       question: "Which plan should I start with?",
       answer:
-        "Start with the free 7-day plan to explore. Basic fits smaller shops, Growth is best for busy counters adding their first team, and Business suits established multi-counter teams.",
+        "Start with the free 7-day plan to explore. Starter fits smaller shops, Growth is best for busy counters adding their first team, and Business suits established multi-counter teams.",
     },
     {
       question: "Does MemoApp support Bangla?",
@@ -887,7 +887,7 @@ export const enLandingContent = {
       {
         question: "Which plan should I choose for these features?",
         answer:
-          "Start with the free plan if you are exploring. Basic fits smaller shops, Growth is better for busy counters adding their first team, and Business is best for established multi-counter teams that need unlimited records, backup, and priority support.",
+          "Start with the free plan if you are exploring. Starter fits smaller shops, Growth is better for busy counters adding their first team, and Business is best for established multi-counter teams that need unlimited records, backup, and priority support.",
       },
     ],
     ctaTitle: "See how these MemoApp features work during a real shop day",
@@ -1086,7 +1086,7 @@ export const enLandingContent = {
     comparisonColumns: {
       feature: "Feature",
       popularBadge: "Most popular",
-      basic: { name: "Basic", price: "৳699/mo" },
+      basic: { name: "Starter", price: "৳699/mo" },
       growth: { name: "Growth", price: "৳1,199/mo" },
       pro: { name: "Business", price: "৳2,199/mo" },
       enterprise: { name: "Enterprise", price: "Custom" },
@@ -1094,13 +1094,6 @@ export const enLandingContent = {
     comparisonRows: [
       {
         feature: "Memos, dues, purchases & expenses",
-        basic: true,
-        growth: true,
-        pro: true,
-        enterprise: true,
-      },
-      {
-        feature: "PDF invoices + WhatsApp share",
         basic: true,
         growth: true,
         pro: true,
@@ -1129,14 +1122,14 @@ export const enLandingContent = {
       },
       {
         feature: "Employee management",
-        basic: true,
+        basic: false,
         growth: true,
         pro: true,
         enterprise: true,
       },
       {
         feature: "Business notes",
-        basic: true,
+        basic: false,
         growth: true,
         pro: true,
         enterprise: true,
@@ -1156,18 +1149,25 @@ export const enLandingContent = {
         enterprise: "Custom",
       },
       {
+        feature: "Roles & permissions",
+        basic: false,
+        growth: true,
+        pro: true,
+        enterprise: true,
+      },
+      {
+        feature: "Quotations + Delivery challans",
+        basic: false,
+        growth: false,
+        pro: true,
+        enterprise: true,
+      },
+      {
         feature: "AI invoice scan",
         basic: false,
         growth: "50 / month",
         pro: "80 / month",
         enterprise: "Custom",
-      },
-      {
-        feature: "Reports (P&L, PDF)",
-        basic: false,
-        growth: true,
-        pro: true,
-        enterprise: true,
       },
       {
         feature: "Import / export (Excel & PDF)",
@@ -1184,17 +1184,10 @@ export const enLandingContent = {
         enterprise: true,
       },
       {
-        feature: "Analytics depth",
-        basic: false,
-        growth: true,
-        pro: true,
-        enterprise: true,
-      },
-      {
         feature: "Backups & storage",
-        basic: "Basic",
-        growth: "Frequent + auto backup",
-        pro: "Frequent + auto backup",
+        basic: "Basic storage",
+        growth: "Auto Cloud backup",
+        pro: "Auto Cloud backup",
         enterprise: "Dedicated",
       },
       {
@@ -1208,27 +1201,6 @@ export const enLandingContent = {
         feature: "Data reset",
         basic: false,
         growth: false,
-        pro: true,
-        enterprise: true,
-      },
-      {
-        feature: "Quotations",
-        basic: false,
-        growth: false,
-        pro: true,
-        enterprise: true,
-      },
-      {
-        feature: "Delivery challans",
-        basic: false,
-        growth: false,
-        pro: true,
-        enterprise: true,
-      },
-      {
-        feature: "Roles & permissions",
-        basic: false,
-        growth: true,
         pro: true,
         enterprise: true,
       },
@@ -1256,7 +1228,7 @@ export const enLandingContent = {
       {
         question: "What happens after the 7-day free plan?",
         answer:
-          "After 7 days, choose the plan that matches your shop size. Basic covers smaller counters, Growth fits busy retailers adding their first team, and Business supports established multi-counter teams.",
+          "After 7 days, choose the plan that matches your shop size. Starter covers smaller counters, Growth fits busy retailers adding their first team, and Business supports established multi-counter teams.",
       },
       {
         question: "Can I change plans later?",
@@ -1271,7 +1243,7 @@ export const enLandingContent = {
       {
         question: "Which plan is best for a small grocery shop?",
         answer:
-          "Basic is usually the simplest starting point for one-shop counters that need POS billing, products, stock, and customer dues.",
+          "Starter is usually the simplest starting point for one-shop counters that need POS billing, products, stock, and customer dues.",
       },
       {
         question: "Which plan includes AI and stronger reports?",
@@ -1411,7 +1383,7 @@ export const enLandingContent = {
     {
       question: "Which plan should I start with?",
       answer:
-        "Start with the free 7-day plan to explore. Basic fits smaller shops, Growth is best for busy counters adding their first team, and Business suits established multi-counter teams.",
+        "Start with the free 7-day plan to explore. Starter fits smaller shops, Growth is best for busy counters adding their first team, and Business suits established multi-counter teams.",
       category: "Billing & plans",
     },
     {
@@ -1423,7 +1395,7 @@ export const enLandingContent = {
     {
       question: "What shop types fit MemoApp plans?",
       answer:
-        "MemoApp works for grocery, pharmacy, hardware, electronics, clothing, restaurant, and general retail. Basic suits solo counters; Growth and Business fit teams with more records, reports, and backup needs.",
+        "MemoApp works for grocery, pharmacy, hardware, electronics, clothing, restaurant, and general retail. Starter suits solo counters; Growth and Business fit teams with more records, reports, and backup needs.",
       category: "Billing & plans",
     },
     {

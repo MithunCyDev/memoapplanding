@@ -235,7 +235,7 @@ export function PricingRouteContent() {
           </div>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
-              className="rounded-full bg-(--color-secondary) px-6 py-3 text-center text-sm font-bold text-white"
+              className="rounded-full bg-(--color-secondary) px-6 py-3 text-center text-sm font-bold text-white!"
               href="/features"
             >
               {content.pricingRoute.featuresLink}

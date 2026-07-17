@@ -84,16 +84,6 @@ function CellValue({ value }: { value: boolean | string }) {
   );
 }
 
-function planColumnClass(plan: PlanKey): string {
-  if (plan === "pro") {
-    return "bg-[rgba(2,115,74,0.04)]";
-  }
-  if (plan === "enterprise") {
-    return "bg-[rgba(128,0,128,0.05)]";
-  }
-  return "bg-white";
-}
-
 export function PricingComparisonTable({
   content,
 }: {
@@ -109,25 +99,25 @@ export function PricingComparisonTable({
           <thead>
             <tr>
               <th
-                className="sticky left-0 z-20 min-w-40 border-b border-(--color-border) bg-(--color-primary-light) px-4 py-4 text-sm font-bold text-(--color-primary-dark) sm:min-w-48 sm:px-5"
+                className="sticky left-0 z-20 min-w-40 border-b border-(--color-border) bg-white px-4 py-4 text-sm font-bold text-(--color-primary-dark) sm:min-w-48 sm:px-5"
                 scope="col"
               >
                 {columns.feature}
               </th>
               {PLAN_KEYS.map((plan) => {
                 const col = columns[plan];
-                const isBusiness = plan === "pro";
+                const isFeatured = plan === "growth";
                 const isEnterprise = plan === "enterprise";
                 return (
                   <th
-                    className={`min-w-28 border-b border-(--color-border) px-3 py-4 text-center sm:min-w-32 sm:px-4 ${planColumnClass(plan)} ${
-                      isBusiness ? "border-x-2 border-x-(--color-primary)" : ""
+                    className={`min-w-28 border-b border-(--color-border) bg-white px-3 py-4 text-center sm:min-w-32 sm:px-4 ${
+                      isFeatured ? "border-x-2 border-x-(--color-primary)" : ""
                     }`}
                     key={plan}
                     scope="col"
                   >
                     <div className="flex flex-col items-center gap-1.5">
-                      {isBusiness ? (
+                      {isFeatured ? (
                         <span className="rounded-md bg-(--color-primary) px-2 py-0.5 text-[0.65rem] font-extrabold uppercase tracking-wide text-white">
                           {columns.popularBadge}
                         </span>
@@ -166,11 +156,11 @@ export function PricingComparisonTable({
                   {row.feature}
                 </th>
                 {PLAN_KEYS.map((plan) => {
-                  const isBusiness = plan === "pro";
+                  const isFeatured = plan === "growth";
                   return (
                     <td
-                      className={`border-b border-(--color-border) px-3 py-3.5 text-center align-middle sm:px-4 ${planColumnClass(plan)} ${
-                        isBusiness
+                      className={`border-b border-(--color-border) bg-white px-3 py-3.5 text-center align-middle sm:px-4 ${
+                        isFeatured
                           ? "border-x-2 border-x-(--color-primary)"
                           : ""
                       }`}
