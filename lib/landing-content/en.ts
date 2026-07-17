@@ -40,7 +40,6 @@ export const enLandingContent = {
       { label: "Features", href: "/features", external: false },
       { label: "Workflow", href: "/workflow", external: false },
       { label: "Pricing", href: "/pricing", external: false },
-      { label: "FAQ", href: "/faq", external: false },
     ],
     companyLinks: [
       { label: "About Us", href: ororaSoftAboutUrl, external: true },
@@ -129,6 +128,18 @@ export const enLandingContent = {
       badge: "Reports",
     },
     {
+      title: "AI invoice scan to stock",
+      description:
+        "Photograph a supplier invoice and let AI create the purchase and update stock counts for you.",
+      badge: "AI Scan",
+    },
+    {
+      title: "Excel & CSV product import",
+      description:
+        "Upload products and customers from Excel or CSV in under a minute — no typing every row by hand.",
+      badge: "Import",
+    },
+    {
       title: "AI assistant for shop decisions",
       description:
         "Ask business questions in plain language and get guidance on stock, dues, sales trends, and next actions.",
@@ -147,21 +158,9 @@ export const enLandingContent = {
       badge: "Export",
     },
     {
-      title: "Automatic due reminders",
+      title: "Notes, reminders & sharing",
       description:
-        "Help customers remember baki payments with clear due reminders that support healthier cash collection.",
-      badge: "Reminder",
-    },
-    {
-      title: "Business notes you can share",
-      description:
-        "Create quick shop notes, save them automatically, and share important updates with the right people.",
-      badge: "Notes",
-    },
-    {
-      title: "Social sharing made simple",
-      description:
-        "Share memos, business updates, and customer-ready information across common social channels faster.",
+        "Create shop notes, send due reminders, and share memos or updates across WhatsApp and social channels.",
       badge: "Share",
     },
     {
@@ -172,29 +171,29 @@ export const enLandingContent = {
     },
   ],
   workflowHeading: {
-    eyebrow: "Daily flow",
-    title: "Designed for the rhythm of a real shop day.",
+    eyebrow: "Your day with MemoApp",
+    title: "One app that runs your shop from open to close.",
     description:
-      "From opening cash to the final report, MemoApp keeps busy selling moments simple and gives owners the clarity to make better decisions.",
+      "Open the counter in the morning, sell all day, and close with clear numbers — MemoApp handles billing, dues, and stock at every step, so nothing lives in a notebook anymore.",
   },
   workflowSteps: [
     {
       step: "01",
-      title: "Open counter",
+      title: "Start the morning ready",
       description:
-        "Start the day with cashflow visibility, product shortcuts, and ready-to-use memo actions.",
+        "Open the counter with yesterday's cash, today's stock, and your fastest-selling products already in front of you.",
     },
     {
       step: "02",
-      title: "Sell, collect, sync",
+      title: "Sell all day without friction",
       description:
-        "Record sales, partial payments, and customer dues even when internet quality is uneven.",
+        "Bill customers in seconds, accept cash or baki, and keep selling even when the internet drops — everything syncs later.",
     },
     {
       step: "03",
-      title: "Review the business",
+      title: "Close with clear numbers",
       description:
-        "Close the day with reports, low-stock alerts, expense context, and owner-ready insights.",
+        "End the day knowing your sales, profit, dues collected, and which products need restocking before tomorrow.",
     },
   ],
   showcase: {
@@ -235,27 +234,27 @@ export const enLandingContent = {
     eyebrow: "Point of sale",
     title: "A counter built for speed, even on the busiest day.",
     description:
-      "MemoApp's POS keeps every sale fast and accurate — scan products, juggle multiple bills, take any payment type, and print a memo in seconds.",
+      "Get a POS shaped for your shop type — hardware, clothing, restaurant, pharmacy, and more. Scan products, manage multiple bills, take any payment, and print a memo in seconds.",
     previews: [
       {
-        src: "/FashionPOS.png",
-        label: "Fashion",
-        alt: "MemoApp fashion store POS with clothing products, bill tabs, and checkout.",
+        src: "/hardware.png",
+        label: "Hardware",
+        alt: "MemoApp hardware store POS with tools, building materials, bill tabs, and checkout on desktop and mobile.",
       },
       {
-        src: "/GrosaryPOS.png",
-        label: "Grocery",
-        alt: "MemoApp grocery POS with product grid, categories, stock counts, and current bill.",
+        src: "/Clothing.png",
+        label: "Clothing",
+        alt: "MemoApp clothing store POS with apparel products, categories, current bill, and mobile checkout.",
       },
       {
-        src: "/medicinePOS.png",
-        label: "Pharmacy",
-        alt: "MemoApp pharmacy POS showing medicine cards, MRP, stock, and payment options.",
-      },
-      {
-        src: "/ResturentPOS.png",
+        src: "/Resturent.png",
         label: "Restaurant",
-        alt: "MemoApp restaurant POS with menu items, multi-bill tabs, and table checkout.",
+        alt: "MemoApp restaurant POS with menu items, multi-bill tabs, and table checkout on desktop and mobile.",
+      },
+      {
+        src: "/Pharmacy.png",
+        label: "Pharmacy",
+        alt: "MemoApp pharmacy POS showing medicine cards, MRP, stock, and payment options on desktop and mobile.",
       },
     ],
     cards: [
@@ -681,6 +680,28 @@ export const enLandingContent = {
         },
       ],
     },
+    aiSpotlight: {
+      eyebrow: "AI that does the typing",
+      title: "Snap a supplier invoice. AI does the data entry.",
+      description:
+        "Photograph a purchase invoice and MemoApp reads the line items, creates the purchase, and updates stock — so you spend less time typing and more time selling.",
+      highlights: [
+        "Photo → extracted products, quantities, and prices",
+        "Stock and purchase records update automatically",
+        "Scans included with trial, Growth, and Business plans",
+      ],
+      pricingLink: "See scan limits by plan",
+      importEyebrow: "Bulk upload",
+      importTitle: "Or import your whole catalog from Excel in under a minute",
+      importDescription:
+        "Drop a product or customer spreadsheet and MemoApp maps columns automatically — perfect when you already keep lists in Excel or CSV.",
+      importLink: "See the setup journey below",
+      importHighlights: [
+        "Excel and CSV for products and customers",
+        "Template download if you are starting fresh",
+        "Stock, prices, and units in one import",
+      ],
+    },
     setupJourney: {
       eyebrow: "Feature details",
       title: "Open your shop and start selling in minutes",
@@ -941,7 +962,7 @@ export const enLandingContent = {
         description:
           "Start the day with product shortcuts, opening cash context, and ready memo actions for the first customers.",
         featureLabel: "POS billing and cash visibility",
-        featureHref: "/features#feature-details",
+        featureHref: "/features",
       },
       {
         step: "02",
@@ -949,7 +970,7 @@ export const enLandingContent = {
         description:
           "Create paid, partial paid, or due sales and send customer-ready memos through thermal print, PDF, or WhatsApp.",
         featureLabel: "Memos, invoices, and sharing",
-        featureHref: "/features#feature-details",
+        featureHref: "/features",
       },
       {
         step: "03",
@@ -957,7 +978,7 @@ export const enLandingContent = {
         description:
           "Product quantities stay connected to counter activity, helping owners see low-stock risk earlier.",
         featureLabel: "Inventory and low-stock alerts",
-        featureHref: "/features#feature-details",
+        featureHref: "/features",
       },
       {
         step: "04",
@@ -965,7 +986,7 @@ export const enLandingContent = {
         description:
           "Customer baki, supplier purchases, and payable context stay organized beside the daily sales flow.",
         featureLabel: "Customer and supplier ledgers",
-        featureHref: "/features#feature-details",
+        featureHref: "/features",
       },
       {
         step: "05",
@@ -973,7 +994,7 @@ export const enLandingContent = {
         description:
           "Record daily costs, team notes, and important shop updates before details are forgotten.",
         featureLabel: "Expenses and business notes",
-        featureHref: "/features#feature-details",
+        featureHref: "/features",
       },
       {
         step: "06",
@@ -981,7 +1002,7 @@ export const enLandingContent = {
         description:
           "Close the day with sales, profit, dues, stock, AI guidance, and sync status.",
         featureLabel: "Reports, AI, sync, and backup",
-        featureHref: "/features#feature-details",
+        featureHref: "/features",
       },
     ],
     bakiFlowEyebrow: "Baki collection",

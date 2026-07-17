@@ -15,7 +15,6 @@ import { SectionHeading } from "@/components/landing/section-heading";
 import { useInView } from "@/components/landing/use-in-view";
 import { useMotionAllowed } from "@/components/landing/use-motion-allowed";
 import { MobileCounterMockup } from "@/components/landing/product-mockups";
-import { WorkflowFlowDiagram } from "@/components/landing/workflow-flow-diagram";
 import { appLoginUrl, installUrl } from "@/lib/landing-content";
 import { splitPricingPlans } from "@/lib/pricing-plans";
 import { siteConfig } from "@/lib/site";
@@ -150,21 +149,6 @@ function HeroSection() {
           </div>
         </div>
         <HeroDashboardPreview stats={content.heroStats} />
-        <div className="grid w-full grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-          {content.stats.map((stat) => (
-            <div
-              className="glass-card rounded-2xl p-3 lg:p-2.5"
-              key={stat.label}
-            >
-              <p className="text-xl font-semibold sm:text-2xl lg:text-lg">
-                {stat.value}
-              </p>
-              <p className="mt-1 text-xs leading-5 text-white/65 lg:text-[0.68rem] lg:leading-4">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
@@ -373,7 +357,13 @@ export function FeatureSection() {
         />
       </div>
 
-      <div className="mx-auto mt-14 max-w-384 space-y-5">
+      <div className="mx-auto mt-12 hidden max-w-384 grid-cols-3 gap-3 lg:grid">
+        {content.featureCards.map((feature) => (
+          <FeatureCard feature={feature} key={feature.title} />
+        ))}
+      </div>
+
+      <div className="mx-auto mt-12 max-w-384 space-y-3 lg:hidden">
         {featureRows.map((row, rowIndex) => (
           <div
             className="feature-marquee"
@@ -385,23 +375,12 @@ export function FeatureSection() {
               }`}
             >
               {[...row, ...row].map((feature, index) => (
-                <article
-                  aria-hidden={index >= row.length}
-                  className="feature-marquee-card group rounded-2xl border border-(--color-border) bg-white/95 p-6 shadow-sm shadow-[rgba(1,64,52,0.04)] ring-1 ring-white/70 transition  hover:border-(--color-primary) hover:shadow-2xl hover:shadow-[rgba(1,64,52,0.1)]"
+                <FeatureCard
+                  ariaHidden={index >= row.length}
+                  className="feature-marquee-card"
+                  feature={feature}
                   key={`${feature.title}-${index}`}
-                >
-                  <div className="mb-7 flex items-center justify-between gap-4">
-                    <span className="rounded-full bg-(--color-primary-light) px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-(--color-primary-dark)">
-                      {feature.badge}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-semibold tracking-tight">
-                    {feature.title}
-                  </h3>
-                  <p className="mt-4 leading-7 text-(--color-muted)">
-                    {feature.description}
-                  </p>
-                </article>
+                />
               ))}
             </div>
           </div>
@@ -411,23 +390,87 @@ export function FeatureSection() {
   );
 }
 
+function FeatureCard({
+  feature,
+  className = "",
+  ariaHidden = false,
+}: {
+  feature: { title: string; description: string; badge: string };
+  className?: string;
+  ariaHidden?: boolean;
+}) {
+  return (
+    <article
+      aria-hidden={ariaHidden || undefined}
+      className={`group rounded-2xl border border-(--color-border) bg-white p-4 shadow-sm shadow-[rgba(1,64,52,0.04)] transition hover:border-(--color-primary)/40 hover:shadow-md hover:shadow-[rgba(1,64,52,0.08)] sm:p-5 ${className}`}
+    >
+      <span className="inline-flex rounded-full bg-(--color-primary-light) px-2.5 py-0.5 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-(--color-primary-dark)">
+        {feature.badge}
+      </span>
+      <h3 className="mt-3 text-base font-semibold tracking-tight text-(--color-ink) sm:text-lg">
+        {feature.title}
+      </h3>
+      <p className="mt-2 text-sm leading-6 text-(--color-muted)">
+        {feature.description}
+      </p>
+    </article>
+  );
+}
+
 export function WorkflowSection() {
   const { content } = useLanguage();
 
   return (
     <section
-      className="bg-(--color-primary-light) px-5 py-24 lg:px-8"
+      className="relative isolate overflow-hidden px-5 py-28 lg:px-8"
       id="workflow"
     >
+      {/* Fixed background creates the parallax reveal while scrolling. */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-20 bg-[url('/posbackground.png')] bg-cover bg-center lg:bg-fixed"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-linear-to-b from-white/95 via-white/90 to-white/96"
+      />
+
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-14 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-16">
-          <SectionHeading
-            align="left"
-            eyebrow={content.workflowHeading.eyebrow}
-            title={content.workflowHeading.title}
-            description={content.workflowHeading.description}
-          />
-          <WorkflowFlowDiagram steps={content.workflowSteps} />
+        <SectionHeading
+          eyebrow={content.workflowHeading.eyebrow}
+          title={content.workflowHeading.title}
+          description={content.workflowHeading.description}
+        />
+
+        <div className="mt-14 grid gap-4 md:grid-cols-3 md:gap-5">
+          {content.workflowSteps.map((step) => (
+            <article
+              className="group rounded-2xl border border-(--color-border) bg-white/90 p-6 shadow-sm shadow-[rgba(1,64,52,0.06)] backdrop-blur-md transition hover:border-(--color-primary)/40 hover:shadow-md hover:shadow-[rgba(1,64,52,0.1)] sm:p-7"
+              key={step.step}
+            >
+              <div className="flex items-center gap-4">
+                <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-(--color-primary) text-base font-bold text-white shadow-lg shadow-[rgba(2,115,74,0.22)]">
+                  {step.step}
+                </span>
+                <h3 className="text-lg font-semibold leading-snug text-(--color-ink) sm:text-xl">
+                  {step.title}
+                </h3>
+              </div>
+              <p className="mt-4 leading-7 text-(--color-muted)">
+                {step.description}
+              </p>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            className="inline-flex items-center gap-2 rounded-full bg-(--color-secondary) px-7 py-3.5 text-sm font-bold text-white! shadow-xl shadow-[rgba(1,64,52,0.18)] transition hover:bg-(--color-primary-dark)"
+            href="/features"
+          >
+            {content.common.exploreFeatures}
+            <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </div>
     </section>

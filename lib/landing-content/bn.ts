@@ -40,7 +40,6 @@ export const bnLandingContent = {
       { label: "Features", href: "/features", external: false },
       { label: "Workflow", href: "/workflow", external: false },
       { label: "Pricing", href: "/pricing", external: false },
-      { label: "FAQ", href: "/faq", external: false },
     ],
     companyLinks: [
       { label: "About Us", href: ororaSoftAboutUrl, external: true },
@@ -130,6 +129,18 @@ export const bnLandingContent = {
       badge: "Reports",
     },
     {
+      title: "AI ইনভয়েস স্ক্যান থেকে স্টক",
+      description:
+        "সাপ্লায়ারের ইনভয়েসের ছবি তুলুন — AI ক্রয় তৈরি করে স্টক আপডেট করে দেয়।",
+      badge: "AI Scan",
+    },
+    {
+      title: "Excel ও CSV প্রোডাক্ট ইমপোর্ট",
+      description:
+        "এক মিনিটের কম সময়ে Excel বা CSV থেকে প্রোডাক্ট ও কাস্টমার আপলোড করুন — হাতে প্রতিটি রো টাইপ করতে হবে না।",
+      badge: "Import",
+    },
+    {
       title: "দোকানের সিদ্ধান্তে AI সহকারী",
       description:
         "স্টক, বাকি, সেলস ট্রেন্ড ও পরবর্তী কাজ নিয়ে সহজ ভাষায় প্রশ্ন করে গাইডলাইন পান।",
@@ -148,21 +159,9 @@ export const bnLandingContent = {
       badge: "Export",
     },
     {
-      title: "অটোমেটিক বাকি রিমাইন্ডার",
+      title: "নোট, রিমাইন্ডার ও শেয়ারিং",
       description:
-        "কাস্টমারকে বাকি পেমেন্ট মনে করিয়ে দিয়ে ক্যাশ কালেকশন আরও স্বাস্থ্যকর রাখুন।",
-      badge: "Reminder",
-    },
-    {
-      title: "শেয়ার করা যায় এমন বিজনেস নোট",
-      description:
-        "দোকানের জরুরি নোট তৈরি করুন, অটো সেভ করুন এবং প্রয়োজনীয় মানুষের সঙ্গে শেয়ার করুন।",
-      badge: "Notes",
-    },
-    {
-      title: "সহজ সোশ্যাল শেয়ারিং",
-      description:
-        "মেমো, ব্যবসার আপডেট ও কাস্টমার-রেডি তথ্য দ্রুত সোশ্যাল চ্যানেলে শেয়ার করুন।",
+        "দোকানের নোট তৈরি করুন, বাকি রিমাইন্ডার পাঠান এবং মেমো বা আপডেট WhatsApp ও সোশ্যাল চ্যানেলে শেয়ার করুন।",
       badge: "Share",
     },
     {
@@ -173,29 +172,29 @@ export const bnLandingContent = {
     },
   ],
   workflowHeading: {
-    eyebrow: "দৈনন্দিন ফ্লো",
-    title: "বাস্তব দোকানের দিনের ছন্দ অনুযায়ী ডিজাইন করা।",
+    eyebrow: "MemoApp-এ আপনার দিন",
+    title: "দোকান খোলা থেকে বন্ধ — সব চলে এক অ্যাপে।",
     description:
-      "ক্যাশ ওপেন করা থেকে দিনের শেষ রিপোর্ট পর্যন্ত MemoApp ব্যস্ত বিক্রির সময়কে সহজ রাখে এবং মালিককে পরিষ্কার ধারণা দেয়।",
+      "সকালে কাউন্টার খুলুন, সারাদিন বিক্রি করুন, আর দিন শেষে পরিষ্কার হিসাব দেখুন — বিলিং, বাকি ও স্টক প্রতিটি ধাপে MemoApp সামলায়, খাতায় আর কিছু রাখতে হয় না।",
   },
   workflowSteps: [
     {
       step: "০১",
-      title: "কাউন্টার খুলুন",
+      title: "সকাল শুরু করুন প্রস্তুত হয়ে",
       description:
-        "ক্যাশফ্লো ভিজিবিলিটি, প্রোডাক্ট শর্টকাট ও প্রস্তুত মেমো অ্যাকশন দিয়ে দিন শুরু করুন।",
+        "গতকালের ক্যাশ, আজকের স্টক আর সবচেয়ে বেশি বিক্রি হওয়া প্রোডাক্ট সামনে নিয়েই কাউন্টার খুলুন।",
     },
     {
       step: "০২",
-      title: "বিক্রি, কালেকশন, সিঙ্ক",
+      title: "সারাদিন বাধাহীন বিক্রি",
       description:
-        "ইন্টারনেট দুর্বল হলেও সেলস, আংশিক পেমেন্ট ও কাস্টমার বাকি রেকর্ড করুন।",
+        "সেকেন্ডেই বিল করুন, ক্যাশ বা বাকিতে নিন, আর ইন্টারনেট চলে গেলেও বিক্রি চালু রাখুন — পরে সব সিঙ্ক হয়ে যায়।",
     },
     {
       step: "০৩",
-      title: "ব্যবসা রিভিউ করুন",
+      title: "দিন শেষ করুন পরিষ্কার হিসাবে",
       description:
-        "রিপোর্ট, লো-স্টক অ্যালার্ট, খরচের কনটেক্সট ও মালিক-রেডি ইনসাইট দিয়ে দিন শেষ করুন।",
+        "সেলস, লাভ, আদায় হওয়া বাকি আর কাল কোন প্রোডাক্ট রিস্টক করতে হবে — সব জেনেই দিন শেষ করুন।",
     },
   ],
   showcase: {
@@ -236,27 +235,27 @@ export const bnLandingContent = {
     eyebrow: "পয়েন্ট অব সেল",
     title: "ব্যস্ততম দিনেও দ্রুত কাজের জন্য তৈরি কাউন্টার।",
     description:
-      "MemoApp-এর POS প্রতিটি বিক্রি দ্রুত ও নির্ভুল রাখে — প্রোডাক্ট স্ক্যান করুন, একসাথে একাধিক বিল সামলান, যেকোনো পেমেন্ট নিন আর সেকেন্ডেই মেমো প্রিন্ট করুন।",
+      "আপনার দোকানের ধরন অনুযায়ী POS পান — হার্ডওয়্যার, পোশাক, রেস্তোরাঁ, ফার্মেসি এবং আরও। প্রোডাক্ট স্ক্যান করুন, একাধিক বিল সামলান, যেকোনো পেমেন্ট নিন আর সেকেন্ডেই মেমো প্রিন্ট করুন।",
     previews: [
       {
-        src: "/FashionPOS.png",
-        label: "ফ্যাশন",
-        alt: "MemoApp ফ্যাশন স্টোর POS — পোশাক প্রোডাক্ট, বিল ট্যাব ও চেকআউট।",
+        src: "/hardware.png",
+        label: "হার্ডওয়্যার",
+        alt: "MemoApp হার্ডওয়্যার স্টোর POS — টুলস, নির্মাণ সামগ্রী, বিল ট্যাব ও ডেস্কটপ-মোবাইল চেকআউট।",
       },
       {
-        src: "/GrosaryPOS.png",
-        label: "গ্রোসারি",
-        alt: "MemoApp গ্রোসারি POS — প্রোডাক্ট গ্রিড, ক্যাটাগরি, স্টক ও কারেন্ট বিল।",
+        src: "/Clothing.png",
+        label: "পোশাক",
+        alt: "MemoApp পোশাক স্টোর POS — অ্যাপারেল প্রোডাক্ট, ক্যাটাগরি, কারেন্ট বিল ও মোবাইল চেকআউট।",
       },
       {
-        src: "/medicinePOS.png",
-        label: "ফার্মেসি",
-        alt: "MemoApp ফার্মেসি POS — ওষুধ কার্ড, MRP, স্টক ও পেমেন্ট অপশন।",
-      },
-      {
-        src: "/ResturentPOS.png",
+        src: "/Resturent.png",
         label: "রেস্তোরাঁ",
-        alt: "MemoApp রেস্তোরাঁ POS — মেনু আইটেম, মাল্টি-বিল ট্যাব ও টেবিল চেকআউট।",
+        alt: "MemoApp রেস্তোরাঁ POS — মেনু আইটেম, মাল্টি-বিল ট্যাব ও ডেস্কটপ-মোবাইল চেকআউট।",
+      },
+      {
+        src: "/Pharmacy.png",
+        label: "ফার্মেসি",
+        alt: "MemoApp ফার্মেসি POS — ওষুধ কার্ড, MRP, স্টক ও পেমেন্ট অপশন ডেস্কটপ ও মোবাইলে।",
       },
     ],
     cards: [
@@ -671,6 +670,29 @@ export const bnLandingContent = {
         },
       ],
     },
+    aiSpotlight: {
+      eyebrow: "AI যা টাইপ করে",
+      title: "সাপ্লায়ার ইনভয়েসের ছবি তুলুন। ডাটা এন্ট্রি করে AI।",
+      description:
+        "ক্রয়ের ইনভয়েসের ছবি তুলুন — MemoApp লাইন আইটেম পড়ে ক্রয় তৈরি করে এবং স্টক আপডেট করে, যাতে আপনি কম টাইপ করে বেশি বিক্রি করতে পারেন।",
+      highlights: [
+        "ছবি → প্রোডাক্ট, পরিমাণ ও দাম স্বয়ংক্রিয়ভাবে বের হয়",
+        "স্টক ও ক্রয় রেকর্ড অটোমেটিক আপডেট হয়",
+        "ট্রায়াল, Growth ও Business প্ল্যানে স্ক্যান অন্তর্ভুক্ত",
+      ],
+      pricingLink: "প্ল্যান অনুযায়ী স্ক্যান লিমিট দেখুন",
+      importEyebrow: "বাল্ক আপলোড",
+      importTitle:
+        "অথবা এক মিনিটের কম সময়ে Excel থেকে পুরো ক্যাটালগ ইমপোর্ট করুন",
+      importDescription:
+        "প্রোডাক্ট বা কাস্টমার স্প্রেডশিট ড্রপ করুন — MemoApp কলাম অটো ম্যাপ করে; Excel বা CSV-তে লিস্ট থাকলে আদর্শ।",
+      importLink: "নিচের সেটআপ জার্নি দেখুন",
+      importHighlights: [
+        "প্রোডাক্ট ও কাস্টমারের জন্য Excel ও CSV",
+        "নতুন শুরু হলে টেমপ্লেট ডাউনলোড",
+        "এক ইমপোর্টে স্টক, দাম ও ইউনিট",
+      ],
+    },
     setupJourney: {
       eyebrow: "ফিচার বিস্তারিত",
       title: "দোকান খুলে মিনিটের মধ্যে বিক্রি শুরু করুন",
@@ -929,7 +951,7 @@ export const bnLandingContent = {
         description:
           "প্রোডাক্ট শর্টকাট, ওপেনিং ক্যাশ ও প্রস্তুত মেমো অ্যাকশন দিয়ে দিন শুরু করুন।",
         featureLabel: "POS বিলিং ও ক্যাশ ভিজিবিলিটি",
-        featureHref: "/features#feature-details",
+        featureHref: "/features",
       },
       {
         step: "০২",
@@ -937,7 +959,7 @@ export const bnLandingContent = {
         description:
           "পেইড, পারশিয়াল বা বাকি সেল তৈরি করুন — থার্মাল, PDF বা WhatsApp-এ পাঠান।",
         featureLabel: "মেমো, ইনভয়েস ও শেয়ারিং",
-        featureHref: "/features#feature-details",
+        featureHref: "/features",
       },
       {
         step: "০৩",
@@ -945,7 +967,7 @@ export const bnLandingContent = {
         description:
           "প্রোডাক্ট পরিমাণ কাউন্টারের সঙ্গে যুক্ত — লো-স্টক ঝুঁকি আগে দেখুন।",
         featureLabel: "ইনভেন্টরি ও লো-স্টক অ্যালার্ট",
-        featureHref: "/features#feature-details",
+        featureHref: "/features",
       },
       {
         step: "০৪",
@@ -953,7 +975,7 @@ export const bnLandingContent = {
         description:
           "কাস্টমার বাকি, সাপ্লায়ার ক্রয় ও পেমেন্ট দৈনিক সেলস ফ্লোর পাশেই গুছানো।",
         featureLabel: "কাস্টমার ও সাপ্লায়ার লেজার",
-        featureHref: "/features#feature-details",
+        featureHref: "/features",
       },
       {
         step: "০৫",
@@ -961,14 +983,14 @@ export const bnLandingContent = {
         description:
           "ডিটেইল ভুলে যাওয়ার আগে দৈনিক খরচ ও দোকান আপডেট রেকর্ড করুন।",
         featureLabel: "খরচ ও কর্মচারী",
-        featureHref: "/features#feature-details",
+        featureHref: "/features",
       },
       {
         step: "০৬",
         title: "রিপোর্ট, সিঙ্ক ও ব্যাকআপ রিভিউ করুন",
         description: "সেলস, লাভ, বাকি, স্টক, AI ও সিঙ্ক দিয়ে দিন শেষ করুন।",
         featureLabel: "রিপোর্ট, AI, সিঙ্ক ও ব্যাকআপ",
-        featureHref: "/features#feature-details",
+        featureHref: "/features",
       },
     ],
     bakiFlowEyebrow: "বাকি কালেকশন",

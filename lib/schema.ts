@@ -16,14 +16,17 @@ export const pageSeo = {
   features: {
     title: "MemoApp Features | Billing, Inventory & Dues",
     openGraphTitle:
-      "MemoApp Features | Billing, Inventory & Dues for Bangladesh Shops",
+      "MemoApp Features | AI Invoice Scan, POS, Inventory & Dues for Bangladesh Shops",
     description:
-      "Explore MemoApp features: POS billing, Excel/CSV import, inventory, customer dues, reports, team access, and AI — a modern web app that runs on any device.",
+      "Explore MemoApp features: AI invoice scan to stock, POS billing, Excel/CSV product import, inventory, customer dues, reports, team access, and AI assistant — a modern web app for Bangladesh shops.",
     keywords: [
       "MemoApp features",
       "memoapp features",
       "memo app features",
       "memo app bd",
+      "AI invoice scanner",
+      "invoice to stock software",
+      "AI POS Bangladesh",
       "POS software features Bangladesh",
       "inventory management software BD",
       "baki tracking app",

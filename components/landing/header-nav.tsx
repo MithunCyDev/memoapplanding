@@ -12,8 +12,8 @@ export function HeaderNav() {
       {navItems.map((item) => {
         const isActive = !item.external && pathname === item.href;
         const className = isActive
-          ? "rounded-full bg-(--color-primary-light) px-4 py-2 text-sm font-semibold text-(--color-primary-dark)"
-          : "rounded-full px-4 py-2 text-sm font-medium text-(--color-muted) transition hover:bg-(--color-primary-light) hover:text-(--color-primary)";
+          ? "px-3 py-2 text-md font-semibold text-(--color-primary-dark)!"
+          : "px-3 py-2 text-md font-bold text-(--color-muted)! transition hover:text-(--color-primary)!";
 
         if (item.external) {
           return (

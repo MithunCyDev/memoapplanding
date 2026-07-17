@@ -13,6 +13,5 @@ export const navItems = [
   { label: "Features", href: "/features", external: false },
   { label: "Workflow", href: "/workflow", external: false },
   { label: "Pricing", href: "/pricing", external: false },
-  { label: "FAQ", href: "/faq", external: false },
   { label: "Privacy", href: "/privacy-policy", external: false },
 ] as const;
