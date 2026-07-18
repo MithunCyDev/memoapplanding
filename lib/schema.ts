@@ -121,12 +121,12 @@ const pricingOffers = [
   },
   {
     name: "Starter",
-    price: "699",
+    price: "499",
     description: "Monthly plan for clean POS billing, stock, and dues.",
   },
   {
     name: "Growth",
-    price: "1199",
+    price: "999",
     description:
       "Monthly plan for growing shops adding manager and staff logins, reports, AI, and import/export.",
   },
