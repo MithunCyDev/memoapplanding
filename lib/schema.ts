@@ -107,6 +107,24 @@ export const pageSeo = {
     ],
     path: "/terms-of-service",
   },
+  pharmacyPos: {
+    title: "Pharmacy POS Software Bangladesh | MemoApp for Medicine Shops",
+    openGraphTitle:
+      "MemoApp Pharmacy POS | MRP Billing, Stock & Offline for Medicine Shops",
+    description:
+      "Pharmacy POS for Bangladesh medicine shops — MRP list, one-click product create, multi bill, barcode, returns, offline billing, dashboard, roles, and AI assistant.",
+    keywords: [
+      "pharmacy POS Bangladesh",
+      "pharmacy software BD",
+      "medicine shop POS",
+      "pharmacy billing software",
+      "pharmacy inventory software",
+      "MemoApp pharmacy",
+      "dokan pharmacy software",
+      "offline pharmacy POS",
+    ],
+    path: "/pharmacy-pos",
+  },
 } as const;
 
 const featureNames = landingContent.en.featureCards.map(
@@ -399,6 +417,43 @@ export function buildTermsOfServicePageSchema() {
         url: siteConfig.url,
       },
       about: ["Terms of service", "Acceptable use", "Data export"],
+    },
+  ];
+}
+
+export function buildPharmacyPosPageSchema() {
+  const page = landingContent.en.pharmacyPosPage;
+
+  return [
+    buildBreadcrumb(pageSeo.pharmacyPos.path, "Pharmacy POS"),
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: pageSeo.pharmacyPos.openGraphTitle,
+      url: absoluteUrl(pageSeo.pharmacyPos.path),
+      description: pageSeo.pharmacyPos.description,
+      isPartOf: {
+        "@type": "WebSite",
+        name: siteConfig.name,
+        url: siteConfig.url,
+      },
+      about: [
+        "Pharmacy POS",
+        "Medicine shop billing",
+        "Pharmacy inventory",
+        "Offline pharmacy software",
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: page.features.title,
+      itemListElement: page.features.items.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.title,
+        description: item.description,
+      })),
     },
   ];
 }

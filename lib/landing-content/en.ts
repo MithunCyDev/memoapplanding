@@ -4,6 +4,7 @@ export const enLandingContent = {
   common: {
     tryForFree: "Try for free",
     downloadMemoApp: "Download MemoApp",
+    watchVideo: "Watch video",
     startWithMemoApp: "Start with MemoApp",
     tryMemoApp: "Try MemoApp",
     exploreFeatures: "Explore features",
@@ -1448,5 +1449,118 @@ export const enLandingContent = {
     emailSupport: "Email support",
     chatWithUs: "Talk with us",
     whatsappMessage: "Hello MemoApp team, I would like to talk with you.",
+  },
+  pharmacyPosPage: {
+    chrome: {
+      tryCta: "Try MemoApp",
+      whatsappCta: "WhatsApp",
+      privacyLabel: "Privacy Policy",
+      termsLabel: "Terms of Service",
+    },
+    hero: {
+      eyebrow: "Pharmacy POS for medicine shops",
+      title: "Bill medicines faster with MemoApp Pharmacy POS",
+      description:
+        "Built for pharmacy counters — pick by MRP, manage stock, run multiple bills, and keep selling even when the internet drops.",
+      tryCta: "Try MemoApp",
+      whatsappCta: "Talk on WhatsApp",
+      whatsappMessage:
+        "Hello MemoApp team, I want to try MemoApp Pharmacy POS for my medicine shop.",
+      imageAlt:
+        "MemoApp Pharmacy POS on desktop and mobile showing medicine cards, MRP, stock, and billing.",
+    },
+    features: {
+      eyebrow: "Pharmacy-ready features",
+      title: "Everything a medicine shop needs at the counter",
+      description:
+        "From MRP selection to offline billing — MemoApp is shaped for how pharmacies sell every day.",
+      items: [
+        {
+          title: "Medicine MRP List",
+          description:
+            "Select medicines in seconds by checking MRP — built for fast pharmacy counters.",
+        },
+        {
+          title: "One-Click Product Creation",
+          description:
+            "Add a new medicine anytime with cost price and stock, then start billing immediately.",
+        },
+        {
+          title: "Smart Inventory Management",
+          description:
+            "Control medicine stock in and out with clear, simple inventory tracking.",
+        },
+        {
+          title: "Pending Bill System",
+          description:
+            "Save incomplete bills and finish them later when the customer returns.",
+        },
+        {
+          title: "Multi Bill",
+          description:
+            "Handle multiple bills at once during busy hours without losing your place.",
+        },
+        {
+          title: "Auto & Manual Price",
+          description:
+            "Set selling price automatically or adjust manually whenever you need.",
+        },
+        {
+          title: "Barcode Scanner Support",
+          description:
+            "Scan barcodes for faster, more accurate medicine billing.",
+        },
+        {
+          title: "Return Product System",
+          description:
+            "Process returns and sync stock automatically — no manual guesswork.",
+        },
+        {
+          title: "Offline Support",
+          description:
+            "Keep selling even without internet — sync when you are back online.",
+        },
+        {
+          title: "Business Dashboard",
+          description:
+            "See sales, stock, profit & loss, and key business insights at a glance.",
+        },
+        {
+          title: "Role-Based Access Control",
+          description:
+            "Separate permissions for Owner, Manager, and Staff on one pharmacy system.",
+        },
+        {
+          title: "AI Assistant",
+          description:
+            "Get smarter help running your pharmacy day-to-day with MemoAI support.",
+        },
+      ],
+    },
+    trust: {
+      eyebrow: "Why pharmacies choose MemoApp",
+      items: [
+        {
+          title: "Faster counter billing",
+          description: "MRP list, barcode, and multi-bill keep queues moving.",
+        },
+        {
+          title: "Stock you can trust",
+          description:
+            "In/out tracking and returns stay aligned with every sale.",
+        },
+        {
+          title: "Works when net drops",
+          description: "Offline support means the counter does not stop.",
+        },
+      ],
+    },
+    finalCta: {
+      title: "Ready to run your pharmacy on MemoApp?",
+      description:
+        "Start free, set up your medicine catalog, and bill from desktop or mobile in minutes.",
+      tryCta: "Try MemoApp free",
+      whatsappCta: "WhatsApp us",
+    },
   },
 } as const;

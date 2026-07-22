@@ -15,7 +15,8 @@ import { SectionHeading } from "@/components/landing/section-heading";
 import { useInView } from "@/components/landing/use-in-view";
 import { useMotionAllowed } from "@/components/landing/use-motion-allowed";
 import { MobileCounterMockup } from "@/components/landing/product-mockups";
-import { appLoginUrl, installUrl } from "@/lib/landing-content";
+import { YoutubeVideoDialog } from "@/components/landing/youtube-video-dialog";
+import { appLoginUrl } from "@/lib/landing-content";
 import { splitPricingPlans } from "@/lib/pricing-plans";
 import { siteConfig } from "@/lib/site";
 
@@ -89,6 +90,7 @@ export function Header() {
 function HeroSection() {
   const { content, language } = useLanguage();
   const isBangla = language === "bn";
+  const [videoOpen, setVideoOpen] = useState(false);
 
   return (
     <section
@@ -140,16 +142,31 @@ function HeroSection() {
             >
               {content.common.tryMemoApp}
             </a>
-            <a
-              className="rounded-full border border-white/20 px-7 py-4 text-center text-sm font-bold text-white transition hover:bg-white/10"
-              href={installUrl}
+            <button
+              className="inline-flex items-center justify-center cursor-pointer gap-2 rounded-full border border-white/20 px-7 py-4 text-center text-sm font-bold text-white transition hover:bg-white/10"
+              onClick={() => setVideoOpen(true)}
+              type="button"
             >
-              {content.common.downloadMemoApp}
-            </a>
+              <svg
+                aria-hidden
+                className="size-4"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M8 5.14v13.72a1 1 0 0 0 1.55.83l10.12-6.86a1 1 0 0 0 0-1.66L9.55 4.31A1 1 0 0 0 8 5.14Z" />
+              </svg>
+              {content.common.watchVideo}
+            </button>
           </div>
         </div>
         <HeroDashboardPreview stats={content.heroStats} />
       </div>
+
+      <YoutubeVideoDialog
+        onClose={() => setVideoOpen(false)}
+        open={videoOpen}
+        title={content.common.watchVideo}
+      />
     </section>
   );
 }

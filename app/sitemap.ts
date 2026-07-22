@@ -6,6 +6,7 @@ const routes = [
   { path: "/features", priority: 0.9, lastModified: "2026-06-23" },
   { path: "/workflow", priority: 0.8, lastModified: "2026-06-23" },
   { path: "/pricing", priority: 0.9, lastModified: "2026-06-23" },
+  { path: "/pharmacy-pos", priority: 0.8, lastModified: "2026-07-23" },
   { path: "/faq", priority: 0.7, lastModified: "2026-06-23" },
   { path: "/privacy-policy", priority: 0.6, lastModified: "2026-06-23" },
   { path: "/terms-of-service", priority: 0.6, lastModified: "2026-06-23" },

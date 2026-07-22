@@ -4,6 +4,7 @@ export const bnLandingContent = {
   common: {
     tryForFree: "ফ্রি শুরু করুন",
     downloadMemoApp: "MemoApp ডাউনলোড",
+    watchVideo: "ভিডিও দেখুন",
     startWithMemoApp: "MemoApp শুরু করুন",
     tryMemoApp: "MemoApp ব্যবহার করুন",
     exploreFeatures: "ফিচার দেখুন",
@@ -1431,5 +1432,108 @@ export const bnLandingContent = {
     emailSupport: "ইমেইল সাপোর্ট",
     chatWithUs: "আমাদের সাথে কথা বলুন",
     whatsappMessage: "হ্যালো MemoApp টিম, আপনাদের সাথে কথা বলতে চাই।",
+  },
+  pharmacyPosPage: {
+    chrome: {
+      tryCta: "MemoApp ব্যবহার করুন",
+      whatsappCta: "WhatsApp",
+      privacyLabel: "Privacy Policy",
+      termsLabel: "Terms of Service",
+    },
+    hero: {
+      eyebrow: "ফার্মেসি POS — ওষুধের দোকানের জন্য",
+      title: "MemoApp Pharmacy POS দিয়ে দ্রুত ওষুধ বিল করুন",
+      description:
+        "ফার্মেসি কাউন্টারের জন্য তৈরি — MRP দেখে নির্বাচন, স্টক নিয়ন্ত্রণ, মাল্টি বিল, আর ইন্টারনেট না থাকলেও বিক্রি চালিয়ে যান।",
+      tryCta: "MemoApp ব্যবহার করুন",
+      whatsappCta: "WhatsApp-এ কথা বলুন",
+      whatsappMessage:
+        "হ্যালো MemoApp টিম, আমার ওষুধের দোকানের জন্য Pharmacy POS ব্যবহার করতে চাই।",
+      imageAlt:
+        "MemoApp Pharmacy POS — ডেস্কটপ ও মোবাইলে ওষুধ কার্ড, MRP, স্টক ও বিলিং।",
+    },
+    features: {
+      eyebrow: "ফার্মেসি-রেডি ফিচার",
+      title: "ওষুধের দোকানের কাউন্টারে যা দরকার",
+      description:
+        "MRP সিলেকশন থেকে অফলাইন বিলিং পর্যন্ত — MemoApp ফার্মেসির দৈনন্দিন বিক্রির ধরন অনুযায়ী তৈরি।",
+      items: [
+        {
+          title: "Medicine MRP List",
+          description: "MRP দেখে কয়েক সেকেন্ডেই ওষুধ নির্বাচন করুন।",
+        },
+        {
+          title: "One-Click Product Creation",
+          description:
+            "নতুন ওষুধ যেকোনো সময় Cost Price ও Stock দিয়ে মুহূর্তেই প্রোডাক্ট তৈরি করুন এবং সঙ্গে সঙ্গে বিলিং শুরু করুন।",
+        },
+        {
+          title: "Smart Inventory Management",
+          description: "ওষুধের স্টক, ইন ও আউট সহজে নিয়ন্ত্রণ করুন।",
+        },
+        {
+          title: "Pending Bill System",
+          description: "অসম্পূর্ণ বিল পরে সম্পন্ন করার সুবিধা।",
+        },
+        {
+          title: "Multi Bill",
+          description: "ব্যস্ত সময়ে একাধিক বিল একসাথে পরিচালনা করুন।",
+        },
+        {
+          title: "Auto & Manual Price",
+          description: "প্রয়োজন অনুযায়ী বিক্রয় মূল্য নির্ধারণ করুন।",
+        },
+        {
+          title: "Barcode Scanner Support",
+          description: "দ্রুত ও নির্ভুল বিলিং।",
+        },
+        {
+          title: "Return Product System",
+          description: "রিটার্ন পণ্য স্বয়ংক্রিয়ভাবে স্টকে সমন্বয় করুন।",
+        },
+        {
+          title: "Offline Support",
+          description: "ইন্টারনেট সংযোগ না থাকলেও বিক্রয় চালিয়ে যান।",
+        },
+        {
+          title: "Business Dashboard",
+          description:
+            "বিক্রয়, স্টক, লাভ-ক্ষতি ও ব্যবসার গুরুত্বপূর্ণ তথ্য এক নজরে দেখুন।",
+        },
+        {
+          title: "Role-Based Access Control",
+          description:
+            "Owner, Manager ও Staff-এর জন্য আলাদা অনুমতি নির্ধারণ করুন।",
+        },
+        {
+          title: "AI Assistant",
+          description: "ব্যবসা পরিচালনায় আরও স্মার্ট সহায়তা।",
+        },
+      ],
+    },
+    trust: {
+      eyebrow: "ফার্মেসিগুলো MemoApp কেন বেছে নেয়",
+      items: [
+        {
+          title: "দ্রুত কাউন্টার বিলিং",
+          description: "MRP লিস্ট, বারকোড ও মাল্টি বিল কিউ কমায়।",
+        },
+        {
+          title: "বিশ্বাসযোগ্য স্টক",
+          description: "ইন/আউট ও রিটার্ন প্রতিটি সেলের সাথে মিল রাখে।",
+        },
+        {
+          title: "নেট না থাকলেও চলে",
+          description: "অফলাইন সাপোর্টে কাউন্টার থেমে যায় না।",
+        },
+      ],
+    },
+    finalCta: {
+      title: "আপনার ফার্মেসি MemoApp-এ চালু করতে প্রস্তুত?",
+      description:
+        "ফ্রি শুরু করুন, ওষুধের ক্যাটালগ সেট করুন, আর মিনিটের মধ্যে ডেস্কটপ বা মোবাইল থেকে বিল করুন।",
+      tryCta: "ফ্রি শুরু করুন",
+      whatsappCta: "WhatsApp করুন",
+    },
   },
 } as const;
