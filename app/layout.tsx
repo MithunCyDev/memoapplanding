@@ -68,8 +68,10 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body>
+      <head>
         <GoogleAnalytics />
+      </head>
+      <body>
         <MetaPixel />
         <LanguageProvider>
           <PageVisibilityRoot>{children}</PageVisibilityRoot>
