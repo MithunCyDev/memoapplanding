@@ -1,13 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useRef } from "react";
+import { Footer } from "@/components/landing/footer";
 import { Header } from "@/components/landing/landing-page";
 import { useLanguage } from "@/components/landing/language-provider";
 import { useInView } from "@/components/landing/use-in-view";
 import { appLoginUrl } from "@/lib/landing-content";
-import { siteConfig } from "@/lib/site";
 import { buildWhatsAppLink } from "@/lib/whatsapp-link";
 
 function PlayfulAccentDot() {
@@ -23,7 +22,6 @@ export function PharmacyPosPage() {
   const { content } = useLanguage();
   const page = content.pharmacyPosPage;
   const whatsappHref = buildWhatsAppLink(page.hero.whatsappMessage);
-  const year = new Date().getFullYear();
 
   return (
     <div className="min-h-screen overflow-hidden bg-(--color-paper)">
@@ -159,30 +157,7 @@ export function PharmacyPosPage() {
         </section>
       </main>
 
-      <footer className="border-t border-(--color-border) bg-white px-5 py-8 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
-          <p className="text-sm text-(--color-muted)">
-            © {year} {siteConfig.name}. {content.common.copyright}
-          </p>
-          <nav
-            aria-label="Legal"
-            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2"
-          >
-            <Link
-              className="text-sm font-medium text-(--color-muted)! transition hover:text-(--color-primary)!"
-              href="/privacy-policy"
-            >
-              {page.chrome.privacyLabel}
-            </Link>
-            <Link
-              className="text-sm font-medium text-(--color-muted)! transition hover:text-(--color-primary)!"
-              href="/terms-of-service"
-            >
-              {page.chrome.termsLabel}
-            </Link>
-          </nav>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

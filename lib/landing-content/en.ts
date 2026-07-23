@@ -1458,16 +1458,16 @@ export const enLandingContent = {
       termsLabel: "Terms of Service",
     },
     hero: {
-      eyebrow: "Pharmacy POS for medicine shops",
-      title: "Bill medicines faster with MemoApp Pharmacy POS",
+      eyebrow: "Pharmacy management system for medicine shops",
+      title: "Run your whole pharmacy — not just the counter",
       description:
-        "Built for pharmacy counters — pick by MRP, manage stock, run multiple bills, and keep selling even when the internet drops.",
+        "MemoApp is a pharmacy management system for medicine shops: fast MRP billing, stock control, multi-bill, dues, reports, and offline selling — so you manage the full shop from one place.",
       tryCta: "Try MemoApp",
       whatsappCta: "Talk on WhatsApp",
       whatsappMessage:
-        "Hello MemoApp team, I want to try MemoApp Pharmacy POS for my medicine shop.",
+        "Hello MemoApp team, I want to try MemoApp Pharmacy Management for my medicine shop.",
       imageAlt:
-        "MemoApp Pharmacy POS on desktop and mobile showing medicine cards, MRP, stock, and billing.",
+        "MemoApp pharmacy management on desktop and mobile showing medicine cards, MRP, stock, and billing.",
     },
     dashboard: {
       eyebrow: "See the full picture",
