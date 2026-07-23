@@ -15,20 +15,6 @@ SEO-friendly marketing site for **MemoApp** - AI-powered business management / P
 | Language  | TypeScript                                  |
 | Linting   | ESLint (`eslint-config-next`)               |
 
----
-
-## Features
-
-- Multilingual landing experience (EN / BN)
-- Product pages: home, features, workflow, pricing, FAQ, pharmacy POS
-- Legal pages: privacy policy, terms of service
-- SEO: metadata, Open Graph, sitemap, robots
-- WhatsApp support CTA
-- Google Analytics (gtag) traffic tracking
-- Meta Pixel page-view tracking
-
----
-
 ## Getting started
 
 ### Prerequisites
