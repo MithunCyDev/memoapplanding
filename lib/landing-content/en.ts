@@ -1469,6 +1469,15 @@ export const enLandingContent = {
       imageAlt:
         "MemoApp Pharmacy POS on desktop and mobile showing medicine cards, MRP, stock, and billing.",
     },
+    dashboard: {
+      eyebrow: "See the full picture",
+      title: "A dashboard that keeps your pharmacy under control",
+      description:
+        "Track sales, stock, dues, and profit from one clear owner view — then jump straight into the counter when customers are waiting.",
+      label: "Business dashboard",
+      imageAlt:
+        "MemoApp product dashboard on laptop and mobile with live shop metrics.",
+    },
     features: {
       eyebrow: "Pharmacy-ready features",
       title: "Everything a medicine shop needs at the counter",

@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { LanguageToggle } from "@/components/landing/language-toggle";
+import { useRef } from "react";
+import { Header } from "@/components/landing/landing-page";
 import { useLanguage } from "@/components/landing/language-provider";
+import { useInView } from "@/components/landing/use-in-view";
 import { appLoginUrl } from "@/lib/landing-content";
 import { siteConfig } from "@/lib/site";
 import { buildWhatsAppLink } from "@/lib/whatsapp-link";
@@ -25,34 +27,7 @@ export function PharmacyPosPage() {
 
   return (
     <div className="min-h-screen overflow-hidden bg-(--color-paper)">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[rgba(248,249,245,0.9)] backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 py-4 lg:px-8">
-          <Link
-            aria-label="MemoApp home"
-            className="flex items-center"
-            href="/"
-          >
-            <Image
-              alt="MemoApp"
-              className="h-9 w-auto sm:h-11"
-              height={58}
-              priority
-              src="/logo.png"
-              width={260}
-            />
-          </Link>
-
-          <div className="flex items-center gap-2 sm:gap-3">
-            <LanguageToggle className="inline-flex rounded-full border border-(--color-border) bg-(--color-background) p-0.5" />
-            <a
-              className="primary-button hidden rounded-full px-5 py-2.5 text-sm font-semibold shadow-lg shadow-[rgba(1,64,52,0.18)] transition sm:inline-flex"
-              href={appLoginUrl}
-            >
-              {page.chrome.tryCta}
-            </a>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <main>
         <section className="relative isolate overflow-hidden bg-(--color-secondary) pt-28 text-white sm:pt-32">
@@ -60,14 +35,15 @@ export function PharmacyPosPage() {
           <div className="hero-flow-orb hero-flow-orb-primary" />
           <div className="hero-flow-orb hero-flow-orb-secondary" />
           <div className="hero-flow-orb hero-flow-orb-accent" />
+          <div className="hero-flow-ribbon" />
 
-          <div className="mx-auto grid max-w-7xl gap-10 px-5 pb-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12 lg:px-8 lg:pb-20">
-            <div>
+          <div className="mx-auto grid max-w-7xl gap-12 px-5 pb-20 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-10 lg:px-8 lg:pb-24">
+            <div className="relative z-10">
               <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white/80 backdrop-blur-xl">
                 <PlayfulAccentDot />
                 {page.hero.eyebrow}
               </p>
-              <h1 className="text-balance mt-6 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
+              <h1 className="text-balance mt-6 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-[3.35rem] lg:leading-[1.08]">
                 {page.hero.title}
               </h1>
               <p className="mt-5 max-w-xl text-base leading-8 text-white/72 sm:text-lg">
@@ -92,22 +68,11 @@ export function PharmacyPosPage() {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-(--color-info)/15 blur-3xl" />
-              <div className="overflow-hidden rounded-2xl border border-white/15 bg-white/10 p-2 shadow-2xl shadow-black/30 backdrop-blur-sm sm:p-3">
-                <Image
-                  alt={page.hero.imageAlt}
-                  className="h-auto w-full rounded-xl"
-                  height={533}
-                  priority
-                  sizes="(min-width: 1024px) 42vw, 100vw"
-                  src="/Pharmacy.png"
-                  width={800}
-                />
-              </div>
-            </div>
+            <PharmacyHeroVisual alt={page.hero.imageAlt} />
           </div>
         </section>
+
+        <DashboardShowcaseSection />
 
         <section className="border-b border-(--color-border) bg-white px-5 py-20 lg:px-8">
           <div className="mx-auto max-w-7xl">
@@ -124,7 +89,7 @@ export function PharmacyPosPage() {
             <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {page.features.items.map((item, index) => (
                 <article
-                  className="rounded-2xl border border-(--color-border) bg-(--color-background) p-5 shadow-sm transition hover:border-(--color-primary)/35"
+                  className="rounded-2xl border border-(--color-border) bg-(--color-background) p-5 shadow-sm transition hover:border-(--color-primary)/35 hover:shadow-md"
                   key={item.title}
                 >
                   <p className="text-xs font-bold uppercase tracking-[0.18em] text-(--color-primary)">
@@ -219,6 +184,84 @@ export function PharmacyPosPage() {
         </div>
       </footer>
     </div>
+  );
+}
+
+function PharmacyHeroVisual({ alt }: { alt: string }) {
+  return (
+    <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
+      <div
+        aria-hidden="true"
+        className="absolute -inset-10 -z-10 rounded-full bg-(--color-info)/18 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute -right-6 top-8 -z-10 hidden h-40 w-40 rounded-full bg-white/10 blur-2xl sm:block"
+      />
+
+      <div className="relative overflow-hidden rounded-2xl bg-white p-3 shadow-2xl shadow-black/30 sm:p-4">
+        <Image
+          alt={alt}
+          className="h-auto w-full"
+          height={900}
+          priority
+          sizes="(min-width: 1024px) 42vw, 92vw"
+          src="/memoapppharmecy-POS.png"
+          width={1200}
+        />
+      </div>
+    </div>
+  );
+}
+
+function DashboardShowcaseSection() {
+  const { content } = useLanguage();
+  const dashboard = content.pharmacyPosPage.dashboard;
+  const sectionRef = useRef<HTMLElement>(null);
+  const inView = useInView(sectionRef, { threshold: 0.18 });
+
+  return (
+    <section
+      className="border-b border-(--color-border) bg-(--color-background) px-5 py-20 lg:px-8"
+      ref={sectionRef}
+    >
+      <div className="mx-auto max-w-7xl">
+        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-(--color-primary)">
+          {dashboard.eyebrow}
+        </p>
+        <h2 className="mt-3 max-w-3xl text-balance text-3xl font-semibold tracking-tight text-(--color-ink) sm:text-4xl">
+          {dashboard.title}
+        </h2>
+        <p className="mt-4 max-w-2xl text-base leading-7 text-(--color-muted)">
+          {dashboard.description}
+        </p>
+
+        <figure
+          className={`mx-auto mt-12 max-w-5xl overflow-hidden rounded-2xl border border-(--color-border) bg-white shadow-xl shadow-[rgba(1,64,52,0.08)] transition duration-700 ${
+            inView ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+          }`}
+        >
+          <div className="flex items-center justify-between border-b border-(--color-border) bg-(--color-paper) px-4 py-3">
+            <div className="flex items-center gap-1.5" aria-hidden="true">
+              <span className="size-2.5 rounded-full bg-[#ff5f57]" />
+              <span className="size-2.5 rounded-full bg-[#ffbd2e]" />
+              <span className="size-2.5 rounded-full bg-[#28c840]" />
+            </div>
+            <figcaption className="text-xs font-bold uppercase tracking-[0.18em] text-(--color-primary)">
+              {dashboard.label}
+            </figcaption>
+          </div>
+          <Image
+            alt={dashboard.imageAlt}
+            className="h-auto w-full"
+            height={769}
+            sizes="(min-width: 1024px) 72vw, 100vw"
+            src="/product-dashboard.png"
+            width={1480}
+          />
+        </figure>
+      </div>
+    </section>
   );
 }
 
