@@ -4,6 +4,7 @@ import "./globals.css";
 import { LanguageProvider } from "@/components/landing/language-provider";
 import { FloatingTalkButton } from "@/components/landing/floating-talk-button";
 import { PageVisibilityRoot } from "@/components/landing/page-visibility-root";
+import { MetaPixel } from "@/components/meta-pixel";
 import { openGraphImage, pageSeo } from "@/lib/schema";
 import { siteConfig } from "@/lib/site";
 
@@ -67,6 +68,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body>
+        <MetaPixel />
         <LanguageProvider>
           <PageVisibilityRoot>{children}</PageVisibilityRoot>
           <FloatingTalkButton />
