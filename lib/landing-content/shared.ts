@@ -1,4 +1,4 @@
-export const appLoginUrl = "https://memoappbd.shop";
+export const appLoginUrl = "https://memoappbd.shop/signup";
 export const installUrl = "https://memoappbd.shop/install";
 export const ororaSoftAboutUrl = "https://www.ororasoft.com/about";
 export const ororaSoftUrl = "https://www.ororasoft.com/";
