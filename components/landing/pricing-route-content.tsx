@@ -1,22 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useLanguage } from "@/components/landing/language-provider";
 import { PricingComparisonTable } from "@/components/landing/pricing-comparison-table";
 import { SectionHeading } from "@/components/landing/section-heading";
 import { appLoginUrl } from "@/lib/landing-content";
-import { splitPricingPlans } from "@/lib/pricing-plans";
 
 type BillingCycle = "monthly" | "yearly";
 
 export function PricingRouteContent() {
   const { content } = useLanguage();
   const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
-  const { paidPlans } = useMemo(
-    () => splitPricingPlans(content.pricingPlans),
-    [content.pricingPlans],
-  );
+  const plans = content.pricingPlans;
 
   return (
     <>
@@ -72,7 +68,7 @@ export function PricingRouteContent() {
           </div>
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {paidPlans.map((plan) => (
+            {plans.map((plan) => (
               <article
                 className={`relative flex h-full flex-col rounded-2xl border p-7 ${
                   plan.highlighted
@@ -171,7 +167,7 @@ export function PricingRouteContent() {
                         : "primary-button"
                     }`}
                     href={
-                      "ctaHref" in plan && plan.ctaHref
+                      "ctaHref" in plan && typeof plan.ctaHref === "string"
                         ? plan.ctaHref
                         : appLoginUrl
                     }

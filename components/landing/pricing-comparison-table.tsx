@@ -4,9 +4,9 @@ import type { LandingContent } from "@/lib/landing-content";
 
 type ComparisonRow = LandingContent["pricingRoute"]["comparisonRows"][number];
 
-type PlanKey = "basic" | "growth" | "pro" | "enterprise";
+type PlanKey = "free" | "basic" | "growth" | "pro";
 
-const PLAN_KEYS: PlanKey[] = ["basic", "growth", "pro", "enterprise"];
+const PLAN_KEYS: PlanKey[] = ["free", "basic", "growth", "pro"];
 
 function CellValue({ value }: { value: boolean | string }) {
   if (value === true) {
@@ -107,7 +107,6 @@ export function PricingComparisonTable({
               {PLAN_KEYS.map((plan) => {
                 const col = columns[plan];
                 const isFeatured = plan === "growth";
-                const isEnterprise = plan === "enterprise";
                 return (
                   <th
                     className={`min-w-28 border-b border-(--color-border) bg-white px-3 py-4 text-center sm:min-w-32 sm:px-4 ${
@@ -124,20 +123,10 @@ export function PricingComparisonTable({
                       ) : (
                         <span className="h-5" aria-hidden />
                       )}
-                      <span
-                        className={`text-sm font-extrabold sm:text-base ${
-                          isEnterprise ? "text-[#800080]" : "text-(--color-ink)"
-                        }`}
-                      >
+                      <span className="text-sm font-extrabold text-(--color-ink) sm:text-base">
                         {col.name}
                       </span>
-                      <span
-                        className={`text-xs font-semibold sm:text-sm ${
-                          isEnterprise
-                            ? "text-[#800080]/80"
-                            : "text-(--color-muted)"
-                        }`}
-                      >
+                      <span className="text-xs font-semibold text-(--color-muted) sm:text-sm">
                         {col.price}
                       </span>
                     </div>

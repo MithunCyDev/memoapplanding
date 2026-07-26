@@ -61,7 +61,7 @@ export const enLandingContent = {
     titlePrefix: "Your Business Assistant, Inventory Manager, and POS",
     titleHighlight: "All-in-One",
     description:
-      "Bill in seconds, track stock in real time, collect dues without chasing, and see what's selling — all from one counter app built for Bangladeshi businesses. Start free for 7 days.",
+      "Bill in seconds, track stock in real time, collect dues without chasing, and see what's selling — all from one counter app built for Bangladeshi businesses. Start free — no time limit.",
   },
   heroStats: [
     { value: "৳48,320", label: "today's counter sales" },
@@ -290,7 +290,7 @@ export const enLandingContent = {
     title:
       "Simple packaging for small shops, busy counters, and growing teams.",
     description:
-      "Start with the free plan for 7 days, then choose a paid plan in the live app. Upgrade anytime as your shop adds staff, reports, AI, and backup.",
+      "Start with the free plan, then choose a paid plan in the live app when you need more capacity, team logins, reports, AI, or backup.",
   },
   pricingBenefits: [
     "Invoices",
@@ -310,12 +310,13 @@ export const enLandingContent = {
   },
   trialBanner: {
     title: "Start with the free plan",
-    subtitle: "Explore MemoApp free for 7 days before you choose a paid plan.",
-    badge: "7 days free",
+    subtitle:
+      "Start free forever with starter limits, then upgrade when your shop grows.",
+    badge: "Free forever",
   },
   homeFreeCta: {
     eyebrow: "Start free",
-    title: "Run your whole shop, free for 7 days.",
+    title: "Run your whole shop on Free, then upgrade when you grow.",
     description:
       "Try MemoApp with Zero Cost. See how billing, stock, dues, and reports work for your shop, then choose a plan only when you are ready.",
     benefits: [
@@ -340,43 +341,43 @@ export const enLandingContent = {
           "Understand sales, profit, and trends, and ask the AI assistant what to do next.",
       },
     ],
-    primaryCta: "Start free for 7 days",
+    primaryCta: "Start free",
     secondaryCta: "See full pricing",
   },
   paidPlansHeading: {
-    title: "Paid plans",
+    title: "Plans",
     subtitle:
-      "Choose the plan that fits your shop — upgrade anytime as your team and data grow.",
+      "Start free, then choose Starter, Growth, or Business as your shop grows.",
   },
   pricingPlans: [
     {
       name: "Free",
       price: "Free",
-      term: "7 days",
-      yearly: "Explore before choosing a paid plan",
+      term: "forever",
+      yearly: "No time limit — upgrade when you grow",
       description:
-        "Try MemoApp with guided access to core shop workflows before your team commits.",
+        "Permanent free plan with starter limits for memos, stock, dues, expenses, and notes.",
       monthlyPrice: "Free",
       yearlyPrice: "Free",
       yearlyWasPrice: "",
-      monthlyTerm: "7 days",
-      yearlyTerm: "7 days",
-      target: "New shops · first-time setup · early exploration",
+      monthlyTerm: "forever",
+      yearlyTerm: "forever",
+      target: "New shops · solo owners · getting started",
       blurb:
-        "Try onboarding, invoicing, catalog, dues, expense tracking, and baseline reports — free for 7 days.",
+        "Memos, stock, dues, expenses, and notes with starter limits — free forever. Upgrade when your shop needs more.",
       cta: "Get started free",
-      yearlyNote: "Free access stays active while you explore MemoApp.",
+      yearlyNote: "Free stays available with no expiry.",
       teamSeats: "1 team member",
       features: [
-        "7 days of full free access to set up your shop",
-        "Try memos, stock, dues, reports, notes, team pages, and AI",
-        "Experience core shop workflows — billing, inventory, purchases, and suppliers",
-        "2 AI invoice scans during trial period",
-        "Start free with no credit card — upgrade when your shop is ready",
-        "Upgrade anytime with digital payments",
+        "Free forever — no time limit",
+        "Memos, customers, dues, stock, purchases, suppliers, expenses, and notes",
+        "Up to 50 products, customers, memos, dues, and expenses",
+        "Up to 20 notes, purchases, and suppliers",
+        "Core dashboard and settings for daily shop work",
+        "Upgrade anytime for team logins, reports, AI, and higher limits",
       ],
       highlighted: false,
-      badge: "Start",
+      badge: "Free",
     },
     {
       name: "Starter",
@@ -399,7 +400,7 @@ export const enLandingContent = {
       features: [
         "POS screen for fast counter billing",
         "Memos, customers, dues, and stock control",
-        "Purchases, suppliers, and shop expenses",
+        "Purchases, suppliers, expenses, and notes",
         "Dashboard and daily shop controls",
         "Generous limits sized for a single counter",
       ],
@@ -466,35 +467,6 @@ export const enLandingContent = {
       ],
       highlighted: false,
       badge: "Scale",
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      term: "",
-      yearly: "Custom pricing for big operations",
-      description: "For chains, wholesalers, and multi-branch operations.",
-      monthlyPrice: "Custom",
-      yearlyPrice: "Custom",
-      yearlyWasPrice: "",
-      monthlyTerm: "",
-      yearlyTerm: "",
-      target: "Chains · wholesalers · multi-branch",
-      blurb:
-        "We scope access, pricing, and support together for larger operations.",
-      cta: "Contact sales",
-      ctaHref:
-        "https://wa.me/8801835623863?text=Hello%20MemoApp%20team%2C%20I%20would%20like%20to%20discuss%20an%20Enterprise%20plan.",
-      yearlyNote: "Talk with MemoApp for a tailored quote.",
-      features: [
-        "Custom access and custom pricing",
-        "Dedicated support with SLA",
-        "Custom integrations when you need them",
-        "Optional dedicated infrastructure",
-        "Hands-on training for your team",
-        "Permissions and reports shaped to your rules",
-      ],
-      highlighted: false,
-      badge: "Enterprise",
     },
   ],
   testimonialsHeading: {
@@ -576,7 +548,7 @@ export const enLandingContent = {
     {
       question: "Which plan should I start with?",
       answer:
-        "Start with the free 7-day plan to explore. Starter fits smaller shops, Growth is best for busy counters adding their first team, and Business suits established multi-counter teams.",
+        "Start with the free plan to explore. Starter fits smaller shops, Growth is best for busy counters adding their first team, and Business suits established multi-counter teams.",
     },
     {
       question: "Does MemoApp support Bangla?",
@@ -588,7 +560,7 @@ export const enLandingContent = {
     eyebrow: "Get started",
     title: "Start managing your shop with MemoApp",
     description:
-      "Create your shop account, try core workflows free for 7 days, and upgrade when your counter, team, and reports need more.",
+      "Create your shop account, try core workflows on Free, and upgrade when your counter, team, and reports need more.",
   },
   routeHeroes: {
     features: {
@@ -689,7 +661,7 @@ export const enLandingContent = {
       highlights: [
         "Photo → extracted products, quantities, and prices",
         "Stock and purchase records update automatically",
-        "Scans included with trial, Growth, and Business plans",
+        "Scans included with Growth and Business plans",
       ],
       pricingLink: "See scan limits by plan",
       importEyebrow: "Bulk upload",
@@ -1108,137 +1080,137 @@ export const enLandingContent = {
     comparisonColumns: {
       feature: "Feature",
       popularBadge: "Most popular",
+      free: { name: "Free", price: "Free" },
       basic: { name: "Starter", price: "৳499/mo" },
       growth: { name: "Growth", price: "৳999/mo" },
       pro: { name: "Business", price: "৳2,199/mo" },
-      enterprise: { name: "Enterprise", price: "Custom" },
     },
     comparisonRows: [
       {
         feature: "Memos, dues, purchases & expenses",
+        free: true,
         basic: true,
         growth: true,
         pro: true,
-        enterprise: true,
       },
       {
         feature: "WhatsApp messaging",
+        free: true,
         basic: true,
         growth: true,
         pro: true,
-        enterprise: true,
       },
       {
         feature: "Barcode label printing",
+        free: true,
         basic: true,
         growth: true,
         pro: true,
-        enterprise: true,
       },
       {
         feature: "POS screen",
+        free: true,
         basic: true,
         growth: true,
         pro: true,
-        enterprise: true,
       },
       {
         feature: "Employee management",
+        free: false,
         basic: false,
         growth: true,
         pro: true,
-        enterprise: true,
       },
       {
         feature: "Business notes",
-        basic: false,
+        free: true,
+        basic: true,
         growth: true,
         pro: true,
-        enterprise: true,
       },
       {
         feature: "Records & stock capacity",
+        free: "Up to 50 core records",
         basic: "Generous limits",
         growth: "Higher limits",
         pro: "Unlimited",
-        enterprise: "Custom",
       },
       {
         feature: "Team members",
+        free: "1 member",
         basic: "1 member",
         growth: "3 members",
         pro: "5 members",
-        enterprise: "Custom",
       },
       {
         feature: "Roles & permissions",
+        free: false,
         basic: false,
         growth: true,
         pro: true,
-        enterprise: true,
       },
       {
         feature: "Quotations + Delivery challans",
+        free: false,
         basic: false,
         growth: false,
         pro: true,
-        enterprise: true,
       },
       {
         feature: "AI invoice scan",
+        free: false,
         basic: false,
         growth: "50 / month",
         pro: "80 / month",
-        enterprise: "Custom",
       },
       {
         feature: "Import / export (Excel & PDF)",
+        free: false,
         basic: false,
         growth: true,
         pro: true,
-        enterprise: true,
       },
       {
         feature: "AI assistant",
+        free: false,
         basic: false,
         growth: true,
         pro: true,
-        enterprise: true,
       },
       {
         feature: "Backups & storage",
+        free: "—",
         basic: "Basic storage",
         growth: "Auto Cloud backup",
         pro: "Auto Cloud backup",
-        enterprise: "Dedicated",
       },
       {
         feature: "Multi-business / branch",
+        free: false,
         basic: false,
         growth: false,
         pro: "Up to 3 businesses/branches",
-        enterprise: "Custom",
       },
       {
         feature: "Data reset",
+        free: false,
         basic: false,
         growth: false,
         pro: true,
-        enterprise: true,
       },
       {
         feature: "Support level",
+        free: "Community",
         basic: "Email ~48h",
         growth: "Priority <24h",
         pro: "Named queue",
-        enterprise: "24/7 SLA",
       },
     ],
     assurance: [
-      "Start with the free plan before choosing a paid plan.",
+      "Start free forever, then upgrade when your shop needs more.",
       "Yearly billing gives two bonus months compared with monthly billing.",
       "Upgrade when your shop needs richer reports, AI, backup, or employee workflows.",
-      "Need chains, wholesalers, or multi-branch rollout? Contact sales for Enterprise.",
+      "Business covers multi-counter teams with branches and priority support.",
     ],
     faqEyebrow: "Pricing FAQ",
     faqTitle: "Questions before choosing a plan",
@@ -1248,9 +1220,9 @@ export const enLandingContent = {
     faqLink: "Read public FAQ",
     faqs: [
       {
-        question: "What happens after the 7-day free plan?",
+        question: "Is the Free plan really free forever?",
         answer:
-          "After 7 days, choose the plan that matches your shop size. Starter covers smaller counters, Growth fits busy retailers adding their first team, and Business supports established multi-counter teams.",
+          "Yes. Free stays available with starter limits. Choose Starter, Growth, or Business when you need more capacity, team logins, or AI.",
       },
       {
         question: "Can I change plans later?",
@@ -1405,7 +1377,7 @@ export const enLandingContent = {
     {
       question: "Which plan should I start with?",
       answer:
-        "Start with the free 7-day plan to explore. Starter fits smaller shops, Growth is best for busy counters adding their first team, and Business suits established multi-counter teams.",
+        "Start with the free plan to explore. Starter fits smaller shops, Growth is best for busy counters adding their first team, and Business suits established multi-counter teams.",
       category: "Billing & plans",
     },
     {

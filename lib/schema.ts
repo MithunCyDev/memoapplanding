@@ -56,7 +56,7 @@ export const pageSeo = {
     openGraphTitle:
       "MemoApp Pricing & Plans — AI-Powered Business Management Software in Bangladesh",
     description:
-      "Compare MemoApp Trial, Starter, Growth, Business, and Enterprise plans for billing, inventory, dues, reports, backup, team access, and AI-assisted shop workflows in Bangladesh.",
+      "Compare MemoApp Free, Starter, Growth, and Business plans for billing, inventory, dues, reports, backup, team access, and AI-assisted shop workflows in Bangladesh.",
     keywords: [
       "MemoApp pricing",
       "POS software price Bangladesh",
@@ -135,7 +135,8 @@ const pricingOffers = [
   {
     name: "Free",
     price: "0",
-    description: "7 days of free access for exploring core MemoApp workflows.",
+    description:
+      "Permanent free plan with starter limits for memos, stock, dues, expenses, and notes.",
   },
   {
     name: "Starter",
@@ -153,12 +154,6 @@ const pricingOffers = [
     price: "2199",
     description:
       "Monthly plan for established teams with unlimited records, full employee roles, and priority support.",
-  },
-  {
-    name: "Enterprise",
-    price: "0",
-    description:
-      "Custom pricing for chains, wholesalers, and multi-branch operations — contact sales.",
   },
 ] as const;
 
