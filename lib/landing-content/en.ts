@@ -371,8 +371,8 @@ export const enLandingContent = {
       features: [
         "Free forever — no time limit",
         "Memos, customers, dues, stock, purchases, suppliers, expenses, and notes",
-        "Up to 50 products, customers, memos, dues, and expenses",
-        "Up to 20 notes, purchases, and suppliers",
+        "Limited products, customers, memos, dues, and expenses",
+        "Limited notes, purchases, and suppliers",
         "Core dashboard and settings for daily shop work",
         "Upgrade anytime for team logins, reports, AI, and higher limits",
       ],
@@ -1130,7 +1130,7 @@ export const enLandingContent = {
       },
       {
         feature: "Records & stock capacity",
-        free: "Up to 50 core records",
+        free: "Limited",
         basic: "Generous limits",
         growth: "Higher limits",
         pro: "Unlimited",
