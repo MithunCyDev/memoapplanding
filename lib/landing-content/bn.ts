@@ -429,14 +429,14 @@ export const bnLandingContent = {
     },
     {
       name: "বিজনেস",
-      price: "৳২,১৯৯",
+      price: "৳২,৪৯৯",
       term: "/মাস",
-      yearly: "৳২১,১১০/বছর",
+      yearly: "৳২৩,৯৯০/বছর",
       description:
         "বড় টিম, সীমাহীন রেকর্ড ও অগ্রাধিকার সাপোর্ট চাইলে এই প্ল্যান।",
-      monthlyPrice: "৳২,১৯৯",
-      yearlyPrice: "৳২১,১১০",
-      yearlyWasPrice: "৳২৬,৩৮৮",
+      monthlyPrice: "৳২,৪৯৯",
+      yearlyPrice: "৳২৩,৯৯০",
+      yearlyWasPrice: "৳২৯,৯৮৮",
       monthlyTerm: "/মাস",
       yearlyTerm: "/বছর",
       target: "একাধিক কাউন্টারে টিম চালানো দোকান",
@@ -1069,7 +1069,7 @@ export const bnLandingContent = {
       popularBadge: "সবচেয়ে জনপ্রিয়",
       basic: { name: "স্টার্টার", price: "৳৪৯৯/মাস" },
       growth: { name: "Growth", price: "৳৯৯৯/মাস" },
-      pro: { name: "বিজনেস", price: "৳২,১৯৯/মাস" },
+      pro: { name: "বিজনেস", price: "৳২,৪৯৯/মাস" },
     },
     comparisonRows: [
       {

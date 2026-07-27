@@ -439,14 +439,14 @@ export const enLandingContent = {
     },
     {
       name: "Business",
-      price: "৳2,199",
+      price: "৳2,499",
       term: "/month",
-      yearly: "৳21,110/year",
+      yearly: "৳23,990/year",
       description:
         "For established teams that need unlimited records and priority support.",
-      monthlyPrice: "৳2,199",
-      yearlyPrice: "৳21,110",
-      yearlyWasPrice: "৳26,388",
+      monthlyPrice: "৳2,499",
+      yearlyPrice: "৳23,990",
+      yearlyWasPrice: "৳29,988",
       monthlyTerm: "/month",
       yearlyTerm: "/year",
       target: "Teams running multiple counters",
@@ -1083,7 +1083,7 @@ export const enLandingContent = {
       free: { name: "Free", price: "Free" },
       basic: { name: "Starter", price: "৳499/mo" },
       growth: { name: "Growth", price: "৳999/mo" },
-      pro: { name: "Business", price: "৳2,199/mo" },
+      pro: { name: "Business", price: "৳2,499/mo" },
     },
     comparisonRows: [
       {
