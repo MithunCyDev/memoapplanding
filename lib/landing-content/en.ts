@@ -432,7 +432,7 @@ export const enLandingContent = {
         "Reports (P&L, PDF) and AI assistant",
         "50 AI invoice scans per month",
         "Import and export from any data grid",
-        "Higher limits for a busier counter",
+        "Unlimited product uploads",
       ],
       highlighted: true,
       badge: "Most Popular",
@@ -1129,10 +1129,10 @@ export const enLandingContent = {
         pro: true,
       },
       {
-        feature: "Records & stock capacity",
+        feature: "Stock capacity",
         free: "Limited",
         basic: "Generous limits",
-        growth: "Higher limits",
+        growth: "Unlimited",
         pro: "Unlimited",
       },
       {

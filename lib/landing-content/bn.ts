@@ -422,7 +422,7 @@ export const bnLandingContent = {
         "রিপোর্ট (লাভ-ক্ষতি, PDF) ও এআই সহকারী",
         "মাসে ৫০টি এআই ইনভয়েস স্ক্যান",
         "যেকোনো তালিকা থেকে তথ্য আনা-নেওয়া",
-        "ব্যস্ত কাউন্টারের জন্য বেশি সীমা",
+        "সীমাহীন পণ্য আপলোড",
       ],
       highlighted: true,
       badge: "Most Popular",
@@ -1115,10 +1115,10 @@ export const bnLandingContent = {
         pro: true,
       },
       {
-        feature: "রেকর্ড ও স্টক ধারণক্ষমতা",
+        feature: "স্টক ধারণক্ষমতা",
         free: "সীমিত",
         basic: "পর্যাপ্ত স্থান",
-        growth: "বেশি স্থান",
+        growth: "সীমাহীন",
         pro: "সীমাহীন",
       },
       {
