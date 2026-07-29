@@ -93,13 +93,13 @@ export function PricingComparisonTable({
 
   return (
     <div className="mt-12 overflow-hidden rounded-2xl border border-(--color-border) bg-white shadow-[0_1px_4px_rgba(15,23,42,0.06)]">
-      <div className="overflow-x-auto">
-        <table className="w-full min-w-[52rem] border-separate border-spacing-0 text-left">
+      <div className="overflow-x-auto overscroll-x-contain">
+        <table className="w-full min-w-[44rem] border-separate border-spacing-0 text-left sm:min-w-[52rem]">
           <caption className="sr-only">{content.comparisonTitle}</caption>
           <thead>
             <tr>
               <th
-                className="sticky left-0 z-20 min-w-40 border-b border-(--color-border) bg-white px-4 py-4 text-sm font-bold text-(--color-primary-dark) sm:min-w-48 sm:px-5"
+                className="sticky left-0 z-20 w-28 max-w-28 border-b border-(--color-border) bg-white px-2.5 py-4 text-sm font-bold text-(--color-primary-dark) sm:w-auto sm:min-w-48 sm:max-w-none sm:px-5 sm:text-sm"
                 scope="col"
               >
                 {columns.feature}
@@ -109,7 +109,7 @@ export function PricingComparisonTable({
                 const isFeatured = plan === "growth";
                 return (
                   <th
-                    className={`min-w-28 border-b border-(--color-border) bg-white px-3 py-4 text-center sm:min-w-32 sm:px-4 ${
+                    className={`min-w-24 border-b border-(--color-border) bg-white px-2 py-4 text-center sm:min-w-32 sm:px-4 ${
                       isFeatured ? "border-x-2 border-x-(--color-primary)" : ""
                     }`}
                     key={plan}
@@ -139,7 +139,7 @@ export function PricingComparisonTable({
             {content.comparisonRows.map((row: ComparisonRow) => (
               <tr key={row.feature}>
                 <th
-                  className="sticky left-0 z-10 border-b border-(--color-border) bg-white px-4 py-3.5 text-left text-sm font-semibold text-(--color-ink) shadow-[6px_0_10px_-6px_rgba(0,0,0,0.08)] sm:px-5"
+                  className="sticky left-0 z-10 w-28 max-w-28 border-b border-(--color-border) bg-white px-2.5 py-3.5 text-left text-xs font-semibold leading-snug text-(--color-ink) shadow-[6px_0_10px_-6px_rgba(0,0,0,0.08)] sm:w-auto sm:min-w-48 sm:max-w-none sm:px-5 sm:text-sm"
                   scope="row"
                 >
                   {row.feature}
@@ -148,7 +148,7 @@ export function PricingComparisonTable({
                   const isFeatured = plan === "growth";
                   return (
                     <td
-                      className={`border-b border-(--color-border) bg-white px-3 py-3.5 text-center align-middle sm:px-4 ${
+                      className={`border-b border-(--color-border) bg-white px-2 py-3.5 text-center align-middle sm:px-4 ${
                         isFeatured
                           ? "border-x-2 border-x-(--color-primary)"
                           : ""

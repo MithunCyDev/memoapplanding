@@ -134,7 +134,7 @@ export function PricingRouteContent() {
                 </p>
                 {"teamSeats" in plan && plan.teamSeats ? (
                   <p
-                    className={`mt-4 rounded-xl px-3 py-2 text-sm font-semibold ${
+                    className={`mt-4 rounded-md px-3 py-2 text-sm font-semibold ${
                       plan.highlighted
                         ? "bg-white/10 text-(--color-info)"
                         : "bg-(--color-primary-light) text-(--color-primary-dark)"
