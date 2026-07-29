@@ -428,11 +428,11 @@ export const enLandingContent = {
       features: [
         "Everything in Starter",
         "Up to 3 team members with separate logins",
+        "Unlimited product uploads",
         "Employee management and business notes",
         "Reports (P&L, PDF) and AI assistant",
         "50 AI invoice scans per month",
         "Import and export from any data grid",
-        "Unlimited product uploads",
       ],
       highlighted: true,
       badge: "Most Popular",
