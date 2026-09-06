@@ -81,11 +81,11 @@ export const enLandingContent = {
   ],
   trusted: {
     eyebrow: "Trusted by Bangladeshi businesses",
-    title: "Built for 100+ ambitious shops and business teams",
+    title: "Built for 500+ ambitious shops and business teams",
     description:
       "MemoApp is shaped around the daily needs of local retailers, wholesalers, and service businesses.",
     metrics: [
-      { value: "100+", label: "businesses supported" },
+      { value: "500+", label: "businesses supported" },
       { value: "24/7", label: "sales visibility" },
       { value: "AI", label: "assistant-ready operations" },
       { value: "360°", label: "billing, stock, dues, reports" },
